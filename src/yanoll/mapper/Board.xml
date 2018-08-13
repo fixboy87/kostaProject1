@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<mapper namespace="kosta.mapper.BoardMapper">
+	<cache />
+	
+	<!-- <insert id="insertBoard" parameterType="Board">insert할때는 데이터값이 넘어올게 있으니까
+	insert into board(
+	seq, title, writer, contents, regdate, hitcount
+	)values(
+	board_seq.nextval, #{title}, #{writer}, #{contents}, sysdate, 0
+	
+	)
+	#{} 이걸로 객체의 변수안에  들어간 데이터 값을 뺴올수 잇음
+	</insert>
+	
+	<select id="listBoard" resultType="Board">
+	select * form board
+	</select> -->
+	
+	
+<!-- mybatis-config.xml에서 alias로  별칭준게 있어서 Board하면 알아서 찾아줌 
+쿼리문에 정렬하고 싶음 해도됨 -->
+	
+</mapper>
