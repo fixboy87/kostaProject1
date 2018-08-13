@@ -9,14 +9,15 @@
 <body>
 	<form action="registerAction.jsp" method="post">
 		ID : <input type="text" name="id">
-		Password : <input type="text" name="password">
+		Password : <input type="password" name="password">
 		E-mail : <input type="email" name="email">
 		연락처 : <input type="text" name="tel">
 		성 : <input type="text" name="surname">
 		이름 : <input type="text" name="first_name">
-		성별 : <input type="text" name="sex">
+		성별 : 남 <input type="checkbox" name="sex" value="male">
+		여	 <input type="checkbox" name="sex" value="female">
 		생년월일 <input type="date" name="date_of_birth">
-		<input type="submit" value="acc_register">
+		<input type="submit" value="SignUp">
 	</form>
 </body>
 </html>
