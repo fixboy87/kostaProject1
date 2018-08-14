@@ -5,8 +5,13 @@
 
 <configuration>
 	<typeAliases>
-		 <typeAlias type="yanoll.model.Board" alias="Board"/> 
-	
+		 <typeAlias type="yanoll.models.vo.Booking" alias="Booking"/>
+		 <typeAlias type="yanoll.models.vo.Hotel_detail" alias="Hotel_detail"/> 
+		 <typeAlias type="yanoll.models.vo.Hotel_info" alias="Hotel_info"/>
+		 <typeAlias type="yanoll.models.vo.Hotel_List" alias="Hotel_List"/>
+		 <typeAlias type="yanoll.models.vo.Pic_view" alias="Pic_view"/>
+	     <typeAlias type="yanoll.models.vo.Board" alias="Board"/>
+	     
 	</typeAliases>
 	
 	<environments default="development">
@@ -20,6 +25,7 @@
 	
 	<mappers>
 		<mapper resource="kosta/mapper/mapper.xml"/>
+		<mapper resource="yanoll/mapper/Booking.xml"/>
 	</mappers>
 	
 </configuration>
