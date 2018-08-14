@@ -892,19 +892,19 @@ section
 }
 .find_item:first-child
 {
-	width: 31.413%;
+	width: 28%;
 }
 .find_item:nth-child(2)
 {
-	width: 31.413%;
+	width: 20%;
 }
 .find_item:nth-child(3)
 {
-	width: 10.122%;
+	width: 20%;
 }
 .find_item:nth-child(4)
 {
-	width: 10.122%;
+	width: 20%;
 }
 .find_item div
 {

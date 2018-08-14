@@ -1,7 +1,6 @@
 package yanoll.mapper;
 
 import java.util.List;
-import yanoll.model.Board;
 
 
 public interface BoardMapper {
