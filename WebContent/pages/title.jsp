@@ -9,11 +9,11 @@
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="../styles/common/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="../plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="../plugins/common/OwlCarousel2-2.2.1/animate.css">
-<link href="plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+<link href="../plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../styles/common/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../styles/common/responsive.css">
 </head>
@@ -21,9 +21,11 @@
 
 <div class="super_container">
 
-<jsp:include page="sub_page/header_menu.jsp">
+<%-- <jsp:include page="sub_page/header_menu.jsp">
 	<jsp:param value="" name=""/>
-</jsp:include>
+</jsp:include> --%>
+<%@ include file="sub_page/header_menu.jsp"%>
+
 	
 	<!-- Home -->
 
