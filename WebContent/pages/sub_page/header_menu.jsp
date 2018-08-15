@@ -30,11 +30,11 @@
 						<nav class="main_nav ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item active"><a href="#">홈</a></li>
-								<li class="main_nav_item"><a href="#">관리자메뉴</a></li>
+								<li class="main_nav_item" hidden="true"><a href="#">관리자메뉴</a></li>
 								<li class="main_nav_item"><a href="#">로그인</a></li>
-								<li class="main_nav_item"><a href="#">예약현황</a></li>
+								<li class="main_nav_item" hidden="true"><a href="#">예약현황</a></li>
 								<li class="main_nav_item"><a href="#">회원가입</a></li>
-								<li class="main_nav_item"><a href="#">로그아웃</a></li>
+								<li class="main_nav_item" hidden="true"><a href="#">로그아웃</a></li>
 							</ul>
 						</nav>
 
@@ -68,10 +68,11 @@
 				</div>
 				<ul class="menu_list menu_mm">
 					<li class="menu_item menu_mm"><a href="#">홈</a></li>
-					<li class="menu_item menu_mm"><a href="#">로그인</a></li>
-					<li class="menu_item menu_mm"><a href="#">회원가입</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
-					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+					<li class="menu_item menu_mm" hidden="true"><a href="#">관리자메뉴</a></li>
+					<li class="menu_item menu_mm"><a href="#">로그인</a></li>
+					<li class="menu_item menu_mm" hidden="true"><a href="#">예약현황</a></li>
+					<li class="menu_item menu_mm"><a href="#">회원가입</a></li>
+					<li class="menu_item menu_mm" hidden="true"><a href="#">로그아웃</a></li>
 				</ul>
 
 				<!-- Menu Social -->

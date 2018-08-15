@@ -6,7 +6,3 @@
 .visible {
 	visibility : visible;
 }
-
-.main_nav_list:NTH-CHILD(2n) {
-	visibility : hidden;
-}
