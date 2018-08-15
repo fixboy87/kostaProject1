@@ -24,7 +24,7 @@
 
 <%@ include file="sub_page/header_menu.jsp"%>
 
-	
+9	
 	<!-- Home -->
 
 	<div class="home">
