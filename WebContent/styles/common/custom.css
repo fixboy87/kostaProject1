@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.hidden {
+	visibility : hidden;
+}
+.visible {
+	visibility : visible;
+}
+
+.main_nav_list:NTH-CHILD(2n) {
+	visibility : hidden;
+}
