@@ -217,7 +217,7 @@ $(document).ready(function()
 		}
 	}
 	
-	function datePick() {
+	var datePick = function() {
 		$('.arrival find_input').on('click', function() {
 			$(this).pignoseCalender({
 			    click: function(event, context) { 
