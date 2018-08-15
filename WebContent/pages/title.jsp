@@ -21,9 +21,6 @@
 
 <div class="super_container">
 
-<%-- <jsp:include page="sub_page/header_menu.jsp">
-	<jsp:param value="" name=""/>
-</jsp:include> --%>
 <%@ include file="sub_page/header_menu.jsp"%>
 
 	
@@ -57,11 +54,11 @@
 							</div>
 							<div class="find_item">
 								<div>채크인 :</div>
-								<input type="text" class="destination find_input" placeholder="YYYY-MM-DD">
+								<input type="text" class="arrival find_input" placeholder="YYYY-MM-DD">
 							</div>
 							<div class="find_item">
 								<div>채크아웃 :</div>
-								<input type="text" class="destination find_input" placeholder="YYYY-MM-DD">
+								<input type="text" class="departure find_input" placeholder="YYYY-MM-DD">
 							</div>
 							<button class="button find_button">Find</button>
 						</form>
@@ -424,12 +421,14 @@
 <%@include file="sub_page/footer.html" %>
 
 <script src="../scripts/common/jquery-3.2.1.min.js"></script>
+<script src="../scripts/common/moment.min.js"></script>
 <script src="../styles/common/bootstrap4/popper.js"></script>
 <script src="../styles/common/bootstrap4/bootstrap.min.js"></script>
 <script src="../plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="../plugins/common/easing/easing.js"></script>
 <script src="../plugins/common/parallax-js-master/parallax.min.js"></script>
 <script src="../plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="../scripts/common/pignose.calendar.js"></script>
 <script src="../scripts/common/custom.js"></script>
 </body>
 </html>
