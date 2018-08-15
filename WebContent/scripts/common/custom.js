@@ -216,4 +216,26 @@ $(document).ready(function()
 			});
 		}
 	}
+	
+	var datePick = function() {
+		$('.arrival find_input').on('click', function() {
+			$(this).pignoseCalender({
+			    click: function(event, context) { 
+
+			         // This is clicked button Element.
+			         var $this = $(this);
+
+			         // You can access event parameter.
+			         event.preventDefault();
+
+			         // You can get target element in `context` variable, This element is same `$(this)`.
+			         var $element = context.element;
+
+			         // You can also get calendar element, It is calendar view DOM.
+			         var $calendar = context.calendar;
+			    }
+				
+			});
+		});
+	}
 });

@@ -292,7 +292,7 @@ section
 
 .header
 {
-	display: block;
+	display: black;
 	position: fixed;
 	top: 47px;
 	width: 100%;
@@ -306,12 +306,13 @@ section
 .header.scrolled
 {
 	top: 15px;
+	background-color: black;
 }
 .header_container
 {
 	width: 100%;
 	height: 121px;
-	background: #131a2f;
+	background: none;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
 	-ms-transition: all 400ms ease;
