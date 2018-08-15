@@ -293,7 +293,7 @@ section
 .header
 {
 	display: black;
-	/* position: fixed; */
+	position: fixed;
 	top: 47px;
 	width: 100%;
 	z-index: 100;
@@ -306,6 +306,7 @@ section
 .header.scrolled
 {
 	top: 15px;
+	background-color: black;
 }
 .header_container
 {
