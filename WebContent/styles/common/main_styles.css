@@ -306,6 +306,7 @@ section
 .header.scrolled
 {
 	top: 15px;
+	background-color: black;
 }
 .header_container
 {
