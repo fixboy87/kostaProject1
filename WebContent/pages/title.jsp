@@ -16,6 +16,7 @@
 <link href="../plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../styles/common/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../styles/common/responsive.css">
+<link rel="stylesheet" type="text/css" href="../styles/common/custom.css">
 </head>
 <body>
 
