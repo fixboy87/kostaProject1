@@ -202,22 +202,23 @@ $(document).ready(function()
 
 	*/
 
+	
 	function initSearch()
 	{
-		if($('.search').length)
+		if($('.search').length && rightDate == true)
 		{
 			var search = $('.search');
 			search.on('click', function(e)
 			{
 				var target = $(e.target);
-				if(!target.hasClass('ctrl_class'))
-				{
+				if(!target.hasClass('ctrl_class')) {
 					$(this).toggleClass('active');
 				}
 			});
 		}
 	}
 	
+	var rightDate = false;
 	var $arrDate = new Date;
 	var $depDate = new Date;
 	
@@ -245,7 +246,7 @@ $(document).ready(function()
 				alert("잘못된 날짜를 선택하셨습니다.");
 				$depDate = $arrDate;
 			} else {
-				//검색활성화
+				rightDate = true;
 			}
 			
 		}
