@@ -955,6 +955,44 @@ section
 	border: solid 2px rgba(255,255,255,0.5);
 	background: transparent;
 }
+
+
+/************
+10. 767px
+************/
+
+@media only screen and (max-width: 767px)
+{
+	.menu_container
+	{
+		right: -100vw;
+		width: 100vw;
+		height: 100vh;
+	}
+	.find_item:first-child
+	{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.find_item:nth-child(2)
+	{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.find_item:nth-child(3),
+	.find_item:nth-child(4)
+	{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.find_button
+	{
+		width: 138px;
+	}
+}
+
+
+
 .find_item:first-child
 {
 	width: 31.413%;

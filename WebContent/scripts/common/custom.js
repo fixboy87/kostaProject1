@@ -202,22 +202,23 @@ $(document).ready(function()
 
 	*/
 
+	
 	function initSearch()
 	{
-		if($('.search').length)
+		if($('.search').length && rightDate == true)
 		{
 			var search = $('.search');
 			search.on('click', function(e)
 			{
 				var target = $(e.target);
-				if(!target.hasClass('ctrl_class'))
-				{
+				if(!target.hasClass('ctrl_class')) {
 					$(this).toggleClass('active');
 				}
 			});
 		}
 	}
 	
+	var rightDate = false;
 	var $arrDate = new Date;
 	var $depDate = new Date;
 	
@@ -228,17 +229,29 @@ $(document).ready(function()
 		
 		onClose: function() {
 			$arrDate = $('.arrival').datepicker('getDate');
+			
 			$('.departure').datepicker('setDate', $arrDate);
+			
 			setTimeout(function() {
 				$('.departure').focus();
 			}, 100);
-			//$('.departure').trigger()
 		}
 	});
 	
 	$('.departure').datepicker({
 		minDate: "0d",
+		onClose: function() {
+			$depDate = $('.departure').datepicker('getDate');
+			if($depDate < $arrDate) {
+				alert("잘못된 날짜를 선택하셨습니다.");
+				$depDate = $arrDate;
+				rightDate = false;
+			} else {
+				rightDate = true;
+			}
+		}
 	});
+	
 		
 		
 	
