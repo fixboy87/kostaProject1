@@ -228,17 +228,29 @@ $(document).ready(function()
 		
 		onClose: function() {
 			$arrDate = $('.arrival').datepicker('getDate');
+			
 			$('.departure').datepicker('setDate', $arrDate);
+			
 			setTimeout(function() {
 				$('.departure').focus();
 			}, 100);
-			//$('.departure').trigger()
 		}
 	});
 	
 	$('.departure').datepicker({
 		minDate: "0d",
+		onClose: function() {
+			$depDate = $('.departure').datepicker('getDate');
+			if($depDate < $arrDate) {
+				alert("잘못된 날짜를 선택하셨습니다.");
+				$depDate = $arrDate;
+			} else {
+				//검색활성화
+			}
+			
+		}
 	});
+	
 		
 		
 	
