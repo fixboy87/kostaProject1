@@ -46,6 +46,7 @@ $(document).ready(function()
 	initVideo();
 	initSearch();
 
+
 	/* 
 
 	2. Set Header
@@ -201,40 +202,57 @@ $(document).ready(function()
 
 	*/
 
+	
 	function initSearch()
 	{
-		if($('.search').length)
+		if($('.search').length && rightDate == true)
 		{
 			var search = $('.search');
 			search.on('click', function(e)
 			{
 				var target = $(e.target);
-				if(!target.hasClass('ctrl_class'))
-				{
+				if(!target.hasClass('ctrl_class')) {
 					$(this).toggleClass('active');
 				}
 			});
 		}
 	}
 	
-	function arrDatePick() {
-		$('.arrival find_input').on('click', function() {
-			$(this).pignoseCalendar(/*{
-			    click: function(event, context) { 
-
-			         var $this = $(this);
-
-			         event.preventDefault();
-
-			         var $element = context.element;
-
-			         var $calendar = context.calendar;
-			    }
-			}*/);
-		});
-	}
+	var rightDate = false;
+	var $arrDate = new Date;
+	var $depDate = new Date;
 	
-	function loggedIn() {
+	$('.arrival').datepicker('setDate', 'today');
+	$('.arrival').datepicker({
+		minDate: 0,
+		maxDate: "6M",
 		
-	}
+		onClose: function() {
+			$arrDate = $('.arrival').datepicker('getDate');
+			
+			$('.departure').datepicker('setDate', $arrDate);
+			
+			setTimeout(function() {
+				$('.departure').focus();
+			}, 100);
+		}
+	});
+	
+	$('.departure').datepicker({
+		minDate: "0d",
+		onClose: function() {
+			$depDate = $('.departure').datepicker('getDate');
+			if($depDate < $arrDate) {
+				alert("잘못된 날짜를 선택하셨습니다.");
+				$depDate = $arrDate;
+				rightDate = false;
+			} else {
+				rightDate = true;
+			}
+		}
+	});
+	
+		
+		
+	
 });

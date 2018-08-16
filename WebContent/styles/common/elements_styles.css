@@ -1490,7 +1490,260 @@ section
 	-o-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
+
+.find_title
+{
+	width: 100%;
+	font-size: 30px;
+	font-weight: 300;
+	color: #000000;
+}
+
 .tag:hover
 {
 	background: rgba(254,60,82,0.8);
+}
+
+
+
+/*********************************
+8. 수정 메뉴
+*********************************/
+.find
+{
+	width: calc(100% - 124px);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -148px;
+	padding-top: 63px;
+	padding-bottom: 70px;
+	z-index: 10;
+	background: transparent;
+}
+.find_background_container
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.find_background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.find_form_container
+{
+	width: 100%;
+	margin-top: 36px;
+}
+.find_title
+{
+	width: 100%;
+	font-size: 30px;
+	font-weight: 300;
+	color: #939393;
+}
+.find_form
+{
+	width: 100%;
+	height: 100%;
+}
+.find_input
+{
+	width: 100%;
+	height: 56px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 52px;
+	color: #939393;
+	border: solid 2px #939393;
+	background: transparent;
+}
+.find_item:first-child
+{
+	width: 31.413%;
+}
+.find_item:nth-child(2)
+{
+	width: 31.413%;
+}
+.find_item:nth-child(3)
+{
+	width: 10.122%;
+}
+.find_item:nth-child(4)
+{
+	width: 10.122%;
+}
+.find_item div
+{
+	font-size: 14px;
+	font-weight: 400;
+	color: #939393;
+	margin-bottom: 7px;
+}
+.dropdown_item_select
+{
+	-webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+	-webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	-webkit-user-select: none;
+	background-image: url(../images/down.png);
+	background-position: center right;
+	background-repeat: no-repeat;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 400;
+	font-style: italic;
+	color: #939393 !important;
+}
+.dropdown_item_select::-ms-expand
+{
+    display: none;
+}
+.find_input:hover
+{
+	border: solid 2px rgba(254, 67, 91, 0.5);
+}
+.find_input:focus
+{
+	outline-color: rgba(254, 67, 91, 0.5);
+	border: solid 2px rgba(254, 67, 91, 0.5);
+}
+.find_button
+{
+	width: 14.048%;
+	height: 56px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #FFFFFF;
+	line-height: 52px;
+	padding-left: 46px;
+	padding-right: 46px;
+	background: #fe435b !important;
+	-webkit-transform: translateY(14px);
+	-moz-transform: translateY(14px);
+	-ms-transform: translateY(14px);
+	-o-transform: translateY(14px);
+	transform: translateY(14px);
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.find_button:hover
+{
+	opacity: 0.8;
+}
+.find_input::-webkit-input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #939393 !important;
+}
+.find_input:-moz-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #939393 !important;
+}
+.find_input::-moz-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #939393 !important;
+} 
+.find_input:-ms-input-placeholder
+{ 
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #939393 !important;
+}
+.find_input::input-placeholder
+{
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	font-style: italic;
+	color: #939393 !important;
+}
+
+.navi li
+{
+	display : inline;
+	list-style : none;
+	float : left;
+	font-size : 20px;
+	padding-right : 50px;
+	font-family: 'Nanum Gothic Coding', monospace;
+}
+
+
+/*********************************
+9. 예약현황, roomlist, 호텔정보수정, 매출현황
+*********************************/
+
+.navi_bar li      /* 상단 예약현황 RoomList 호텔정보수정 매출현황 1  */
+{
+	display:inline;
+	font-size:15px;
+	padding-right:50px;
+	float : left;
+	list-style-type:none;
+	font-family: 'Nanum Gothic Coding', monospace;
+}
+
+.navi_bar li:hover   /* 상단 예약현황 RoomList 호텔정보수정 매출현황 2 */
+{
+	color:blue;
+	color: rgba(254,60,82,1);
+}
+
+#secondday			/* 두번째 날짜선택창 */
+{
+	width: 100%;
+	height: 56px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 52px;
+	color: #939393;
+	border: solid 2px #939393;
+	background: transparent;
+}
+#firstday			/* 첫번째 날짜선택창 */
+{
+	width: 100%;
+	height: 56px;
+	border: none;
+	outline: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 52px;
+	color: #939393;
+	border: solid 2px #939393;
+	background: transparent;
 }

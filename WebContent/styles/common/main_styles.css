@@ -10,7 +10,7 @@
 3. Home
 4. Header
 	4.1 Logo
-	4.2 Navigation
+	4.2 Navigation_
 	4.3 Search
 	4.4 Hamburger
 5. Menu
@@ -893,19 +893,19 @@ section
 }
 .find_item:first-child
 {
-	width: 28%;
+	width: 20%;
 }
 .find_item:nth-child(2)
 {
-	width: 20%;
+	width: 10%;
 }
 .find_item:nth-child(3)
 {
-	width: 20%;
+	width: 17%;
 }
 .find_item:nth-child(4)
 {
-	width: 20%;
+	width: 17%;
 }
 .find_item div
 {
