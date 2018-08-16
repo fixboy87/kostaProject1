@@ -245,10 +245,10 @@ $(document).ready(function()
 			if($depDate < $arrDate) {
 				alert("잘못된 날짜를 선택하셨습니다.");
 				$depDate = $arrDate;
+				rightDate = false;
 			} else {
 				rightDate = true;
 			}
-			
 		}
 	});
 	
