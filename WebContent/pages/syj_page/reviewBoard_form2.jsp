@@ -62,6 +62,27 @@ margin-bottom: 2%;
 
 
 	<!-- Contact -->
+
+                     <h1>후기 작성</h1>
+					<div class="contact_form_container">
+						<form action="insertReviewAction.do" method="post"
+						enctype="multipart/form-data" id="contact_form" class="clearfix">
+							<div class="contact_set_container">
+								작성자  <a id="contact_set" class="contact_input contact_input_subject" name="name" placeholder="작성자">작성자</a><br>
+							</div>
+							<div class="contact_set_container">
+								호텔명 <a id="contact_set" class="contact_input contact_input_subject">그랜드 하얏트 서울</a>  숙박일수 <a id="contact_set" class="contact_input contact_input_subject">3일</a><br>
+							</div>
+							제목  <input id="contact_input_title" class="contact_input contact_input_subject" type="text" name="r_title" placeholder="제목"><br>
+							평점   <input id="contact_input_writer" class="contact_input contact_input_subject" type="number" name="r_grade" placeholder="평점"><br>
+							이미지 첨부 <input  id="contact_input_img" class="contact_input contact_input_subject" type="file" name="r_fname" placeholder="이미지를 첨부해주세요."><br>
+							
+							<textarea id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="r_content" placeholder="내용"></textarea>
+							<button id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="Submit">보내기</button>
+						</form>
+					</div>
+					
+					<%-- form의 textarea에 summernote 적용 --%>
 	<div>
 		<div>
 			<%--로그인체크 <%@ include file="/home/sidebar.jsp"%> --%>
