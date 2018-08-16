@@ -6,7 +6,7 @@
 <head>
 
 
-<title>ReservationStatus</title>
+<title>RoomList</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
@@ -162,68 +162,45 @@
 		</div>
 	</div>
 	
-<!-- -------------------------------테이블... 어차피 바뀔꺼... ㅜㅜ 임시------------------------------------------------------ -->
-<div id="wrap" align="cnter">
-	<div class="elements_title">예약현황</div>
+<!-- -------------------------------파일업로드창------------------------------------------------------ -->
 
-	<table class="type10">
-	    <thead>
-	    <tr>
-	        <th>번호</th><th>고객명</th><th>ID</th><th>연락처</th><th>E-MAIL</th><th>결제상태</th><th>수정</th>
-	    </tr>
-	    </thead>
-	    <tbody>
-	    <tr>
-	        <th scope="row">1</th>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>
-	        	<select>
-	        		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
-	    </tr>
-	    <tr>
-	        <th scope="row" class="even">2</th>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">
-	        	<select>
-	       	 		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
-	    </tr>
-	    <tr>
-	        <th scope="row">3</th>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>
-	        	<select>
-	        		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
-	    </tr>
-	    </tbody>
-	</table>
-</div>
+
+<div class="elements_title">Hotel Info</div>
+<br></br>
+	<form action="insertAction.jsp" method="post"
+		enctype="multipart/form-data">
+		<!-- enctype="multipart/form-data"  파일을 넘겨주는 코드 -->
+		<!-- 파일업로드는 이문서부터  요렇게 수정-->
+		작성자 : <input type="text" name="writer"><br> 
+		제    목 : <input type="text" name="title"><br>
+		파    일 : <input type="file" name="fname"><br>
+		내    용 <br>
+		<textarea rows="6" cols="70" name="contents"></textarea>
+		<br> <input type="submit" value="등록">
+	</form>
+	
+	
+			<div class="buttons">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="elements_title">Buttons</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="buttons_container">
+							<div class="button button_1 elements_button"><a href="#">Button</a></div>
+							<div class="button button_2 elements_button"><a href="#">Button</a></div>
+							<div class="button button_3 elements_button"><a href="#">Button</a></div>
+							<div class="button button_4 elements_button"><a href="#">Button</a></div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		
+
 <!-- -------------------------------------------------------------------------------------- -->
 
 
@@ -275,7 +252,6 @@
 				</div>
 			</div>
 		</div>
-			
 	</div>
 
 	<!-- Footer -->

@@ -6,7 +6,7 @@
 <head>
 
 
-<title>ReservationStatus</title>
+<title>RoomList</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
@@ -164,7 +164,7 @@
 	
 <!-- -------------------------------테이블... 어차피 바뀔꺼... ㅜㅜ 임시------------------------------------------------------ -->
 <div id="wrap" align="cnter">
-	<div class="elements_title">예약현황</div>
+	<div class="elements_title">RoomList</div>
 
 	<table class="type10">
 	    <thead>
@@ -275,7 +275,6 @@
 				</div>
 			</div>
 		</div>
-			
 	</div>
 
 	<!-- Footer -->

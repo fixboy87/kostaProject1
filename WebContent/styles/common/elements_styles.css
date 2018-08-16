@@ -1711,9 +1711,8 @@ section
 	font-family: 'Nanum Gothic Coding', monospace;
 }
 
-.navi_bar li:hover   /* 상단 예약현황 RoomList 호텔정보수정 매출현황 2 */
+.navi_bar li:hover   /* 상단 예약현황 RoomList 호텔정보수정 매출현황 2 호버시 분홍색 */
 {
-	color:blue;
 	color: rgba(254,60,82,1);
 }
 
@@ -1746,4 +1745,44 @@ section
 	color: #939393;
 	border: solid 2px #939393;
 	background: transparent;
+}
+
+/*********************************
+10. 리스트 테이블 
+*********************************/
+#wrap{
+	margin-left : 12%;
+	font-size: 13px;
+	color:#7a7a7a;
+}
+
+
+.type10 {
+
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 10px;
+    text-align:center
+}
+.type10 thead th {
+    width: 90px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: rgba(254,60,82,1);;
+    margin: 20px 10px;
+   	font-size: 15px;
+}
+
+.type10 td {
+    width: 175px;
+    padding: 10px;
+    vertical-align: top;
+}
+.type10 .even {
+    background: #fdf3f5;
 }

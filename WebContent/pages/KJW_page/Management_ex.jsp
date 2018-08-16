@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +16,12 @@
 <link rel="stylesheet" type="text/css" href="../../styles/common/elements_styles.css">
 <link rel="stylesheet" type="text/css" href="../../styles/common/elements_responsive.css">
 <link rel="stylesheet" href="../../styles/common/bootstrap4/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">
 
 <!-- 추가. 아래 3줄  -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>							<!-- 달력 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>						<!-- 달력 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">		<!-- 달력 -->
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">	<!-- 폰트 -->
 
 </head>
 <body>
@@ -28,49 +29,8 @@
 <div class="super_container">
 	
 	<!-- Header -->
+	<%@include file="../sub_page/header_menu.jsp" %>
 
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_container d-flex flex-row align-items-center justify-content-start">
-
-						<!-- Logo -->
-						<div class="logo_container">
-							<div class="logo">
-								<div>LIME</div>
-								<div>travel agency</div>
-								<div class="logo_image"><img src="../../images/common/logo.png" alt=""></div>
-							</div>
-						</div>
-
-						<!-- Main Navigation -->
-						<nav class="main_nav ml-auto">
-							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="index.html">Home</a></li>
-								<li class="main_nav_item"><a href="management.html">Management</a></li>
-								<li class="main_nav_item"><a href="offers.html">Offers</a></li>
-								<li class="main_nav_item"><a href="news.html">News</a></li>
-								<li class="main_nav_item"><a href="contact.html">Contact</a></li>
-							</ul>
-						</nav>
-
-						<!-- Search -->
-						<div class="search">
-							<form action="#" class="search_form">
-								<input type="search" name="search_input" class="search_input ctrl_class" required="required" placeholder="Keyword">
-								<button type="submit" class="search_button ml-auto ctrl_class"><img src="../../images/common/search.png" alt=""></button>
-							</form>
-						</div>
-
-						<!-- Hamburger -->
-						<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
 
 	<!-- Menu -->
 
@@ -146,18 +106,19 @@
 	
 	
 	
-	<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="../../images/find.jpg" data-speed="0.8"></div> -->
+	<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<div class="find_title text-center">
-					<navi class="navi">
+					<navi class="navi_bar">
 						<li>예약현황</li>
 						<li>RoomList</li>
 						<li>호텔정보수정</li>
 						<li>매출현황</li>
+						<br></br>
 					</navi>
-					 <hr width = "90%" color = "red">
+						
 					</div>
 				</div>
 				<div class="col-12">
@@ -165,12 +126,11 @@
 						<form action="#" id="find_form" class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
 							<div class="find_item">
 								<div>Destination:</div>
-								<input type="text" class="destination find_input" required="required" placeholder="Keyword here">
+								<input type="text" class="destination find_input" required="required" placeholder="Keyword here" >
 							</div>
 							<div class="find_item">
 								<div>Adventure type:</div>
 								<select name="adventure" id="adventure" class="dropdown_item_select find_input">
-									<option>  click  </option>
 									<option>  고객명  </option>
 									<option>  연락처  </option>
 									<option>  ID  </option>
@@ -178,17 +138,17 @@
 							</div>
 							<div class="find_item">
 								<div>first day</div>
-									<input type="text" id="firstday" size="11">
-								    <script>
-								        $("#firstday").datepicker();
-								    </script>
-							</div>
+								<input type="text" id="firstday" size="9" placeholder="YYYY-MM-DD">
+								<script>
+								    $("#firstday").datepicker();
+								</script>
+							</div>	
 							<div class="find_item">
 								<div>second day</div>
-									<input type="text" id="secondday" size="11">
-								    <script>
-								        $("#secondday").datepicker();
-								    </script> 
+								<input type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
+								<script>
+								    $("#secondday").datepicker();
+							    </script> 
 								</select>
 							</div>
 							<button class="button find_button">Find</button>
@@ -199,13 +159,36 @@
 		</div>
 	</div>
 	
-	
-	<!-- 추가 -->
-	<div class="calender"></div>
-	
-	
-	
-	
+<!-- -------------------------------------------------------------------------------------- -->
+<div id="wrap" align="cnter">
+	<div class="elements_title">예약현황</div>
+
+	<table class="type10">
+	    <thead>
+	    <tr>
+	        <th scope="cols">타이틀</th>
+	        <th scope="cols">내용</th>
+	    </tr>
+	    </thead>
+	    <tbody>
+	    <tr>
+	        <th scope="row">항목명</th>
+	        <td>내용이 들어갑니다.</td>
+	    </tr>
+	    <tr>
+	        <th scope="row" class="even">항목명</th>
+	        <td class="even">내용이 들어갑니다.</td>
+	    </tr>
+	    <tr>
+	        <th scope="row">항목명</th>
+	        <td>내용이 들어갑니다.</td>
+	    </tr>
+	    </tbody>
+	</table>
+</div>
+<!-- -------------------------------------------------------------------------------------- -->
+
+
 		<!-- Buttons -->
 
 		<div class="buttons">
@@ -434,78 +417,9 @@
 	</div>
 
 	<!-- Footer -->
+	<%@include file="../sub_page/footer.html" %>
 
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
 
-				<!-- Footer Column -->
-				<div class="col-lg-4 footer_col">
-					<div class="footer_about">
-						<!-- Logo -->
-						<div class="logo_container">
-							<div class="logo">
-								<div>destino</div>
-								<div>travel agency</div>
-								<div class="logo_image"><img src="../../images/common/logo.png" alt=""></div>
-							</div>
-						</div>
-						<div class="footer_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar sed mauris eget tincidunt. Sed lectus nulla, tempor vel eleifend quis, tempus rut rum metus. Pellentesque ultricies enim eu quam fermentum hendrerit.</div>
-						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-					</div>
-				</div>
-
-				<!-- Footer Column -->
-				<div class="col-lg-4 footer_col">
-					<div class="footer_latest">
-						<div class="footer_title">Latest News</div>
-						<div class="footer_latest_content">
-
-							<!-- Footer Latest Post -->
-							<div class="footer_latest_item">
-								<div class="footer_latest_image"><img src="../../images/common/latest_1.jpg" alt="https://unsplash.com/@peecho"></div>
-								<div class="footer_latest_item_content">
-									<div class="footer_latest_item_title"><a href="news.html">Brazil Summer</a></div>
-									<div class="footer_latest_item_date">Jan 09, 2018</div>
-								</div>
-							</div>
-
-							<!-- Footer Latest Post -->
-							<div class="footer_latest_item">
-								<div class="footer_latest_image"><img src="../../images/common/latest_2.jpg" alt="https://unsplash.com/@sanfrancisco"></div>
-								<div class="footer_latest_item_content">
-									<div class="footer_latest_item_title"><a href="news.html">A perfect vacation</a></div>
-									<div class="footer_latest_item_date">Jan 09, 2018</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- Footer Column -->
-				<div class="col-lg-4 footer_col">
-					<div class="tags footer_tags">
-						<div class="footer_title">Tags</div>
-						<ul class="tags_content d-flex flex-row flex-wrap align-items-start justify-content-start">
-							<li class="tag"><a href="#">travel</a></li>
-							<li class="tag"><a href="#">summer</a></li>
-							<li class="tag"><a href="#">cruise</a></li>
-							<li class="tag"><a href="#">beach</a></li>
-							<li class="tag"><a href="#">offer</a></li>
-							<li class="tag"><a href="#">vacation</a></li>
-							<li class="tag"><a href="#">trip</a></li>
-							<li class="tag"><a href="#">city break</a></li>
-							<li class="tag"><a href="#">adventure</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</footer>
 </div>
 
 <script src="../../destino/js/jquery-3.2.1.min.js"></script>
@@ -520,8 +434,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../../plugins/common/progressbar/progressbar.min.js"></script>
 <script src="../../plugins/common/parallax-js-master/parallax.min.js"></script>
 <script src="../../destino/js/elements_custom.js"></script>
-
-
 
 </body>
 </html>
