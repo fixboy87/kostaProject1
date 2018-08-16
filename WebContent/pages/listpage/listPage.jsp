@@ -12,9 +12,6 @@
 <link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"><!-- ok -->
 <link rel="stylesheet" type="text/css" href="../../styles/common/offers_styles.css"><!-- ok -->
 <link rel="stylesheet" type="text/css" href="../../styles/common/offers_responsive.css"><!-- ok -->
-
-<link rel="stylesheet" type="text/css" href="../../styles/common/bootstrap4/bootstrap.min.css">
-<link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/animate.css">
@@ -26,10 +23,10 @@
 <body>
 
 <div class="super_container">
-	<%@ include file="../sub_page/header_menu.jsp"%>
-	<!-- Header -->
+<!-- Header -->
+<%@ include file="../sub_page/header_menu.jsp"%>
 
-	<!-- Menu -->
+		<!-- Menu -->
 
 	<div class="menu_container menu_mm">
 
@@ -78,7 +75,7 @@
 
 	<div class="home">
 		<!-- Image by https://unsplash.com/@peecho -->
-		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/offers.jpg" data-speed="0.8"></div>
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="../../images/common/home.jpg" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -103,7 +100,7 @@
 	<div class="find">
 		<!-- Image by https://unsplash.com/@garciasaldana_ -->
 		<div class="find_background_container prlx_parent">
-			<div class="find_background prlx" style="background-image:url(images/find.jpg)"></div>
+			<div class="find_background prlx" style="background-image:url(../../images/common/home.jpg)"></div>
 		</div>
 		<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
 		<div class="container">
@@ -126,6 +123,7 @@
 									<option>Categories</option>
 								</select>
 							</div>
+							
 							<div class="find_item">
 								<div>Min price</div>
 								<select name="min_price" id="min_price" class="dropdown_item_select find_input">
@@ -333,14 +331,11 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Newsletter -->
-
-
-	<!-- Footer -->
-
 </div>
+
+<!-- Footer -->
 <%@include file="../sub_page/footer.html" %>
+
 <script src="../../scripts/common/jquery-3.2.1.min.js"></script>
 <script src="../../styles/common/bootstrap4/popper.js"></script>
 <script src="../../styles/common/bootstrap4/bootstrap.min.js"></script>
