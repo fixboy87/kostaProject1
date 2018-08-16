@@ -16,6 +16,7 @@
 <link href="../plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="../styles/common/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../styles/common/responsive.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="../styles/common/custom.css">
 </head>
 <body>
@@ -55,11 +56,11 @@
 							</div>
 							<div class="find_item">
 								<div>채크인 :</div>
-								<input type="text" class="arrival find_input" placeholder="YYYY-MM-DD">
+								<input type="text" class="arrival find_input" id="arrival_pick" placeholder="YYYY-MM-DD">
 							</div>
 							<div class="find_item">
 								<div>채크아웃 :</div>
-								<input type="text" class="departure find_input" placeholder="YYYY-MM-DD">
+								<input type="text" class="departure find_input" id="departure_pick" placeholder="YYYY-MM-DD">
 							</div>
 							<button class="button find_button">Find</button>
 						</form>
@@ -191,7 +192,7 @@
 			<div class="video_title">A day on the island</div>
 			<div class="video_subtitle">A trip organized by Destino's team</div>
 			<div class="video_play">
-				<a  class="video" href="https://www.youtube.com/watch?v=BzMLA8YIgG0">
+				<a  class="video" href="https://www.youtube.com/watch?v=ogAhXWZaAJQ">
 					<svg version="1.1" id="Layer_1" class="play_button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 						 width="140px" height="140px" viewBox="0 0 140 140" enable-background="new 0 0 140 140" xml:space="preserve">
 						<g id="Layer_2">
@@ -423,6 +424,7 @@
 
 <script src="../scripts/common/jquery-3.2.1.min.js"></script>
 <script src="../scripts/common/moment.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="../styles/common/bootstrap4/popper.js"></script>
 <script src="../styles/common/bootstrap4/bootstrap.min.js"></script>
 <script src="../plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>

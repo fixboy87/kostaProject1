@@ -1,17 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <html>
-
-<!-- <link rel="stylesheet" type="text/css" href="../../styles/common/bootstrap4/bootstrap.min.css">
-<link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/animate.css">
-<link href="../../plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../styles/common/main_styles.css">
-<link rel="stylesheet" type="text/css" href="../../styles/common/responsive.css"> -->
-
 <!-- Header -->
+
 	<header class="header">
 		<div class="container">
 			<div class="row">
@@ -23,6 +14,7 @@
 							<div class="logo">
 								<div>L I M E</div>
 								<div>travel agency</div>
+								<div class="logo_image"><img src="../images/common/logo.png" alt=""></div>
 							</div>
 						</div>
 
@@ -30,11 +22,10 @@
 						<nav class="main_nav ml-auto">
 							<ul class="main_nav_list">
 								<li class="main_nav_item active"><a href="#">홈</a></li>
-								<li class="main_nav_item" hidden="true"><a href="#">관리자메뉴</a></li>
 								<li class="main_nav_item"><a href="#">로그인</a></li>
-								<li class="main_nav_item" hidden="true"><a href="#">예약현황</a></li>
 								<li class="main_nav_item"><a href="#">회원가입</a></li>
-								<li class="main_nav_item" hidden="true"><a href="#">로그아웃</a></li>
+								<!-- <li class="main_nav_item"><a href="news.html">News</a></li>
+								<li class="main_nav_item"><a href="contact.html">Contact</a></li> -->
 							</ul>
 						</nav>
 
@@ -68,11 +59,10 @@
 				</div>
 				<ul class="menu_list menu_mm">
 					<li class="menu_item menu_mm"><a href="#">홈</a></li>
-					<li class="menu_item menu_mm" hidden="true"><a href="#">관리자메뉴</a></li>
-					<li class="menu_item menu_mm"><a href="#">로그인</a></li>
-					<li class="menu_item menu_mm" hidden="true"><a href="#">예약현황</a></li>
-					<li class="menu_item menu_mm"><a href="#">회원가입</a></li>
-					<li class="menu_item menu_mm" hidden="true"><a href="#">로그아웃</a></li>
+					<li class="menu_item menu_mm"><a href="#">로그인</a></li>
+					<li class="menu_item menu_mm"><a href="#">회원가입</a></li>
+					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
+					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
 				</ul>
 
 				<!-- Menu Social -->
@@ -93,13 +83,5 @@
 		</div>
 
 	</div>
-<!-- 	
-<script src="../../scripts/common/jquery-3.2.1.min.js"></script>
-<script src="../../styles/common/bootstrap4/popper.js"></script>
-<script src="../../styles/common/bootstrap4/bootstrap.min.js"></script>
-<script src="../../plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="../../plugins/common/easing/easing.js"></script>
-<script src="../../plugins/common/parallax-js-master/parallax.min.js"></script>
-<script src="../../plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="../../scripts/common/custom.js"></script>	 -->
+	
 </html>
