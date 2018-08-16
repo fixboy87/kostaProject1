@@ -46,6 +46,7 @@ $(document).ready(function()
 	initVideo();
 	initSearch();
 
+
 	/* 
 
 	2. Set Header
@@ -217,24 +218,28 @@ $(document).ready(function()
 		}
 	}
 	
-	function arrDatePick() {
-		$('.arrival find_input').on('click', function() {
-			$(this).pignoseCalendar(/*{
-			    click: function(event, context) { 
-
-			         var $this = $(this);
-
-			         event.preventDefault();
-
-			         var $element = context.element;
-
-			         var $calendar = context.calendar;
-			    }
-			}*/);
-		});
-	}
+	var $arrDate = new Date;
+	var $depDate = new Date;
 	
-	function loggedIn() {
+	$('.arrival').datepicker('setDate', 'today');
+	$('.arrival').datepicker({
+		minDate: 0,
+		maxDate: "6M",
 		
-	}
+		onClose: function() {
+			$arrDate = $('.arrival').datepicker('getDate');
+			$('.departure').datepicker('setDate', $arrDate);
+			setTimeout(function() {
+				$('.departure').focus();
+			}, 100);
+			//$('.departure').trigger()
+		}
+	});
+	
+	$('.departure').datepicker({
+		minDate: "0d",
+	});
+		
+		
+	
 });
