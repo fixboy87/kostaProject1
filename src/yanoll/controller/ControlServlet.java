@@ -87,6 +87,9 @@ public class ControlServlet extends HttpServlet {
 			   } 
 		}*/
     	
+    	
+    	
+    	
     	if(forward != null){
     		if(forward.isRedirect()){
     			response.sendRedirect(forward.getPath());
