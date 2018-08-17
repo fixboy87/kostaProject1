@@ -1,6 +1,7 @@
 package yanoll.models.dao;
 
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -18,7 +19,7 @@ public class Enquire_BoardDao {
 	}
 	
 	public SqlSessionFactory getSqlSessionFactory(){
-		String resource ="mybatis-config";
+		String resource ="mybatis-config.xml";
 		InputStream in = null;
 		try {
 			in= Resources.getResourceAsStream(resource);
@@ -45,6 +46,19 @@ public class Enquire_BoardDao {
 			sqlSession.close();
 		}
 		return re;
+	}
+	
+	public List<Enquire_Board> list(int user_no){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Enquire_Board> list= null; 
+		
+		try {
+			list= sqlSession.getMapper(Enquire_BoardMapper.class).list(user_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 
 }

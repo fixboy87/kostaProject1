@@ -5,10 +5,16 @@
 
 
 <mapper namespace="yanoll.mapper.Enquire_BoardMapper">
-<insert id="insertEnquire" parameterType="Enquire_Board">
-insert into enquire_board (e_seq,e_title,e_contents,e_date,hotel_name,id,user_no,h_no)
-values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{hotel_name},#{id},#{user_no},#{h_no})
-</insert>
+	<insert id="insertEnquire" parameterType="Enquire_Board">
+		insert into enquire_board
+		(e_seq,e_title,e_contents,e_date,user_no)
+		values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,1)
+	</insert>
+	
+	<select id="ListEnquire_Board" resultType="Enquire_Board"
+		parameterType="user_no">   <!-- 문의 게시판 목록 -->
+		select*from enquire_board
+	</select>
 </mapper>
 
 

@@ -11,17 +11,19 @@ public class GngInqInsertAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	GngEnquireService service = GngEnquireService.getinstance();
 	
+	
+	GngEnquireService service = GngEnquireService.getinstance();	
 	service.insertEnquireService(request);
 	
+	System.out.println(10);
+	
 	ActionForward forward= new ActionForward();
-	forward.setPath("title.do");
-	
-	
+	forward.setPath("/pages/gng_page/enquirelist.do");
 	forward.setRedirect(true);
 	
 	return forward;
+	
 	}
 	
 }

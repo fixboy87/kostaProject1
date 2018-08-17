@@ -81,11 +81,11 @@ margin-bottom: 2%;
 							
 							</select>
 							<br>
+							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="user_no" placeholder="번호">
+							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="e_title" placeholder="제목">
+							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" placeholder="내용"></input>
+							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록"></button>
 							
-							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="e_contents" placeholder="제목">
-							<textarea id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" placeholder="내용"></textarea>
-							<button id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="Submit">보내기</button>
-							<input type="hidden" name="id">
 						</form>
 					</div>
 			
