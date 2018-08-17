@@ -53,6 +53,14 @@ public class ControlServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if (command.equals("registerTypeForm.do")) {//회원유형 선택창
+			   action = new RegisterTypeFormAction();
+			   try {
+			      forward = action.execute(request, response);
+			      
+			   } catch (Exception e) {
+			      e.printStackTrace();
+			   }
 		}
     	
     	if(forward != null){
