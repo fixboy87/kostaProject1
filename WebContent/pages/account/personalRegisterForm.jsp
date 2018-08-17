@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="warning-txt msg_passwdConfirm" id="cpTextArea"></div>
                                     </div>
-                                    <button type="submit" name="button" class="btn-gradation" id="btnToJoinEnd">다음</button>
+                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">다음</button>
                                 </fieldset>
                             </form>
                         </section>
@@ -82,7 +82,7 @@
 <script src="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/pignose.calendar.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
-<script src="http://localhost:8081/kostaProject1/scripts/account/registerType.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
 <script type="text/javascript">
     $(function() {
         var $pw = $('.inp-password')

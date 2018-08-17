@@ -1231,7 +1231,7 @@ a.link-txt:hover {
 }
 
 .container-comm {
-    padding: 150px 0;
+    padding-top: 200px;
 }
 
 
@@ -1812,3 +1812,8 @@ a.link-txt:hover {
     color: #ff2d60
 }
 
+.right_align {
+	margin-left: 248px;
+	background: rgba(254, 60, 82, 0.8);
+	color: white;
+}
