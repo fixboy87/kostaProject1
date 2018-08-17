@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="en
+">
 <head>
 <title>Offers</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <link rel="stylesheet" type="text/css" href="../../styles/common/bootstrap4/bootstrap.min.css"> <!-- ok -->
 <link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"><!-- ok -->
 <link rel="stylesheet" type="text/css" href="../../styles/common/offers_styles.css"><!-- ok -->
@@ -19,6 +22,38 @@
 <link rel="stylesheet" type="text/css" href="../../styles/common/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../../styles/common/responsive.css">
 <link rel="stylesheet" type="text/css" href="../../styles/common/custom.css">
+
+<!--레인지 슬라이더 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+var _ = jQuery;
+
+_( function() {
+    _( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        _( "#amount" ).val( "_" + ui.values[ 0 ] + " - _" + ui.values[ 1 ] );
+      }
+    });
+    _( "#amount" ).val( "_" + _( "#slider-range" ).slider( "values", 0 ) +
+      " - _" + _( "#slider-range" ).slider( "values", 1 ) );
+  } );
+ 
+_(function () {
+	_("#wook").on("click",function(){
+		alert("dasd")
+		_("pricepopup").css("display", "block")
+	});
+});
+
+</script>
+
 </head>
 <body>
 
@@ -81,14 +116,62 @@
 				<div class="col">
 					<div class="home_content">
 						<div class="home_content_inner">
-							<div class="home_title">Offers</div>
+							<div class="home_title"><!-- Offers --></div>
 							<div class="home_breadcrumbs">
-								<ul class="home_breadcrumbs_list">
-									<li class="home_breadcrumb"><a href="index.html">Home</a></li>
-									<li class="home_breadcrumb">Offers</li>
-								</ul>
 							</div>
-						</div>
+							<!--파인드 -->
+						 	<div class="find">
+									<div class="find_background_container prlx_parent">
+										<div class="find_background prlx"
+											style="background-image: url()"></div>
+									</div>
+									<div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div>
+									<div class="container">
+										<div class="row">
+											<div class="col-12">
+												<div class="find_title text-center"><!-- F in the Adventure of a lifetime --></div>
+											</div>
+											<div class="col-12">
+												<div class="find_form_container">
+													<form action="#" id="find_form"
+														class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
+														<div class="find_item">
+															<div>Destination:</div>
+															<input type="text" class="destination find_input"
+																required="required" placeholder="Keyword here">
+														</div>
+														<div class="find_item">
+															<div>type:</div>
+															<select name="adventure" id="adventure"
+																class="dropdown_item_select find_input">
+																<option>Categories</option>
+																<option>Categories</option>
+																<option>Categories</option>
+															</select>
+														</div>
+														<div class="find_item" id="wook">
+															<div>Max price</div>
+															<select name="max_price" id="max_price"
+																class="dropdown_item_select find_input">
+															</select>
+														</div>
+														<button class="button find_button">Find</button>
+													
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div style="display: none;" id="pricepopup">
+									<p>
+										<label for="amount">Price range:</label> <input type="text"
+											id="amount" readonly
+											style="border: 0; color: #f6931f; font-weight: bold;">
+									</p>
+									<div id="slider-range" style="width: 400px;" ></div>
+								</div>
+							</div>
 					</div>
 				</div>
 			</div>
@@ -97,56 +180,6 @@
 
 	<!-- Find Form -->
 
-	<div class="find">
-		<!-- Image by https://unsplash.com/@garciasaldana_ -->
-		<div class="find_background_container prlx_parent">
-			<div class="find_background prlx" style="background-image:url(../../images/common/home.jpg)"></div>
-		</div>
-		<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="find_title text-center">Find the Adventure of a lifetime</div>
-				</div>
-				<div class="col-12">
-					<div class="find_form_container">
-						<form action="#" id="find_form" class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
-							<div class="find_item">
-								<div>Destination:</div>
-								<input type="text" class="destination find_input" required="required" placeholder="Keyword here">
-							</div>
-							<div class="find_item">
-								<div>Adventure type:</div>
-								<select name="adventure" id="adventure" class="dropdown_item_select find_input">
-									<option>Categories</option>
-									<option>Categories</option>
-									<option>Categories</option>
-								</select>
-							</div>
-							
-							<div class="find_item">
-								<div>Min price</div>
-								<select name="min_price" id="min_price" class="dropdown_item_select find_input">
-									<option>&nbsp;</option>
-									<option>Price</option>
-									<option>Price</option>
-								</select>
-							</div>
-							<div class="find_item">
-								<div>Max price</div>
-								<select name="max_price" id="max_price" class="dropdown_item_select find_input">
-									<option>&nbsp;</option>
-									<option>Price</option>
-									<option>Price</option>
-								</select>
-							</div>
-							<button class="button find_button">Find</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Offers -->
 
