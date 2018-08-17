@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="yanoll.mapper.Enquire_BoardMapper">
+<insert id="insertEnquire" parameterType="Enquire_Board">
+insert into enquire_board (e_seq,e_title,e_contents,e_date,hotel_name,id,user_no,h_no)
+values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{hotel_name},#{id},#{user_no},#{h_no})
+</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
