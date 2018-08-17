@@ -1,6 +1,8 @@
 package yanoll.models.vo;
 
-public class Hotel {
+import java.io.Serializable;
+
+public class Hotel implements Serializable {
 	
 	private int h_no;
 	private String h_name;

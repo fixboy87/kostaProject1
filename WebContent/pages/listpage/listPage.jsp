@@ -49,9 +49,25 @@
 	padding-left: 30px;
 	
 }
-.dropdown_item_select find_input{
-	color: white;
+
+
+.home
+{
+	width: 100%;
+	height: 50vh !important;
+}
+.home_background
+{
+	height: 70% !important;
+}
+.home_content
+{
+	width: 90% !important;
+}
 	
+.find_button
+{
+	margin-left: 85%;
 }
 
 </style>
@@ -166,13 +182,13 @@
 														<div class="find_item">
 															<div>최소 값</div>
 															<input name="low_price" id="low_price"
-																class="dropdown_item_select find_input" style="color: white;">
+																class="dropdown_item_select find_input">
 															
 														</div>
 														<div class="find_item">
 															<div>최대 값</div>
 															<input name="max_price" id="max_price"
-																class="dropdown_item_select find_input" style="color: white;">
+																class="dropdown_item_select find_input">
 															
 														</div>
 														<button class="button find_button">Find</button>
