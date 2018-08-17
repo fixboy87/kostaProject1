@@ -22,14 +22,14 @@
 </head>
 <body>
 
-<div class="super_container">
+<div class="super_container margin_top_control">
 
 <%@ include file="../sub_page/header_menu.jsp"%>
 
         <div id="content" class="content_wrap">
             <!-- mb_join start -->
             <div class="mb_join">
-                <h2 class="tit"><img src="#" alt="알툴즈 회원가입"></h2>
+                <h2 class="tit"><img src="#" alt="회원가입"></h2>
                 <p class="txt">해당 사이트에서 제공하는 호텔 간편조회 및 간편예약 서비스를 즐길 수 있습니다. 회원가입은 무료입니다.</p>
 
                 <div class="join_divi">
