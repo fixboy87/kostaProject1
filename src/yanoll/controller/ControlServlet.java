@@ -36,7 +36,25 @@ public class ControlServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    	}/*else if(command.equals("insertAction.do")){
+    	} else if (command.equals("Insertenquire.do")) {
+			action = new GngInqInsertFormAction();
+			try {
+				forward = action.execute(request, response);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println(command);
+			
+		} else if (command.equals("GngInqInsertAction")) {
+			action = new GngInqInsertAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+    	/*else if(command.equals("insertAction.do")){
     		action = new InsertAction();
     		try {
 				forward = action.execute(request, response);
@@ -68,7 +86,6 @@ public class ControlServlet extends HttpServlet {
     			dispatcher.forward(request, response);
     		}
     	}
-    	
     	
     }
 	

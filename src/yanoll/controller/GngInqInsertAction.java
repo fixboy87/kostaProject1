@@ -7,15 +7,15 @@ import yanoll.models.dao.Enquire_BoardDao;
 import yanoll.models.service.GngEnquireService;
 import yanoll.models.vo.Enquire_Board;
 
-public class GngInqInsertAction implements GngAction {
+public class GngInqInsertAction implements Action {
 
 	@Override
-	public GngActionFoward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	GngEnquireService service = GngEnquireService.getinstance();
 	
 	service.insertEnquireService(request);
 	
-	GngActionFoward forward= new GngActionFoward();
+	ActionForward forward= new ActionForward();
 	forward.setPath("title.do");
 	
 	
