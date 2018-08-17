@@ -1625,3 +1625,7 @@ section
 {
 	background: rgba(254,60,82,0.8);
 }
+
+.hidden {
+	visibility: hidden;
+}

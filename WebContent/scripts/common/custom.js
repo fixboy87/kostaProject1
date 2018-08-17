@@ -254,15 +254,21 @@ $(document).ready(function()
 	
 	$('.main_nav_item').click(function() {
 		var $buttonPressed = $(this);
-		var $buttonHtml = $(this).html();
-		
-		if(($buttonHtml).is("홈")) {
-			
-		} else if(($buttonHtml).is("로그인")) {
-			
-		} else if(($buttonHtml).is("회원가입")) {
-			location.href = "registerTypeForm.do"
+		var $buttonHtml = $(this).find('a').html();
+		if($buttonHtml === "홈") {
+			location.href = "titlePage.do";
+		} else if($buttonHtml === "로그인") {
+			location.href = "loginForm.do";
+		} else if($buttonHtml === "회원가입") {
+			location.href = "registerTypeForm.do";
+		} else if($buttonHtml === "마이페이지") {
+			//세션처리(관리자/오너)
+		} else if($buttonHtml === "예약내역") {
+			location.href = "bookingAction.do";
+		} else if($buttonHtml === "로그아웃") {
+			location.href = "logOutAction.do";
 		}
+		
 	})
 		
 	
