@@ -4,15 +4,10 @@
 <mapper namespace="kosta.mapper.Review_BoardMapper">
 	<cache />
 
-<!-- 후기 등록 -->
-	<insert id="insertReview" parameterType="Review_Board">
-		insert into Review_Board(
-			r_no, r_title, r_grade, r_content, r_redate, r_hitcount, userNo, h_id
-		)values(
-			review_seq.nextval, #{r_title}, #{r_grade}, #{r_content}, sysdate, 0,
-			#{userNo}, #{h_id}
-		)
-	</insert>	
+<!-- 후기 목록  -->
+	<select id ="review_list" resultType="Review_Board">
+		select*from Review_Board
+	</select>
 	
 	
 	

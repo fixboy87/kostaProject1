@@ -1515,4 +1515,44 @@ syj_1. rating
   color: #555555;
 }
 
+/* review_list */
+table.list_table{
+	width: 100%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	background-color: white;
+}
+#list_container{
+	margin-bottom: 10%;
+}
+td{
+  width : 70px;
+
+  
+}
+.img_td{
+  border-color: gray;
+  border-top:solid;
+  border-bottom:solid;
+  border-left:solid;
+}
+.table_top{
+  border-top:solid;
+}
+.table_bottom{
+  border-bottom:solid;
+}
+
+.table_edge1{
+  border-top:solid;
+  border-right:solid;
+}
+.table_edge2{
+  border-right:solid;
+  border-bottom:solid;
+}
+.table_right{
+  border-right:solid;
+}
+
 

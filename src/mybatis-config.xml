@@ -12,6 +12,7 @@
 		 <typeAlias type="yanoll.models.vo.Pic_view" alias="Pic_view"/>
 	     <typeAlias type="yanoll.models.vo.Board" alias="Board"/>
 	     <typeAlias type="yanoll.models.vo.Review_Board" alias="Review_Board"/>
+	     <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/>
 	     
 	</typeAliases>
 	
