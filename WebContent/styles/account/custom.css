@@ -125,19 +125,15 @@ a:active {
 
 body {
     width: 100%;
-    background: url("../img/altoolsRenewal/bg_sub.gif") repeat-x
 }
 
 .page_download {
-    background: url("../img/altoolsRenewal/bg_download.gif") repeat-x
 }
 
 .page_no_tab {
-    background: url("../img/altoolsRenewal/bg_notab.gif") repeat-x
 }
 
 .page_no_tab_m {
-    background: url("../img/altoolsRenewal/bg_notab_m.gif") repeat-x
 }
 
 #header.page_main {
@@ -201,7 +197,7 @@ strong {
     width: 761px;
     height: 335px;
     margin: 20px 0 38px 0;
-    background: url(../img/altoolsRenewal/bg_join_divi.gif) no-repeat
+    
 }
 
 .join_divi dl {
@@ -243,4 +239,12 @@ span#personal_type {
 
 span#enterprise_type {
 	bottom: 20px;
+}
+
+.register_button {
+	margin-top: 30px;
+}
+
+.join_divi img {
+	margin-top: 20px;
 }

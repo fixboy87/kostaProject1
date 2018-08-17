@@ -36,14 +36,20 @@
                     <dl class="personal_type">
                         <dt>일반회원(개인)</dt>
                         <dd>호텔 간편조회 및 간편예약<br>서비스를 즐길 수 있습니다.<br>
-                            <span class="button find_button" id="personal_type"><span><a id="#" href="#">일반회원 가입하기<img src="#" alt=""></a></span></span>
+                        	<div>
+	                        	<img src="../../images/pages/account/btn_join_1.gif" alt="personal_type">
+                        	</div>
+                            <span class="register_button button find_button" id="personal_type"><span><a id="#" href="#">일반회원 가입하기<img src="#" alt=""></a></span></span>
                         </dd>
                     </dl>
 
                     <dl class="enterprise_type">
                         <dt>기업회원(회사)</dt>
                         <dd>매칭 서비스 및 관리에 필요한<br>UI를 제공해 드립니다.<br>
-                            <span class="button find_button" id="enterprise_type"><span><a id="#" href="#">기업회원 가입하기<img src="#" alt=""></a></span></span>
+                        	<div>
+	                        	<img src="../../images/pages/account/btn_join_3.gif" alt="enterprise_type">
+                        	</div>
+                            <span class="register_button button find_button" id="enterprise_type"><span><a id="#" href="#">기업회원 가입하기<img src="#" alt=""></a></span></span>
                         </dd>
                     </dl>
                 </div>
