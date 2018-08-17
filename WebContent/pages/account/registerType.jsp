@@ -8,23 +8,23 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../../styles/common/bootstrap4/bootstrap.min.css">
-<link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="../../plugins/common/OwlCarousel2-2.2.1/animate.css">
-<link href="../../plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../styles/account/main_styles.css">
-<link rel="stylesheet" type="text/css" href="../../styles/common/responsive.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.css">
+<link href="http://localhost:8081/kostaProject1/plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/animate.css">
+<link href="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/main_styles.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="../../styles/account/register_type.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/register_type.css">
 
 </head>
 <body>
 
 <div class="super_container margin_top_control">
 
-<%@ include file="../sub_page/header_menu.jsp"%>
+<%@ include file="../../pages/sub_page/header_menu.jsp"%>
 
         <div id="content" class="content_wrap">
             <!-- mb_join start -->
@@ -37,7 +37,7 @@
                         <dt>일반회원(개인)</dt>
                         <dd>호텔 간편조회 및 간편예약<br>서비스를 즐길 수 있습니다.<br>
                         	<div>
-	                        	<img src="../../images/pages/account/btn_join_1.gif" alt="personal_type">
+	                        	<img src="http://localhost:8081/kostaProject1/images/pages/account/btn_join_1.gif" alt="personal_type">
                         	</div>
                             <span class="register_button button find_button" id="personal_type"><span><a id="#" href="#">일반회원 가입하기<img src="#" alt=""></a></span></span>
                         </dd>
@@ -47,7 +47,7 @@
                         <dt>기업회원(회사)</dt>
                         <dd>매칭 서비스 및 관리에 필요한<br>UI를 제공해 드립니다.<br>
                         	<div>
-	                        	<img src="../../images/pages/account/btn_join_3.gif" alt="enterprise_type">
+	                        	<img src="http://localhost:8081/kostaProject1/images/pages/account/btn_join_3.gif" alt="enterprise_type">
                         	</div>
                             <span class="register_button button find_button" id="enterprise_type"><span><a id="#" href="#">기업회원 가입하기<img src="#" alt=""></a></span></span>
                         </dd>
@@ -62,19 +62,19 @@
 
 	
 </div>
-<%@include file="../sub_page/footer.html" %>
+<%@include file="../../pages/sub_page/footer.html" %>
 
-<script src="../../scripts/common/jquery-3.2.1.min.js"></script>
-<script src="../../scripts/common/moment.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/moment.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="../../styles/common/bootstrap4/popper.js"></script>
-<script src="../../styles/common/bootstrap4/bootstrap.min.js"></script>
-<script src="../../plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="../../plugins/common/easing/easing.js"></script>
-<script src="../../plugins/common/parallax-js-master/parallax.min.js"></script>
-<script src="../../plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="../../scripts/common/pignose.calendar.js"></script>
-<script src="../../scripts/common/custom.js"></script>
-<script src="../../scripts/account/registerType.js"></script>
+<script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
+<script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/easing/easing.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/parallax-js-master/parallax.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/pignose.calendar.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/account/registerType.js"></script>
 </body>
 </html>
