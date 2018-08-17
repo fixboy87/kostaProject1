@@ -252,7 +252,18 @@ $(document).ready(function()
 		}
 	});
 	
+	$('.main_nav_item').click(function() {
+		var $buttonPressed = $(this);
+		var $buttonHtml = $(this).html();
 		
+		if(($buttonHtml).is("홈")) {
+			
+		} else if(($buttonHtml).is("로그인")) {
+			
+		} else if(($buttonHtml).is("회원가입")) {
+			location.href = "registerTypeForm.do"
+		}
+	})
 		
 	
 });
