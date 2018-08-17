@@ -1,31 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-
-/******************************
-
-[Table of Contents]
-
-1. Fonts
-2. Body and some general stuff
-3. Home
-4. Header
-	4.1 Logo
-	4.2 Navigation
-	4.3 Search
-	4.4 Hamburger
-5. Menu
-	5.1 Menu Social
-	5.2 Menu copyright
-6. Find
-7. Contact
-	7.1 Contact Form
-	7.2 Contact Map
-8. Newsletter
-9. Footer
-
-
-******************************/
-
 /***********
 1. Fonts
 ***********/
@@ -1170,14 +1144,14 @@ section
 	padding-right: 9px;
 	padding-top:4px;
 	padding-bottom:4px;
-	margin-bottom: 19px;
+	margin-bottom: 13px;
 	
    
 } 
 .contact_set_container{
 	width: 80%;
 	height: 30px;
-	margin-bottom: 19px;
+	margin-bottom: 13px;
 }
 
 #contact_input_writer{
@@ -1198,7 +1172,7 @@ section
 	height: 41px;
 	border: solid 2px #dbdbdb;
 	padding-left: 20px;
-	margin-bottom: 19px;
+	margin-bottom: 13px;
 	outline: none;
 }
 .contact_input::-webkit-input-placeholder,
@@ -1506,8 +1480,39 @@ section
 	background: rgba(254,60,82,0.8);
 }
 
+.select_button{
+	padding-bottom: 20px;
+}
 
 
 
+/*********************************
+syj_1. rating
+*********************************/
+.rating-stars {
+  width: 100%;
+
+}
+
+.rating-stars .rating-stars-container {
+  font-size: 0px;
+}
+
+.rating-stars .rating-stars-container .rating-star {
+  display: inline-block;
+  font-size: 32px;
+  color: #555555;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.rating-stars .rating-stars-container .rating-star.is--active,
+.rating-stars .rating-stars-container .rating-star.is--hover {
+  color: #f1c40f;
+}
+
+.rating-stars .rating-stars-container .rating-star.is--no-hover {
+  color: #555555;
+}
 
 
