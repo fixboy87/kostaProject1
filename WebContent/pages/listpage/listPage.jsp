@@ -30,12 +30,18 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="../../scripts/HY_Script/priceRang.js"></script>
 
+
+
+
+
 <!-- 달력 -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>                     <!-- 달력 -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>                  <!-- 달력 -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">      <!-- 달력 -->
 
+
 <style type="text/css">
+
 #price_range {
 	background-color: white;
 	width: 470px;
@@ -43,6 +49,11 @@
 	padding-left: 30px;
 	
 }
+.dropdown_item_select find_input{
+	color: white;
+	
+}
+
 </style>
 
 </head>
@@ -135,7 +146,7 @@
 														
 														<div class="find_item">
 															<div>체크인</div>
-															<input class="dropdown_item_select find_input"  type="text" id="firstday" size="9" placeholder="YYYY-MM-DD" >
+															<input class="dropdown_item_select find_input"   autocomplete="off" type="text" id="firstday" size="9" placeholder="YYYY-MM-DD" >
 																<script>
 																	$("#firstday")
 																		.datepicker();
@@ -144,7 +155,7 @@
 														
 														<div class="find_item">
 															<div>체크 아웃</div>									
-															<input class="dropdown_item_select find_input" type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
+															<input class="dropdown_item_select find_input" autocomplete="off" type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
 																<script>
 																	$("#secondday")
 																		.datepicker();
@@ -153,10 +164,16 @@
 														
 														
 														<div class="find_item">
-															<div>가격 설정</div>
-															<select name="max_price" id="max_price"
-																class="dropdown_item_select find_input">
-															</select>
+															<div>최소 값</div>
+															<input name="low_price" id="low_price"
+																class="dropdown_item_select find_input" style="color: white;">
+															
+														</div>
+														<div class="find_item">
+															<div>최대 값</div>
+															<input name="max_price" id="max_price"
+																class="dropdown_item_select find_input" style="color: white;">
+															
 														</div>
 														<button class="button find_button">Find</button>
 													
