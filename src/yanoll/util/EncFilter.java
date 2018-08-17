@@ -9,8 +9,8 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-@WebFilter(urlPatterns = {
-		"../controller/*", "../mapper/*", "../models/dao/*", "../models/service/*", "../models/dao/*", "/*"})
+/*@WebFilter(urlPatterns = {
+		"../controller/*", "../mapper/*", "../models/dao/*", "../models/service/*", "../models/dao/*", "/*"})*/
 public class EncFilter implements Filter {
 
     public EncFilter() { }
