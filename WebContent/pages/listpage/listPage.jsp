@@ -26,33 +26,24 @@
 <!--레인지 슬라이더 -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="../../scripts/common/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript">
-var _ = jQuery;
+<script type="text/javascript" src="../../scripts/HY_Script/priceRang.js"></script>
 
-_( function() {
-    _( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [ 75, 300 ],
-      slide: function( event, ui ) {
-        _( "#amount" ).val( "_" + ui.values[ 0 ] + " - _" + ui.values[ 1 ] );
-      }
-    });
-    _( "#amount" ).val( "_" + _( "#slider-range" ).slider( "values", 0 ) +
-      " - _" + _( "#slider-range" ).slider( "values", 1 ) );
-  } );
- 
-_(function () {
-	_("#wook").on("click",function(){
-		alert("dasd")
-		_("pricepopup").css("display", "block")
-	});
-});
+<!-- 달력 -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>                     <!-- 달력 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>                  <!-- 달력 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">      <!-- 달력 -->
 
-</script>
+<style type="text/css">
+#price_range {
+	background-color: white;
+	width: 470px;
+	height: 80px;
+	padding-left: 30px;
+	
+}
+</style>
 
 </head>
 <body>
@@ -135,22 +126,34 @@ _(function () {
 												<div class="find_form_container">
 													<form action="#" id="find_form"
 														class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
+
 														<div class="find_item">
 															<div>Destination:</div>
 															<input type="text" class="destination find_input"
 																required="required" placeholder="Keyword here">
 														</div>
+														
 														<div class="find_item">
-															<div>type:</div>
-															<select name="adventure" id="adventure"
-																class="dropdown_item_select find_input">
-																<option>Categories</option>
-																<option>Categories</option>
-																<option>Categories</option>
-															</select>
+															<div>체크인</div>
+															<input class="dropdown_item_select find_input"  type="text" id="firstday" size="9" placeholder="YYYY-MM-DD" >
+																<script>
+																	$("#firstday")
+																		.datepicker();
+																</script>
 														</div>
-														<div class="find_item" id="wook">
-															<div>Max price</div>
+														
+														<div class="find_item">
+															<div>체크 아웃</div>									
+															<input class="dropdown_item_select find_input" type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
+																<script>
+																	$("#secondday")
+																		.datepicker();
+																</script>															
+														</div>
+														
+														
+														<div class="find_item">
+															<div>가격 설정</div>
 															<select name="max_price" id="max_price"
 																class="dropdown_item_select find_input">
 															</select>
@@ -163,14 +166,17 @@ _(function () {
 										</div>
 									</div>
 								</div>
-								<div style="display: none;" id="pricepopup">
+								<!-- 가격 범위 -->
+								<div id="price_range">
 									<p>
-										<label for="amount">Price range:</label> <input type="text"
-											id="amount" readonly
-											style="border: 0; color: #f6931f; font-weight: bold;">
+										<label for="amount">Price range:</label> 
+										<input type="text" id="amount" readonly	style="border: 0; color: #f6931f; font-weight: bold;">
 									</p>
-									<div id="slider-range" style="width: 400px;" ></div>
+									<div id="slider-range" style="width: 400px; background-color: white; " ></div>
 								</div>
+								<!-- 달력 -->
+								
+								
 							</div>
 					</div>
 				</div>
@@ -369,7 +375,7 @@ _(function () {
 <!-- Footer -->
 <%@include file="../sub_page/footer.html" %>
 
-<script src="../../scripts/common/jquery-3.2.1.min.js"></script>
+<!-- <script src="../../scripts/common/jquery-3.2.1.min.js"></script> -->
 <script src="../../styles/common/bootstrap4/popper.js"></script>
 <script src="../../styles/common/bootstrap4/bootstrap.min.js"></script>
 <script src="../../plugins/common/greensock/TweenMax.min.js"></script>
