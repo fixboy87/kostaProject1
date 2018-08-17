@@ -53,7 +53,7 @@ public class ControlServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}else if (command.equals("registerTypeForm.do")) {//회원유형 선택창
+		} else if (command.equals("registerTypeForm.do")) {//회원유형 선택창
 			   action = new RegisterTypeFormAction();
 			   try {
 			      forward = action.execute(request, response);
@@ -61,7 +61,31 @@ public class ControlServlet extends HttpServlet {
 			   } catch (Exception e) {
 			      e.printStackTrace();
 			   }
-		}
+		} else if (command.equals("myPageAction.do")) {
+			   action = new MyPageAction();
+			   try {
+			      forward = action.execute(request, response);
+			      
+			   } catch (Exception e) {
+			      e.printStackTrace();
+			   }
+		} else if (command.equals("bookingAction.do")) {
+			   action = new BookingAction();
+			   try {
+			      forward = action.execute(request, response);
+			      
+			   } catch (Exception e) {
+			      e.printStackTrace();
+			   }
+		}/* else if (command.equals("logOutAction.do")) {
+			   action = new LogOutAction();
+			   try {
+			      forward = action.execute(request, response);
+			      
+			   } catch (Exception e) {
+			      e.printStackTrace();
+			   } 
+		}*/
     	
     	if(forward != null){
     		if(forward.isRedirect()){
