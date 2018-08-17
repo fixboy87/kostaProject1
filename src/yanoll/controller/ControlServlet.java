@@ -54,28 +54,6 @@ public class ControlServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-    	/*else if(command.equals("insertAction.do")){
-    		action = new InsertAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(command.equals("listAction.do")){
-    		action = new ListAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(command.equals("detailAction.do")) {
-    		action = new DetailAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}*/
     	
     	if(forward != null){
     		if(forward.isRedirect()){
