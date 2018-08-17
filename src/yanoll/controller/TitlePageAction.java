@@ -7,8 +7,11 @@ public class TitlePageAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		ActionForward forward = new ActionForward();
+		forward.setRedirect(false);
+		forward.setPath("/pages/title.jsp");
+		System.out.println(forward.getPath());
+		return forward;
 	}
 
 }

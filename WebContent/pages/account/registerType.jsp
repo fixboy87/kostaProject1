@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="../../styles/account/main_styles.css">
 <link rel="stylesheet" type="text/css" href="../../styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="../../styles/account/custom.css">
+<link rel="stylesheet" type="text/css" href="../../styles/account/register_type.css">
 
 </head>
 <body>
@@ -75,5 +75,6 @@
 <script src="../../plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="../../scripts/common/pignose.calendar.js"></script>
 <script src="../../scripts/common/custom.js"></script>
+<script src="../../scripts/account/registerType.js"></script>
 </body>
 </html>

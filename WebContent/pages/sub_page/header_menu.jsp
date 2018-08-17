@@ -14,7 +14,7 @@
 							<div class="logo">
 								<div>L I M E</div>
 								<div>travel agency</div>
-								<div class="logo_image"><img src="../images/common/logo.png" alt=""></div>
+								<div class="logo_image"><img src="http://localhost:8081/kostaProject1/images/common/logo.png" alt=""></div>
 							</div>
 						</div>
 
@@ -54,7 +54,7 @@
 				<div class="menu_search_form_container">
 					<form action="#" id="menu_search_form">
 						<input type="search" class="menu_search_input menu_mm">
-						<button id="menu_search_submit" class="menu_search_submit" type="submit"><img src="../images/common/search_2.png" alt=""></button>
+						<button id="menu_search_submit" class="menu_search_submit" type="submit"><img src="http://localhost:8081/kostaProject1/images/common/search_2.png" alt=""></button>
 					</form>
 				</div>
 				<ul class="menu_list menu_mm">

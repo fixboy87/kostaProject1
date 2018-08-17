@@ -8,16 +8,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../styles/common/bootstrap4/bootstrap.min.css">
-<link href="../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="../plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="../plugins/common/OwlCarousel2-2.2.1/animate.css">
-<link href="../plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../styles/common/main_styles.css">
-<link rel="stylesheet" type="text/css" href="../styles/common/responsive.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.css">
+<link href="http://localhost:8081/kostaProject1/plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/animate.css">
+<link href="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/main_styles.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="../styles/common/custom.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/custom.css">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="home_background" style="background-image:url(../images/common/home.jpg)"></div>
+		<div class="home_background" style="background-image:url(http://localhost:8081/kostaProject1/images/common/home.jpg)"></div>
 		<div class="home_content">
 					<div class="container">
 			<div class="row">
@@ -93,7 +93,7 @@
 					<!-- Top Destination Item -->
 					<div class="top_item">
 						<a href="#">
-							<div class="top_item_image"><img src="../images/common/top_1.jpg" alt="https://unsplash.com/@sgabriel"></div>
+							<div class="top_item_image"><img src="http://localhost:8081/kostaProject1/images/common/top_1.jpg" alt="https://unsplash.com/@sgabriel"></div>
 							<div class="top_item_content">
 								<div class="top_item_price">From $890</div>
 								<div class="top_item_text">Paris, France</div>
@@ -107,7 +107,7 @@
 					<!-- Top Destination Item -->
 					<div class="top_item">
 						<a href="#">
-							<div class="top_item_image"><img src="../images/common/top_2.jpg" alt="https://unsplash.com/@jenspeter"></div>
+							<div class="top_item_image"><img src="http://localhost:8081/kostaProject1/images/common/top_2.jpg" alt="https://unsplash.com/@jenspeter"></div>
 							<div class="top_item_content">
 								<div class="top_item_price">From $890</div>
 								<div class="top_item_text">Italian Riviera</div>
@@ -121,7 +121,7 @@
 					<!-- Top Destination Item -->
 					<div class="top_item">
 						<a href="#">
-							<div class="top_item_image"><img src="../images/common/top_3.jpg" alt="https://unsplash.com/@anikindimitry"></div>
+							<div class="top_item_image"><img src="http://localhost:8081/kostaProject1/images/common/top_3.jpg" alt="https://unsplash.com/@anikindimitry"></div>
 							<div class="top_item_content">
 								<div class="top_item_price">From $890</div>
 								<div class="top_item_text">Cinque Terre</div>
@@ -135,7 +135,7 @@
 					<!-- Top Destination Item -->
 					<div class="top_item">
 						<a href="#">
-							<div class="top_item_image"><img src="../images/common/top_4.jpg" alt="https://unsplash.com/@hellolightbulb"></div>
+							<div class="top_item_image"><img src="http://localhost:8081/kostaProject1/images/common/top_4.jpg" alt="https://unsplash.com/@hellolightbulb"></div>
 							<div class="top_item_content">
 								<div class="top_item_price">From $890</div>
 								<div class="top_item_text">Santorini, Greece</div>
@@ -156,7 +156,7 @@
 
 		<div class="container">
 			<div class="row">
-				<div class="last_logo"><img src="../images/common/last_logo.png" alt=""></div>
+				<div class="last_logo"><img src="http://localhost:8081/kostaProject1/images/common/last_logo.png" alt=""></div>
 				<div class="col-lg-6 last_col">
 					<div class="last_item">
 						<div class="last_item_content">
@@ -224,7 +224,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_1.jpg" alt="image by Egzon Bytyqi">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_1.jpg" alt="image by Egzon Bytyqi">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Turkey</div>
@@ -235,7 +235,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_2.jpg" alt="https://unsplash.com/@michael75">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_2.jpg" alt="https://unsplash.com/@michael75">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Hawai</div>
@@ -246,7 +246,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_3.jpg" alt="https://unsplash.com/@sapegin">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_3.jpg" alt="https://unsplash.com/@sapegin">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Ireland</div>
@@ -257,7 +257,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_4.jpg" alt="https://unsplash.com/@kensuarez">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_4.jpg" alt="https://unsplash.com/@kensuarez">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Thailand</div>
@@ -268,7 +268,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_5.jpg" alt="https://unsplash.com/@noahbasle">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_5.jpg" alt="https://unsplash.com/@noahbasle">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Croatia</div>
@@ -279,7 +279,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_6.jpg" alt="https://unsplash.com/@seb">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_6.jpg" alt="https://unsplash.com/@seb">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Bali</div>
@@ -290,7 +290,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_7.jpg" alt="https://unsplash.com/@nevenkrcmarek">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_7.jpg" alt="https://unsplash.com/@nevenkrcmarek">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">France</div>
@@ -301,7 +301,7 @@
 						<!-- Popular Item -->
 						<div class="popular_item">
 							<a href="offers.html">
-								<img src="../images/common/popular_8.jpg" alt="https://unsplash.com/@bergeryap87">
+								<img src="http://localhost:8081/kostaProject1/images/common/popular_8.jpg" alt="https://unsplash.com/@bergeryap87">
 								<div class="popular_item_content">
 									<div class="popular_item_price">From $890</div>
 									<div class="popular_item_title">Vietnam</div>
@@ -422,16 +422,16 @@
 </div>
 <%@include file="sub_page/footer.html" %>
 
-<script src="../scripts/common/jquery-3.2.1.min.js"></script>
-<script src="../scripts/common/moment.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/moment.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="../styles/common/bootstrap4/popper.js"></script>
-<script src="../styles/common/bootstrap4/bootstrap.min.js"></script>
-<script src="../plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="../plugins/common/easing/easing.js"></script>
-<script src="../plugins/common/parallax-js-master/parallax.min.js"></script>
-<script src="../plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="../scripts/common/pignose.calendar.js"></script>
-<script src="../scripts/common/custom.js"></script>
+<script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
+<script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/easing/easing.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/parallax-js-master/parallax.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/pignose.calendar.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 </body>
 </html>
