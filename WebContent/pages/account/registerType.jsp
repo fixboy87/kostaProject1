@@ -57,6 +57,10 @@
             </div>
             <!-- mb_join end -->
         </div>
+        <form name= "typeSelect" method="get" action="registerAction.do">
+        	<input type="hidden" name="registerType" value="">
+        	<input type="submit" value="typeSelect"/>
+        </form> 
         <!-- content end -->
 
 

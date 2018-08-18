@@ -41,12 +41,12 @@
                                         <div class="warning-txt msg_email" id="emailTextArea"></div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="nickName" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)">
+                                            <input type="text" id="mInput1" name="id" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)">
                                         </div>
                                         <div class="warning-txt msg_nickName" id="nickTextArea"></div>
 
                                         <div class="inp-txt-member">
-                                            <input type="password" id="mInput2" name="passwd" class="inp-password">
+                                            <input type="password" id="mInput2" name="password" class="inp-password">
                                             <label class="placeholder-div">비밀번호를 입력하세요(8~20자)</label>
                                         </div>
                                         <div class="warning-txt msg_passwd" id="pwTextArea"></div>
