@@ -8,12 +8,9 @@ public class RegisterFormAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		String type = request.getParameter("type");
-		System.out.println(type);
-		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("/pages/account/registrationForm.jsp");
+		forward.setRedirect(false);
+		forward.setPath("/pages/account/registerType.jsp");
 		return forward;
 	
 	}
