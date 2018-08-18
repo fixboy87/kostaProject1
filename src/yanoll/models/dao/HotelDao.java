@@ -13,7 +13,7 @@ import yanoll.models.vo.Hotel;
 
 public class HotelDao {
 	private static HotelDao dao =new HotelDao();
-	private static HotelDao getinstance(){
+	public static  HotelDao getInstance(){
 		return dao;
 	}
 	public SqlSessionFactory getSqlSessionFactory(){
@@ -27,12 +27,12 @@ public class HotelDao {
 		return new SqlSessionFactoryBuilder().build(in);
 	}
 	
-	public List<Hotel> listHotel(){
+	public List<Hotel> hotel(){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Hotel> list= null;
 		
 		try {
-			list = sqlSession.getMapper(HotelMapper.class).listHotel();
+			list = sqlSession.getMapper(HotelMapper.class).hotelList();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -43,6 +43,7 @@ public class HotelDao {
 		return list;
 	}
 }
+
 
 
 

@@ -54,11 +54,11 @@
 .home
 {
 	width: 100%;
-	height: 50vh !important;
+	height: 70vh !important;
 }
 .home_background
 {
-	height: 70% !important;
+	height: 90% !important;
 }
 .home_content
 {

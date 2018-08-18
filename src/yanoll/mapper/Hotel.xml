@@ -4,7 +4,7 @@
 
 <mapper namespace="yanoll.mapper.HotelMapper">
 	<cache />
-	<select id="hotelSearch" resultType="Hotel">
+	<select id="hotelList" resultType="Hotel">
 		select h_name, h_info, pic_url, h_location from Hotel
 	</select>
 	
