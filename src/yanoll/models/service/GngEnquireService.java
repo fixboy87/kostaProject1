@@ -17,7 +17,10 @@ public class GngEnquireService {
 		return service;
 	}
 	public int insertEnquireService(HttpServletRequest request) throws Exception{
-		Enquire_Board board= new Enquire_Board();	
+		
+		Enquire_Board board= new Enquire_Board();
+		
+		
 		return dao.insertEnquire(board);
 	}
 	

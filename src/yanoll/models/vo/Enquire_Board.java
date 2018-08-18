@@ -7,7 +7,10 @@ public class Enquire_Board implements Serializable {
 	private String e_title;
 	private String e_contents;
 	private String e_date;
+	private String hotel_name;
+	private String id;
 	private int user_no;
+	private int h_no;
 	
 	
 	public Enquire_Board() {
@@ -15,13 +18,17 @@ public class Enquire_Board implements Serializable {
 	}
 
 
-	public Enquire_Board(int e_seq, String e_title, String e_contents, String e_date, int user_no) {
+	public Enquire_Board(int e_seq, String e_title, String e_contents, String e_date, String hotel_name, String id,
+			int user_no, int h_no) {
 		super();
 		this.e_seq = e_seq;
 		this.e_title = e_title;
 		this.e_contents = e_contents;
 		this.e_date = e_date;
+		this.hotel_name = hotel_name;
+		this.id = id;
 		this.user_no = user_no;
+		this.h_no = h_no;
 	}
 
 
@@ -65,6 +72,26 @@ public class Enquire_Board implements Serializable {
 	}
 
 
+	public String getHotel_name() {
+		return hotel_name;
+	}
+
+
+	public void setHotel_name(String hotel_name) {
+		this.hotel_name = hotel_name;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
 	public int getUser_no() {
 		return user_no;
 	}
@@ -73,6 +100,19 @@ public class Enquire_Board implements Serializable {
 	public void setUser_no(int user_no) {
 		this.user_no = user_no;
 	}
+
+
+	public int getH_no() {
+		return h_no;
+	}
+
+
+	public void setH_no(int h_no) {
+		this.h_no = h_no;
+	}
+
+    
+	
 	
 	
 	

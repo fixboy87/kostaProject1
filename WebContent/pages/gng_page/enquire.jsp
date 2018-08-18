@@ -1,5 +1,16 @@
+<%@page import="yanoll.models.dao.Enquire_BoardDao"%>
+<%@page import="yanoll.mapper.BoardMapper"%>
+<%@page import="yanoll.models.vo.Enquire_Board"%>
+
+<jsp:useBean id="Enquire_Board" class="yanoll.models.vo.Enquire_Board"></jsp:useBean>
+<jsp:setProperty property="*" name="Enquire_Board"/>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <% 
+    Enquire_BoardDao dao= Enquire_BoardDao.getinstance();
+    
+    
+    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -81,11 +92,11 @@ margin-bottom: 2%;
 							
 							</select>
 							<br>
-							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="user_no" placeholder="번호">
+							
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="e_title" placeholder="제목">
 							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" placeholder="내용"></input>
-							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록"></button>
-							
+							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">
+					
 						</form>
 					</div>
 			

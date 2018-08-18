@@ -4,12 +4,14 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import yanoll.mapper.Enquire_BoardMapper;
 import yanoll.models.vo.Enquire_Board;
+import yanoll.models.vo.Enquire_Search;
 
 public class Enquire_BoardDao {
 	private static Enquire_BoardDao dao= new Enquire_BoardDao();
@@ -48,12 +50,12 @@ public class Enquire_BoardDao {
 		return re;
 	}
 	
-	public List<Enquire_Board> list(int user_no){
+	public List<Enquire_Board> Enquirelist(Enquire_Search search,int startrow){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Enquire_Board> list= null; 
 		
 		try {
-			list= sqlSession.getMapper(Enquire_BoardMapper.class).list(user_no);
+			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startrow, 10), search);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
