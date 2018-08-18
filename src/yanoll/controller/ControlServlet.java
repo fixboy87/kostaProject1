@@ -54,7 +54,7 @@ public class ControlServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else if (command.equals("registerTypeForm.do")) {//회원유형 선택창
-			   action = new RegisterTypeFormAction();
+			   action = new RegisterFormAction();
 			   try {
 			      forward = action.execute(request, response);
 			      
@@ -77,6 +77,13 @@ public class ControlServlet extends HttpServlet {
 			   } catch (Exception e) {
 			      e.printStackTrace();
 			   }
+		} else if (command.equals("registerForm.do")) {
+				action = new RegisterFormAction();
+				try {
+					forward = action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 		}
     	
     	
