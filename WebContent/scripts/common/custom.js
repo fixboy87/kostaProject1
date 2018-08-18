@@ -262,7 +262,7 @@ $(document).ready(function()
 		} else if($buttonHtml === "회원가입") {
 			location.href = "registerTypeForm.do";
 		} else if($buttonHtml === "마이페이지") {
-			//세션처리(관리자/오너)
+			location.href = "myPage.do";
 		} else if($buttonHtml === "예약내역") {
 			location.href = "bookingAction.do";
 		} else if($buttonHtml === "로그아웃") {
