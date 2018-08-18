@@ -13,6 +13,8 @@
 	     <typeAlias type="yanoll.models.vo.Board" alias="Board"/>
 	     <typeAlias type="yanoll.models.vo.Review_Board" alias="Review_Board"/>
 	     <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/>
+	     <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/>
+	     <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search"/>
 	     
 	</typeAliases>
 	
@@ -29,6 +31,7 @@
 		<mapper resource="kosta/mapper/mapper.xml"/>
 		<mapper resource="yanoll/mapper/Booking.xml"/>
 		<mapper resource="yanoll/mapper/Review_Board.xml"/>
+		<mapper resource="yanoll/mapper/Enquire_Board.xml"/>
 	</mappers>
 	
 </configuration>

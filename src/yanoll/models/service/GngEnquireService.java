@@ -3,9 +3,11 @@ package yanoll.models.service;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.Enquire_BoardDao;
 import yanoll.models.vo.Enquire_Board;
+import yanoll.models.vo.Enquire_Search;
 
 public class GngEnquireService {
 	
@@ -24,8 +26,19 @@ public class GngEnquireService {
 		return dao.insertEnquire(board);
 	}
 	
-	public List<Enquire_Board> list(int user_no , HttpServletRequest request) throws Exception {
-		List<Enquire_Board> list = dao.list(user_no);
+	public List<Enquire_Board> list(int requestPage , HttpServletRequest request) throws Exception {
+		HttpSession session= request.getSession();
+		Enquire_Search search = new Enquire_Search();
+		
+		if(request.getParameter("area") !=null){
+			session.removeAttribute("search");
+			search.setArea(request.getParameter("area"));
+			search.setSearchKey("%" + request.getParameter("serchKey"+ "%"));
+			session.setAttribute("search", search);
+			
+		}
+		
+		List<Enquire_Board> list = dao.Enquirelist(re, startrow);
 		
 		return list;
 		
