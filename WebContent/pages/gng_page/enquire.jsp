@@ -76,7 +76,7 @@ margin-bottom: 2%;
 					<div class="contact_form_container">
 						<form action="GngInqInsertAction.do" method="post"
 						enctype="multipart/form-data" id="contact_form" class="clearfix">
-						<a class="enq_list" href="enquire.jsp" id="contact_send_btn" class="contact_send_btn trans_200" >나의문의내역</a>
+						<a class="enq_list" href="GngListAction.do" id="contact_send_btn" class="contact_send_btn trans_200" >나의문의내역</a>
 							<select class="hotel_name" name="hotel_name" id="tt" >
 							<option>문의호텔</option>
 							<option value="">파라다이스</option>
@@ -97,9 +97,7 @@ margin-bottom: 2%;
 							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" placeholder="내용"></input>
 							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">
 					        
-					        <form action="GngListAction.do" method="post">
-					        <input type="checkbox" name="area" value="e_title">
-					        <input type="submit" value="검색">
+					        
 					        
 					        </form>
 						</form>

@@ -50,17 +50,32 @@ public class Enquire_BoardDao {
 		return re;
 	}
 	
-	public List<Enquire_Board> Enquirelist(Enquire_Search search,int startrow){
+	public List<Enquire_Board> EnquireList(Enquire_Search search,int startRow){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Enquire_Board> list= null; 
 		
 		try {
-			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startrow, 10), search);
+			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startRow, 10), search);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return list;
+	}
+	
+	public int countBoard(Enquire_Search search) {
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		int re =0;
+
+		try {
+			re = sqlsession.getMapper(Enquire_BoardMapper.class).countBoard(search);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlsession.close();
+		}
+		return re;
 	}
 
 }

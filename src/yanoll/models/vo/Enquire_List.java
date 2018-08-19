@@ -9,7 +9,7 @@ public class Enquire_List{
 	private int startPage; //시작페이지
 	private int endPage; //끝 페이지
 	public Enquire_List() {
-		super();
+		
 		
 	}
 	public Enquire_List(List<Enquire_Board> list, int requestPage, int totalPageCount, int startPage, int endPage) {

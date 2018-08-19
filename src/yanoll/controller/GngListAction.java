@@ -7,23 +7,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import yanoll.models.service.GngEnquireService;
 import yanoll.models.vo.Enquire_Board;
+import yanoll.models.vo.Enquire_List;
 
 public class GngListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         
-		int user_no =0;
+	  GngEnquireService service = GngEnquireService.getinstance();
+
+	    String pageNum= request.getParameter("pageNum");
+	    if(pageNum == null) {
+	    	pageNum ="1";
+	    }
+	    int requestPage = Integer.parseInt(pageNum);
 	    
-	    GngEnquireService service = GngEnquireService.getinstance();
-	    List<Enquire_Board> list = service.list(user_no, request);
+	    Enquire_List listModel = service.listBoardService(requestPage, request);
 	    
-	    request.setAttribute("list", list);
+	    request.setAttribute("listModel", listModel);
+
 	    
 	    ActionForward forward = new ActionForward();
-	    
-	    forward.setRedirect(false);
 	    forward.setPath("/pages/gng_page/enquirelist.jsp");
+	    forward.setRedirect(false);
+	   
 	    
 		return forward;
 	}
