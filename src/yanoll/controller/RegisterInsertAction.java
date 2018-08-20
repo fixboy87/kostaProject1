@@ -12,11 +12,11 @@ public class RegisterInsertAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		UserService service = UserService.getInstance(); //service 인자를 할당받음
 		
-		service.RegisterUserService(request);
-		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/pages/title.jsp");
 		forward.setRedirect(true);
+
+		service.RegisterUserService(request);
 
 		return forward;
 	}

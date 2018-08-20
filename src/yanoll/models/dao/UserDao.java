@@ -1,4 +1,4 @@
-package yanoll.controller;
+package yanoll.models.dao;
 
 import java.io.InputStream;
 
@@ -12,7 +12,7 @@ import yanoll.models.vo.Users;
 
 public class UserDao {
 
-	private static UserDao dao;
+	private static UserDao dao= new UserDao();
 	
 	public static UserDao getInstance() {
 		return dao;
@@ -31,12 +31,11 @@ public class UserDao {
 	}
 	
 	
-	public int registerUser(Users user) {
+	public int registerUser(Users user) {	
 		int re = -1;
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		
 		try {
-			re = sqlSession.getMapper(UserMapper.class).registerUser();
+			re = sqlSession.getMapper(UserMapper.class).registerUser(user);
 			if(re > 0){
 				sqlSession.commit();
 			} else {

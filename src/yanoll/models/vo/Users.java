@@ -2,6 +2,33 @@ package yanoll.models.vo;
 
 import java.io.Serializable;
 
+/*
+DROP TABLE users;
+DROP SEQUENCE users_seq;
+
+CREATE TABLE users (
+    userNo      NUMBER,
+    id          VARCHAR2(20) NOT NULL,
+    password    VARCHAR2(30) NOT NULL,
+    name        VARCHAR2(30) NOT NULL,
+    tel         VARCHAR2(20) NOT NULL,
+    email       VARCHAR2(40) NOT NULL,
+    gender      VARCHAR2(10),
+    birth       VARCHAR2(30),
+    
+    CONSTRAINT users_userNo_pk PRIMARY KEY(userNo),
+    CONSTRAINT users_id_unique UNIQUE(id),
+    CONSTRAINT users_password_unique UNIQUE(password),
+    CONSTRAINT users_email_unique UNIQUE(email),
+    CONSTRAINT users_gender_check CHECK(gender = 'male' OR gender = 'female')
+    );
+    
+CREATE SEQUENCE users_seq
+    START WITH 1
+    INCREMENT BY 1;
+ */
+ 
+
 public class Users implements Serializable{
 	private int userNo;
 	
@@ -83,8 +110,8 @@ public class Users implements Serializable{
 		return gender;
 	}
 
-	public void setGender(String string) {
-		this.gender = string;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	public String getBirth() {
@@ -93,6 +120,12 @@ public class Users implements Serializable{
 
 	public void setBirth(String birth) {
 		this.birth = birth;
+	}
+
+	@Override
+	public String toString() {
+		return "Users [userNo=" + userNo + ", id=" + id + ", password=" + password + ", name=" + name + ", tel=" + tel
+				+ ", email=" + email + ", gender=" + gender + ", birth=" + birth + "]";
 	}
 	
 	

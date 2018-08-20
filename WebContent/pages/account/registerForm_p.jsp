@@ -37,7 +37,7 @@
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="date" name="dob_pick" value="" placeholder="생년월일을 입력해주세요.(옵션)" title="생년월일을 입력해주세요.(옵션)" autocomplete="off">
+                                            <input type="date" name="birth" value="" placeholder="생년월일을 입력해주세요.(옵션)" title="생년월일을 입력해주세요.(옵션)" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">

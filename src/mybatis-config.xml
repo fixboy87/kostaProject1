@@ -5,7 +5,7 @@
 
 <configuration>
 	<typeAliases>
-		 <typeAlias type="yanoll.models.vo.Booking" alias="Booking"/>
+ 		 <typeAlias type="yanoll.models.vo.Booking" alias="Booking"/>
 		 <typeAlias type="yanoll.models.vo.Hotel_detail" alias="Hotel_detail"/> 
 		 <typeAlias type="yanoll.models.vo.Hotel_info" alias="Hotel_info"/>
 		 <typeAlias type="yanoll.models.vo.Hotel_List" alias="Hotel_List"/>
@@ -32,7 +32,7 @@
 		<mapper resource="yanoll/mapper/Booking.xml"/>
 		<mapper resource="yanoll/mapper/Review_Board.xml"/>
 		<mapper resource="yanoll/mapper/Enquire_Board.xml"/>
-		<mapper resource="yanoll/mapper/UserMapper.xml"/>
+		<mapper resource="yanoll/mapper/Users.xml"/>
 	</mappers>
 	
 </configuration>

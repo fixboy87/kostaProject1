@@ -5,7 +5,7 @@
 
 <configuration>
 	<typeAliases>
-		 <typeAlias type="yanoll.models.vo.Booking" alias="Booking"/>
+		 <!-- <typeAlias type="yanoll.models.vo.Booking" alias="Booking"/>
 		 <typeAlias type="yanoll.models.vo.Hotel_detail" alias="Hotel_detail"/> 
 		 <typeAlias type="yanoll.models.vo.Hotel_info" alias="Hotel_info"/>
 		 <typeAlias type="yanoll.models.vo.Hotel_List" alias="Hotel_List"/>
@@ -14,7 +14,7 @@
 	     <typeAlias type="yanoll.models.vo.Review_Board" alias="Review_Board"/>
 	     <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/>
 	     <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/>
-	     <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search"/>
+	     <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search"/> -->
 	     
 	</typeAliases>
 	

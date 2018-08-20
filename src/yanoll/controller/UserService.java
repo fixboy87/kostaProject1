@@ -3,6 +3,7 @@ package yanoll.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import yanoll.models.dao.UserDao;
 import yanoll.models.vo.Users;
 
 public class UserService {
@@ -15,13 +16,12 @@ public class UserService {
 		return service;
 	}
 	
-	public int RegisterUserService(HttpServletRequest request) {
+	public int RegisterUserService(HttpServletRequest request) throws Exception {
 		Users user = new Users();
 		
 		HttpSession session = request.getSession();
 		
 		String type = request.getParameter("type");
-		System.out.println("type = "+type);
 		
 		if(type.equals("personal")) { //세션에서 정보를 추출 및 객체를 생성
 			
@@ -34,11 +34,10 @@ public class UserService {
 			user.setBirth((String)request.getParameter("birth"));
 			user.setGender((String)request.getParameter("gender"));
 			
-			System.out.println(user.getBirth());
-			System.out.println(user.getEmail());
 			
 			session.invalidate(); //해당 세션을 만료시킴
 			return dao.registerUser(user);
+			
 		} else if (type.equals("enterprise")) {//사업자의 경우
 			return 0;
 		} else {//잘못된 접근
