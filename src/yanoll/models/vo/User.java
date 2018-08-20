@@ -1,131 +1,129 @@
 package yanoll.models.vo;
 
-public abstract class User {
+public class User {
 	private int userNo;
 	
 	private String id;
-	private String pass;
-	private String tel;
+	private String password;
 	private String name;
+	private String tel;
 	private String email;
 	
-	private String authority;
-
+	private char gender;
+	private String birth;
 	
-	public User(int userNo, String id, String pass, String tel, String name, String email, String authority) {
+	
+	public User() {};
+	
+	public User(int userNo, String id, String password, String name, String tel, String email, char gender,
+			String dob) {
 		super();
 		this.userNo = userNo;
 		this.id = id;
-		this.pass = pass;
-		this.tel = tel;
+		this.password = password;
 		this.name = name;
+		this.tel = tel;
 		this.email = email;
-		this.authority = authority;
+		this.gender = gender;
+		this.birth = dob;
 	}
-	
-	public User(String id, String pass, String tel, String name, String email) {
+
+	public User(String id, String password, String name, String tel, String email, String birth) {
 		super();
 		this.id = id;
-		this.pass = pass;
-		this.tel = tel;
+		this.password = password;
 		this.name = name;
+		this.tel = tel;
+		this.email = email;
+		this.birth = birth;
+	}
+
+	public User(int userNo, String id, String password, String name, String tel, String email, char gender) {
+		super();
+		this.userNo = userNo;
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.tel = tel;
+		this.email = email;
+		this.gender = gender;
+	}
+
+	public User(int userNo, String id, String password, String name, String tel, String email) {
+		super();
+		this.userNo = userNo;
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.tel = tel;
 		this.email = email;
 	}
 
-	public User() {
-		// TODO Auto-generated constructor stub
-	}
-	
 	
 	public int getUserNo() {
 		return userNo;
 	}
+
+	public void setUserNo(int userNo) {
+		this.userNo = userNo;
+	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPass() {
-		return pass;
+
+	public String getPassword() {
+		return password;
 	}
-	public void setPass(String pass) {
-		this.pass = pass;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getTel() {
-		return tel;
-	}
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getAuthority() {
-		return authority;
-	}
-	public void setAuthority(String authority) {
-		this.authority = authority;
-	}
-	
-}
 
-class Consumer extends User {
-	private String sex;
-	private String dob;
-	
-	
-	public Consumer(int userNo, String id, String pass, String tel, String name, String email, String authority,
-			String sex, String dob) {
-		super(userNo, id, pass, tel, name, email, authority);
-		this.sex = sex;
-		this.dob = dob;
-	}
-	
-	public Consumer() { }
-
-	public String getSex() {
-		return sex;
+	public char getGender() {
+		return gender;
 	}
 
-	public void setSex(String sex) {
-		this.sex = sex;
+	public void setGender(char gender) {
+		this.gender = gender;
 	}
 
 	public String getDob() {
-		return dob;
+		return birth;
 	}
 
 	public void setDob(String dob) {
-		this.dob = dob;
-	}
-}
-
-class Owner extends User {
-	private int profit;
-
-	public Owner(int userNo, String id, String pass, String tel, String name, String email, String authority,
-			int profit) {
-		super(userNo, id, pass, tel, name, email, authority);
-		this.profit = profit;
+		this.birth = dob;
 	}
 	
-	public Owner() { }
-
-	public int getProfit() {
-		return profit;
-	}
-
-	public void setProfit(int profit) {
-		this.profit = profit;
-	}
+	
+	
 }

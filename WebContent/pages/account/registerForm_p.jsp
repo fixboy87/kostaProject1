@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-<%
-	String type = request.getParameter("type");
-	System.out.println("11111111"+type);
-%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -62,7 +57,6 @@
                                         </div>
                                         <div class="warning-txt msg_passwdConfirm" id="cpTextArea"></div>
                                     </div>
-                                    <input type="hidden" id="registerType" name="type" value="<%=type%>"/>
                                     <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">다음</button>
                                 </fieldset>
                             </form>
@@ -75,7 +69,6 @@
 
 
 </div>
-</form>
 <%@include file="../../pages/sub_page/footer.html"%>
 
 <script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
