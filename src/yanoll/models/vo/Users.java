@@ -1,6 +1,6 @@
 package yanoll.models.vo;
 
-public class User {
+public class Users {
 	private int userNo;
 	
 	private String id;
@@ -9,13 +9,13 @@ public class User {
 	private String tel;
 	private String email;
 	
-	private char gender;
+	private String gender;
 	private String birth;
 	
 	
-	public User() {};
+	public Users() {};
 	
-	public User(int userNo, String id, String password, String name, String tel, String email, char gender,
+	public Users(int userNo, String id, String password, String name, String tel, String email, String gender,
 			String dob) {
 		super();
 		this.userNo = userNo;
@@ -28,7 +28,7 @@ public class User {
 		this.birth = dob;
 	}
 
-	public User(String id, String password, String name, String tel, String email, String birth) {
+	public Users(String id, String password, String name, String tel, String email, String birth) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -38,7 +38,7 @@ public class User {
 		this.birth = birth;
 	}
 
-	public User(int userNo, String id, String password, String name, String tel, String email, char gender) {
+	public Users(int userNo, String id, String password, String name, String tel, String email, String gender) {
 		super();
 		this.userNo = userNo;
 		this.id = id;
@@ -49,7 +49,7 @@ public class User {
 		this.gender = gender;
 	}
 
-	public User(int userNo, String id, String password, String name, String tel, String email) {
+	public Users(int userNo, String id, String password, String name, String tel, String email) {
 		super();
 		this.userNo = userNo;
 		this.id = id;
@@ -108,12 +108,12 @@ public class User {
 		this.email = email;
 	}
 
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(char gender) {
-		this.gender = gender;
+	public void setGender(String string) {
+		this.gender = string;
 	}
 
 	public String getDob() {
