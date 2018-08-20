@@ -20,7 +20,7 @@ public class RegisterFormAction2 implements Action {
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
 
-		if(type == "personal") {
+		if(type.equals("personal")) {
 			forward.setPath("/pages/account/registerForm2.jsp?type=personal");
 			
 			session.setAttribute("email", email);
@@ -28,7 +28,7 @@ public class RegisterFormAction2 implements Action {
 			session.setAttribute("tel", tel);
 			session.setAttribute("password", password);
 			
-		} else if (type == "enterprise") {
+		} else if (type.equals("enterprise")) {
 			forward.setPath("/pages/account/registerForm2.jsp?type=enterprise");
 			
 			session.setAttribute("h_mail", email);
