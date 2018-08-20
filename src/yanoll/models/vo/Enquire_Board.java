@@ -111,6 +111,14 @@ public class Enquire_Board implements Serializable {
 		this.h_no = h_no;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Enquire_Board [e_seq=" + e_seq + ", e_title=" + e_title + ", e_contents=" + e_contents + ", e_date="
+				+ e_date + ", hotel_name=" + hotel_name + ", id=" + id + ", user_no=" + user_no + ", h_no=" + h_no
+				+ "]";
+	}
+
     
 	
 	

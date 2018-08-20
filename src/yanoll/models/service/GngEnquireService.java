@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.swing.ListModel;
 
+import org.apache.coyote.Request;
+
+import com.oreilly.servlet.MultipartRequest;
+
 import oracle.sql.TIMESTAMPLTZ;
 import yanoll.models.dao.Enquire_BoardDao;
 import yanoll.models.vo.Enquire_Board;
@@ -24,7 +28,14 @@ public class GngEnquireService {
 	
 	public int insertEnquireService(HttpServletRequest request) throws Exception{
 		
-		Enquire_Board board= new Enquire_Board();		
+		Enquire_Board board= new Enquire_Board();
+		
+		HttpSession session = request.getSession();
+		
+		board.setHotel_name(request.getParameter("hotel_name"));
+		board.setE_title(request.getParameter("e_title"));
+		board.setE_contents(request.getParameter("e_contents"));
+			
 		return dao.insertEnquire(board);
 		
 	}

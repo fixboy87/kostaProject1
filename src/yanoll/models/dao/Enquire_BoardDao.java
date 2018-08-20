@@ -32,8 +32,10 @@ public class Enquire_BoardDao {
 	}
 	
 	public int insertEnquire(Enquire_Board board){
+		System.out.println(board);
 		int re=-1;
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
 		try {
 			re= sqlSession.getMapper(Enquire_BoardMapper.class).insertEnquire(board);
 			
@@ -55,7 +57,7 @@ public class Enquire_BoardDao {
 		List<Enquire_Board> list= null; 
 		
 		try {
-			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startRow, 10), search);
+			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startRow , 10), search);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,5 +79,17 @@ public class Enquire_BoardDao {
 		}
 		return re;
 	}
+	public Enquire_Board EnquireDetail(int e_seq){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+	    Enquire_Board board= null;
+		
+		try {
+			board= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireDetail(e_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return board;
+	}
+	
 
 }

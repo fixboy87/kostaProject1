@@ -19,8 +19,8 @@ public class GngInqInsertAction implements Action {
 	System.out.println(10);
 	
 	ActionForward forward= new ActionForward();
-	forward.setPath("/pages/gng_page/enquirelist.do");
-	forward.setRedirect(true);
+	forward.setPath("/pages/gng_page/GngListAction.do");
+	forward.setRedirect(false);
 	
 	return forward;
 	

@@ -20,6 +20,7 @@ public class GngListAction implements Action {
 	    if(pageNum == null) {
 	    	pageNum ="1";
 	    }
+	    
 	    int requestPage = Integer.parseInt(pageNum);
 	    
 	    Enquire_List listModel = service.listBoardService(requestPage, request);

@@ -8,8 +8,8 @@
 
 	<insert id="insertEnquire" parameterType="Enquire_Board">
 		insert into enquire_board
-		(e_seq,e_title,e_contents,e_date,hotel_name,id,user_no,h_no)
-		values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{id},#{user_no},#{h_no})
+		(e_seq,e_title,e_contents,e_date,hotel_name)
+		values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{hotel_name})
 	</insert>
 	
 	<select id="EnquireList" resultType="Enquire_Board" parameterType="Enquire_Search">   <!-- 문의 게시판 목록 -->
@@ -25,18 +25,23 @@
 	</select>
 	
 	<select id="countBoard" resultType="int" parameterType="Enquire_Search">
-    select count(*)from enquire_board   <!-- 총글갯수 -->
+    select count(*)from enquire_board   
     <if test="area !=null">
 			<where>
-				<!--titls Like %aa% OR writer Like %aa% 쿼리문은 리터럴 형식으로 선언되어져야한다. -->
+				
 				<foreach collection="area" item="item" separator="OR" open="(" 
-					close=")"> <!-- foreach 체크박스가 하나 또는 두개 선택 시-->
-					${item} LIKE #{searchKey}    <!--$리터럴 형식으로 선언 -->
+					close=")"> 
+					${item} LIKE #{searchKey}    
 				</foreach>
 
 			</where>
 		</if>
 		</select>
+		
+	<select id="EnquireDetail" parameterType="int" resultType="Enquire_Board">
+	select*from Enquire_Board where e_seq=#{e_seq}
+	
+	</select>
 </mapper>
 
 
