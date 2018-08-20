@@ -1231,15 +1231,9 @@ a.link-txt:hover {
 }
 
 .container-comm {
-    padding-top: 200px;
+    padding-top: 150px;
 }
 
-
-/**
- * 작업자: 김선미
- * 작업일자: 2017.12.05
- * 작업내용: web2.0과 푸터 싱크 맞춤
- */
 
 .footer {
     z-index: 1;
@@ -1325,7 +1319,6 @@ a.link-txt:hover {
     width: 100%;
     color: #aaa;
     font-size: 14px;
-    background: url(../../img/pc/select-off.png) no-repeat 100%
 }
 
 .foot-address {
@@ -1581,48 +1574,8 @@ a.link-txt:hover {
     font-size: 18px;
     color: #fff;
     text-align: center;
-    background: #00c73c url(../../images/pc/member/btn-naverIcon.png) no-repeat 20px center;
 }
 
-
-/* 약관 동의 */
-
-.scroll-cont {
-    margin-bottom: 40px;
-    font-size: 14px;
-}
-
-.agreetext-head,
-.agreetext-cont {
-    padding: 20px;
-    border: 1px solid #ddd;
-    overflow-y: scroll;
-}
-
-.agreetext-head {
-    font-weight: 600;
-}
-
-.agreetext-head em,
-.agreetext-head b,
-.agreetext-cont {
-    border-top: 0 none;
-    height: 110px;
-    overflow-y: scroll;
-}
-
-.checkbox-cont {
-    margin-top: 30px;
-    padding: 0 10px 10px;
-}
-
-.checkbox-cont .inp-checkbox-member {
-    margin-top: 15px;
-}
-
-.checkbox-cont .inp-checkbox-member:first-child {
-    margin-top: 0;
-}
 
 
 /* 회원가입 */
@@ -1693,9 +1646,6 @@ a.link-txt:hover {
     color: #ff2d60
 }
 
-.layer-area-list .area-list .area-item.area-item-myfocus a {
-    background: url(../../images/pc/member/icon-myfocus.png) no-repeat 0
-}
 
 .layer-area-list .subarea-cnt {
     background-color: #fafafa;
@@ -1816,4 +1766,10 @@ a.link-txt:hover {
 	margin-left: 248px;
 	background: rgba(254, 60, 82, 0.8);
 	color: white;
+	margin-top: 15px;
+}
+
+.m_inline {
+	display: inline-block;
+	
 }

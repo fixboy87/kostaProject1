@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%
+	String type = request.getParameter("type");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,28 +40,18 @@
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="text" name="email" value="" placeholder="아이디(이메일)를 입력해주세요." title="아이디(이메일)를 입력" autocomplete="off">
+                                            <input type="date" name="dob_pick" value="" placeholder="생년월일을 입력해주세요.(옵션)" title="생년월일을 입력해주세요.(옵션)" autocomplete="off">
                                         </div>
-                                        <div class="warning-txt msg_email" id="emailTextArea"></div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="id" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)" autocomplete="off">
+                                        	<select name="gender">
+                                        		<option value="male">남성</option>
+                                        		<option value="female">여성</option>
+                                        	</select>
                                         </div>
-                                        <div class="warning-txt msg_nickName" id="nickTextArea"></div>
-
-                                        <div class="inp-txt-member">
-                                            <input type="password" id="mInput2" name="password" class="inp-password">
-                                            <label class="placeholder-div">비밀번호를 입력하세요(8~20자)</label>
-                                        </div>
-                                        <div class="warning-txt msg_passwd" id="pwTextArea"></div>
-
-                                        <div class="inp-txt-member">
-                                            <input type="password" id="" name="passwdConfirm" class="inp-password">
-                                            <label class="placeholder-div">비밀번호를 한번 더 입력하세요.</label>
-                                        </div>
-                                        <div class="warning-txt msg_passwdConfirm" id="cpTextArea"></div>
                                     </div>
-                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">다음</button>
+                                    <input type="hidden" name="type" value=<%=type %>>
+                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">완료</button>
                                 </fieldset>
                             </form>
                         </section>
@@ -95,6 +89,9 @@
                 $this.siblings('label').show()
             }
         });
+        
+        
+        
 
     });
 </script>
