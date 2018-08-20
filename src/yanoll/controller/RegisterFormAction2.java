@@ -14,6 +14,7 @@ public class RegisterFormAction2 implements Action {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		String tel = request.getParameter("tel");
+		String name = request.getParameter("name");
 		
 		HttpSession session = request.getSession();
 		
@@ -21,20 +22,22 @@ public class RegisterFormAction2 implements Action {
 		forward.setRedirect(true);
 
 		if(type.equals("personal")) {
-			forward.setPath("/pages/account/registerForm2.jsp?type=personal");
+			forward.setPath("/pages/account/registerForm_p.jsp");
 			
 			session.setAttribute("email", email);
 			session.setAttribute("id", id);
 			session.setAttribute("tel", tel);
 			session.setAttribute("password", password);
+			session.setAttribute("name", name);
 			
 		} else if (type.equals("enterprise")) {
-			forward.setPath("/pages/account/registerForm2.jsp?type=enterprise");
+			forward.setPath("/pages/account/registerForm_e.jsp");
 			
 			session.setAttribute("h_mail", email);
-			session.setAttribute("h_name", id);
+			session.setAttribute("h_id", id);
 			session.setAttribute("h_phonenum", tel);
 			session.setAttribute("h_password", password);
+			session.setAttribute("h_name", name);
 			
 		} else {
 			// 에러 페이지로 리다이렉트

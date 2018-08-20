@@ -1,4 +1,4 @@
-package yanoll.controller;
+package yanoll.mapper;
 
 public interface UserMapper {
 

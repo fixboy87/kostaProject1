@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import yanoll.mapper.UserMapper;
 import yanoll.models.vo.Users;
 
 public class UserDao {
@@ -48,5 +49,6 @@ public class UserDao {
 		}
 		return re;
 	}
+
 
 }

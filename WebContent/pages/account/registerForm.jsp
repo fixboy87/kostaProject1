@@ -34,7 +34,7 @@
                         <section class="login-area">
                             <h3>회원가입</h3>
 
-                            <form id="joinMemberPc" action="registerFormAction_2.do" method="post" data-member-form="true" class="form-group form-w410">
+                            <form id="joinMemberPc" action="registerFormAction2.do" method="post" data-member-form="true" class="form-group form-w410">
 
                                 <fieldset id="joinFieldset">
                                     <legend class="sc-out">회원가입 폼</legend>
@@ -50,6 +50,10 @@
 
                                         <div class="inp-txt-member">
                                             <input type="text" id="mInput2" name="tel" placeholder="전화번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                        </div>
+
+                                        <div class="inp-txt-member">
+                                            <input type="text" id="mInput3" name="name" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
