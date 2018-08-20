@@ -36,12 +36,12 @@
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="text" name="email" value="" placeholder="아이디(이메일)를 입력해주세요." title="아이디(이메일)를 입력">
+                                            <input type="text" name="email" value="" placeholder="아이디(이메일)를 입력해주세요." title="아이디(이메일)를 입력" autocomplete="off">
                                         </div>
                                         <div class="warning-txt msg_email" id="emailTextArea"></div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="id" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)">
+                                            <input type="text" id="mInput1" name="id" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)" autocomplete="off">
                                         </div>
                                         <div class="warning-txt msg_nickName" id="nickTextArea"></div>
 

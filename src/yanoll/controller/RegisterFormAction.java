@@ -11,6 +11,8 @@ public class RegisterFormAction implements Action {
 		String type = request.getParameter("type");
 		System.out.println(type);
 		
+		request.setAttribute("type", type);
+		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("/pages/account/registerForm.jsp");
