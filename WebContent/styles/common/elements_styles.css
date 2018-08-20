@@ -1786,3 +1786,39 @@ section
 .type10 .even {
     background: #fdf3f5;
 }
+
+
+/*********************************
+11. hotel_info의 입력창크기
+*********************************/
+
+.find_item_hotel_info1
+{
+	width: 31.413%;
+}
+.find_item_hotel_info2
+{
+	width: 31.413%;
+}
+.find_item_hotel_info3
+{
+	width: 31.413%;
+}
+.find_item_hotel_info4
+{
+	width: 64%;
+}
+
+/*
+.find_item_hotel_info5
+{
+	border : 2px;
+	border-color: #939393;
+}
+*/
+
+
+
+/*********************************
+12. hotel_info 그래프
+*********************************/

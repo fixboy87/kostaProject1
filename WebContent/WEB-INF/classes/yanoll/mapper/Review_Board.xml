@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<mapper namespace="kosta.mapper.Review_BoardMapper">
+	<cache />
+
+<!-- 후기 목록  -->
+	<select id ="review_list" resultType="Review_Board">
+		select*from Review_Board
+	</select>
+</mapper>

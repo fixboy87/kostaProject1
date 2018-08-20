@@ -141,18 +141,18 @@
 							</div>
 							<div class="find_item">
 								<div>first day</div>
-								<input type="text" id="firstday" size="9" placeholder="YYYY-MM-DD">
+								<input type="text" id="firstday" size="9" autocomplete="off" placeholder="YYYY-MM-DD">
 								<script>
 								    $("#firstday").datepicker();
 								</script>
 							</div>	
 							<div class="find_item">
 								<div>second day</div>
-								<input type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
+								<input type="text" id="secondday" autocomplete="off" size="9" placeholder="YYYY-MM-DD">
 								<script>
 								    $("#secondday").datepicker();
 							    </script> 
-								</select>
+								
 							</div>
 							<button class="button find_button">Find</button>
 						</form>
@@ -162,75 +162,64 @@
 		</div>
 	</div>
 	
+	
+	
+	
+	
 <!-- -------------------------------테이블... 어차피 바뀔꺼... ㅜㅜ 임시------------------------------------------------------ -->
+ 	
 <div id="wrap" align="cnter">
 	<div class="elements_title">예약현황</div>
-
+	<br></br>
+	<div class="buttons">
+		<img id="button1" src="../../images/common/wicon.png" alt="호텔추가" onclick="alert('나중에 페이지 이동할꺼임~');"width="35px"height="35px"/>
+		<img id="button2" src="../../images/common/ricon.png" alt="호텔수정" onclick="alert('나중에 페이지 이동할꺼임~');"width="35px"height="35px"/>
+		<img id="button3" src="../../images/common/dicon.png" alt="호텔삭제" onclick="alert('나중에 페이지 이동할꺼임~');"width="35px"height="35px"/>
+	</div>
 	<table class="type10">
 	    <thead>
 	    <tr>
-	        <th>번호</th><th>고객명</th><th>ID</th><th>연락처</th><th>E-MAIL</th><th>결제상태</th><th>수정</th>
+	        <th>고객번호</th><th>ID</th><th>이름</th><th>예약이름</th><th>연락처</th>
+	        <th>예약번호</th><th>Check-in</th><th>Check-out</th><th>예약비용</th><th>결제현황</th>
 	    </tr>
 	    </thead>
 	    <tbody>
 	    <tr>
-	        <th scope="row">1</th>
+	        <th scope="row"><input type="radio" name="select" value="1"></th>
+	        <td>1</td>		<!--  나중에 자동으로 번호 넣어야함 -->
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
-	        <td>
-	        	<select>
-	        		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
 	    </tr>
 	    <tr>
-	        <th scope="row" class="even">2</th>
+	        <th scope="row" class="even"><input type="radio" name="select" value="1"></th>
+	        <td class="even">2</td>     <!--  나중에 자동으로 번호 넣어야함 -->
 	        <td class="even">내용이 들어갑니다.</td>
 	        <td class="even">내용이 들어갑니다.</td>
 	        <td class="even">내용이 들어갑니다.</td>
 	        <td class="even">내용이 들어갑니다.</td>
 	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">
-	        	<select>
-	       	 		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
 	    </tr>
 	    <tr>
-	        <th scope="row">3</th>
+	        <th scope="row"><input type="radio" name="select" value="1"></th>
+	        <td>3</td>     <!--  나중에 자동으로 번호 넣어야함 -->
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
 	        <td>내용이 들어갑니다.</td>
-	        <td>
-	        	<select>
-	        		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
 	    </tr>
 	    </tbody>
 	</table>
 </div>
+
 <!-- -------------------------------------------------------------------------------------- -->
 
 
-	
-		
-	
-	
+<!-- -------------------------------------------------------------------------------------- -->
+
 		<!-- Icon Boxes -->
 
 		<div class="icon_boxes">
@@ -280,8 +269,6 @@
 
 	<!-- Footer -->
 	<%@include file="../sub_page/footer.html" %>
-
-
 </div>
 
 <script src="../../destino/js/jquery-3.2.1.min.js"></script>
