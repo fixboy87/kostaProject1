@@ -6,7 +6,7 @@ public class Hotel implements Serializable {
 	
 	private int h_no;
 	private String h_name;
-	private int h_phonenum;
+	private String h_phonenum;
 	private String h_mail;
 	private String h_address;
 	private int room_count;
@@ -21,8 +21,8 @@ public class Hotel implements Serializable {
 	public Hotel() {}
 
 
-	public Hotel(int h_no, String h_name, int h_phonenum, String h_mail, String h_address, int room_count, String h_id,
-			String h_password, int h_profit, String h_info, String pic_url, String h_location) {
+	public Hotel(int h_no, String h_name, String h_phonenum, String h_mail, String h_address, int room_count,
+			String h_id, String h_password, int h_profit, String h_info, String pic_url, String h_location) {
 		super();
 		this.h_no = h_no;
 		this.h_name = h_name;
@@ -37,6 +37,8 @@ public class Hotel implements Serializable {
 		this.pic_url = pic_url;
 		this.h_location = h_location;
 	}
+
+
 
 
 	public int getH_no() {
@@ -59,12 +61,12 @@ public class Hotel implements Serializable {
 	}
 
 
-	public int getH_phonenum() {
+	public String getH_phonenum() {
 		return h_phonenum;
 	}
 
 
-	public void setH_phonenum(int h_phonenum) {
+	public void setH_phonenum(String h_phonenum) {
 		this.h_phonenum = h_phonenum;
 	}
 
