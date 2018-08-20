@@ -1,1 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="yanoll.mapper.UserMapper">
+	<insert id="registerUser" parameterType="Users">
+		insert into users(
+			userNo, id, password, name, tel, email, gender, birth
+		) values (
+			users_seq.nextval, #{id}, #{password}, #{name}, #{tel}, #{email}, #{gender}, #{birth}
+		)
+	</insert>
+	
+	
+</mapper>

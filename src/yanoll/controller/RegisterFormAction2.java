@@ -19,7 +19,7 @@ public class RegisterFormAction2 implements Action {
 		HttpSession session = request.getSession();
 		
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 
 		if(type.equals("personal")) {
 			forward.setPath("/pages/account/registerForm_p.jsp");

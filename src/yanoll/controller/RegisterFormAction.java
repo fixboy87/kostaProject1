@@ -10,8 +10,6 @@ public class RegisterFormAction implements Action {
 		
 		String type = request.getParameter("type");
 		
-		System.out.println(type);
-	
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		if(type.equals("personal")) {

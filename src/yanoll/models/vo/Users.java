@@ -1,6 +1,8 @@
 package yanoll.models.vo;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable{
 	private int userNo;
 	
 	private String id;
@@ -16,7 +18,7 @@ public class Users {
 	public Users() {};
 	
 	public Users(int userNo, String id, String password, String name, String tel, String email, String gender,
-			String dob) {
+			String birth) {
 		super();
 		this.userNo = userNo;
 		this.id = id;
@@ -25,38 +27,7 @@ public class Users {
 		this.tel = tel;
 		this.email = email;
 		this.gender = gender;
-		this.birth = dob;
-	}
-
-	public Users(String id, String password, String name, String tel, String email, String birth) {
-		super();
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.tel = tel;
-		this.email = email;
 		this.birth = birth;
-	}
-
-	public Users(int userNo, String id, String password, String name, String tel, String email, String gender) {
-		super();
-		this.userNo = userNo;
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.tel = tel;
-		this.email = email;
-		this.gender = gender;
-	}
-
-	public Users(int userNo, String id, String password, String name, String tel, String email) {
-		super();
-		this.userNo = userNo;
-		this.id = id;
-		this.password = password;
-		this.name = name;
-		this.tel = tel;
-		this.email = email;
 	}
 
 	
@@ -116,12 +87,12 @@ public class Users {
 		this.gender = string;
 	}
 
-	public String getDob() {
+	public String getBirth() {
 		return birth;
 	}
 
-	public void setDob(String dob) {
-		this.birth = dob;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 	
 	

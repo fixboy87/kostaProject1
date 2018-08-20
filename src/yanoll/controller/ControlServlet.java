@@ -84,7 +84,7 @@ public class ControlServlet extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-		} else if (command.equals("registerFormAction_2.do")) {
+		} else if (command.equals("registerFormAction2.do")) {
 				action = new RegisterFormAction2();
 				try {
 					forward = action.execute(request, response);

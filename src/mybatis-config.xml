@@ -15,7 +15,7 @@
 	     <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/>
 	     <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/>
 	     <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search"/>
-	     <typeAlias type="yanoll.models.vo.Users" alias="Users"/>
+	     <!-- <typeAlias type="yanoll.models.vo.Users" alias="Users"/> -->
 	</typeAliases>
 	
 	<environments default="development">

@@ -16,7 +16,7 @@ public class RegisterInsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/pages/title.jsp");
-		forward.setRedirect(false);
+		forward.setRedirect(true);
 
 		return forward;
 	}
