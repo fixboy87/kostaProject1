@@ -1,8 +1,15 @@
+<%@page import="java.util.List"%>
+<%@page import="yanoll.models.dao.HotelDao"%>
+<%@page import="yanoll.models.vo.Hotel"%>
+<%@page import="yanoll.models.service.HotelService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<html lang="en
-">
+<html lang="kr">
+
 <head>
 <title>Offers</title>
 <meta charset="utf-8">
@@ -50,7 +57,7 @@
 	
 }
 
-
+/* 
 .home
 {
 	width: 100%;
@@ -63,7 +70,7 @@
 .home_content
 {
 	width: 90% !important;
-}
+} */
 	
 .find_button
 {
@@ -119,6 +126,8 @@
 
 				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
 			</div>
+			
+
 
 		</div>
 
@@ -299,7 +308,11 @@
 							<div class="item_image"><img src="images/top_1.jpg" alt=""></div>
 							<div class="item_content">
 								<div class="item_price">From $890</div>
-								<div class="item_title">Paris, France</div>
+								<div class="item_title">Paris, France
+										<c:forEach var="hotel" items="${hotelList.list}">
+											<div>${hotel.contests}</div>
+										</c:forEach>
+									</div>
 								<ul>
 									<li>1 person</li>
 									<li>4 nights</li>
