@@ -5,11 +5,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <% 
-    Enquire_BoardDao dao= Enquire_BoardDao.getinstance();
-    System.out.print("555");
-    
-    %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,32 +47,9 @@
 
 </head>
 <body>
-<%@include file="../sub_page/header_menu.jsp" %>
 
-   <table class="enquire_detail" border="1">
-	<thead>
-	<tr>
-	<td style="background-color: #fafafa; color: #000000; width: 80px;"><h5>글번호</h5></td>
-	<td colspan="3"><h5>${board.e_seq}</h5></td>
-	</tr>
-	<tr>
-	<td style="background-color: #fafafa; color: #000000; width: 80px; "><h5>제목</h5></td>
-	<td colspan="3"><h5>${board.e_title}</h5></td>
-	</tr>
-	<tr>
-	<td style="background-color: #fafafa; color: #000000; width: 80px; "><h5>작성자</h5></td>
-	<td colspan="3"><h5>${board.id}</h5></td>
-	</tr>
-	<tr>
-	<td style="vertical-align :middle; min-height: 20%; background-color: #fafafa; color: #000000; width: 80px; "><h5>내용</h5></td>
-	<td colspan="3" style="text-align: left"><h5>${board.e_contents}</h5></td>
-	</tr>
-	</thead>
-	</table>
-	
-    <a class="enq_list" href="GngReplyFormAction.do?e_seq=${board.e_seq}" id="contact_send_btn" class="contact_send_btn trans_200" >답장</a>
-									
-									 <table class="enquire_reply" border="1">
+
+   <table class="enquire_reply" border="1">
 	<thead>
 	<tr>
 	<td style="background-color: #fafafa; color: #000000; width: 80px;"><h5>내용</h5></td>
@@ -85,13 +57,13 @@
 	</tr>
 	</thead>
 	</table>
-									
+
 																		
-<%@include file="../gng_page/enqreplylist.jsp" %>							
+							
 					      			        
 					
 			
 			
-<%@include file="../sub_page/footer.html" %>
+
 </body>
 </html>

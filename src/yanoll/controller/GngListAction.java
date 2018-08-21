@@ -13,7 +13,9 @@ public class GngListAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        
+		response.setCharacterEncoding("utf-8");
+
+		
 	  GngEnquireService service = GngEnquireService.getinstance();
 
 	    String pageNum= request.getParameter("pageNum");
@@ -29,7 +31,8 @@ public class GngListAction implements Action {
 
 	    
 	    ActionForward forward = new ActionForward();
-	    forward.setPath("/pages/gng_page/enquirelist.jsp");
+	    forward.setPath("enquirelist.jsp");
+	    
 	    forward.setRedirect(false);
 	   
 	    

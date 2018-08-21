@@ -2,7 +2,7 @@
 <%@page import="yanoll.mapper.BoardMapper"%>
 <%@page import="yanoll.models.vo.Enquire_Board"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%request.setCharacterEncoding("utf-8");%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -53,6 +53,9 @@ margin-left: 80%;
 margin-bottom: 1%;
 
 }
+.page{
+margin-left: 20%;
+}
 
 </style>
 
@@ -87,13 +90,24 @@ margin-bottom: 1%;
 		
 		<c:if test="${listModel.startPage>5} ">
 		<a href="GngListAction.do?pageNum=${listModel.startPage-1}" >[이전]</a>
-		</c:if>					
+		</c:if>	
+		
+		<c:forEach var="pageNo" begin="${listModel.startPage}"
+		end="${listModel.endPage}" >
+		<c:if test="${listModel.requestPage ==PageNo }">
+		<b>
+		</c:if>
+	<a href="GngListAction.do?pageNum=${pageNo}">[${pageNo}]</a> 
+		<c:if test="${listModel.requestPage==PageNo }">
+		</b>
+		</c:if>
+		</c:forEach>
+					
 		<c:if test="${listModel.endPage <listModel.totalPageCount }">
-		<a href="GngListAction.do?pageNum=${listModel.startPage+5}">[이후]</a>
+		<a href="GngListAction.do?pageNum=${listModel.startPage+5}"> [이후]</a>
 		</c:if>		
 		
-		<form class="enquire_search" action="GngListAction.do" method="post">
-					      
+		<form class="enquire_search" action="GngListAction.do" method="post">					      
 					        <input type="checkbox" name="area" value="e_title"> 제목 
 					        <input type="checkbox" name="area" value="id"> ID 
 			                <input type="text" name="searchKey" size="10">

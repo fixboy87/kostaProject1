@@ -1,15 +1,17 @@
 package yanoll.models.vo;
 
-public class Enquire_Reply {
+import java.io.Serializable;
+
+public class Enquire_Reply implements Serializable{
   private int r_seq;
   private String r_contents;
-  private int r_date;
+  private String r_date;
   private String hotel_name;
   private int e_seq;
 public Enquire_Reply() {
 
 }
-public Enquire_Reply(int r_seq, String r_contents, int r_date, String hotel_name, int e_seq) {
+public Enquire_Reply(int r_seq, String r_contents, String r_date, String hotel_name, int e_seq) {
 	super();
 	this.r_seq = r_seq;
 	this.r_contents = r_contents;
@@ -29,10 +31,10 @@ public String getR_contents() {
 public void setR_contents(String r_contents) {
 	this.r_contents = r_contents;
 }
-public int getR_date() {
+public String getR_date() {
 	return r_date;
 }
-public void setR_date(int r_date) {
+public void setR_date(String r_date) {
 	this.r_date = r_date;
 }
 public String getHotel_name() {
@@ -47,6 +49,12 @@ public int getE_seq() {
 public void setE_seq(int e_seq) {
 	this.e_seq = e_seq;
 }
+@Override
+public String toString() {
+	return "Enquire_Reply [r_seq=" + r_seq + ", r_contents=" + r_contents + ", r_date=" + r_date + ", hotel_name="
+			+ hotel_name + ", e_seq=" + e_seq + "]";
+}
+
   
   
 }

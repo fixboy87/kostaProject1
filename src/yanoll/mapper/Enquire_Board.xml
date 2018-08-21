@@ -42,6 +42,15 @@
 	select*from Enquire_Board where e_seq=#{e_seq}
 	
 	</select>
+	
+    <insert id="insertEnquireReply" parameterType="Enquire_Reply">
+    insert into enquire_reply (r_seq,r_contents,r_date,e_seq)
+    values(enquire_reply_r_seq.nextval,#{r_contents},sysdate,#{e_seq})
+    </insert>
+    
+    <select id="EnqReplyList" parameterType="int" resultType="Enquire_Reply">
+    select*from enquire_reply where e_seq=#{e_seq}
+    </select>
 </mapper>
 
 

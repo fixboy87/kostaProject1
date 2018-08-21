@@ -19,13 +19,13 @@ public class GngDetailAction implements Action {
 			
 		}
 		Enquire_BoardDao dao = Enquire_BoardDao.getinstance();
-		dao.EnquireDetail(e_seq);
+		
 		Enquire_Board 	board = dao.EnquireDetail(e_seq);
 		request.setAttribute("board", board);
 		
 		ActionForward forward= new ActionForward();
 		
-		forward.setPath("/pages/gng_page/enquiredetail.jsp");
+		forward.setPath("enquiredetail.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}

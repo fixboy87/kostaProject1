@@ -1,8 +1,9 @@
 package yanoll.models.vo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Enquire_List{
+public class Enquire_List implements Serializable{
 	private List<Enquire_Board> list;
 	private int requestPage; //요청한 페이지 정보
 	private int totalPageCount; //총페이지

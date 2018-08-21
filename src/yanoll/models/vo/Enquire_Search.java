@@ -1,6 +1,8 @@
 package yanoll.models.vo;
 
-public class Enquire_Search {
+import java.io.Serializable;
+
+public class Enquire_Search implements Serializable{
 	private String area;
 	private String searchKey;
 	

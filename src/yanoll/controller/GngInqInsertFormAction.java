@@ -14,7 +14,7 @@ public class GngInqInsertFormAction implements Action {
 		ActionForward forward = new ActionForward();
 		
 		forward.setRedirect(false);
-		forward.setPath("/pages/gng_page/enquire.jsp");
+		forward.setPath("enquire.jsp");
 	
 		return forward;
 	}

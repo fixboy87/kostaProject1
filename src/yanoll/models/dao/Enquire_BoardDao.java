@@ -11,6 +11,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import yanoll.mapper.Enquire_BoardMapper;
 import yanoll.models.vo.Enquire_Board;
+import yanoll.models.vo.Enquire_List;
+import yanoll.models.vo.Enquire_Reply;
 import yanoll.models.vo.Enquire_Search;
 
 public class Enquire_BoardDao {
@@ -89,6 +91,35 @@ public class Enquire_BoardDao {
 			e.printStackTrace();
 		}
 		return board;
+	}
+	public int insertEnquireReply(Enquire_Reply reply){
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		int re= -1;
+		System.out.println(reply);
+		try {
+			re= sqlsession.getMapper(Enquire_BoardMapper.class).insertEnquireReply(reply);
+			
+			if(re>0){
+				sqlsession.commit();
+			}else{
+				sqlsession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return re;
+	}
+	public Enquire_Reply EnqReplyList(int e_seq){
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		Enquire_Reply reply = null;
+		
+		try {
+			reply = sqlsession.getMapper(Enquire_BoardMapper.class).EnqReplyList(e_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return reply;
 	}
 	
 

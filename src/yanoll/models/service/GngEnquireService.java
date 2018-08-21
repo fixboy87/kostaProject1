@@ -14,6 +14,7 @@ import oracle.sql.TIMESTAMPLTZ;
 import yanoll.models.dao.Enquire_BoardDao;
 import yanoll.models.vo.Enquire_Board;
 import yanoll.models.vo.Enquire_List;
+import yanoll.models.vo.Enquire_Reply;
 import yanoll.models.vo.Enquire_Search;
 
 public class GngEnquireService {
@@ -73,6 +74,18 @@ public class GngEnquireService {
 		Enquire_List listModel = new Enquire_List(list, requestPage, totalPageCount, startPage, endPage);
 		
 		return listModel;
+		
+	}
+	
+	public int insertEnqReply(HttpServletRequest request){
+		Enquire_Reply reply = new Enquire_Reply();
+		HttpSession Session = request.getSession();
+		
+	
+		reply.setE_seq(Integer.parseInt(request.getParameter("e_seq")));
+		reply.setR_contents(request.getParameter("r_contents"));
+	
+		return dao.insertEnquireReply(reply);
 		
 	}
 	
