@@ -251,10 +251,16 @@ $(document).ready(function()
 			}
 		}
 	});
+	$('.main_nav_item').hover(function() {
+		$('.main_nav_list>li.active').removeClass("active");
+		$(this).addClass("active");
+	})
+	
 	
 	$('.main_nav_item').click(function() {
 		var $buttonPressed = $(this);
 		var $buttonHtml = $(this).find('a').html();
+		
 		if($buttonHtml === "홈") {
 			location.href = "titlePage.do";
 		} else if($buttonHtml === "로그인") {
@@ -270,8 +276,5 @@ $(document).ready(function()
 		}
 		
 	});
-	
 
-		
-	
 });

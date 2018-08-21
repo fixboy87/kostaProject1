@@ -78,10 +78,8 @@ public class UserService {
 		}
 		if(re == 0){
 			session.setAttribute("id", userId);
-			session.setAttribute("loginAlert", "로그인 성공");
 			return true; //성공
 		} else {
-			session.setAttribute("alert", "로그인 실패");
 			return false; //실패
 		}
 	}

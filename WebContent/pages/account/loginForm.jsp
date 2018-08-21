@@ -92,10 +92,6 @@
                 $this.siblings('label').show()
             }
         });
-        var $failed = '<%=session.getAttribute("alert")%>';
-        if(($failed).length > 0) {
-        	$('.login-cont:first-child>input').attr('placeholder', $failed);
-        }
     });
 </script>
 </body>

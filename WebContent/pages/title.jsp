@@ -25,7 +25,7 @@
 
 <%@ include file="sub_page/header_menu.jsp"%>
 
-	
+	<input type="hidden" id="auth" name="auth" val="<%=(String)session.getAttribute("id")%>"/>
 	<!-- Home -->
 
 	<div class="home">
@@ -434,12 +434,31 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/pignose.calendar.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script type="text/javascript">
-	$(function() {
-		var $loginAlert = '<%=session.getAttribute("loginAlert")%>';
-		if(($loginAlert).length > 0) {
-			alert($alert);
-			<% session.removeAttribute("loginAlert"); %>
+	$(document).ready(function(){
+		
+		var $menu0 = $('ul.main_nav_list li:eq(0)');
+		var $menu1 = $('ul.main_nav_list li:eq(1)');
+		var $menu2 = $('ul.main_nav_list li:eq(2)');
+		var $menu3 = $('ul.main_nav_list li:eq(3)');
+		var $menu4 = $('ul.main_nav_list li:eq(4)');
+		var $menu5 = $('ul.main_nav_list li:eq(5)');
+		
+		
+		$auth = $('#auth').attr("val");
+		
+		if($auth !== null) {
+			
+ 			$($menu0).removeClass("hidden").addClass("active");
+			$($menu1).removeClass("hidden");
+			$($menu2).removeClass("hidden");
+			$($menu3).remove();
+			$($menu4).remove();
+			$($menu5).remove();
+			
+		} else {
+			
 		}
+		
 	});
 </script>
 </body>
