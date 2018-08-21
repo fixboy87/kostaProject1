@@ -59,4 +59,33 @@ public class UserService {
 			return 0;
 		}
 	}
+
+	public boolean loginUserService(HttpServletRequest request) throws Exception{
+		
+		String userId = request.getParameter("id");
+		String userPassword = request.getParameter("password");
+		String loginType = request.getParameter("loginType");
+		HttpSession session = request.getSession();
+		String comment = "";
+		
+		int re = 0;
+		
+		if(loginType.equals("personal")) {
+			re = dao.loginUser(userId, userPassword);
+		} else if(loginType.equals("enterprise")) {
+			dao.loginHotel(userId, userPassword);
+			
+		} else {
+			//리다이렉트
+		}
+		if(re == 0){
+			session.setAttribute("id", userId);
+			session.setAttribute("loginAlert", "로그인 성공");
+			session.removeAttribute("loginAlert");
+			return true; //성공
+		} else {
+			session.setAttribute("alert", "로그인 실패");
+			return false; //실패
+		}
+	}
 }

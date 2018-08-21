@@ -269,7 +269,9 @@ $(document).ready(function()
 			location.href = "logOutAction.do";
 		}
 		
-	})
+	});
+	
+
 		
 	
 });

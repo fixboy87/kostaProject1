@@ -4,9 +4,12 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.io.Resources;
@@ -118,8 +121,53 @@ public class UserDao {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
 		}
 		return re;
+		
+	}
+
+
+	public int loginUser(String userId, String userPass) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
+
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String user = "kosta186";
+		String password = "1234";
+		String sql = "select password from users where id= ( ? )"; // ? = 커맨드 객체
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+
+			rs = pstmt.executeQuery();
+			rs.next();
+			if(userPass.equals(rs.getString("password"))) {
+				re = 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(re);
+		return re;
+	}
+
+
+	public void loginHotel(String userId, String userPassword) {
+		// TODO Auto-generated method stub
 		
 	}
 	

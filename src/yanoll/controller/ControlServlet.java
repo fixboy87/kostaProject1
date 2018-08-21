@@ -19,12 +19,24 @@ public class ControlServlet extends HttpServlet {
     }
     
     public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        // insertForm.do, insertAction.do, list.do. detail.do
+        String requestURI = request.getRequestURI();
+        String uri_id = requestURI.substring(requestURI.lastIndexOf("/")+1, requestURI.lastIndexOf("."));
+        System.out.println(uri_id);
+        String command=uri_id+".do";
+        System.out.println(command);
+        /*System.out.println(requestURI);// /MVC/insertForm.do
+        String contextPath = request.getContextPath();
+        String command = requestURI.substring(contextPath.length() + 16);
+        System.out.println(command);// insertForm.do*/
+    	
+    	
     	//insertForm.do, insertAction.do, list.do. detail.do
-    	String requestURI = request.getRequestURI();
+//    	String requestURI = request.getRequestURI();
     	//System.out.println(requestURI);//    /MVC/insertForm.do
-    	String contextPath = request.getContextPath();
-    	String command = requestURI.substring(contextPath.length()+1);
-    	System.out.println(command);//   insertForm.do
+//    	String contextPath = request.getContextPath();
+ //   	String command = requestURI.substring(contextPath.length()+1);
+ //   	System.out.println(command);//   insertForm.do
     	
     	Action action = null;
     	ActionForward forward = null;
@@ -98,7 +110,20 @@ public class ControlServlet extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
+		} else if (command.equals("loginForm.do")) {
+				action = new LoginFormAction();
+				try {
+					forward = action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		} else if (command.equals("loginAction.do")) {
+				action = new LoginAction();
+				try {
+					forward = action.execute(request, response);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 		}
     	
     	

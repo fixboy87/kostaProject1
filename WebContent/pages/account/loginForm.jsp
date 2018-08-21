@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
+<%
+	String type = request.getParameter("type");
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +20,7 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/loginForm.css">
 </head>
 
 <body>
@@ -28,27 +32,29 @@
                 <article class="contents">
                     <div class="member-content">
                         <section class="login-area">
-                            <h3>회원가입</h3>
+                            <h3>로그인</h3>
 
-                            <form id="joinMemberPc" action="registerInsert.do" method="post" data-member-form="true" class="form-group form-w410">
+                            <form id="joinMemberPc" action="loginAction.do" method="post" data-member-form="true" class="form-group form-w410">
 
                                 <fieldset id="joinFieldset">
-                                    <legend class="sc-out">회원가입 폼</legend>
-
+                                    <legend class="sc-out">로그인</legend>
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="date" name="birth" value="" placeholder="생년월일을 입력해주세요.(옵션)" title="생년월일을 입력해주세요.(옵션)" autocomplete="off">
+                                            <input type="text" name="id" value="" placeholder="아이디를 입력해주세요." title="아이디를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                        	<select name="gender">
-                                        		<option value="male">남성</option>
-                                        		<option value="female">여성</option>
+                                            <input type="text" id="mInput1" name="password" placeholder="비밀번호를 입력해주세요." title="비밀번호 입력" autocomplete="off">
+                                        </div>
+
+                                        <div class="inp-txt-member">
+                                        	<select name="loginType" class="widthExpand" placeholder="가입하신 계정의 유형을 선택해주세요.">
+                                        		<option value="personal">일반유저</option>
+                                        		<option value="enterprise">사업자유저</div>
                                         	</select>
                                         </div>
-                                    </div>
-                                    <input type="hidden" name="type" value="personal">
-                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">완료</button>
+
+                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">로그인</button>
                                 </fieldset>
                             </form>
                         </section>
@@ -86,14 +92,10 @@
                 $this.siblings('label').show()
             }
         });
-        $('.login-cont').last().click(function() {
-        	alert('11111111111111');
-        	$('.login-cont select[name="gender"]').focus();
-        	$('.login-cont select[name="gender"]').click();
-        })
-        
-        
-
+        var $failed = '<%=session.getAttribute("alert")%>';
+        if(($failed).length > 0) {
+        	$('.login-cont:first-child>input').attr('placeholder', $failed);
+        }
     });
 </script>
 </body>
