@@ -166,9 +166,34 @@ public class UserDao {
 	}
 
 
-	public void loginHotel(String userId, String userPassword) {
-		// TODO Auto-generated method stub
+	public int loginHotel(String h_id, String h_password) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
+		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
+
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String user = "kosta186";
+		String password = "1234";
+		String sql = "select h_password from hotel where h_id= ( ? )"; // ? = 커맨드 객체
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, user, password);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, h_id);
+
+			rs = pstmt.executeQuery();
+			rs.next();
+			if(h_password.equals(rs.getString("h_password"))) {
+				re = 0;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(re);
+		return re;
 	}
 	
 	
