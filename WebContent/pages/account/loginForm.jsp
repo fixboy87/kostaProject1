@@ -80,6 +80,7 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/pignose.calendar.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
         var $pw = $('.inp-password')

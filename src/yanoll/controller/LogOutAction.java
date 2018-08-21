@@ -10,8 +10,8 @@ public class LogOutAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		
-		forward.setPath("titlePage.do");
-		forward.setRedirect(true);
+		forward.setPath("/pages/account/logOut.jsp");
+		forward.setRedirect(false);
 
 		HttpSession session = request.getSession();
 		session.invalidate();

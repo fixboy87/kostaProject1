@@ -78,6 +78,7 @@ public class UserService {
 		}
 		if(re == 0){
 			session.setAttribute("id", userId);
+			session.setAttribute("type", loginType);
 			return true; //성공
 		} else {
 			return false; //실패

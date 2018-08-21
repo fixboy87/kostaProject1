@@ -26,6 +26,7 @@
 <%@ include file="sub_page/header_menu.jsp"%>
 
 	<input type="hidden" id="auth" name="auth" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
 	<!-- Home -->
 
 	<div class="home">
@@ -41,7 +42,7 @@
 						<form action="#" id="find_form" class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
 							<div class="find_item">
 								<div>지역:</div>
-								<input type="text" class="destination find_input" required="required" placeholder="Keyword here">
+								<input type="text" class="destination find_input" required="required" placeholder="Keyword here" autocomplete="off">
 							</div>
 							<div class="find_item">
 								<div>투숙인수:</div>
@@ -56,11 +57,11 @@
 							</div>
 							<div class="find_item">
 								<div>채크인 :</div>
-								<input type="text" class="arrival find_input" id="arrival_pick" placeholder="YYYY-MM-DD">
+								<input type="text" class="arrival find_input" id="arrival_pick" placeholder="YYYY-MM-DD" autocomplete="off">
 							</div>
 							<div class="find_item">
 								<div>채크아웃 :</div>
-								<input type="text" class="departure find_input" id="departure_pick" placeholder="YYYY-MM-DD">
+								<input type="text" class="departure find_input" id="departure_pick" placeholder="YYYY-MM-DD" autocomplete="off">
 							</div>
 							<button class="button find_button">Find</button>
 						</form>
@@ -433,33 +434,44 @@
 <script src="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/pignose.calendar.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
+<!--  메뉴이펙트 스크립트 -->
+<script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+$(document).onLoad(function() {
+	$type = $('#type').attr("val");
+	alert($type);
+	if(($type) === 'personal') {
+		$('find_title').html().replaceWith("개인회원으로 로그인 하셨습니다.");
+	} else if(($type) === 'enterprise') {
+		$('find_title').html().replaceWith("사업자회원으로 로그인 하셨습니다.");
+	}
+})
+
+/* 	var $menu0 = $('ul.main_nav_list li:eq(0)');
+	var $menu1 = $('ul.main_nav_list li:eq(1)');
+	var $menu2 = $('ul.main_nav_list li:eq(2)');
+	var $menu3 = $('ul.main_nav_list li:eq(3)');
+	var $menu4 = $('ul.main_nav_list li:eq(4)');
+	var $menu5 = $('ul.main_nav_list li:eq(5)');
+	
+	
+	$auth = $('#auth').attr("val");
+	if(($auth) !== 'null') {
+		$($menu0).removeClass("hidden").addClass("active");
+		$($menu1).removeClass("hidden");
+		$($menu2).removeClass("hidden");
+		$($menu3).remove().removeClass("active");
+		$($menu4).remove();
+		$($menu5).remove();
 		
-		var $menu0 = $('ul.main_nav_list li:eq(0)');
-		var $menu1 = $('ul.main_nav_list li:eq(1)');
-		var $menu2 = $('ul.main_nav_list li:eq(2)');
-		var $menu3 = $('ul.main_nav_list li:eq(3)');
-		var $menu4 = $('ul.main_nav_list li:eq(4)');
-		var $menu5 = $('ul.main_nav_list li:eq(5)');
+	} else {
+		$($menu0).removeClass("active");
+		$($menu3).removeClass("hidden").addClass("active");
+		$($menu4).removeClass("hidden");
+		$($menu5).removeClass("hidden");
 		
-		
-		$auth = $('#auth').attr("val");
-		if(($auth) !== 'null') {
- 			$($menu0).removeClass("hidden").addClass("active");
-			$($menu1).removeClass("hidden");
-			$($menu2).removeClass("hidden");
-			$($menu3).remove();
-			$($menu4).remove();
-			$($menu5).remove();
-			
-		} else {
-			$($menu3).removeClass("hidden");
-			$($menu4).removeClass("hidden");
-			$($menu5).removeClass("hidden");
-		}
-		
-	});
+	} */
+
 </script>
 </body>
 </html>
