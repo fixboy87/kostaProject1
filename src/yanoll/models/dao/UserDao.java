@@ -15,6 +15,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import yanoll.mapper.UserMapper;
+import yanoll.models.vo.Hotel;
 import yanoll.models.vo.Users;
 
 public class UserDao {
@@ -75,6 +76,51 @@ public class UserDao {
 			e.printStackTrace();
 		}
 		return re;
+	}
+
+
+	public int registerUser(Hotel hotel) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String user = "kosta186";
+		String password = "1234";
+		String sql = "insert into hotel values ( "
+				+ "hotel_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; // ? = 커맨드 객체
+		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
+		
+		try {
+			// 1. JDBC 드라이버 로딩
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			// 2. Connection 객체 생성 (DB 연결)
+			conn = DriverManager.getConnection(url, user, password);
+			
+			// 3. PrepareStatement 객체생성
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, hotel.getH_name());
+			pstmt.setString(2, hotel.getH_phonenum());
+			pstmt.setString(3, hotel.getH_mail());
+			pstmt.setString(4, hotel.getH_address());
+			pstmt.setInt(5, hotel.getRoom_count());
+			pstmt.setString(6, hotel.getH_id());
+			pstmt.setString(7, hotel.getH_password());
+			pstmt.setInt(8, hotel.getH_profit());
+			pstmt.setInt(9, hotel.getPrice());
+			pstmt.setString(10, hotel.getH_info());
+			pstmt.setString(11, hotel.getPic_url());
+			pstmt.setString(12, hotel.getH_location());
+			
+			// 4. ResultSet 객체생성
+			re = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return re;
+		
 	}
 	
 	

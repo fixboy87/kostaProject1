@@ -18,7 +18,6 @@ CREATE TABLE users (
     
     CONSTRAINT users_userNo_pk PRIMARY KEY(userNo),
     CONSTRAINT users_id_unique UNIQUE(id),
-    CONSTRAINT users_password_unique UNIQUE(password),
     CONSTRAINT users_email_unique UNIQUE(email),
     CONSTRAINT users_gender_check CHECK(gender = 'male' OR gender = 'female')
     );
@@ -26,6 +25,38 @@ CREATE TABLE users (
 CREATE SEQUENCE users_seq
     START WITH 1
     INCREMENT BY 1;
+
+insert into users(
+    userno, id, password, name, tel, email, gender, birth
+    ) values (
+    users_seq.nextval, 'admin', 'admin', 'admin', '1111', 'admin@admin.com', 'male', '1987-08-04'
+    );
+    
+insert into users(
+    userno, id, password, name, tel, email, gender, birth
+    ) values (
+    users_seq.nextval, 'user1', 'user', 'user1', '010-1111-1111', 'user1@user.com', 'male', '1987-01-01'
+    );
+    
+insert into users(
+    userno, id, password, name, tel, email, gender, birth
+    ) values (
+    users_seq.nextval, 'user2', 'user', 'user2', '010-2222-2222', 'user2@user.com', 'female', '1987-03-10'
+    );
+    
+insert into users(
+    userno, id, password, name, tel, email, gender, birth
+    ) values (
+    users_seq.nextval, 'user3', 'user', 'user3', '010-3333-3333', 'user3@user.com', 'male', '1987-02-28'
+    );
+
+insert into users(
+    userno, id, password, name, tel, email, gender, birth
+    ) values (
+    users_seq.nextval, 'user4', 'user', 'user4', '010-4444-4444', 'user4@user.com', 'female', '1987-12-30'
+    );
+    
+select * from users;
  */
  
 

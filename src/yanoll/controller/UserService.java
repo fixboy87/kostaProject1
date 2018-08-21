@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.UserDao;
+import yanoll.models.vo.Hotel;
 import yanoll.models.vo.Users;
 
 public class UserService {
@@ -17,13 +18,13 @@ public class UserService {
 	}
 	
 	public int RegisterUserService(HttpServletRequest request) throws Exception {
-		Users user = new Users();
 		
 		HttpSession session = request.getSession();
 		
 		String type = request.getParameter("type");
 		
 		if(type.equals("personal")) { //세션에서 정보를 추출 및 객체를 생성
+			Users user = new Users();
 			
 			user.setEmail((String)session.getAttribute("email"));
 			user.setId((String)session.getAttribute("id"));
@@ -39,7 +40,21 @@ public class UserService {
 			return dao.registerUser(user);
 			
 		} else if (type.equals("enterprise")) {//사업자의 경우
-			return 0;
+			Hotel hotel = new Hotel();
+			
+			hotel.setH_mail((String)session.getAttribute("h_mail"));
+			hotel.setH_id((String)session.getAttribute("h_id"));
+			hotel.setH_password((String)session.getAttribute("h_password"));
+			hotel.setH_phonenum((String)session.getAttribute("h_phonenum"));
+			hotel.setH_name((String)session.getAttribute("h_name"));
+			
+			hotel.setH_location((String)request.getParameter("h_location"));
+			hotel.setH_address((String)request.getParameter("h_address"));
+			hotel.setH_info((String)request.getParameter("h_info"));
+			
+			session.invalidate();
+			return dao.registerUser(hotel);
+			
 		} else {//잘못된 접근
 			return 0;
 		}

@@ -3,7 +3,6 @@
 	
 <%
 	String type = request.getParameter("type");
-	System.out.println("11111111"+type);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,36 +33,27 @@
                         <section class="login-area">
                             <h3>회원가입</h3>
 
-                            <form id="joinMemberPc" action="registerFormAction_2.do" method="post" data-member-form="true" class="form-group form-w410">
+                            <form id="joinMemberPc" action="registerInsert.do" method="post" data-member-form="true" class="form-group form-w410">
 
                                 <fieldset id="joinFieldset">
                                     <legend class="sc-out">회원가입 폼</legend>
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="text" name="email" value="" placeholder="이메일을 입력해주세요." title="아이디(이메일)를 입력" autocomplete="off">
+                                            <input type="text" name="h_location" value="" placeholder="지역을 입력해주세요." title="지역을 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="id" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)" autocomplete="off">
+                                            <input type="text" id="mInput1" name="h_address" placeholder="세부주소를 입력해주세요." title="세부주소 입력" autocomplete="off">
                                         </div>
 
-                                        <div class="inp-txt-member">
-                                            <input type="text" id="mInput2" name="tel" placeholder="전화번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                        <div class="inp-txt-member downExpand">
+                                            <input type="textarea" id="mInput2" name="h_info" placeholder="간단한 소개글을 작성해 주세요." title="소개글을 입력" autocomplete="off">
                                         </div>
 
-                                        <div class="inp-txt-member">
-                                            <input type="password" id="mInput3" name="password" class="inp-password">
-                                            <label class="placeholder-div">비밀번호를 입력하세요(8~20자)</label>
-                                        </div>
-
-                                        <div class="inp-txt-member">
-                                            <input type="password" id="" name="passwdConfirm" class="inp-password">
-                                            <label class="placeholder-div">비밀번호를 한번 더 입력하세요.</label>
-                                        </div>
                                     </div>
                                     <input type="hidden" id="registerType" name="type" value="<%=type%>"/>
-                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">다음</button>
+                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">완료</button>
                                 </fieldset>
                             </form>
                         </section>

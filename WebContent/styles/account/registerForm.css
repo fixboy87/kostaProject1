@@ -1773,3 +1773,7 @@ a.link-txt:hover {
 	display: inline-block;
 	
 }
+
+.downExpand {
+	height: 300px !important;
+}
