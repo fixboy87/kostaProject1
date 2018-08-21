@@ -8,4 +8,9 @@
 		select h_name, h_info, pic_url, h_location from Hotel
 	</select>
 	
+	<select id="hotelSortLocation" resultType="Hotel">
+		select h_name, h_info, pic_url, h_location from Hotel where h_location = #{h_location}
+	</select>
+		
+	
 </mapper>

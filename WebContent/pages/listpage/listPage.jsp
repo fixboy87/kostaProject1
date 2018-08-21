@@ -1,3 +1,4 @@
+<%@page import="yanoll.controller.HotelListActionForm"%>
 <%@page import="java.util.List"%>
 <%@page import="yanoll.models.dao.HotelDao"%>
 <%@page import="yanoll.models.vo.Hotel"%>
@@ -77,6 +78,33 @@
 	margin-left: 85%;
 }
 
+.findButtonCustom {
+	-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#fe435c;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.findButtonCustom:hover {
+	background-color:#eb675e;
+}
+.findButtonCustom:active {
+	position:relative;
+	top:1px;
+}
+
+
 </style>
 
 </head>
@@ -85,6 +113,9 @@
 <div class="super_container">
 <!-- Header -->
 <%@ include file="../sub_page/header_menu.jsp"%>
+<%
+	request.getAttribute("list0");
+%>
 
 		<!-- Menu -->
 
@@ -243,17 +274,23 @@
 			</div>
 			<div class="row filtering_row">
 				<div class="col">
+				<form action="HotelSortLocation.jsp">
 					<div class="sorting_group_1">
 						<ul class="item_sorting">
 							<li>
-								<span class="sorting_text">Filter by</span>
+								<span class="sorting_text">가고 싶은곳</span>
 								<i class="fa fa-angle-down"></i>
 								<ul>
-									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Show All</span></li>
-									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'><span>Name</span></li>
+									<li class="item_sorting_btn"><span>부산</span></li>
+									<li class="item_sorting_btn"><span>광주</span></li>
+									<li class="item_sorting_btn"><span>대구</span></li>
+									<li class="item_sorting_btn"><span>강원도</span></li>
+									<li class="item_sorting_btn"><span>서울</span></li>
+									<li class="item_sorting_btn"><span>제주</span></li>
 								</ul>
+								
 							</li>
+							
 							<li>
 								<span class="sorting_text">Stars</span>
 								<i class="fa fa-angle-down"></i>
@@ -285,13 +322,11 @@
 								</ul>
 							</li>
 						</ul>
+						
 					</div>
+					</form>
+					<a href="#" class="findButtonCustom">Find</a>
 					<div class="sorting_group_2 clearfix">
-						<ul>
-							<li>Airplane X</li>
-							<li>5 stars X</li>
-							<li>Romantic X</li>
-						</ul>
 						<div class="sorting_icons clearfix">
 							<div class="detail_view"><i class="fa fa-bars" aria-hidden="true"></i></div>
 							<div class="box_view"><i class="fa fa-th-large" aria-hidden="true"></i></div>
@@ -302,17 +337,14 @@
 			<div class="row">
 				<div class="col">
 					<div class="items item_grid clearfix">
-
+					<!-- forEach -->
+					<c:forEach var="listH" items="${list}"> 
 						<!-- Item -->
 						<div class="item clearfix rating_5">
-							<div class="item_image"><img src="images/top_1.jpg" alt=""></div>
+							<div class="item_image"><img src="../../images/pages/HYimg/${listH.pic_url}" alt=""></div>
 							<div class="item_content">
-								<div class="item_price">From $890</div>
-								<div class="item_title">Paris, France
-										<c:forEach var="hotel" items="${hotelList.list}">
-											<div>${hotel.contests}</div>
-										</c:forEach>
-									</div>
+								<div class="item_price">${listH.h_location}</div>
+								<div class="item_title">${listH.h_name }</div>
 								<ul>
 									<li>1 person</li>
 									<li>4 nights</li>
@@ -325,80 +357,11 @@
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 								</div>
-								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
+								<div class="item_text">${listH.h_info}</div>
 								<div class="item_more_link"><a href="#">Read More</a></div>
 							</div>
 						</div>
-
-						<!-- Item -->
-						<div class="item clearfix rating_3">
-							<div class="item_image"><img src="images/top_2.jpg" alt=""></div>
-							<div class="item_content">
-								<div class="item_price">From $290</div>
-								<div class="item_title">Cinque Terre</div>
-								<ul>
-									<li>1 person</li>
-									<li>4 nights</li>
-									<li>3 star hotel</li>
-								</ul>
-								<div class="rating rating_3" data-rating="3">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="item clearfix rating_4">
-							<div class="item_image"><img src="images/top_3.jpg" alt=""></div>
-							<div class="item_content">
-								<div class="item_price">From $590</div>
-								<div class="item_title">Italian Riviera</div>
-								<ul>
-									<li>1 person</li>
-									<li>4 nights</li>
-									<li>3 star hotel</li>
-								</ul>
-								<div class="rating rating_4" data-rating="4">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
-							</div>
-						</div>
-
-						<!-- Item -->
-						<div class="item clearfix rating_5">
-							<div class="item_image"><img src="images/top_4.jpg" alt=""></div>
-							<div class="item_content">
-								<div class="item_price">From $490</div>
-								<div class="item_title">Santorini, Greece</div>
-								<ul>
-									<li>1 person</li>
-									<li>4 nights</li>
-									<li>3 star hotel</li>
-								</ul>
-								<div class="rating rating_5" data-rating="5">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-								</div>
-								<div class="item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla lectus nec diam auctor, ut fringilla diam sagittis. Quisque vel est id justo faucibus dapibus id a nibh. Aenean suscipit consequat lacus, sit amet mollis nulla. Morbi sagittis orci id lacus convallis tempus eget sit amet metus.</div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
-							</div>
-						</div>
-
+					</c:forEach> 
 					</div>
 				</div>
 			</div>

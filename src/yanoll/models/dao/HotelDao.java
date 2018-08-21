@@ -32,12 +32,26 @@ public class HotelDao {
 		List<Hotel> list= null;
 		
 		try {
-			list = sqlSession.getMapper(HotelMapper.class).hotelList();
+			list = sqlSession.getMapper(HotelMapper.class).hotelList(); //파라미터 타입 쓴거 써주면됨(mapper 의 parameterType="")
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			sqlSession.close();
+		}
+		
+		return list;
+	}
+	
+	public List<Hotel> SortLocation(){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Hotel> list = null;
+		
+		try {
+			list = sqlSession.getMapper(HotelMapper.class).hotelSortLocation();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		return list;

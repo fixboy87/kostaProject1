@@ -2,7 +2,6 @@ package yanoll.models.service;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 
 import yanoll.models.dao.HotelDao;
 import yanoll.models.vo.Hotel;
@@ -18,6 +17,13 @@ public class HotelService {
 	}
 	public List<Hotel> hotelList() throws Exception{
 	
+		List<Hotel> list = dao.hotel();
+		
+		return list;
+	}
+	
+	public List<Hotel> hotelSortLocation() throws Exception{
+		
 		List<Hotel> list = dao.hotel();
 		
 		return list;
