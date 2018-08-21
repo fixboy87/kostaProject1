@@ -14,11 +14,10 @@ public class RegisterInsertAction implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath("/pages/title.jsp");
-		forward.setRedirect(true);
+		forward.setRedirect(false);
 
 		service.RegisterUserService(request);
 
 		return forward;
 	}
-
 }
