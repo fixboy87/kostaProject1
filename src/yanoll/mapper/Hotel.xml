@@ -5,12 +5,17 @@
 <mapper namespace="yanoll.mapper.HotelMapper">
 	<cache />
 	<select id="hotelList" resultType="Hotel">
-		select h_name, h_info, pic_url, h_location from Hotel
+		select h_no,h_name, h_info, pic_url, h_location,price from Hotel order by h_no
 	</select>
 	
-	<select id="hotelSortLocation" resultType="Hotel">
-		select h_name, h_info, pic_url, h_location from Hotel where h_location = #{h_location}
-	</select>
+	<select id="hotelSortLocation" resultType="Hotel" parameterType="String">
+		select h_no, h_name, h_info, pic_url, h_location,price from Hotel where h_location = #{h_location}
+	</select>  
 		
+	<select id="hotelPriceSelector" resultType="Hotel" parameterType="int">
+		select h_no, h_name, h_info, pic_url, h_location,price from Hotel
+				where price between ${low_price} and ${max_price}
+	</select>	
+	
 	
 </mapper>

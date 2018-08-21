@@ -103,7 +103,18 @@
 	position:relative;
 	top:1px;
 }
-
+#select_box {
+  width: 170px;
+  height:40px;
+  padding: .8em .5em;
+  font-family: inherit;
+  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #999;
+  border-radius: 0px;
+}
 
 </style>
 
@@ -114,7 +125,7 @@
 <!-- Header -->
 <%@ include file="../sub_page/header_menu.jsp"%>
 <%
-	request.getAttribute("list0");
+	/* request.getAttribute("list0"); */
 %>
 
 		<!-- Menu -->
@@ -191,18 +202,20 @@
 											</div>
 											<div class="col-12">
 												<div class="find_form_container">
+												
+													<!-- 가격 폼 -->
 													<form action="#" id="find_form"
 														class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
 
 														<div class="find_item">
-															<div>Destination:</div>
+															<div>:</div>
 															<input type="text" class="destination find_input"
-																required="required" placeholder="Keyword here">
+																required="required" placeholder="Keyword here" name="Destination">
 														</div>
 														
 														<div class="find_item">
 															<div>체크인</div>
-															<input class="dropdown_item_select find_input"   autocomplete="off" type="text" id="firstday" size="9" placeholder="YYYY-MM-DD" >
+															<input class="dropdown_item_select find_input"   autocomplete="off" type="text" id="firstday" size="9" placeholder="YYYY-MM-DD" name="checkIn">
 																<script>
 																	$("#firstday")
 																		.datepicker();
@@ -211,7 +224,7 @@
 														
 														<div class="find_item">
 															<div>체크 아웃</div>									
-															<input class="dropdown_item_select find_input" autocomplete="off" type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
+															<input class="dropdown_item_select find_input" autocomplete="off" type="text" id="secondday" size="9" placeholder="YYYY-MM-DD" name="checkOut">
 																<script>
 																	$("#secondday")
 																		.datepicker();
@@ -231,8 +244,9 @@
 																class="dropdown_item_select find_input">
 															
 														</div>
-														<button class="button find_button">Find</button>
-													
+														<form action="HotelPriceSelector.do">
+															<button class="button find_button">Find</button>
+														</form>
 													</form>
 												</div>
 											</div>
@@ -274,58 +288,21 @@
 			</div>
 			<div class="row filtering_row">
 				<div class="col">
-				<form action="HotelSortLocation.jsp">
-					<div class="sorting_group_1">
-						<ul class="item_sorting">
-							<li>
-								<span class="sorting_text">가고 싶은곳</span>
-								<i class="fa fa-angle-down"></i>
-								<ul>
-									<li class="item_sorting_btn"><span>부산</span></li>
-									<li class="item_sorting_btn"><span>광주</span></li>
-									<li class="item_sorting_btn"><span>대구</span></li>
-									<li class="item_sorting_btn"><span>강원도</span></li>
-									<li class="item_sorting_btn"><span>서울</span></li>
-									<li class="item_sorting_btn"><span>제주</span></li>
-								</ul>
-								
-							</li>
-							
-							<li>
-								<span class="sorting_text">Stars</span>
-								<i class="fa fa-angle-down"></i>
-								<ul>
-									<li class="item_filter_btn" data-filter="*"><span>Show All</span></li>
-									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Ascending</span></li>
-									<li class="item_filter_btn" data-filter=".rating_1"><span>1</span></li>
-									<li class="item_filter_btn" data-filter=".rating_2"><span>2</span></li>
-									<li class="item_filter_btn" data-filter=".rating_3"><span>3</span></li>
-									<li class="item_filter_btn" data-filter=".rating_4"><span>4</span></li>
-									<li class="item_filter_btn" data-filter=".rating_5"><span>5</span></li>
-								</ul>
-							</li>
-							<li>
-								<span class="sorting_text">Price</span>
-								<i class="fa fa-angle-down"></i>
-								<ul>
-									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Default</span></li>
-									<li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-								</ul>
-							</li>
-							<li>
-								<span class="sorting_text">Facility</span>
-								<i class="fa fa-angle-down"></i>
-								<ul>
-									<li><span>Facility</span></li>
-									<li><span>Facility</span></li>
-									<li><span>Facility</span></li>
-								</ul>
-							</li>
-						</ul>
-						
+				<!-- 수정해야지 -->
+					<div class="sorting_group_1" style="float: left; display: inline; ">
+						<form action="HotelSortLocation.do#dirPic">
+							<select id="select_box" name="hotelSelect">
+								<option value="제주">제주</option>									
+								<option value="부산">부산</option>									
+								<option value="강원도">강원도</option>									
+								<option value="서울">서울</option>									
+								<option value="대구">대구</option>									
+								<option value="광주">광주</option>																	
+							</select>
+							<input type="submit" value="Find" style="background:#fe435c; color: white; height: 45px;width: 75px;"/>
+						</form>
 					</div>
-					</form>
-					<a href="#" class="findButtonCustom">Find</a>
+					
 					<div class="sorting_group_2 clearfix">
 						<div class="sorting_icons clearfix">
 							<div class="detail_view"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -341,13 +318,13 @@
 					<c:forEach var="listH" items="${list}"> 
 						<!-- Item -->
 						<div class="item clearfix rating_5">
-							<div class="item_image"><img src="../../images/pages/HYimg/${listH.pic_url}" alt=""></div>
+							<div class="item_image"><a href="HotelDetail.do?${listH.h_no}"><img src="../../images/pages/HYimg/${listH.pic_url}" alt=""></a></div>
 							<div class="item_content">
 								<div class="item_price">${listH.h_location}</div>
 								<div class="item_title">${listH.h_name }</div>
 								<ul>
-									<li>1 person</li>
-									<li>4 nights</li>
+									<li>${listH.price}만원</li>
+									<li>1 nights</li>
 									<li>3 star hotel</li>
 								</ul>
 								<div class="rating rating_5" data-rating="5">

@@ -43,15 +43,35 @@ public class HotelDao {
 		return list;
 	}
 	
-	public List<Hotel> SortLocation(){
+	public List<Hotel> SortLocation(String h_location){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Hotel> list = null;
 		
 		try {
-			list = sqlSession.getMapper(HotelMapper.class).hotelSortLocation();
+			list = sqlSession.getMapper(HotelMapper.class).hotelSortLocation(h_location);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return list;
+	}
+	
+	public List<Hotel> hotelPriceSelector (int low_price , int max_price){
+		
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Hotel>list = null;
+		
+		try {
+			
+			list = sqlSession.getMapper(HotelMapper.class).hotelPriceSelector(low_price, max_price);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
 		}
 		
 		return list;

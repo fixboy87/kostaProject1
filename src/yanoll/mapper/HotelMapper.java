@@ -6,5 +6,6 @@ import yanoll.models.vo.Hotel;
 
 public interface HotelMapper {
 	List<Hotel> hotelList();
-	List<Hotel> hotelSortLocation();
+	List<Hotel> hotelSortLocation(String h_location);
+	List<Hotel> hotelPriceSelector(int low_price , int max_price);
 }
