@@ -445,9 +445,7 @@
 		
 		
 		$auth = $('#auth').attr("val");
-		
-		if($auth !== null) {
-			
+		if(($auth) !== 'null') {
  			$($menu0).removeClass("hidden").addClass("active");
 			$($menu1).removeClass("hidden");
 			$($menu2).removeClass("hidden");
@@ -456,7 +454,9 @@
 			$($menu5).remove();
 			
 		} else {
-			
+			$($menu3).removeClass("hidden");
+			$($menu4).removeClass("hidden");
+			$($menu5).removeClass("hidden");
 		}
 		
 	});

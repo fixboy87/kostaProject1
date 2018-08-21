@@ -13,7 +13,7 @@
 						<div class="logo_container">
 							<div class="logo">
 								<div>L I M E</div>
-								<div>travel agency</div>
+								<div>hotel agency</div>
 								<div class="logo_image"><img src="http://localhost:8081/kostaProject1/images/common/logo.png" alt=""></div>
 							</div>
 						</div>
@@ -21,12 +21,12 @@
 						<!-- Main Navigation -->
 						<nav class="main_nav ml-auto">
 							<ul class="main_nav_list">
-								<li class="main_nav_item"><a href="#">마이페이지</a></li>
-								<li class="main_nav_item"><a href="#">예약내역</a></li>
-								<li class="main_nav_item"><a href="#">로그아웃</a></li>
-								<li class="main_nav_item active"><a href="#">홈</a></li>
-								<li class="main_nav_item"><a href="#">로그인</a></li>
-								<li class="main_nav_item"><a href="#">회원가입</a></li>
+								<li class="main_nav_item hidden"><a href="#">마이페이지</a></li>
+								<li class="main_nav_item hidden"><a href="#">예약내역</a></li>
+								<li class="main_nav_item hidden"><a href="#">로그아웃</a></li>
+								<li class="main_nav_item hidden active"><a href="#">홈</a></li>
+								<li class="main_nav_item hidden"><a href="#">로그인</a></li>
+								<li class="main_nav_item hidden"><a href="#">회원가입</a></li>
 							</ul>
 						</nav>
 
