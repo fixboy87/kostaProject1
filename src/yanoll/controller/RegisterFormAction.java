@@ -17,9 +17,7 @@ public class RegisterFormAction implements Action {
 		} else if (type.equals("enterprise")) {
 			forward.setPath("/pages/account/registerForm.jsp?type=enterprise");
 		} 
-		
 		return forward;
-	
 	}
 
 }
