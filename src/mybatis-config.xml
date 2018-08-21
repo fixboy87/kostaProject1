@@ -16,6 +16,7 @@
 	     <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/>
 	     <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search"/>
 	     <typeAlias type="yanoll.models.vo.Users" alias="Users"/>
+	     
 	</typeAliases>
 	
 	<environments default="development">
@@ -33,6 +34,7 @@
 		<mapper resource="yanoll/mapper/Review_Board.xml"/>
 		<mapper resource="yanoll/mapper/Enquire_Board.xml"/>
 		<mapper resource="yanoll/mapper/Users.xml"/>
+		<mapper resource="yanoll/mapper/ManagerBoard.xml"/>
 	</mappers>
 	
 </configuration>

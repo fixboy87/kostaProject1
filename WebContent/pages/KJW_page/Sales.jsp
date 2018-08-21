@@ -11,17 +11,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="../../styles/common/bootstrap4/bootstrap.min.css">
-<link
-	href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="../../styles/common/elements_styles.css">
-<link rel="stylesheet" type="text/css"
-	href="../../styles/common/elements_responsive.css">
-<link rel="stylesheet"
-	href="../../styles/common/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../styles/KJW_Style/bootstrap4/bootstrap.min.css">
+<link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../../styles/KJW_Style/elements_styles.css">
+<link rel="stylesheet" type="text/css" href="../../styles/KJW_Style/elements_responsive.css">
+<link rel="stylesheet" href="../../styles/KJW_Style/bootstrap4/bootstrap.min.css">
 
 <!-- 추가. 아래 3줄  -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

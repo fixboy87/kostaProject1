@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<mapper namespace="kosta.mapper.ManagerBoardMapper">
+	<cache />
+	
+	<insert id="insertBoard" parameterType="Users">	
+	insert into users values (
+		#{id}, #{name}, #{tel}, #{start_day}, #{end_day}, #{booking_price};
+	)
+	</insert>
+	
+	<select id="listBoard" resultType="Users" parameterType="User">
+			select u.id, u.name, u.tel, b.start_day, b.end_day, b.booking_price
+				from booking b, users u
+				where b.seq = u.seq
+				and p_condition = 1;
+		<if test="area !=null">
+			<where>
+			<foreach collection="area" item="item" separator="OR" open="(" close=")">
+				${item} LIKE #{searchKey}
+			</foreach>
+			</where>
+		</if>
+	</select>
+</mapper>
