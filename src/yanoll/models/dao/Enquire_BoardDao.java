@@ -62,6 +62,8 @@ public class Enquire_BoardDao {
 			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startRow , 10), search);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlSession.close();
 		}
 		
 		return list;
@@ -89,9 +91,32 @@ public class Enquire_BoardDao {
 			board= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireDetail(e_seq);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlSession.close();
 		}
 		return board;
 	}
+	
+	public int deleteEnquireBoard(int e_seq){
+		SqlSession session= getSqlSessionFactory().openSession();
+		int re=-1;
+		
+		try {
+			re= session.getMapper(Enquire_BoardMapper.class).deleteEnquire(e_seq);
+			System.out.println(re);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+	
 	public int insertEnquireReply(Enquire_Reply reply){
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		int re= -1;
@@ -106,20 +131,43 @@ public class Enquire_BoardDao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlsession.close();
 		}
 		
 		return re;
 	}
-	public Enquire_Reply EnqReplyList(int e_seq){
+	public List<Enquire_Reply> EnqReplyList(int e_seq){
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
-		Enquire_Reply reply = null;
+		List<Enquire_Reply> reply = null;
 		
 		try {
 			reply = sqlsession.getMapper(Enquire_BoardMapper.class).EnqReplyList(e_seq);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlsession.close();
 		}
 		return reply;
+	}
+	
+	public int deleteEnqReply(int e_seq){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {
+			re= session.getMapper(Enquire_BoardMapper.class).deleteEnquireReply(e_seq);
+			
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
 	}
 	
 

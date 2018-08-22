@@ -41,6 +41,7 @@ public class GngEnquireService {
 		
 	}
 	
+	
 	public Enquire_List listBoardService(int requestPage , HttpServletRequest request) throws Exception {
 		HttpSession session= request.getSession();
 		Enquire_Search search = new Enquire_Search();
@@ -79,7 +80,7 @@ public class GngEnquireService {
 	
 	public int insertEnqReply(HttpServletRequest request){
 		Enquire_Reply reply = new Enquire_Reply();
-		HttpSession Session = request.getSession();
+		/*HttpSession Session = request.getSession();*/
 		
 	
 		reply.setE_seq(Integer.parseInt(request.getParameter("e_seq")));
@@ -90,5 +91,5 @@ public class GngEnquireService {
 	}
 	
 	
-
+	
 }

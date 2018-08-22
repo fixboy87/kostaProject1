@@ -1,37 +1,34 @@
 package yanoll.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import yanoll.models.dao.Enquire_BoardDao;
 import yanoll.models.service.GngEnquireService;
 import yanoll.models.vo.Enquire_Board;
-import yanoll.models.vo.Enquire_Reply;
 
-public class GngReplyInsertAction implements Action {
+public class GngDeleteEnquire implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		GngEnquireService service = GngEnquireService.getinstance();
-		request.setCharacterEncoding("utf-8");
-		service.insertEnqReply(request);
-		
-		
+        
 		String str = request.getParameter("e_seq");
-		int e_seq = 0;
-		if (str != null) {
-			e_seq = Integer.parseInt(str);
-
+		int e_seq=0;
+		if(str != null){
+			e_seq=Integer.parseInt(str);
 		}
-		
+		System.out.println(e_seq);
 		Enquire_BoardDao dao= Enquire_BoardDao.getinstance();
-		Enquire_Board board= dao.EnquireDetail(e_seq);
-		request.setAttribute("board", board);
-		
+		int re=0;
+		re= dao.deleteEnquireBoard(e_seq);
+		System.out.println(re);
+
+
 		ActionForward forward = new ActionForward();
 		forward.setPath("GngListAction.do");
-		forward.setRedirect(true);
+		forward.setRedirect(true);  //고침
 		
 		return forward;
 	}
