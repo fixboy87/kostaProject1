@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -438,52 +441,7 @@
 <!--  메뉴이펙트 스크립트 -->
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
 <script type="text/javascript">
-/* $(document).ready(function() {
-	$type = $('#type').attr("val");
 	
-	  if($type !='undefined'){
-         /*  alert("라디오버튼의 값은  ::"+$type); */
-/*    	  alert("라디오버튼의 값은  ::"+$type);
-          return $type;
-      }else{
-         /*  alert("라디오 버튼을 선택하세요"); */
-      }
-	
-/*	alert($type);
-	if(($type) === 'personal') {
-		$('find_title').html().replaceWith("개인회원으로 로그인 하셨습니다.");
-	} else if(($type) === 'enterprise') {
-		$('find_title').html().replaceWith("사업자회원으로 로그인 하셨습니다.");
-	}
-}); */
-
-
-
-/* 	var $menu0 = $('ul.main_nav_list li:eq(0)');
-	var $menu1 = $('ul.main_nav_list li:eq(1)');
-	var $menu2 = $('ul.main_nav_list li:eq(2)');
-	var $menu3 = $('ul.main_nav_list li:eq(3)');
-	var $menu4 = $('ul.main_nav_list li:eq(4)');
-	var $menu5 = $('ul.main_nav_list li:eq(5)');
-	
-	
-	$auth = $('#auth').attr("val");
-	if(($auth) !== 'null') {
-		$($menu0).removeClass("hidden").addClass("active");
-		$($menu1).removeClass("hidden");
-		$($menu2).removeClass("hidden");
-		$($menu3).remove().removeClass("active");
-		$($menu4).remove();
-		$($menu5).remove();
-		
-	} else {
-		$($menu0).removeClass("active");
-		$($menu3).removeClass("hidden").addClass("active");
-		$($menu4).removeClass("hidden");
-		$($menu5).removeClass("hidden");
-		
-	} */
-
 </script>
 </body>
 </html>

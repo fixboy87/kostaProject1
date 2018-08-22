@@ -10,6 +10,8 @@ public class RegisterInsertAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
 		UserService service = UserService.getInstance(); //service 인자를 할당받음
 		
 		ActionForward forward = new ActionForward();

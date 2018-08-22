@@ -19,7 +19,7 @@ public class UserService {
 	}
 	
 	public int RegisterUserService(HttpServletRequest request) throws Exception {
-		
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		
 		String type = request.getParameter("type");
@@ -62,11 +62,10 @@ public class UserService {
 	}
 
 	public boolean loginUserService(HttpServletRequest request) throws Exception{
-		
+		request.setCharacterEncoding("utf-8");
 		String userId = request.getParameter("id");
 		String userPassword = request.getParameter("password");
 		String loginType = request.getParameter("loginType");
-		System.out.println(loginType);
 		HttpSession session = request.getSession();
 		
 		Login login = new Login();
@@ -83,6 +82,7 @@ public class UserService {
 			//리다이렉트
 		}
 		if(!name.isEmpty()){
+			System.out.println(name);
 			session.setAttribute("id", userId);
 			session.setAttribute("type", loginType);
 			session.setAttribute("name", name);

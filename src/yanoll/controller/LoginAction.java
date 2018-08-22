@@ -7,14 +7,16 @@ public class LoginAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
 		ActionForward forward = new ActionForward();
 		
 		UserService service = UserService.getInstance();
 		boolean result = service.loginUserService(request);
 		
 		if(result == true) {
-			forward.setPath("HotelListActionForm.do");
-		} else {
+			forward.setPath("titlePage.do");
+			} else {
 			forward.setPath("loginForm.do");
 		}
 		forward.setRedirect(true);

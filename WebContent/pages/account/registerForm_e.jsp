@@ -3,6 +3,7 @@
 	
 <%
 	String type = request.getParameter("type");
+	request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -23,6 +24,11 @@
 </head>
 
 <body>
+
+	<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
+	
 	<div class="super_container margin_top_control">
 	<%@ include file="../../pages/sub_page/header_menu.jsp"%>
 

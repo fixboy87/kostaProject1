@@ -7,6 +7,7 @@ public class RegisterFormAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
 		
 		String type = request.getParameter("type");
 		

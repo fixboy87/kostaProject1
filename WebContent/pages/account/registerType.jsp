@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html lang="kr">
 <head>
@@ -22,6 +25,10 @@
 </head>
 <body>
 
+	<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
+	
 <div class="super_container margin_top_control">
 
 <%@ include file="../../pages/sub_page/header_menu.jsp"%>

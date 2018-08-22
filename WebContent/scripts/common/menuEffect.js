@@ -15,7 +15,6 @@ $(document).ready(function(){
    
    
    $id = $('#uid').attr("val");
-   alert("111111111111111");
    if(($id) !== 'null') {
       $($menu0).removeClass("hidden").addClass("active");
       $($menu1).removeClass("hidden");
