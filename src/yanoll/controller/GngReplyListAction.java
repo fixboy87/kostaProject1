@@ -17,6 +17,7 @@ public class GngReplyListAction implements Action {
 	   
 	    
 	    String str= request.getParameter("e_seq");
+	    System.out.println(str);
 	    int e_seq=0;
 	    if(str !=null){
 	    	e_seq= Integer.parseInt(str);

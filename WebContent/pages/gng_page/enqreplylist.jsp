@@ -53,11 +53,14 @@
     <tr>
     <td>${Enquire_Reply.r_contents}</td>
     <td>${Enquire_Reply.e_seq}</td>
-    </tr>  
+    </tr> 
+    <a class="reply" href="GngDeleteEnqReply.do?e_seq=${Enquire_Reply.e_seq}">[답장삭제]</a> <!-- 배열에 있는 상태여서 foreach로 빼야한다.  -->
+    <a class="reply_update" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">[답장수정]</a>
     </c:forEach>
+     
     </table>
     
-    <a class="reply" href="GngDeleteEnqReply.do?e_seq=${enquire_reply.e_seq}">[답장삭제]</a>
+    
 
 																		
 							

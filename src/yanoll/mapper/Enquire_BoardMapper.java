@@ -20,6 +20,7 @@ public interface Enquire_BoardMapper {  //kosta.mapper 폴더안에 인터페이
           List<Enquire_Reply> EnqReplyList(int e_seq);
           int deleteEnquire(int e_seq);
           int deleteEnquireReply(int e_seq);
+          int updateEnquireReply(int e_seq);
 
 
 
