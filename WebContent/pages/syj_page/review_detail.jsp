@@ -82,106 +82,42 @@ h1 {
 
 	<!-- Contact -->
 	<%-- form의 textarea에 summernote 적용 --%>
-	<secion id="wrap">
-		<section id="first">
-	<h1>후기 게시판 목록</h1>
-	
+	<h1>후기 디테일</h1>
+	<div>
 		<div>
 			<%--로그인체크 <%@ include file="/home/sidebar.jsp"%> --%>
 		</div>
 		<!-- <div class="w3-margin-top w3-main"	> -->
-		<div class="contact_form_container" id="list_container">
-
-			<header class="list"> 
-				<input type="button" value=" 전체보기 ">
-				<input type="button" value=" 포토 ">
-			<form action="review_list.jsp">
-				<select name="선택">
-					<option value="작성자">작성자</option>
-					<option value="제목">제목</option>
-					<option value="제목+내용">제목+내용</option>
-					<option value="호텔명">호텔명</option>
-				</select> <input type="text" size="15"> <input type="submit"
-					value="검색">
-			</form>
-			<select name="정렬">
-				<option value="최신순">최신순</option>
-				<option value="평점순">평점순</option>
-				<option value="최신순">최신순</option>
-			</select>
-
-		<div class="table_container">
-			<c:forEach var="board" items="${list}">
-			<table class="list_table" width="700" >
-				<tr>
-					<td class="r_no">${board.r_no }</td>
-					<td rowspan="4" class="img_td">
-						<c:if test="${board.r_fname != null }">
-								<c:set var="head" value="${fn:substring(board.r_fname, 0, fn:length(board.r_fname)-4) }"></c:set>
-								<c:set var="pattern" value="${fn:substring(board.r_fname, 	fn:length(head) +1, fn:length(board.r_fname)) }"></c:set>
-							<c:choose>
-								<c:when test="${pattern == 'jpg' || pattern == 'gif' || pattern == 'JPG' || pattern == 'GIF' }">
-									<img src="images/pages/review_main_img/${head }_small.${pattern}">
-								</c:when>
-								<c:otherwise>
-									<c:out value="NO IMAGE"></c:out>
-								</c:otherwise>
-							</c:choose>
-						</c:if>
-						<c:if test="${board.r_fname==null }">
-									<c:out value="NO IMAGE"></c:out>
-						</c:if>
-					</td>					
-					<td class="table_top"><a href="review_deatailAction.do?r_no=${board.r_no }">제목</a></td>
-					<td colspan="3" class="table_top">${board.r_title}</td>
-					<td class="table_top">작성자</td>
-					<td colspan="2" class="table_edge1">${board.id}</td>
-				</tr>
-				<tr>
-					<td>평점</td>
-					<td colspan="3">${board.r_grade}</td>
-					<td>등록일</td>
-					<td class="table_right">
-						<fmt:parseDate var="dateString" value="${board.r_redate}" pattern="yyyy-MM-dd"/>
-						<fmt:formatDate value="${dateString}" pattern="yy/MM/dd"/> 
-					</td>
-				</tr>
-				<tr class="table_bottom">
-					<td>호텔명</td>
-					<td>${board.hotle_name }</td>
-					<td>숙박일수</td>
-					<td>${board.number_of_stay_days }</td>
-					<td>조회수</td>
-					<td colspan="2" class="table_right">${board.r_hitcount }</td>
-				</tr>
-			</table>
-				</c:forEach>
-				</div>
-
-
-			<a href="review_insertFormAction.do">후기 작성</a> </header>
-	</section>
-	<div id="sidebar">
-
-		<h1>옵션선택</h1>
-		<select name="옵션1(지역별)" class="option1">
-			<option>옵션1(지역별)</option>
-			<option value="서울">서울</option>
-			<option value="부산">부산</option>
-			<option value="광주">광주</option>
-			<option value="대구">대구</option>
-			<option value="강원도">강원도</option>
-			<option value="제주도">제주도</option>
-		</select> <select name="옵션2(지역별)" class="option2">
-			<option>옵션2(지역별)</option>
-		</select>
-		<div id="space"></div>
-	</div>
-
-
-
-	</secion>
-
+		<div class="table_container" align="center">
+			<table class="tg" width="800" align="center">
+				  <tr>
+				    <td class="tg-0pky">제목</td>
+				    <td class="tg-0pky" colspan="3">${board.r_title}</td>
+				  </tr>
+				  <tr>
+				    <td class="tg-0pky">호텔명</td>
+				    <td class="tg-0pky">${board.hotle_name}</td>
+				    <td class="tg-0pky">숙박일수</td>
+				    <td class="tg-0pky">${board.number_of_stay_days}일</td>
+				  </tr>
+				  <tr>
+				    <td class="tg-0pky">${board.r_grade}</td>
+				    <td class="tg-0pky">${board.id}</td>
+				    <td class="tg-0pky" colspan="2">
+				    	<fmt:parseDate var="dateString" value="${board.r_redate }" pattern="yyyy-MM-dd"></fmt:parseDate>
+				   		<fmt:formatDate value="${dateString }" pattern="yy-MM-dd"/>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td class="tg-0pky" colspan="4">${board.r_content}</td>
+				  </tr>
+			</table>	
+			<a >수정</a>
+			<a href="review_deleteAction.do?r_no=${board.r_no}">삭제</a><br>
+			<a href="review_list.do">목록</a>
+		</div>
+		
+		
 	<%@include file="../sub_page/footer.html"%>
 </body>
 </html>

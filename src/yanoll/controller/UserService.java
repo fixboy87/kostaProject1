@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.UserDao;
 import yanoll.models.vo.Hotel;
+import yanoll.models.vo.Login;
 import yanoll.models.vo.Users;
 
 public class UserService {
@@ -65,20 +66,26 @@ public class UserService {
 		String userId = request.getParameter("id");
 		String userPassword = request.getParameter("password");
 		String loginType = request.getParameter("loginType");
+		System.out.println(loginType);
 		HttpSession session = request.getSession();
 		
-		int re = 0;
+		Login login = new Login();
+		String name = "";
+		
+		login.setId(userId);
+		login.setPassword(userPassword);
 		
 		if(loginType.equals("personal")) {
-			re = dao.loginUser(userId, userPassword);
+			name = dao.loginUser_p(login);
 		} else if(loginType.equals("enterprise")) {
-			re = dao.loginHotel(userId, userPassword);
+			name = dao.loginHotel_e(login);
 		} else {
 			//리다이렉트
 		}
-		if(re == 0){
+		if(!name.isEmpty()){
 			session.setAttribute("id", userId);
 			session.setAttribute("type", loginType);
+			session.setAttribute("name", name);
 			return true; //성공
 		} else {
 			return false; //실패

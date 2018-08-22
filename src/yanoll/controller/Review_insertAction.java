@@ -3,21 +3,23 @@ package yanoll.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LoginAction implements Action {
+import yanoll.models.service.ReviewService;
+
+public class Review_insertAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		ReviewService service = ReviewService.getInstance();
+		service.insertReviewService(request);
+		
 		ActionForward forward = new ActionForward();
 		
-		UserService service = UserService.getInstance();
-		boolean result = service.loginUserService(request);
-		
-		if(result == true) {
-			forward.setPath("HotelListActionForm.do");
-		} else {
-			forward.setPath("loginForm.do");
-		}
 		forward.setRedirect(true);
+		forward.setPath("review_list.do");
+		
+		
 		return forward;
 	}
+
 }

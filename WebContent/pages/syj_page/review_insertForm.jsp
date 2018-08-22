@@ -1,3 +1,4 @@
+<%@page import="yanoll.models.vo.Review_Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -75,7 +76,17 @@ $(function() {
 });
 
 </script>
-
+<%
+	
+	Review_Board board = new Review_Board();
+	board.setid("syj85");
+	board.sethotle_name("롯데시티호텔");
+	board.setNumber_of_stay_days(1);
+	board.setUser_no(1);
+	board.setP_no(1);
+	
+	request.setAttribute("board", board);
+%>
 
 </head>
 <body>
@@ -92,24 +103,29 @@ $(function() {
 		
 		<!-- <div class="w3-margin-top w3-main"	> -->
 		<div class="contact_form_container">
-			<form action="insertReviewAction.do" method="post"  id="contact_form" class="clearfix">
+			<form action="review_insertAction.do" method="post"  id="contact_form" class="clearfix" enctype="multipart/form-data">
 			
 				<%-- <div class="w3-center w3-text-white w3-round">
 					<h3 style="text-transform: uppercase">${ param.section }</h3>
 				</div>  --%>
 				
 				<div class="contact_set_container">
-					작성자  <a id="contact_set" class="contact_input contact_input_subject" name="id">작성자</a><br>
+				<input type="hidden" name="p_no" value="${board.p_no}">
+				<input type="hidden" name="user_no" value="${board.user_no}">
+					작성자  <a id="contact_set" class="contact_input contact_input_subject" >${board.id}</a><br>
+								<input type="hidden" name="id" value="${board.id}">
 				</div>
 				
 				<div class="contact_set_container">
-					호텔명 <a id="contact_set" class="contact_input contact_input_subject">그랜드 하얏트 서울</a>  
-					숙박일수 <a id="contact_set" class="contact_input contact_input_subject">3일</a><br>
+				<input type="hidden" name="number_of_stay_days" value="${board.number_of_stay_days}">
+				<input type="hidden" name="hotle_name" value="${board.hotle_name}">
+					호텔명 <a id="contact_set" class="contact_input contact_input_subject" >${board.hotle_name}</a>  
+					숙박일수 <a id="contact_set" class="contact_input contact_input_subject">${board.number_of_stay_days}일</a><br>
 				</div>
 				
 				제목  <input id="contact_input_title" class="contact_input contact_input_subject" type="text" name="r_title" placeholder="제목"><br>
 				평점 <div class="rating-stars block" id="more-rating">
-						<input type="hidden" readonly="readonly" class="rating-value" name="rating-stars-value" id="rating-stars-value">
+						<input type="hidden" readonly="readonly" class="rating-value" name="r_grade"  id="rating-stars-value">
 						<div class="rating-stars-container">
 						  <div class="rating-star">
 						      <i class="fa fa-star"></i>
@@ -131,12 +147,12 @@ $(function() {
 				이미지 첨부 <input  id="contact_input_img" class="contact_input contact_input_subject" type="file" name="r_fname" placeholder="이미지를 첨부해주세요."><br>
 								
 				<div>
-					<textarea name="board_content" id="content"></textarea>
+					<!-- <textarea name=" r_content" ></textarea> -->
+					<textarea name="r_content" id="content"></textarea>
 				</div>
 				
 				<div class="select_button" align="center">
 					<input type="hidden" name="section" value="${ param.section }">
-					<input type="hidden" name="id" value="${ id }">
 					<input type="submit" value="작성" class="w3-button w3-white w3-round-small"> &nbsp;
 					<input type="button" value="취소" class="w3-button w3-white w3-round-small" onclick="history.go(-1)">
 				</div>

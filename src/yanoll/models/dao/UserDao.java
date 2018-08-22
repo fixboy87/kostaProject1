@@ -19,6 +19,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import yanoll.mapper.UserMapper;
 import yanoll.models.vo.Hotel;
+import yanoll.models.vo.Login;
 import yanoll.models.vo.Users;
 
 public class UserDao {
@@ -96,122 +97,35 @@ public class UserDao {
 	}
 	
 	
-	/*public int registerUser(Hotel hotel) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String user = "kosta186";
-		String password = "1234";
-		String sql = "insert into hotel values ( "
-				+ "hotel_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; // ? = 커맨드 객체
-		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
+	public String loginUser_p(Login login) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		String name = "";
 		
 		try {
-			// 1. JDBC 드라이버 로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			// 2. Connection 객체 생성 (DB 연결)
-			conn = DriverManager.getConnection(url, user, password);
-			
-			// 3. PrepareStatement 객체생성
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, hotel.getH_name());
-			pstmt.setString(2, hotel.getH_phonenum());
-			pstmt.setString(3, hotel.getH_mail());
-			pstmt.setString(4, hotel.getH_address());
-			pstmt.setInt(5, hotel.getRoom_count());
-			pstmt.setString(6, hotel.getH_id());
-			pstmt.setString(7, hotel.getH_password());
-			pstmt.setInt(8, hotel.getH_profit());
-			pstmt.setInt(9, hotel.getPrice());
-			pstmt.setString(10, hotel.getH_info());
-			pstmt.setString(11, hotel.getPic_url());
-			pstmt.setString(12, hotel.getH_location());
-			
-			// 4. ResultSet 객체생성
-			re = pstmt.executeUpdate();
-			
+			name = sqlSession.getMapper(UserMapper.class).loginUser_p(login);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			try {
-				pstmt.close();
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			
+		} finally {
+			sqlSession.close();
 		}
-		return re;
-		
-	}*/
-
-
-	public int loginUser(String userId, String userPass) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
-
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String user = "kosta186";
-		String password = "1234";
-		String sql = "select password from users where id= ( ? )"; // ? = 커맨드 객체
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, password);
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userId);
-
-			rs = pstmt.executeQuery();
-			rs.next();
-			if(userPass.equals(rs.getString("password"))) {
-				re = 0;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println(re);
-		return re;
-	}
-
-
-	public int loginHotel(String h_id, String h_password) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
-		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
-
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String user = "kosta186";
-		String password = "1234";
-		String sql = "select h_password from hotel where h_id= ( ? )"; // ? = 커맨드 객체
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, user, password);
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, h_id);
-
-			rs = pstmt.executeQuery();
-			rs.next();
-			if(h_password.equals(rs.getString("h_password"))) {
-				re = 0;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println(re);
-		return re;
+		return name;
 	}
 	
 	
-
+	public String loginHotel_e(Login login) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		String name = "";
+		
+		try {
+			name = sqlSession.getMapper(UserMapper.class).loginUser_e(login);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return name;
+	}
+	
 
 
 }

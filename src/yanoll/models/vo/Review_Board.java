@@ -1,16 +1,17 @@
 package yanoll.models.vo;
 
+import java.io.Serializable;
 
-public class Review_Board {
+public class Review_Board implements Serializable {
 	private int r_no;
 	private String r_title;
 	private int r_grade;
 	private String r_content;
 	private String r_redate;
 	private int r_hitcount;
-	private String r_fid;
+	private String r_fname ;
 	private int p_no;
-	private String hotle_id;
+	private String hotle_name;
 	private int number_of_stay_days;
 	private int user_no;
 	private String id;
@@ -21,7 +22,7 @@ public class Review_Board {
 	}
 
 	public Review_Board(int r_no, String r_title, int r_grade, String r_content, String r_redate, int r_hitcount,
-			String r_fid, int p_no, String hotle_id, int number_of_stay_days, int user_no, String id) {
+			String r_fname , int p_no, String hotle_name, int number_of_stay_days, int user_no, String id) {
 		super();
 		this.r_no = r_no;
 		this.r_title = r_title;
@@ -29,9 +30,9 @@ public class Review_Board {
 		this.r_content = r_content;
 		this.r_redate = r_redate;
 		this.r_hitcount = r_hitcount;
-		this.r_fid = r_fid;
+		this.r_fname  = r_fname ;
 		this.p_no = p_no;
-		this.hotle_id = hotle_id;
+		this.hotle_name = hotle_name;
 		this.number_of_stay_days = number_of_stay_days;
 		this.user_no = user_no;
 		this.id = id;
@@ -85,12 +86,12 @@ public class Review_Board {
 		this.r_hitcount = r_hitcount;
 	}
 
-	public String getR_fid() {
-		return r_fid;
+	public String getr_fname () {
+		return r_fname ;
 	}
 
-	public void setR_fid(String r_fid) {
-		this.r_fid = r_fid;
+	public void setr_fname (String r_fname ) {
+		this.r_fname  = r_fname ;
 	}
 
 	public int getP_no() {
@@ -101,12 +102,12 @@ public class Review_Board {
 		this.p_no = p_no;
 	}
 
-	public String getHotle_id() {
-		return hotle_id;
+	public String gethotle_name() {
+		return hotle_name;
 	}
 
-	public void setHotle_id(String hotle_id) {
-		this.hotle_id = hotle_id;
+	public void sethotle_name(String hotle_name) {
+		this.hotle_name = hotle_name;
 	}
 
 	public int getNumber_of_stay_days() {
@@ -131,6 +132,14 @@ public class Review_Board {
 
 	public void setid(String id) {
 		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Review_Board [r_no=" + r_no + ", r_title=" + r_title + ", r_grade=" + r_grade + ", r_content="
+				+ r_content + ", r_redate=" + r_redate + ", r_hitcount=" + r_hitcount + ", r_fname=" + r_fname
+				+ ", p_no=" + p_no + ", hotle_name=" + hotle_name + ", number_of_stay_days=" + number_of_stay_days
+				+ ", user_no=" + user_no + ", id=" + id + "]";
 	}
 	
 	

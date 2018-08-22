@@ -25,8 +25,9 @@
 
 <%@ include file="sub_page/header_menu.jsp"%>
 
-	<input type="hidden" id="auth" name="auth" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
 	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
 	<!-- Home -->
 
 	<div class="home">
@@ -437,15 +438,26 @@
 <!--  메뉴이펙트 스크립트 -->
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
 <script type="text/javascript">
-$(document).onLoad(function() {
+/* $(document).ready(function() {
 	$type = $('#type').attr("val");
-	alert($type);
+	
+	  if($type !='undefined'){
+         /*  alert("라디오버튼의 값은  ::"+$type); */
+/*    	  alert("라디오버튼의 값은  ::"+$type);
+          return $type;
+      }else{
+         /*  alert("라디오 버튼을 선택하세요"); */
+      }
+	
+/*	alert($type);
 	if(($type) === 'personal') {
 		$('find_title').html().replaceWith("개인회원으로 로그인 하셨습니다.");
 	} else if(($type) === 'enterprise') {
 		$('find_title').html().replaceWith("사업자회원으로 로그인 하셨습니다.");
 	}
-})
+}); */
+
+
 
 /* 	var $menu0 = $('ul.main_nav_list li:eq(0)');
 	var $menu1 = $('ul.main_nav_list li:eq(1)');
