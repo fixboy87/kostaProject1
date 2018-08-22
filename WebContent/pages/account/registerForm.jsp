@@ -36,6 +36,8 @@
 	 var f = document.fmt;  // 이문서의 fmt(아래 form테그중 name이 fmt인 태그)를 f에 넣고
 	
 	 var password = null;
+	 var passwdConfirm = null;
+	 //메소드체인
 	//이메일
 	if(! emailCheck.test(f.email.value)){ // 
 		alert("메일양식이 잘못됐습니다. 다시 입력해주세요");
@@ -68,16 +70,18 @@
 		return false; 
 	}else{
 		password=(f.password.value);
-		alert(password);
-		alert("꾸에에엑");
 		return false;
 	}
-	 if(password.equals(f.passwdConfirm.value)){
-		 alert("입력하신 패스워드가 서로 다릅니다.");
-	}else{
-		
+
+	
+	passwdConfirm=(f.passwdConfirm.value);
+	alert(passwdConfirm);
+	 
+	
+	if(!password.equals(passwdConfirm)){
+		alert("입력하신 패스워드가 서로 다릅니다.");
 		return false;
-	}	
+	}
 } 
     
  
