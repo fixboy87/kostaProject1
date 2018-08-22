@@ -3,6 +3,8 @@ package yanoll.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import yanoll.models.service.UserService;
+
 public class ManagementAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		UserService service = UserService.getInstance();

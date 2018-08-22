@@ -1,4 +1,4 @@
-package yanoll.controller;
+package yanoll.models.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
