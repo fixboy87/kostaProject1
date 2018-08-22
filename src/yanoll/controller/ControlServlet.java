@@ -156,6 +156,7 @@ public class ControlServlet extends HttpServlet {
 			action = new Review_detailAction();
 			try {
 				forward = action.execute(request, response);
+			
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

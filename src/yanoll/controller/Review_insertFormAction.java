@@ -9,7 +9,7 @@ public class Review_insertFormAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("review_insertForm.jsp");
+		forward.setPath("/pages/syj_page/review_insertForm.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}

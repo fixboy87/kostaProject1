@@ -45,7 +45,8 @@ $(function() {
 				location.href="review_detailAction.do?r_no="+r_no;
 			 
 				})
-
+		
+	
 		
 			
 });

@@ -69,6 +69,7 @@
 							</div>
 							<button class="button find_button">Find</button>
 						</form>
+						<a href="review_list.do">후기 리스트 이동</a>
 					</div>
 				</div>
 			</div>
