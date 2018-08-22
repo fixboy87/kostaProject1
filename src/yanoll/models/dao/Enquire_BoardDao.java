@@ -169,6 +169,24 @@ public class Enquire_BoardDao {
 		}
 		return re;
 	}
+	public int updateRnqReply(int e_seq){
+		SqlSession session= getSqlSessionFactory().openSession();
+		int re=-1;
+		
+		try {
+			re= session.getMapper(Enquire_BoardMapper.class).updateEnquireReply(e_seq);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
+	}
 	
 
 }

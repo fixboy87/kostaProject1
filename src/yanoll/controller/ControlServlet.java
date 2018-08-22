@@ -208,14 +208,28 @@ public class ControlServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else if(command.equals("GngDeleteEnqReply.do")){
+        } else if(command.equals("GngDeleteEnqReply.do")){
             action = new GngDeleteEnqReply();
             try {
                 forward = action.execute(request, response);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+        } else if(command.equals("GngUpdateEnqReplyForm.do")){
+            action = new GngUpdateEnqReplyForm();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if(command.equals("GngUpdateEnqReplyAction.do")){
+            action = new GngUpdateEnqReplyAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } 
     	
     	
     	
