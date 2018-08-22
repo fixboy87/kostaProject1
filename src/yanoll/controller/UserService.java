@@ -66,6 +66,7 @@ public class UserService {
 		String userId = request.getParameter("id");
 		String userPassword = request.getParameter("password");
 		String loginType = request.getParameter("loginType");
+		System.out.println(loginType);
 		HttpSession session = request.getSession();
 		
 		Login login = new Login();

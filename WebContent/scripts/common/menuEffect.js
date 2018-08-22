@@ -14,8 +14,9 @@ $(document).ready(function(){
    var $menu5 = $('ul.main_nav_list li:eq(5)');
    
    
-   $auth = $('#auth').attr("val");
-   if(($auth) !== 'null') {
+   $id = $('#uid').attr("val");
+   alert("111111111111111");
+   if(($id) !== 'null') {
       $($menu0).removeClass("hidden").addClass("active");
       $($menu1).removeClass("hidden");
       $($menu2).removeClass("hidden");
