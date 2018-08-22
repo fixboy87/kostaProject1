@@ -18,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/animate.css">
 <link href="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/main_styles.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/main_styles.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
@@ -36,6 +36,8 @@
 	 var f = document.fmt;  // 이문서의 fmt(아래 form테그중 name이 fmt인 태그)를 f에 넣고
 	
 	 var password = null;
+	 var passwdConfirm = null;
+	 //메소드체인
 	//이메일
 	if(! emailCheck.test(f.email.value)){ // 
 		alert("메일양식이 잘못됐습니다. 다시 입력해주세요");
@@ -68,16 +70,18 @@
 		return false; 
 	}else{
 		password=(f.password.value);
-		alert(password);
-		alert("꾸에에엑");
 		return false;
 	}
-	 if(password.equals(f.passwdConfirm.value)){
-		 alert("입력하신 패스워드가 서로 다릅니다.");
-	}else{
-		
+
+	
+	passwdConfirm=(f.passwdConfirm.value);
+	alert(passwdConfirm);
+	 
+	
+	if(!password.equals(passwdConfirm)){
+		alert("입력하신 패스워드가 서로 다릅니다.");
 		return false;
-	}	
+	}
 } 
     
  
@@ -85,7 +89,7 @@
 
 <body>
 	<div class="super_container margin_top_control">
-	<%@ include file="../../pages/sub_page/header_menu.jsp"%>
+	<%@ include file="../sub_page/header_menu.jsp"%>
 
 		<div id="content" class="content_wrap">
            <main class="container-comm">
@@ -153,19 +157,6 @@
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
 <script type="text/javascript">
-    $(function() {
-        var $pw = $('.inp-password')
-        $pw.on('click focus', function() {
-            $(this).siblings('label').hide()
-        });
-        $pw.on('blur', function() {
-            $this = $(this)
-            if ($.trim($this.val()).length === 0) {
-                $this.siblings('label').show()
-            }
-        });
-
-    });
 </script>
 </body>
 </html>

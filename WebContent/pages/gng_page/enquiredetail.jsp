@@ -5,11 +5,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <% 
-    Enquire_BoardDao dao= Enquire_BoardDao.getinstance();
-    System.out.print("555");
-    
-    %>
+  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,7 +36,7 @@
 	border: solid 2px #dbdbdb;
 	padding-left: 20px;
 	margin-left :10%;
-	margin-bottom: 10%;
+	margin-bottom: 5%;
 	margin-top:5%;
 	outline: none;
 	text-align: center;
@@ -75,19 +71,15 @@
 	</thead>
 	</table>
 	
+	
+	<%@include file="../gng_page/enqreplylist.jsp" %>		
+	<a class="enquire" href="GngDeleteEnquire.do?e_seq=${board.e_seq}">삭제</a>
+	
     <a class="enq_list" href="GngReplyFormAction.do?e_seq=${board.e_seq}" id="contact_send_btn" class="contact_send_btn trans_200" >답장</a>
 									
-									 <table class="enquire_reply" border="1">
-	<thead>
-	<tr>
-	<td style="background-color: #fafafa; color: #000000; width: 80px;"><h5>내용</h5></td>
-	<td colspan="3"><h5>${reply.r_contents}</h5></td>
-	</tr>
-	</thead>
-	</table>
 									
 																		
-<%@include file="../gng_page/enqreplylist.jsp" %>							
+					
 					      			        
 					
 			

@@ -269,13 +269,17 @@ $(document).ready(function()
 			location.href = "registerTypeForm.do";
 		} else if($buttonHtml === "마이페이지") {
 			location.href = "myPage.do";
-		} else if($buttonHtml === "예약내역") {
-			location.href = "bookingAction.do";
+		} else if($buttonHtml === "구매페이지") {
+			location.href = "HotelListActionForm.do";
 		} else if($buttonHtml === "로그아웃") {
 			location.href = "logOutAction.do";
 		}
 		
 	});
 		
-
+	$('.titleButton').click(function() {
+		location.href = "HotelListActionForm.do";
+	});
+	
+	
 });
