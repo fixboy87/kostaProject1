@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/animate.css">
 <link href="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/main_styles.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/main_styles.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/register_type.css">
@@ -30,8 +30,7 @@
 	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
 	
 <div class="super_container margin_top_control">
-
-<%@ include file="../../pages/sub_page/header_menu.jsp"%>
+<%@ include file="../sub_page/header_menu.jsp"%>
 
         <div id="content" class="content_wrap">
             <!-- mb_join start -->
