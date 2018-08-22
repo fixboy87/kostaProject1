@@ -21,6 +21,11 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/custom.css">
+<style type="text/css">
+.header_titlePage {
+	background: none !important;
+}
+</style>
 </head>
 <body>
 

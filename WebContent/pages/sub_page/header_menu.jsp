@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="header_container d-flex flex-row align-items-center justify-content-start">
+					<div class="header_container d-flex flex-row align-items-center justify-content-start header_titlePage">
 
 						<!-- Logo -->
 						<div class="logo_container">
