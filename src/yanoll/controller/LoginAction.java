@@ -13,7 +13,7 @@ public class LoginAction implements Action {
 		boolean result = service.loginUserService(request);
 		
 		if(result == true) {
-			forward.setPath("titlePage.do");
+			forward.setPath("HotelListActionForm.do");
 		} else {
 			forward.setPath("loginForm.do");
 		}

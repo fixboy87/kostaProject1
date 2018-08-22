@@ -25,8 +25,9 @@
 
 <%@ include file="sub_page/header_menu.jsp"%>
 
-	<input type="hidden" id="auth" name="auth" val="<%=(String)session.getAttribute("id")%>"/>
-	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="u_id" name="u_id" value="<c:out value="${sessionScope.id }"/>"/>
+	<input type="hidden" id="type" name="type" value="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="u_name" name="u_name" value="<%=(String)session.getAttribute("name") %>">
 	<!-- Home -->
 
 	<div class="home">

@@ -18,4 +18,12 @@
 			hotel_seq.nextval, #{h_id}, #{h_name}, #{h_phonenum}, #{h_mail}, #{h_password}, #{h_address}, 0, 0, #{h_info}, '', #{h_location}, 0
 		)
 	</insert>
+	
+	<select id="loginUser_p" parameterType="Login" resultType="String">
+		select name from users where id = (#{id}) and password = (#{password})
+	</select>
+	
+	<select id="loginUser_e" parameterType="Login" resultType="String">
+		select h_name from hotel where h_id = (#{id}) and h_password = (#{password})
+	</select>
 </mapper>
