@@ -10,7 +10,8 @@ public class Review_detailAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			String str = request.getParameter("r_no");
+	
+		String str = request.getParameter("r_no");
 			int r_no =0;
 			
 			ReviewDao dao = ReviewDao.getInstance();
@@ -24,7 +25,7 @@ public class Review_detailAction implements Action {
 			
 			ActionForward forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("review_detail.jsp");
+			forward.setPath("/pages/syj_page/review_detail.jsp");
 		
 		return forward;
 	}

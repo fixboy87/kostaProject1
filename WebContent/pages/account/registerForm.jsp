@@ -26,12 +26,12 @@
 
 <script type="text/javascript">
  
- function Button_Click(){
-	 var emailCheck = /^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z]+)*$/;	/* 이메일 */	
-	 var idCheck = /^[a-z][a-z0-9_$@#]{4,14}$/;								/* 아이디 */
-	 var nameCheck = /^[\uac00-\ud7a3]*$/;									/* 이름 */
-	 var passwordCheck = /^[a-zA-Z0-9]{7,20}$/;	/* 패스워드 */
-	 var telCheck = /^\d{11}$/;					/* 연락처 */
+/*  function Button_Click(){
+	 var emailCheck = /^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z]+)*$/;		
+	 var idCheck = /^[a-z][a-z0-9_$@#]{4,14}$/;								
+	 var nameCheck = /^[\uac00-\ud7a3]*$/;									
+	 var passwordCheck = /^[a-zA-Z0-9]{7,20}$/;	
+	 var telCheck = /^\d{11}$/;					
 	 
 	 var f = document.fmt;  // 이문서의 fmt(아래 form테그중 name이 fmt인 태그)를 f에 넣고
 	
@@ -83,7 +83,7 @@
 		return false;
 	}
 } 
-    
+     */
  
 </script>
 
@@ -111,7 +111,7 @@
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="id" value="" placeholder="닉네임을 입력하세요.(5~15자)" title="닉네임을 입력(2~8자)" autocomplete="off">
+                                            <input type="text" id="mInput1" name="userId" value="" placeholder="닉네임을 입력하세요.(5~15자)" title="닉네임을 입력(2~8자)" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">

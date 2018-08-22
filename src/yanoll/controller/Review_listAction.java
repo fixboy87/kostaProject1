@@ -14,18 +14,17 @@ public class Review_listAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 	      ReviewDao dao = ReviewDao.getInstance();
 	      List<Review_Board> list = dao.listReview();
-	     /* 
+	     
 	      for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
-	   */
+	  
 	 request.setAttribute("list", list);
 
 	      
-	      
 	      ActionForward forward = new ActionForward();
 	      forward.setRedirect(false);
-	      forward.setPath("review_list.jsp");
+	      forward.setPath("/pages/syj_page/review_list.jsp");
 	      
 	      
 	      return forward;
