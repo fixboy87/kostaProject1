@@ -28,7 +28,7 @@ public class UserService {
 			Users user = new Users();
 			
 			user.setEmail((String)session.getAttribute("email"));
-			user.setId((String)session.getAttribute("id"));
+			user.setId((String)session.getAttribute("userId"));
 			user.setPassword((String)session.getAttribute("password"));
 			user.setTel((String)session.getAttribute("tel"));
 			user.setName((String)session.getAttribute("name"));
