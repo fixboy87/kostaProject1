@@ -21,6 +21,20 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/custom.css">
+<style type="text/css">
+.header_titlePage {
+	background: none !important;
+}
+.titleButton {
+	background: #fe435b !important;
+}
+.titleButton>a{
+	color: white !important;
+	margin: auto;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+</style>
 </head>
 <body>
 
@@ -43,33 +57,7 @@
 				</div>
 				<div class="col-12">
 					<div class="find_form_container">
-						<form action="#" id="find_form" class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
-							<div class="find_item">
-								<div>지역:</div>
-								<input type="text" class="destination find_input" required="required" placeholder="Keyword here" autocomplete="off">
-							</div>
-							<div class="find_item">
-								<div>투숙인수:</div>
-								<select name="adventure" id="adventure" class="dropdown_item_select find_input">
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>6+</option>
-								</select>
-							</div>
-							<div class="find_item">
-								<div>채크인 :</div>
-								<input type="text" class="arrival find_input" id="arrival_pick" placeholder="YYYY-MM-DD" autocomplete="off">
-							</div>
-							<div class="find_item">
-								<div>채크아웃 :</div>
-								<input type="text" class="departure find_input" id="departure_pick" placeholder="YYYY-MM-DD" autocomplete="off">
-							</div>
-							<button class="button find_button">Find</button>
-						</form>
-						<a href="review_list.do">후기 리스트 이동</a>
+						<div class="button titleButton"><a href="#">떠나자!!</a></div>
 					</div>
 				</div>
 			</div>
