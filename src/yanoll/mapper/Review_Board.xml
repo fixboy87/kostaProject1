@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="kosta.mapper.Review_BoardMapper">
+<mapper namespace="yanoll.mapper.Review_BoardMapper">
 	<cache />
 
 <!-- 후기 목록  -->
-	<select id ="review_list" resultType="Review_Board">
-		select*from Review_Board
+
+
+	
+<!-- 후기 등록 -->
+	<insert id="insertReview" parameterType="Review_Board">
+		insert into review_board
+			(r_no, r_title, r_grade, r_content, r_redate, r_hitcount , r_fname, p_no, hotle_name, number_of_stay_days, user_no, id 
+		)values(review_seq.nextval, #{r_title}, #{r_grade}, #{r_content}, sysdate, 0, #{r_fname}, #{p_no}, #{hotle_name}, #{number_of_stay_days}, #{user_no}, #{id})
+	</insert>
+	
+<!-- 후기 목록 -->
+	<select id ="listReview" resultType="Review_Board">
+      SELECT*FROM review_board
+   </select>
+	
+<!-- 디테일 게시물	 -->
+	<select id="detailReview" parameterType="Review_Board" resultType="Review_Board">
+		select*from review_board where r_no = #{r_no}
 	</select>
-	
-	
-	
-	
+
+<!-- 게시물 삭제 -->	
+	<delete id="deleteReivew" parameterType="Review_Board">
+		delete from review_board where r_no = #{r_no}
+	</delete>
+
 </mapper>
