@@ -23,6 +23,51 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
 </head>
 
+<script type="text/javascript">
+ 
+ function Button_Click(){
+	 var emailCheck = /^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z]+)*$/;	/* 이메일 */	
+	 var idCheck = /^[a-z][a-z0-9_$@#]{1,7}$/;								/* 아이디 */
+	 var nameCheck = /^[\uac00-\ud7a3]*$/;									/* 이름 */
+	 var passwordCheck = /^(?=.*[a-z])(?=.*[_!@#$%^&*]|.*[0-9]).{7,19}$/;	/* 패스워드 */
+	 var telCheck = /^\d{3} - \d{4} - \d{4}&/;						/* 패스워드 */
+	 
+	 var f = document.fmt;
+	 alert(emailCheck.test(f.email.value))
+	//이메일
+	if(! emailCheck.test(f.email.value)){ // * : 0개이상(제한을 두지 않는다)
+		alert("메일양식이 잘못됐습니다. 다시 입력해주세요");
+		f.email.focus();
+		return false; 
+	}
+    alert('ok');
+	// 아이디
+	if(! idCheck.test(f.mInput1.value)){ // ^ : 앞에만 검사, $ : 뒤에만 검사, i 대소문자 구분 안함(없으면 소문자만 가능하다)
+		alert("아이디 첫문자는 영문자이고 5~10자만 가능");
+		f.mInput1.focus();
+		return; 
+	}
+	// 연락처
+	if(! telCheck.test(f.mInput2.value)){
+		alert("전화번호 양식에 맞춰 입력해주세요");
+		return; 
+	}		
+	// 이름
+	if(! nameCheck.test(f.mInput3.value)){ //g: 완전일치, ^앞 $뒤 *0개이상, uac00~ud7a3은 한글 코드값  , gi대소문자 구분없이 완전일치
+		alert("이름을 정확히 입력해주세요");
+		return; 
+	}
+	//패스워드검사(영문자와 1자 이상의 숫자특수문자. 8~20)
+	if(! passwordCheck.test(f.mInput4.value)){
+		alert("패드워드는 특수문자가 필요 ");
+		return; 
+	}		
+	
+} 
+
+ 
+</script>
+
 <body>
 	<div class="super_container margin_top_control">
 	<%@ include file="../../pages/sub_page/header_menu.jsp"%>
@@ -34,52 +79,49 @@
                         <section class="login-area">
                             <h3>회원가입</h3>
 
-                            <form id="joinMemberPc" action="registerFormAction2.do" method="post" data-member-form="true" class="form-group form-w410">
+
+                            <form name="fmt" id="joinMemberPc" action="registerFormAction2.do" method="post" data-member-form="true" class="form-group form-w410" onsubmit="return Button_Click();">
+                            
 
                                 <fieldset id="joinFieldset">
                                     <legend class="sc-out">회원가입 폼</legend>
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="text" name="email" value="" placeholder="이메일을 입력해주세요." title="아이디(이메일)를 입력" autocomplete="off">
+                                            <input type="text" id="mInput0" name="email" value="" placeholder="이메일을 입력해주세요." title="아이디(이메일)를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="id" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)" autocomplete="off">
+                                            <input type="text" id="mInput1" name="id" value="" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput2" name="tel" placeholder="전화번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="text" id="mInput2" name="tel" value="" placeholder="핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput3" name="name" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="text" id="mInput3" name="name" value="" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="password" id="mInput3" name="password" class="inp-password">
-                                            <label class="placeholder-div">비밀번호를 입력하세요(8~20자)</label>
+                                            <input type="password" id="mInput4" name="password" value="" class="inp-password">
+                                            <label class="placeholder-div" title="1234">비밀번호를 입력하세요(8~20자)</label>
                                         </div>
-
                                         <div class="inp-txt-member">
-                                            <input type="password" id="" name="passwdConfirm" class="inp-password">
+                                            <input type="password" id="mInput5" name="passwdConfirm" value="" class="inp-password">
                                             <label class="placeholder-div">비밀번호를 한번 더 입력하세요.</label>
                                         </div>
                                     </div>
                                     <input type="hidden" id="registerType" name="type" value="<%=type%>"/>
-                                    <button type="submit" name="button" class="button right_align" id="btnToJoinEnd">다음</button>
+                                    <input type="submit" name="button" class="button right_align" id="btnToJoinEnd" value="다음"></input>
                                 </fieldset>
                             </form>
                         </section>
                     </div>
                 </article>
             </main>
-
 		</div> 
-
-
 </div>
-</form>
 <%@include file="../../pages/sub_page/footer.html"%>
 
 <script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>

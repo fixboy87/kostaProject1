@@ -365,7 +365,7 @@
 	<!-- Footer -->
 	<%@include file="../sub_page/footer.html"%>
 	<!-- </div> -->
-
+	
 	<script src="../../destino/js/jquery-3.2.1.min.js"></script>
 	<script src="../../styles/common/bootstrap4/popper.js"></script>
 	<script src="../../styles/common/bootstrap4/bootstrap.min.js"></script>
