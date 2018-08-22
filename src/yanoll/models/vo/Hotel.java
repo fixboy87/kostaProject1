@@ -5,18 +5,18 @@ import java.io.Serializable;
 public class Hotel implements Serializable {
 	
 	private int h_no;
+	private String h_id;
 	private String h_name;
 	private String h_phonenum;
 	private String h_mail;
+	private String h_password;
 	private String h_address;
 	private int room_count;
-	private String h_id;
-	private String h_password;
 	private int h_profit;
-	private int price;
 	private String h_info;
 	private String pic_url;
 	private String h_location;
+	private int price;
 	
 	
 	/*

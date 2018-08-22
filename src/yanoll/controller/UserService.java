@@ -37,7 +37,7 @@ public class UserService {
 			
 			
 			session.invalidate(); //해당 세션을 만료시킴
-			return dao.registerUser(user);
+			return dao.registerUser_p(user);
 			
 		} else if (type.equals("enterprise")) {//사업자의 경우
 			Hotel hotel = new Hotel();
@@ -53,7 +53,7 @@ public class UserService {
 			hotel.setH_info((String)request.getParameter("h_info"));
 			
 			session.invalidate();
-			return dao.registerUser(hotel);
+			return dao.registerUser_e(hotel);
 			
 		} else {//잘못된 접근
 			return 0;

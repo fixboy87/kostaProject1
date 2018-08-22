@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="yanoll.mapper.UserMapper">
 	<cache />
-	<insert id="registerUser" parameterType="Users">
+	<insert id="registerUser_p" parameterType="Users">
 		insert into users(
 			userNo, id, password, name, tel, email, gender, birth
 		) values (
@@ -12,5 +11,11 @@
 		)
 	</insert>
 	
-	
+	<insert id="registerUser_e" parameterType="Hotel">
+		insert into hotel(
+			h_no, h_id, h_name, h_phonenum, h_mail, h_password, h_address, room_count, h_profit, h_info, pic_url, h_location, price
+		) values (
+			hotel_seq.nextval, #{h_id}, #{h_name}, #{h_phonenum}, #{h_mail}, #{h_password}, #{h_address}, 0, 0, #{h_info}, '', #{h_location}, 0
+		)
+	</insert>
 </mapper>
