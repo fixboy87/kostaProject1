@@ -27,44 +27,58 @@
  
  function Button_Click(){
 	 var emailCheck = /^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z]+)*$/;	/* 이메일 */	
-	 var idCheck = /^[a-z][a-z0-9_$@#]{1,7}$/;								/* 아이디 */
+	 var idCheck = /^[a-z][a-z0-9_$@#]{4,14}$/;								/* 아이디 */
 	 var nameCheck = /^[\uac00-\ud7a3]*$/;									/* 이름 */
-	 var passwordCheck = /^(?=.*[a-z])(?=.*[_!@#$%^&*]|.*[0-9]).{7,19}$/;	/* 패스워드 */
-	 var telCheck = /^\d{3} - \d{4} - \d{4}&/;						/* 패스워드 */
+	 var passwordCheck = /^[a-zA-Z0-9]{7,20}$/;	/* 패스워드 */
+	 var telCheck = /^\d{11}$/;					/* 연락처 */
 	 
-	 var f = document.fmt;
-	 alert(emailCheck.test(f.email.value))
+	 var f = document.fmt;  // 이문서의 fmt(아래 form테그중 name이 fmt인 태그)를 f에 넣고
+	
+	 var password = null;
 	//이메일
-	if(! emailCheck.test(f.email.value)){ // * : 0개이상(제한을 두지 않는다)
+	if(! emailCheck.test(f.email.value)){ // 
 		alert("메일양식이 잘못됐습니다. 다시 입력해주세요");
 		f.email.focus();
 		return false; 
 	}
-    alert('ok');
 	// 아이디
-	if(! idCheck.test(f.mInput1.value)){ // ^ : 앞에만 검사, $ : 뒤에만 검사, i 대소문자 구분 안함(없으면 소문자만 가능하다)
-		alert("아이디 첫문자는 영문자이고 5~10자만 가능");
-		f.mInput1.focus();
-		return; 
+	if(! idCheck.test(f.id.value)){ // ^ : 앞에만 검사, $ : 뒤에만 검사, i 대소문자 구분 안함(없으면 소문자만 가능하다)
+		alert("아이디 첫문자는 영문자이고 5~15자만 가능");
+		f.id.focus();
+		return false; 
 	}
 	// 연락처
-	if(! telCheck.test(f.mInput2.value)){
+	if(! telCheck.test(f.tel.value)){
 		alert("전화번호 양식에 맞춰 입력해주세요");
-		return; 
+		f.tel.focus();
+		return false; 
 	}		
 	// 이름
-	if(! nameCheck.test(f.mInput3.value)){ //g: 완전일치, ^앞 $뒤 *0개이상, uac00~ud7a3은 한글 코드값  , gi대소문자 구분없이 완전일치
+	if(! nameCheck.test(f.name.value)){ //g: 완전일치, ^앞 $뒤 *0개이상, uac00~ud7a3은 한글 코드값  , gi대소문자 구분없이 완전일치
 		alert("이름을 정확히 입력해주세요");
-		return; 
+		f.name.focus();
+		return false; 
 	}
 	//패스워드검사(영문자와 1자 이상의 숫자특수문자. 8~20)
-	if(! passwordCheck.test(f.mInput4.value)){
+	if(!passwordCheck.test(f.password.value)){
 		alert("패드워드는 특수문자가 필요 ");
-		return; 
-	}		
-	
+		password=(f.password.value);
+		alert(password); 
+		return false; 
+	}else{
+		password=(f.password.value);
+		alert(password);
+		alert("꾸에에엑");
+		return false;
+	}
+	 if(password.equals(f.passwdConfirm.value)){
+		 alert("입력하신 패스워드가 서로 다릅니다.");
+	}else{
+		
+		return false;
+	}	
 } 
-
+    
  
 </script>
 
@@ -80,7 +94,7 @@
                             <h3>회원가입</h3>
 
 
-                            <form name="fmt" id="joinMemberPc" action="registerFormAction2.do" method="post" data-member-form="true" class="form-group form-w410" onsubmit="return Button_Click();">
+                            <form name="fmt" id="joinMemberPc" action="registerFormAction2.do" method="post" data-member-form="true" class="form-group form-w410" onsubmit="return Button_Click();">  <!-- 태그안에 onsubmit="return Button_Click();> <!--내용이 있어야 다음페이지로 안넘어감 강사님 수정해주심 -->                                
                             
 
                                 <fieldset id="joinFieldset">
@@ -92,11 +106,11 @@
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="id" value="" placeholder="닉네임을 입력하세요.(2~8자)" title="닉네임을 입력(2~8자)" autocomplete="off">
+                                            <input type="text" id="mInput1" name="id" value="" placeholder="닉네임을 입력하세요.(5~15자)" title="닉네임을 입력(2~8자)" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput2" name="tel" value="" placeholder="핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="number" id="mInput2" name="tel" value="" placeholder="핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
