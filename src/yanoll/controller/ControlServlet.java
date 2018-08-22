@@ -131,6 +131,41 @@ public class ControlServlet extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+		}else if (command.equals("review_insertAction.do")) {//syj_1.후기 등록
+			action = new Review_insertAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("review_list.do")) {//syj_2.후기 목록
+			action = new Review_listAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("review_insertFormAction.do")) {//syj_3.입력폼으로 이동
+			action = new Review_insertFormAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("review_detailAction.do")) {//syj_4.디테일 이동
+			action = new Review_detailAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if (command.equals("review_deleteAction.do")) {//syj_5.게시물 삭제
+			action = new Review_deleteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
     	
     	

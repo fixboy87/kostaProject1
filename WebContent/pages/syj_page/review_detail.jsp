@@ -108,6 +108,10 @@ h1 {
 				   		<fmt:formatDate value="${dateString }" pattern="yy-MM-dd"/>
 				    </td>
 				  </tr>
+				  <td>메인 이미지</td>
+				  <tr>
+				  	<td><img src="images/pages/review_main_img/${board.r_fname}"></img></td>
+				  </tr>
 				  <tr>
 				    <td class="tg-0pky" colspan="4">${board.r_content}</td>
 				  </tr>

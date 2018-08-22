@@ -112,7 +112,7 @@ h1 {
 
 		<div class="table_container">
 			<c:forEach var="board" items="${list}">
-			<table class="list_table" width="700" >
+			<table class="list_table" width="800" >
 				<tr>
 					<td class="r_no">${board.r_no }</td>
 					<td rowspan="4" class="img_td">
