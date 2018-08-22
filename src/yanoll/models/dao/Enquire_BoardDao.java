@@ -62,6 +62,8 @@ public class Enquire_BoardDao {
 			list= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireList(new RowBounds(startRow , 10), search);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlSession.close();
 		}
 		
 		return list;
@@ -89,6 +91,8 @@ public class Enquire_BoardDao {
 			board= sqlSession.getMapper(Enquire_BoardMapper.class).EnquireDetail(e_seq);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlSession.close();
 		}
 		return board;
 	}
@@ -127,6 +131,8 @@ public class Enquire_BoardDao {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlsession.close();
 		}
 		
 		return re;
