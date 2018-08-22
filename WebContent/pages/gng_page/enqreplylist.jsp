@@ -29,14 +29,13 @@
 <script src="../../scripts/common/contact_custom.js"></script>
 
 <style type="text/css">
-.enquire_detail{
+.enquire_reply{
     width: 80%;
-	height: 41px;
+	height: 20%;
 	border: solid 2px #dbdbdb;
 	padding-left: 20px;
 	margin-left :10%;
 	margin-bottom: 10%;
-	margin-top:5%;
 	outline: none;
 	text-align: center;
 
@@ -50,13 +49,15 @@
 
 
    <table class="enquire_reply" border="1">
-	<thead>
-	<tr>
-	<td style="background-color: #fafafa; color: #000000; width: 80px;"><h5>내용</h5></td>
-	<td colspan="3"><h5>${reply.r_contents}</h5></td>
-	</tr>
-	</thead>
-	</table>
+    <c:forEach var="Enquire_Reply" items="${reply}">
+    <tr>
+    <td>${Enquire_Reply.r_contents}</td>
+    <td>${Enquire_Reply.e_seq}</td>
+    </tr>  
+    </c:forEach>
+    </table>
+    
+    <a class="reply" href="GngDeleteEnqReply.do?e_seq=${enquire_reply.e_seq}">[답장삭제]</a>
 
 																		
 							

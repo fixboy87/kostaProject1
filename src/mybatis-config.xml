@@ -7,6 +7,10 @@
 	     <typeAlias type="yanoll.models.vo.Hotel" alias="Hotel"/>
 	     <typeAlias type="yanoll.models.vo.Login" alias="Login"/>
 	    <typeAlias type="yanoll.models.vo.Review_Board" alias="Review_Board"/> 
+	    <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board" />
+       <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search" />
+       <typeAlias type="yanoll.models.vo.Enquire_List" alias="Enquire_List" />
+       <typeAlias type="yanoll.models.vo.Enquire_Reply" alias="Enquire_Reply" />
 	     <!-- <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/> -->
 	     <!-- <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/> -->
 	</typeAliases>
@@ -23,9 +27,9 @@
 	<mappers>
 		<mapper resource="yanoll/mapper/Users.xml"/>
 		<mapper resource="yanoll/mapper/Review_Board.xml"/>
+		<mapper resource="yanoll/mapper/Enquire_Board.xml" />
 		<!-- <mapper resource="yanoll/mapper/Enquire_Board.xml"/> -->
 		<!-- <mapper resource="yanoll/mapper/ManagerBoard.xml"/> -->
 	</mappers>
 	
 </configuration>
-	

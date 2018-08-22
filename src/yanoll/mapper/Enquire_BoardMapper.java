@@ -17,7 +17,9 @@ public interface Enquire_BoardMapper {  //kosta.mapper 폴더안에 인터페이
           int countBoard(Enquire_Search search);
           Enquire_Board EnquireDetail(int e_seq);
           int insertEnquireReply(Enquire_Reply reply);
-          Enquire_Reply EnqReplyList(int e_seq);
+          List<Enquire_Reply> EnqReplyList(int e_seq);
+          int deleteEnquire(int e_seq);
+          int deleteEnquireReply(int e_seq);
 
 
 

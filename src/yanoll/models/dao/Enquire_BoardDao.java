@@ -92,6 +92,27 @@ public class Enquire_BoardDao {
 		}
 		return board;
 	}
+	
+	public int deleteEnquireBoard(int e_seq){
+		SqlSession session= getSqlSessionFactory().openSession();
+		int re=-1;
+		
+		try {
+			re= session.getMapper(Enquire_BoardMapper.class).deleteEnquire(e_seq);
+			System.out.println(re);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
+	
 	public int insertEnquireReply(Enquire_Reply reply){
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		int re= -1;
@@ -110,16 +131,37 @@ public class Enquire_BoardDao {
 		
 		return re;
 	}
-	public Enquire_Reply EnqReplyList(int e_seq){
+	public List<Enquire_Reply> EnqReplyList(int e_seq){
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
-		Enquire_Reply reply = null;
+		List<Enquire_Reply> reply = null;
 		
 		try {
 			reply = sqlsession.getMapper(Enquire_BoardMapper.class).EnqReplyList(e_seq);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			sqlsession.close();
 		}
 		return reply;
+	}
+	
+	public int deleteEnqReply(int e_seq){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		try {
+			re= session.getMapper(Enquire_BoardMapper.class).deleteEnquireReply(e_seq);
+			
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return re;
 	}
 	
 
