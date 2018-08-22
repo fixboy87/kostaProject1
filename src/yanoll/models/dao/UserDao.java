@@ -44,45 +44,59 @@ public class UserDao {
 		return null;
 	}
 	
-	public int registerUser (Users users){
-		Connection conn = null;
-		PreparedStatement pstmt = null;
 
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
-		String user = "kosta186";
-		String password = "1234";
-		String sql = "insert into users values( users_seq.nextval, ?, ?, ?, ?, ?, ?, ? )"; // ? = 커맨드 객체
-		int re = -1; //-1 : 데이터 값에 변화가 없다. -> 변경 실패
+	public SqlSessionFactory getSqlSessionFactory() {
+		String resource = "mybatis-config.xml";
+		InputStream in = null;
 		
 		try {
-			// 1. JDBC 드라이버 로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			// 2. Connection 객체 생성 (DB 연결)
-			conn = DriverManager.getConnection(url, user, password);
-			
-			// 3. PrepareStatement 객체생성
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, users.getId());
-			pstmt.setString(2, users.getPassword());
-			pstmt.setString(3, users.getName());
-			pstmt.setString(4, users.getTel());
-			pstmt.setString(5, users.getEmail());
-			pstmt.setString(6, users.getGender());
-			pstmt.setString(7, users.getBirth());
-			
-			// 4. ResultSet 객체생성
-			re = pstmt.executeUpdate();
-			
+			in = Resources.getResourceAsStream(resource);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return new SqlSessionFactoryBuilder().build(in);
+	}
+	
+	
+	public int registerUser_p(Users user) {	
+		int re = -1;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			re = sqlSession.getMapper(UserMapper.class).registerUser_p(user);
+			if(re > 0){
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
 		return re;
 	}
-
-
-	public int registerUser(Hotel hotel) {
+	
+	public int registerUser_e(Hotel hotel) {
+		int re = -1;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			re = sqlSession.getMapper(UserMapper.class).registerUser_e(hotel);
+			if(re > 0){
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return re;
+	}
+	
+	
+	/*public int registerUser(Hotel hotel) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -132,7 +146,7 @@ public class UserDao {
 		}
 		return re;
 		
-	}
+	}*/
 
 
 	public int loginUser(String userId, String userPass) {
@@ -197,36 +211,7 @@ public class UserDao {
 	}
 	
 	
-	/*public SqlSessionFactory getSqlSessionFactory() {
-		String resource = "mybatis-config.xml";
-		InputStream in = null;
-		
-		try {
-			in = Resources.getResourceAsStream(resource);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return new SqlSessionFactoryBuilder().build(in);
-	}
-	
-	
-	public int registerUser(Users user) {	
-		int re = -1;
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		try {
-			re = sqlSession.getMapper(UserMapper.class).registerUser(user);
-			if(re > 0){
-				sqlSession.commit();
-			} else {
-				sqlSession.rollback();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-		return re;
-	}
 
-*/
+
+
 }

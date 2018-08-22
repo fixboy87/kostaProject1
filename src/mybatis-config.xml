@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
 	<typeAliases>
- 		 <typeAlias type="yanoll.models.vo.Booking" alias="Booking"/>
-		 <typeAlias type="yanoll.models.vo.Hotel_detail" alias="Hotel_detail"/> 
-		 <typeAlias type="yanoll.models.vo.Hotel_info" alias="Hotel_info"/>
-		 <typeAlias type="yanoll.models.vo.Hotel_List" alias="Hotel_List"/>
-		 <typeAlias type="yanoll.models.vo.Pic_view" alias="Pic_view"/>
-	     <typeAlias type="yanoll.models.vo.Board" alias="Board"/>
-	     <typeAlias type="yanoll.models.vo.Review_Board" alias="Review_Board"/>
-	     <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/>
-	     <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/>
-	     <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search"/>
 	     <typeAlias type="yanoll.models.vo.Users" alias="Users"/>
-	     
+	     <typeAlias type="yanoll.models.vo.Hotel" alias="Hotel"/>
+	     <!-- <typeAlias type="yanoll.models.vo.Review_Board" alias="Review_Board"/> -->
+	     <!-- <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/> -->
+	     <!-- <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/> -->
 	</typeAliases>
 	
 	<environments default="development">
@@ -29,12 +20,10 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="kosta/mapper/mapper.xml"/>
-		<mapper resource="yanoll/mapper/Booking.xml"/>
-		<mapper resource="yanoll/mapper/Review_Board.xml"/>
-		<mapper resource="yanoll/mapper/Enquire_Board.xml"/>
 		<mapper resource="yanoll/mapper/Users.xml"/>
-		<mapper resource="yanoll/mapper/ManagerBoard.xml"/>
+		<!-- <mapper resource="yanoll/mapper/Review_Board.xml"/> -->
+		<!-- <mapper resource="yanoll/mapper/Enquire_Board.xml"/> -->
+		<!-- <mapper resource="yanoll/mapper/ManagerBoard.xml"/> -->
 	</mappers>
 	
 </configuration>
