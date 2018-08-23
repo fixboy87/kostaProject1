@@ -19,34 +19,7 @@
 </head>
 <body>
 <style type="text/css">
-h1{
-font-size: 300%;
-margin-top: 3%;
-margin-bottom: 1%;
-text-align: center;
-}
 
-.hotel_name{
-width 8%;
-margin-bottom: 2%;
-}
-
-.enq_list
-{
-	width: 161px;
-	height: 56px;
-	background: rgba(254,60,82,1);
-	border: none;
-	outline: none;
-	float: right;
-	color: #FFFFFF;
-	font-size: 16px;
-	font-weight: 500;
-	cursor: pointer;	
-	
-	margin-bottom: 14px;
-	text-align: center;
-}
 </style>
 
 

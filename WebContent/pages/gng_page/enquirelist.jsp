@@ -36,26 +36,7 @@ margin-top: 3%;
 margin-bottom: 1%;
 text-align: center;
 }
-.Enquire_list
-{
-	width: 80%;
-	height: 41px;
-	border: solid 2px #dbdbdb;
-	padding-left: 20px;
-	margin-left :10%;
-	margin-bottom: 19px;
-	outline: none;
-	text-align: center;
-}
-.enquire_search{
-margin-top : 2%;
-margin-left: 80%;
-margin-bottom: 1%;
 
-}
-.page{
-margin-left: 20%;
-}
 
 </style>
 

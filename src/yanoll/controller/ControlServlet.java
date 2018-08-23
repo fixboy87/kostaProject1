@@ -58,7 +58,7 @@ public class ControlServlet extends HttpServlet {
 			}
 			System.out.println(command);
 			
-		} else if (command.equals("GngInqInsertAction")) {
+		} else if (command.equals("GngInqInsertAction.do")) {
 			action = new GngInqInsertAction();
 			try {
 				forward = action.execute(request, response);

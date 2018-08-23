@@ -30,18 +30,7 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/contact_custom.js"></script>
 
 <style type="text/css">
-.enquire_detail{
-    width: 80%;
-	height: 41px;
-	border: solid 2px #dbdbdb;
-	padding-left: 20px;
-	margin-left :10%;
-	margin-bottom: 5%;
-	margin-top:5%;
-	outline: none;
-	text-align: center;
 
-}
 
 .EnquireDelete {
 	-moz-box-shadow:inset 1px 1px 0px 0px #ffffff;
