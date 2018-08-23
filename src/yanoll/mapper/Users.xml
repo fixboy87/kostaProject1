@@ -40,4 +40,8 @@
     		password = (#{password}), tel = (#{tel}), email = (#{email})
 		where id = (#{id})
 	</update>
+	
+	<delete id="deregister_p" parameterType="String">
+		delete from users where id = (#{id})
+	</delete>
 </mapper>

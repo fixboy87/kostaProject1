@@ -81,7 +81,7 @@ public class UserService {
 		} else {
 			//리다이렉트
 		}
-		if(!name.isEmpty()){
+		if(!name.equals("@")){
 			System.out.println(name);
 			session.setAttribute("id", userId);
 			session.setAttribute("type", loginType);
@@ -152,5 +152,20 @@ public class UserService {
 			}*/
 		}
 		return dao.getDetail_p(uid);
+	}
+
+	public int deregister_p(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		int re = -1;
+		
+		String uid = (String)session.getAttribute("id");
+		String loginType = (String)session.getAttribute("type");
+		
+		if(loginType.equals("personal")) {
+			re = dao.deregister_p(uid);
+		} 
+		session.invalidate();
+		return re;
 	}
 }

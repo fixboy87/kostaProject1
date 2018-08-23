@@ -99,7 +99,7 @@ public class UserDao {
 	
 	public String loginUser_p(Login login) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		String name = "";
+		String name = "@";
 		
 		try {
 			name = sqlSession.getMapper(UserMapper.class).loginUser_p(login);
@@ -165,6 +165,27 @@ public class UserDao {
 			re = sqlSession.getMapper(UserMapper.class).updateUser_p(user);
 			
 			if(re>-1) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return re;
+	}
+
+
+	public int deregister_p(String uid) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(UserMapper.class).deregister_p(uid);
+			
+			if(re > -1) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();

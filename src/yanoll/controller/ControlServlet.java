@@ -300,14 +300,14 @@ public class ControlServlet extends HttpServlet {
         	} catch (Exception e) {
         		e.printStackTrace();
         	}
-        } else if(command.equals("updateUserAction2.do")) {
-        	action = new UpdateUserAction2();
+        } else if(command.equals("deregister.do")) {
+        	action = new DeregisterAction();
         	try {
         		forward = action.execute(request, response);
         	} catch (Exception e) {
         		e.printStackTrace();
         	}
-        }else if(command.equals("HotelDetailAction.do")){
+        } else if(command.equals("HotelDetailAction.do")){
             action = new HotelDetailAction();
             try {
                 forward = action.execute(request, response);
@@ -315,6 +315,7 @@ public class ControlServlet extends HttpServlet {
                 e.printStackTrace();
             }
         } 
+        
     	
 
     	

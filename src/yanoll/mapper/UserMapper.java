@@ -13,5 +13,6 @@ public interface UserMapper {
 	public Users detailUser_p(String id);
 	public Hotel detailUser_e(String id);
 	public int updateUser_p(Users user);
+	public int deregister_p(String uid);
 
 }

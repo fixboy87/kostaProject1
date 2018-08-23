@@ -304,4 +304,12 @@ $(document).ready(function()
 		
 		
 	});
+	
+	$('.logo_image').click(function() {
+		location.href = "titlePage.do"
+	});
+	
+	$('div.logo').click(function() {
+		location.href = "titlePage.do";
+	});
 });
