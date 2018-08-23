@@ -268,7 +268,7 @@ $(document).ready(function()
 		} else if($buttonHtml === "회원가입") {
 			location.href = "registerTypeForm.do";
 		} else if($buttonHtml === "마이페이지") {
-			location.href = "myPage.do";
+			location.href = "myPageAction.do";
 		} else if($buttonHtml === "구매페이지") {
 			location.href = "HotelListActionForm.do";
 		} else if($buttonHtml === "로그아웃") {

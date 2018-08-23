@@ -9,7 +9,7 @@ public class MyPageAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("/pages/myPage/myPage.jsp");
+		forward.setPath("/pages/account/myPage.jsp");
 		return forward;
 	}
 }
