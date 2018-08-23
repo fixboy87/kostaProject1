@@ -1,9 +1,11 @@
+<%@page import="yanoll.models.vo.Users"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
 <%
 	String type = request.getParameter("type");
 	request.setCharacterEncoding("utf-8");
+	Users user = (Users)request.getAttribute("user");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -43,7 +45,7 @@
     text-align: center;
 }
 .myPageCylinder {
-	margin-top: 200px;
+	margin-top: 180px;
 	margin-right: auto;
 	margin-left: auto;
 	width: 1000px;
@@ -92,6 +94,19 @@ div.logo div {
 .scrolled li.main_nav_item>a {
 	color: white;
 }
+#update_user {
+	clear:both;
+}
+#update_user>div {
+	margin-right: 30%;
+    float: right;
+}
+#update_user a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+}
 </style>
 </head>
 
@@ -105,72 +120,78 @@ div.logo div {
 
 		<div id="content" class="content_wrap">
 			
-			<div class="myPageCylinder">
-				<div class="myPageMenuCylinder">
-					<div class="button iEnquire"><a href="#">1:1문의</a></div>			
-					<div class="button iEnquire"><a href="#">구매내역</a></div>			
-					<div class="button iEnquire"><a href="#">회원정보</a></div>			
-					<div class="button iEnquire"><a href="#">회원탈퇴</a></div>			
+			<form action="updateUserAction.do" id="updateUserDetail" method="post">
+				<div class="myPageCylinder">
+					<div class="myPageMenuCylinder">
+						<div class="button iEnquire"><a href="#">1:1문의</a></div>			
+						<div class="button iEnquire"><a href="#">구매내역</a></div>			
+						<div class="button iEnquire"><a href="#">회원정보</a></div>			
+						<div class="button iEnquire"><a href="#">회원탈퇴</a></div>			
+					</div>
+					<div class="myPageContentCylinder">
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>ID : </p></div>
+							</div>
+							<div class="myPage_id">
+								<input type="text" name="mypage_id" value="${user.id }" readonly="readonly"/>
+							</div>
+						</div>
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>비밀번호 : </p></div>
+							</div>
+							<div class="myPage_password">
+								<input type="password" name="mypage_password" value="${user.password }"/>
+							</div>
+						</div>
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>이메일 : </p></div>
+							</div>
+							<div class="myPage_email">
+								<input type="text" name="mypage_email" value="${user.email}"/>
+							</div>
+						</div>
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>이름 : </p></div>
+							</div>
+							<div class="myPage_text">
+								<input type="text" name="mypage_name" value="${user.name}" readonly="readonly"/>
+							</div>
+						</div>
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>전화번호 : </p></div>
+							</div>
+							<div class="myPage_text">
+								<input type="text" name="mypage_tel" value="${user.tel }"/>
+							</div>
+						</div>
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>생년월일 : </p></div>
+							</div>
+							<div class="myPage_text">
+								<input type="text" name="mypage_birth" value="${user.birth }" readonly="readonly"/>
+							</div>
+						</div>
+						<div class="mypage_section">
+							<div class="mypage_text">
+								<div><p>성별 : </p></div>
+							</div>
+							<div class="myPage_text">
+								<input type="text" name="mypage_gender" value="${user.gender }" readonly="readonly"/>
+							</div>
+						</div>
+						<div id="update_user">
+							<button type="submit" name="button" class="button right_align" id="btnToJoinEnd">정보변경</button>
+						</div>
+					</div>
 				</div>
-				<div class="myPageContentCylinder">
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>ID : </p></div>
-						</div>
-						<div class="myPage_id">
-							<input type="text" name="mypage_id" val="" readonly="readonly"/>
-						</div>
-					</div>
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>비밀번호 : </p></div>
-						</div>
-						<div class="myPage_password">
-							<input type="password" name="mypage_password" val=""/>
-						</div>
-					</div>
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>이메일 : </p></div>
-						</div>
-						<div class="myPage_email">
-							<input type="text" name="mypage_email" val=""/>
-						</div>
-					</div>
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>이름 : </p></div>
-						</div>
-						<div class="myPage_text">
-							<input type="text" name="mypage_name" val="" readonly="readonly"/>
-						</div>
-					</div>
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>전화번호 : </p></div>
-						</div>
-						<div class="myPage_text">
-							<input type="text" name="mypage_tel" val=""/>
-						</div>
-					</div>
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>생년월일 : </p></div>
-						</div>
-						<div class="myPage_text">
-							<input type="text" name="mypage_birth" val="" readonly="readonly"/>
-						</div>
-					</div>
-					<div class="mypage_section">
-						<div class="mypage_text">
-							<div><p>성별 : </p></div>
-						</div>
-						<div class="myPage_text">
-							<input type="text" name="mypage_gender" val="" readonly="readonly"/>
-						</div>
-					</div>
-				</div>
-			</div>
+				
+			</form>
 	</div>
 </div>
 <%@include file="../../pages/sub_page/footer.html"%>

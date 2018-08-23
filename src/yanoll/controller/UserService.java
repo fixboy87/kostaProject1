@@ -91,4 +91,34 @@ public class UserService {
 			return false; //실패
 		}
 	}
+
+	public Users detailUser_p(HttpServletRequest request) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		Users user = new Users();
+		
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		String loginType = (String)session.getAttribute("type");
+		
+		if(loginType.equals("personal")) {
+			return dao.getDetail_p(id); 
+		} else {
+			return null;
+		}
+	}
+
+	public Hotel detailUser_e(HttpServletRequest request) throws Exception{
+		request.setCharacterEncoding("utf-8");
+		Hotel hotel = new Hotel();
+		
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("id");
+		String loginType = (String)session.getAttribute("type");
+		
+		if(loginType.equals("enterprise")) {
+			return dao.getDetail_e(id);
+		} else {
+			return null;
+		}
+	}
 }

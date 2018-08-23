@@ -125,6 +125,35 @@ public class UserDao {
 		}
 		return name;
 	}
+
+
+	public Users getDetail_p(String id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Users user = new Users();
+		try{
+			user = sqlSession.getMapper(UserMapper.class).detailUser_p(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return user;
+	}
+
+
+	public Hotel getDetail_e(String id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Hotel hotel = new Hotel();
+		
+		try {
+			hotel = sqlSession.getMapper(UserMapper.class).detailUser_e(id);
+		} catch (Exception e){
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return hotel;
+	}
 	
 
 

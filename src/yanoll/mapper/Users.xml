@@ -26,4 +26,13 @@
 	<select id="loginUser_e" parameterType="Login" resultType="String">
 		select h_name from hotel where h_id = (#{id}) and h_password = (#{password})
 	</select>
+	
+	<select id="detailUser_p" parameterType="String" resultType="Users">
+		select * from users where id = (#{id})
+	</select>
+	
+	<select id="detailUser_e" parameterType="String" resultType="Hotel">
+		select * from users where id = (#{h_id})
+	</select>
+	
 </mapper>

@@ -284,6 +284,24 @@ $(document).ready(function()
 	
 	//mypage 1:1 문의 버튼
 	$('.iEnquire').click(function() {
-		location.href= "Insertenquire.do";
+		var $buttonPressed = $(this);
+		var $buttonHtml = $(this).find('a').html();
+		
+		if($buttonHtml === "1:1문의") {
+			location.href = "Insertenquire.do";
+		} else if ($buttonHtml === "구매내역") {
+			location.href= "#";
+		} else if ($buttonHtml === "회원정보") {
+			location.href = "myPageAction.do";
+		} else if ($buttonHtml === "회원탈퇴") {
+			location.href = "deregister.do";
+		}
+	});
+	
+	$('#update_user>div').click(function() {
+		
+		//유효성검사
+		
+		
 	});
 });
