@@ -69,7 +69,7 @@ public class UserService {
 		HttpSession session = request.getSession();
 		
 		Login login = new Login();
-		String name = "";
+		String name = "@";
 		
 		login.setId(userId);
 		login.setPassword(userPassword);
@@ -81,6 +81,7 @@ public class UserService {
 		} else {
 			//리다이렉트
 		}
+		System.out.println(name);
 		if(!name.equals("@")){
 			System.out.println(name);
 			session.setAttribute("id", userId);
@@ -115,7 +116,9 @@ public class UserService {
 		String loginType = (String)session.getAttribute("type");
 		
 		if(loginType.equals("enterprise")) {
-			return dao.getDetail_e(id);
+			hotel = dao.getDetail_e(id);
+			request.setAttribute("hotel", hotel);
+			return hotel; 
 		} else {
 			return null;
 		}

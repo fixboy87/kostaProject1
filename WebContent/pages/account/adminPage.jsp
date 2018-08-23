@@ -1,11 +1,12 @@
-<%@page import="yanoll.models.vo.Users"%>
+<%@page import="yanoll.models.vo.Hotel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
 <%
 	String type = request.getParameter("type");
 	request.setCharacterEncoding("utf-8");
-	Users user = (Users)request.getAttribute("user");
+	Hotel hotel = (Hotel)request.getAttribute("hotel");
+	System.out.println("jsp = "+hotel);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -123,10 +124,11 @@ div.logo div {
 			<form action="updateUserAction.do" id="updateUserDetail" method="post">
 				<div class="myPageCylinder">
 					<div class="myPageMenuCylinder">
-						<div class="button iEnquire" id="myPage_button"><a href="#">1:1문의</a></div>			
-						<div class="button iEnquire" id="myPage_button"><a href="#">구매내역</a></div>			
-						<div class="button iEnquire" id="myPage_button"><a href="#">회원정보</a></div>			
-						<div class="button iEnquire" id="myPage_button"><a href="#">회원탈퇴</a></div>			
+						<div class="button iEnquire" id="admin_page_button"><a href="#">1:1문의</a></div>			
+						<div class="button iEnquire" id="admin_page_button"><a href="#">세부관리</a></div>			
+						<div class="button iEnquire" id="admin_page_button"><a href="#">기본정보</a></div>			
+						<div class="button iEnquire" id="admin_page_button"><a href="#">세부정보</a></div>			
+						<div class="button iEnquire" id="admin_page_button"><a href="#">회원탈퇴</a></div>			
 					</div>
 					<div class="myPageContentCylinder">
 						<div class="mypage_section">
@@ -134,7 +136,7 @@ div.logo div {
 								<div><p>ID : </p></div>
 							</div>
 							<div class="myPage_id">
-								<input type="text" name="mypage_id" value="${user.id }" readonly="readonly"/>
+								<input type="text" name="mypage_id" value="${hotel.h_id }" readonly="readonly"/>
 							</div>
 						</div>
 						<div class="mypage_section">
@@ -142,7 +144,7 @@ div.logo div {
 								<div><p>비밀번호 : </p></div>
 							</div>
 							<div class="myPage_password">
-								<input type="password" name="mypage_password" value="${user.password }"/>
+								<input type="password" name="mypage_password" value="${hotel.h_password }"/>
 							</div>
 						</div>
 						<div class="mypage_section">
@@ -150,15 +152,15 @@ div.logo div {
 								<div><p>이메일 : </p></div>
 							</div>
 							<div class="myPage_email">
-								<input type="text" name="mypage_email" value="${user.email}"/>
+								<input type="text" name="mypage_email" value="${hotel.h_mail }"/>
 							</div>
 						</div>
 						<div class="mypage_section">
 							<div class="mypage_text">
-								<div><p>이름 : </p></div>
+								<div><p>호텔명 : </p></div>
 							</div>
 							<div class="myPage_text">
-								<input type="text" name="mypage_name" value="${user.name}" readonly="readonly"/>
+								<input type="text" name="mypage_name" value="${hotel.h_name }" readonly="readonly"/>
 							</div>
 						</div>
 						<div class="mypage_section">
@@ -166,23 +168,23 @@ div.logo div {
 								<div><p>전화번호 : </p></div>
 							</div>
 							<div class="myPage_text">
-								<input type="text" name="mypage_tel" value="${user.tel }"/>
+								<input type="text" name="mypage_tel" value="${hotel.h_phonenum }"/>
 							</div>
 						</div>
 						<div class="mypage_section">
 							<div class="mypage_text">
-								<div><p>생년월일 : </p></div>
+								<div><p>지역구 : </p></div>
 							</div>
 							<div class="myPage_text">
-								<input type="text" name="mypage_birth" value="${user.birth }" readonly="readonly"/>
+								<input type="text" name="mypage_location" value="${hotel.h_location }" readonly="readonly"/>
 							</div>
 						</div>
 						<div class="mypage_section">
 							<div class="mypage_text">
-								<div><p>성별 : </p></div>
+								<div><p>상세주소 : </p></div>
 							</div>
 							<div class="myPage_text">
-								<input type="text" name="mypage_gender" value="${user.gender }" readonly="readonly"/>
+								<input type="text" name="mypage_address" value="${hotel.h_address }" readonly="readonly"/>
 							</div>
 						</div>
 						<div id="update_user">

@@ -144,7 +144,6 @@ public class UserDao {
 	public Hotel getDetail_e(String id) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		Hotel hotel = new Hotel();
-		
 		try {
 			hotel = sqlSession.getMapper(UserMapper.class).detailUser_e(id);
 		} catch (Exception e){

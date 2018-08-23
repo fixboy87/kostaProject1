@@ -25,9 +25,11 @@ public class MyPageAction implements Action{
 		if(type.equals("personal")) {
 			user = service.detailUser_p(request);
 			request.setAttribute("user", user);
+			forward.setPath("/pages/account/myPage.jsp");
 		} else if (type.equals("enterprise")) {
 			hotel = service.detailUser_e(request);
 			request.setAttribute("hotel", hotel);
+			forward.setPath("/pages/account/adminPage.jsp");
 		} else {
 			wrongAccess = true;
 			//예외처리
@@ -37,9 +39,7 @@ public class MyPageAction implements Action{
 			wrongAccess = true;
 			//예외처리
 		}
-
 		forward.setRedirect(false);
-		forward.setPath("/pages/account/myPage.jsp");
 		if(wrongAccess == true) {
 			//에러페이지
 		}
