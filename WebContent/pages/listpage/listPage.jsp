@@ -34,7 +34,8 @@
 <!--레인지 슬라이더 -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
-<script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
+<!-- <script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>                     <!-- 달력 -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="http://localhost:8081/kostaProject1/scripts/HY_Script/priceRang.js"></script>
 
@@ -43,7 +44,6 @@
 
 
 <!-- 달력 -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>                     <!-- 달력 -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>                  <!-- 달력 -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">      <!-- 달력 -->
 
@@ -120,6 +120,11 @@
 
 </head>
 <body>
+
+	<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
+
 
 <div class="super_container">
 <!-- Header -->
@@ -363,7 +368,20 @@
 
 <!-- <script src="../../scripts/common/jquery-3.2.1.min.js"></script> -->
 <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
+
+<script src="http://localhost:8081/kostaProject1/scripts/common/moment.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
 <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/easing/easing.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/parallax-js-master/parallax.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/plugins/common/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
+<!--  메뉴이펙트 스크립트 -->
+
+
+<!-- <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script> -->
 <script src="http://localhost:8081/kostaProject1/plugins/common/greensock/TweenMax.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common/greensock/TimelineMax.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common/scrollmagic/ScrollMagic.min.js"></script>

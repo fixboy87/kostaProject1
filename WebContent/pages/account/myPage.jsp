@@ -78,6 +78,20 @@
     border-width: thin;
     border-color: grey;
 }
+
+.header_titlePage {
+	background: none !important;
+}
+
+div.logo div {
+	color: grey;
+}
+.scrolled div.logo>div {
+	color: white;
+}
+.scrolled li.main_nav_item>a {
+	color: white;
+}
 </style>
 </head>
 
