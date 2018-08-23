@@ -11,6 +11,7 @@ public class GngUpdateEnqReplyAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String str= request.getParameter("e_seq");
+		
 		int e_seq=0;
 		if(str != null){
 			e_seq = Integer.parseInt(str);
@@ -21,7 +22,7 @@ public class GngUpdateEnqReplyAction implements Action {
 		re= dao.updateRnqReply(e_seq);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("GngListAction.do");
+		forward.setPath("GngUpdateEnqReplyAction.do");
 		forward.setRedirect(false);
 		
 		return forward;

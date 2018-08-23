@@ -2,6 +2,7 @@ package yanoll.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.Enquire_BoardDao;
 import yanoll.models.service.GngEnquireService;
@@ -16,7 +17,8 @@ public class GngInqInsertAction implements Action {
 	request.setCharacterEncoding("utf-8");
 	service.insertEnquireService(request);
 	
-	System.out.println(10);
+	HttpSession Session = request.getSession();
+	
 	
 	ActionForward forward= new ActionForward();
 	forward.setPath("GngListAction.do");
