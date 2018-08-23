@@ -11,7 +11,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.css">
 <link href="http://localhost:8081/kostaProject1/plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/plugins/common/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -22,7 +21,12 @@
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/responsive.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
-
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/custom.css">
+<style type="text/css">
+.main_nav_item>a {
+	color: white;
+}
+</style>
 </head>
 
 <script type="text/javascript">
@@ -89,6 +93,11 @@
 </script>
 
 <body>
+	
+	<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
+
 	<div class="super_container margin_top_control">
 	<%@ include file="../sub_page/header_menu.jsp"%>
 
@@ -157,6 +166,7 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 </script>
 </body>
