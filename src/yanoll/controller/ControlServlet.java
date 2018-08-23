@@ -286,7 +286,14 @@ public class ControlServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } 
+        } else if (command.equals("review_checkAction.do")) {//syj_6.후기작성 booking출력
+			action = new Review_checkAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
     	
 
     	
