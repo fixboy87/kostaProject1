@@ -9,8 +9,8 @@
 	<insert id="insertEnquire" parameterType="Enquire_Board">
 		insert into
 		enquire_board
-		(e_seq,e_title,e_contents,e_date,hotel_name)
-		values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{hotel_name})
+		(e_seq,e_title,e_contents,e_date,hotel_name,id)
+		values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{hotel_name},#{id})
 	</insert>
 
 	<select id="EnquireList" resultType="Enquire_Board"
@@ -58,6 +58,10 @@
 	</select>
 	<delete id="deleteEnquireReply" parameterType="Enquire_Reply">delete from
 		enquire_reply where e_seq=#{e_seq}</delete>
+		
+	<update id="updateEnquireReply" parameterType="Enquire_Reply">
+	   update enquire_reply set r_contents=#{r_contents} where r_seq=#{r_seq}
+	</update>
 
 
 

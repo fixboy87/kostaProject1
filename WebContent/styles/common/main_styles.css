@@ -1629,3 +1629,7 @@ section
 .hidden {
 	visibility: hidden !important;
 }
+
+.main_nav_list a {
+	color: white;
+}

@@ -27,8 +27,6 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 		<!-- 달력 -->
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">	<!-- 폰트 -->
 
-
-
 </head>
 <body>
 
@@ -128,10 +126,10 @@
 					<div class="col-12">
 						<div class="find_title text-center">
 							<navi class="navi_bar">
-							<li>예약현황</li>
-							<li>RoomList</li>
-							<li>호텔정보수정</li>
-							<li>매출현황</li>
+							<li><a href="Management.do" method="post">예약현황</a></li>
+							<li><a href="roomList.do" method="post">RoomList</a></li>
+							<li><a href="Hotel_Info.do" method="post">호텔정보수정</a></li>
+							<li><a href="Sales.do" method="post">매출현황</a></li>
 							<br></br>
 							</navi>
 
@@ -250,33 +248,44 @@
 	</table>
 </div> -->
 
-		<!-- -------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------- -->
 		<div id="wrap" align="cnter">
 			<div class="elements_title">예약현황</div>
 			<!-- <a href="insert_form.jsp">글쓰기</a> 나중에 이걸 드롭다운으로 테이블안에 넣을꺼임-->
 			<table class="type10" width="500" border="1" cellpadding="0" cellspacing="0">
 				<tr>
-					<th>ID</th>
-					<th>이름</th>
-					<th>연락처</th>
+					<th>예약번호</th>
+					<th>방번호</th>
+					<th>호텔번호</th>
+					<th>예약이름</th>
+					<th>예약가격</th>
 					<th>Check-in</th>
 					<th>Check-out</th>
-					<th>예약비용</th>
+					<th>seq</th>
+					<th>거주기간</th>
+					<th>예약상태</th>
+					<th>예약날짜</th>
 					<th>선택</th>
 				</tr>
+		
 				<c:forEach var="Users" items="${ManagementPaging.list}">
 					<tr>
-						<td>${Users.ID}</td>
-						<td>${Users.name}</td>
-						<td>${Users.tel}</td>
-						<td><fmt:parseDate var="dateString1" value="${Users.start_day}" pattern="yyyy-MM-dd" /> 	 <!-- string을 date로 파싱해줌 -->
-							<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" />									<!-- dateString에 저장된 date를 사용 -->
-						</td> 
+						<td>${ReservationSearch.booking_num}</td>
+						<td>${ReservationSearch.room_num}</td>
+						<td>${ReservationSearch.h_no}</td>
+						<td>${ReservationSearch.booking_name}</td>
+						<td>${ReservationSearch.booking_price}</td>
+						<td><fmt:parseDate var="dateString1" value="${ReservationSearch.start_day}" pattern="yyyy-MM-dd" /> 	 <!-- string을 date로 파싱해줌 -->
+							<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" />							<!-- dateString에 저장된 date를 사용 -->
+						</td>
 						 <td>
-							<fmt:parseDate var="dateString2" value="${Users.end_day}" pattern="yyyy-MM-dd" /> 
+							<fmt:parseDate var="dateString2" value="${ReservationSearch.end_day}" pattern="yyyy-MM-dd" /> 
 							<fmt:formatDate value="${dateString2}" pattern="yyyy-MM-dd" />
 						</td>
-					 	<td>${Users.booking_price}</td>
+					 	<td>${ReservationSearch.seq}</td>
+					 	<td>${ReservationSearch.stay_day}</td>
+					 	<td>${ReservationSearch.p_condition}</td>
+					 	<td>${ReservationSearch.b_date}</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -285,12 +294,14 @@
 			<c:if test= "${ManagementPaging.startPage > 5}">
 				<a href="Management.jsp?pageNum=$"${ManagementPaging.startPage-1}>[이전]</a>
 			</c:if>
+			
 			<!-- 페이지목록 -->
 			<c:forEach var="pageNo" begin="${ManagementPage.startPag}" end="${ManagementPage.endPage}">
 				<c:if test="${Management.requestPage == pageNo}"><b></c:if>
 					<a href="Management.jsp?pageNum=${PageNo}">[${pageNo}]</a>
 				<c:if test="${ManagementPaging.requestPage == pageNo}"></b></c:if>
 			</c:forEach>
+			
 			<!-- 다음페이지 -->
 			<c:if test="${ManagementPaging.endPage < ManagementPaging.totalPageCount}">
 				<a href="Management.jsp?pageNum=${ManagementPaging.startPage+5}">[이후]</a>

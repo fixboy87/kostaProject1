@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.HotelDao;
 import yanoll.models.vo.Hotel;
+import yanoll.models.vo.SearchCondition;
 
 public class HotelService {
 	
@@ -37,9 +38,9 @@ public class HotelService {
 		return list;
 	}
 	
-	public List<Hotel> hotelPriceSelector(int low_price, int max_price){
+	public List<Hotel> hotelPriceSelector(SearchCondition condition){
 		
-		List<Hotel> list = dao.hotelPriceSelector(low_price, max_price);
+		List<Hotel> list = dao.hotelPriceSelector(condition);
 		
 		return list;
 	}

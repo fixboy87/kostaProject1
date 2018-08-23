@@ -23,12 +23,13 @@ public class GngDeleteEnquire implements Action {
 		Enquire_BoardDao dao= Enquire_BoardDao.getinstance();
 		int re=0;
 		re= dao.deleteEnquireBoard(e_seq);
+		re= dao.deleteEnqReply(e_seq);
 		System.out.println(re);
 
 
 		ActionForward forward = new ActionForward();
 		forward.setPath("GngListAction.do");
-		forward.setRedirect(true);  //고침
+		forward.setRedirect(true);  
 		
 		return forward;
 	}

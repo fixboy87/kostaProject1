@@ -22,6 +22,12 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/loginForm.css">
+<style type="text/css">
+.main_nav_list a {
+	color: white;
+}
+</style>
+
 </head>
 
 <body>
@@ -45,11 +51,11 @@
                                     <legend class="sc-out">로그인</legend>
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="text" name="id" value="" placeholder="아이디를 입력해주세요." title="아이디를 입력" autocomplete="off">
+                                            <input type="text" name="id" value="" placeholder="아이디를 입력해주세요.(영문,숫자 7자 이상만 가능)" title="아이디를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="password" placeholder="비밀번호를 입력해주세요." title="비밀번호 입력" autocomplete="off">
+                                            <input type="text" id="mInput1" name="password" placeholder="비밀번호를 입력해주세요.(특수문자 불가, 7자 이상)" title="비밀번호 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">

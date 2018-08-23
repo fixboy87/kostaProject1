@@ -13,7 +13,7 @@ public class RegisterFormAction2 implements Action {
 		String type = (String)request.getParameter("type");
 
 		String email = request.getParameter("email");
-		String id = request.getParameter("id");
+		String userId = request.getParameter("userId");
 		String password = request.getParameter("password");
 		String tel = request.getParameter("tel");
 		String name = request.getParameter("name");
@@ -27,7 +27,7 @@ public class RegisterFormAction2 implements Action {
 			forward.setPath("/pages/account/registerForm_p.jsp");
 			
 			session.setAttribute("email", email);
-			session.setAttribute("id", id);
+			session.setAttribute("userId", userId);
 			session.setAttribute("tel", tel);
 			session.setAttribute("password", password);
 			session.setAttribute("name", name);
@@ -36,7 +36,7 @@ public class RegisterFormAction2 implements Action {
 			forward.setPath("/pages/account/registerForm_e.jsp");
 			
 			session.setAttribute("h_mail", email);
-			session.setAttribute("h_id", id);
+			session.setAttribute("h_id", userId);
 			session.setAttribute("h_phonenum", tel);
 			session.setAttribute("h_password", password);
 			session.setAttribute("h_name", name);

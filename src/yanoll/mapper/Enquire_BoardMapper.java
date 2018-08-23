@@ -14,12 +14,13 @@ public interface Enquire_BoardMapper {  //kosta.mapper 폴더안에 인터페이
           
 	      int insertEnquire(Enquire_Board board);
 	      List<Enquire_Board> EnquireList(RowBounds row,Enquire_Search search);
-          int countBoard(Enquire_Search search);
+          int countBoard(Enquire_Search searczzh);
           Enquire_Board EnquireDetail(int e_seq);
           int insertEnquireReply(Enquire_Reply reply);
           List<Enquire_Reply> EnqReplyList(int e_seq);
           int deleteEnquire(int e_seq);
           int deleteEnquireReply(int e_seq);
+          int updateEnquireReply(int e_seq);
 
 
 

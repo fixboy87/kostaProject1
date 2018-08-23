@@ -49,8 +49,8 @@ $(document).ready(function(){
 		range: true,
 		orientation: "horizontal",
 		min: 0,
-		max: 10000,
-		values: [0, 10000],
+		max: 60,
+		values: [0, 60],
 		step: 100,
 
 		slide: function (event, ui) {
@@ -75,5 +75,7 @@ $(document).ready(function(){
 
 	  $("#searchResults").text("Here List of products will be shown which are cost between " + min_price  +" "+ "and" + " "+ max_price + ".");
 	});
+	
+	
 
 });

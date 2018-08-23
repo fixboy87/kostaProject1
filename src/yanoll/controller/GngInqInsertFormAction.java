@@ -2,6 +2,7 @@ package yanoll.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class GngInqInsertFormAction implements Action {
 
@@ -11,10 +12,16 @@ public class GngInqInsertFormAction implements Action {
 		
 		System.out.println(2);
 		
-		ActionForward forward = new ActionForward();
 		
+		HttpSession session= request.getSession();
+		String id = (String)session.getAttribute("id");
+		
+		session.setAttribute("id", id);
+		System.out.println(id);
+		
+		ActionForward forward = new ActionForward();	
 		forward.setRedirect(false);
-		forward.setPath("enquire.jsp");
+		forward.setPath("/pages/gng_page/enquire.jsp");
 	
 		return forward;
 	}

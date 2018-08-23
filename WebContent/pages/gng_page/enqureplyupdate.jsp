@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/gng_style/gng_contact.css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/gng_style/gng_main.css">
-<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../styles/gng_style/gng_contact.css">
+<link rel="stylesheet" type="text/css" href="../../styles/gng_style/gng_main.css">
+<link rel="stylesheet" type="text/css" href="../../styles/common/bootstrap4/bootstrap.min.css">
 <script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
 <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common//easing/easing.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common//parallax-js-master/parallax.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/contact_custom.js"></script>
-<script type="text/javascript" src="http://localhost:8081/kostaProject1/scripts/gng_script/enquire_sc.js"></script>
+<script type="text/javascript" src="../../scripts/gng_script/enquire_sc.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -58,7 +58,7 @@ margin-bottom: 2%;
 	<!-- Contact -->
 
 							<div class="contact_form_container">
-							<form action="GngReplyInsertAction.do" method="post" id="contact_form" class="clearfix">
+							<form action="GngUpdateEnqReplyAction.do" method="post" id="contact_form" class="clearfix">
 							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="r_contents" ></input>
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="hidden" name="e_seq" value="${board.e_seq}">
 							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">

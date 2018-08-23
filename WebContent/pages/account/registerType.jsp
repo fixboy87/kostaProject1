@@ -35,7 +35,7 @@
         <div id="content" class="content_wrap">
             <!-- mb_join start -->
             <div class="mb_join">
-                <h2 class="tit"><img src="#" alt="회원가입"></h2>
+                <br><br>
                 <p class="txt">해당 사이트에서 제공하는 호텔 간편조회 및 간편예약 서비스를 즐길 수 있습니다. 회원가입은 무료입니다.</p>
 
                 <div class="join_divi">
@@ -87,5 +87,7 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerType.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
+<script type="text/javascript">
+</script>
 </body>
 </html>
