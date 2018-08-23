@@ -59,9 +59,9 @@
 <div class="super_container">
 <!-- Header -->
 <%@ include file="../sub_page/header_menu.jsp"%>
-<%
-	
-%>
+<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
 		<!-- Menu -->
 
 	<div class="menu_container menu_mm">

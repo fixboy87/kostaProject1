@@ -85,7 +85,6 @@ public class HotelDao {
 		
 		try {
 			list = sqlSession.getMapper(HotelMapper.class).hotelDetailList(h_no);
-			System.out.println("디테일 DAO 접근");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

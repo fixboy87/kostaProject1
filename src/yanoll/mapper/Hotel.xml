@@ -15,10 +15,11 @@
 	<select id="hotelPriceSelector" resultType="Hotel" parameterType="SearchCondition">
 		select h_no, h_name, h_info, pic_url, h_location,price from Hotel
 				where price between #{low_price} and #{max_price} and h_location = #{destination} order by price desc 
-				
 	</select>	
+	
 	<select id="hotelDetailList" resultType="Hotel_room" parameterType="int">
-		select pic_room_url, room_type from hotel_room where h_no = #{h_no}
+		select ro.pic_room_url, ro.room_type , ro.room_price, ho.h_name from hotel_room ro Inner JOIN hotel ho 
+     		 on ro.h_no = ho.h_no where ro.h_no = #{h_no}
 	</select>
 	
 </mapper>

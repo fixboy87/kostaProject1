@@ -56,10 +56,9 @@
 <div class="super_container">
 <!-- Header -->
 <%@ include file="../sub_page/header_menu.jsp"%>
-<%
-	/* request.getAttribute("list0"); */
-%>
-
+<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
 		<!-- Menu -->
 
 	<div class="menu_container menu_mm">
@@ -141,8 +140,10 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h2>Top destinations in Europe</h2>
-						<div>take a look at these offers</div>
+					<c:forEach var="listH" items="${detail}" begin="1" end="1" >
+						<h2>${listH.h_name}</h2>
+					</c:forEach>
+						<div>take a look at these rooms</div>
 					</div>
 				</div>
 			</div>
@@ -154,16 +155,17 @@
 					<c:forEach var="listH" items="${detail}"> 
 						<!-- Item -->
 						<div class="item clearfix rating_5">
+						
 							<div class="item_image"><img src="http://localhost:8081/kostaProject1/images/pages/HotelRoomImg/${listH.pic_room_url}" alt=""></div>
 							<div class="item_content">
 								<div class="item_price">${listH.room_type}</div>
 								<div class="item_title"></div>
 								<ul>
-									<li>만원</li>
+									<li>${listH.room_price}만원</li>
 									<li>1 nights</li>
-									<li>3 star hotel</li>
+									<li>11시 입실</li>
 								</ul>
-								<div class="rating rating_5" data-rating="5">
+								<div class="rating rating_5" style="display: none !important;" >
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
@@ -171,7 +173,7 @@
 									<i class="fa fa-star"></i>
 								</div>
 								<div class="item_text"></div>
-								<div class="item_more_link"><a href="#">Read More</a></div>
+								<div class="item_more_link"><a href="#"></a></div>
 							</div>
 						</div>
 					</c:forEach> 
