@@ -282,4 +282,8 @@ $(document).ready(function()
 	});
 	
 	
+	//mypage 1:1 문의 버튼
+	$('.iEnquire').click(function() {
+		location.href= "Insertenquire.do";
+	});
 });
