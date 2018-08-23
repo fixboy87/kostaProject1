@@ -78,7 +78,7 @@ margin-bottom: 2%;
 							<br>
 							
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="e_title" placeholder="제목" >
-							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" placeholder="내용"></input>
+							<textarea id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" placeholder="내용"></textarea>
 							<input id="hotelname" type="hidden" name="hotel_name">
 							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">
 					        <input type="hidden" id="uid" name="id" val="<%=(String)session.getAttribute("id")%>"/>

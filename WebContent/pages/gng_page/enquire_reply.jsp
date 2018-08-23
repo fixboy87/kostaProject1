@@ -44,7 +44,7 @@ margin-bottom: 2%;
 	font-weight: 500;
 	cursor: pointer;	
 	
-	margin-bottom: 14px;
+	margin-bottom: 10%;
 	text-align: center;
 }
 </style>
@@ -52,14 +52,14 @@ margin-bottom: 2%;
 
 </head>
 <body>
-<%@include file="../sub_page/header_menu.jsp" %>
+
 
 
 	<!-- Contact -->
 
 							<div class="contact_form_container">
 							<form action="GngReplyInsertAction.do" method="post" id="contact_form" class="clearfix">
-							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="r_contents" ></input>
+							<textarea id="contact_input_message" class="contact_message_input contact_input_message" type="text" placeholder="내용" name="r_contents" ></textarea>
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="hidden" name="e_seq" value="${board.e_seq}">
 							<input type="hidden" id="uid" name="id" val="<%=(String)session.getAttribute("id")%>"/>
 							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">
@@ -70,6 +70,6 @@ margin-bottom: 2%;
 					</div>
 			
 			
-<%@include file="../sub_page/footer.html" %>
+
 </body>
 </html>

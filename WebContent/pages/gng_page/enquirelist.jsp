@@ -37,7 +37,23 @@ margin-bottom: 1%;
 text-align: center;
 }
 
+.Enquire_list
+{
+	width: 80%;
+	height: 41px;
+	border: solid 2px #dbdbdb;
+	padding-left: 20px;
+	margin-left :10%;
+	margin-bottom: 19px;
+	outline: none;
+	text-align: center;
+}
+.enquire_search{
+margin-top : 2%;
+margin-left: 80%;
+margin-bottom: 1%;
 
+}
 </style>
 
 
@@ -88,12 +104,12 @@ text-align: center;
 		<a href="GngListAction.do?pageNum=${listModel.startPage+5}"> [이후]</a>
 		</c:if>		 --%>
 		
-		<form class="enquire_search" action="GngListAction.do" method="post">					      
+		<!-- <form class="enquire_search" action="GngListAction.do" method="post">					      
 					        <input type="checkbox" name="area" value="e_title"> 제목 
 					        <input type="checkbox" name="area" value="id"> ID 
 			                <input type="text" name="searchKey" size="10">
 					        <input type="submit" value="검색">
-					        </form>														
+					        </form>			 -->											
 			      			        
 					
 			

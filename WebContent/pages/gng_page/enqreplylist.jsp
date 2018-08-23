@@ -57,7 +57,8 @@
 	padding:3px 5px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffffff;
-	
+	margin : 0 auto;
+	float :right;
 }
 .EnquireDelete:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
@@ -73,7 +74,21 @@
 	position:relative;
 	top:1px;
 }
-
+.enquire_reply
+{
+	
+	border: none;
+	outline: none;
+	float: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;	
+	margin : 0 auto;
+	margin-bottom: 14px;
+	
+	text-align: center;
+}
 
 
 
@@ -85,17 +100,21 @@
 
 
    <table class="enquire_reply" border="1">
+   
     <c:forEach var="Enquire_Reply" items="${reply}">
-    
-    
-    
+  
     <tr>
-    <td>${Enquire_Reply.r_contents}</td>
-    <td>${Enquire_Reply.id}</td>
+    <td style="background-color: #fafafa; color: #000000; width: 200px;"><h5>아이디</h5></td>
+	<td colspan="3" style=" color: #000000;"><h5>${Enquire_Reply.id}</h5></td>
+	</tr>
+	<tr>
+	
+	<td style="background-color: #fafafa; color: #000000; width: 80px;"><h5>내용</h5></td>
+	<td colspan="3"style=" color: #000000; width:85%;" height="100px"><h5>${Enquire_Reply.r_contents}</h5></td>
     </tr> 
     </table>
-    <a class="EnquireDelete" href="GngDeleteEnqReply.do?e_seq=${Enquire_Reply.e_seq}">답장삭제</a> <!-- 배열에 있는 상태여서 foreach로 빼야한다.  -->
-    <a class="EnquireDelete" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">답장수정</a>
+    <a class="EnquireDelete" href="GngDeleteEnqReply.do?e_seq=${Enquire_Reply.e_seq}">댓글삭제</a> <!-- 배열에 있는 상태여서 foreach로 빼야한다.  -->
+    <a class="EnquireDelete" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">댓글수정</a>
     </c:forEach>
      
     

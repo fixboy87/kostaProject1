@@ -54,7 +54,7 @@
 	padding:9px 23px;
 	text-decoration:none;
 	text-shadow:1px -1px 0px #ffffff;
-	margin-left: auto;
+
 }
 .EnquireDelete:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
@@ -69,6 +69,21 @@
 .EnquireDelete:active {
 	position:relative;
 	top:1px;
+}
+
+
+
+.enquire_detail
+{
+	width: 80%;
+	height: 41px;
+	border: solid 2px #dbdbdb;
+	padding-left: 20px;
+	margin-left :10%;
+	margin-bottom: 5%;
+	margin-top : 5%
+	outline: none;
+	text-align: center;
 }
 
 
@@ -95,24 +110,25 @@
 	<td colspan="3"><h5>${board.id}</h5></td>
 	</tr>
 	<tr>
-	<td style="vertical-align :middle; min-height: 20%; background-color: #fafafa; color: #000000; width: 80px; "><h5>내용</h5></td>
-	<td colspan="3" style="text-align: left"><h5>${board.e_contents}</h5></td>
+	<td style="vertical-align :middle; min-height: 30%; background-color: #fafafa; color: #000000; width: 80px; "><h5>내용</h5></td>
+	<td colspan="13" style="text-align: left"><h5>${board.e_contents}</h5></td>
 	</tr>
 	</thead>
 	</table>
-	
+	            <a href="GngListAction.do"class="EnquireDelete">목록</a>
+				<a href="GngDeleteEnquire.do?e_seq=${board.e_seq}"class="EnquireDelete">삭제</a>
+	            <a href="GngUpdateEnqForm.do?e_seq=${board.e_seq}"class="EnquireDelete">수정</a>
 	
 			
-	<a href="GngDeleteEnquire.do?e_seq=${board.e_seq}"class="EnquireDelete">삭제</a>
-	<a href="GngUpdateEnqForm.do?e_seq=${board.e_seq}"class="EnquireDelete">수정</a>
-	<a href="GngReplyFormAction.do?e_seq=${board.e_seq}"class="EnquireDelete">답변</a>
+	
 	
 	
 									
-									
-    <%@include file="../gng_page/enqreplylist.jsp" %>																
+    <%@include file="../gng_page/enqreplylist.jsp" %>				
+    <%@include file="../gng_page/enquire_reply.jsp" %>																
 					
-					      			        
+
+	<%-- <a href="GngReplyFormAction.do?e_seq=${board.e_seq}"class="EnquireDelete">답변</a> --%>		      			        
 					
 			
 			

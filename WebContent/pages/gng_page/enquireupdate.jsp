@@ -52,7 +52,7 @@
 							<br>
 							
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="text" name="e_title" >
-							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" ></input>
+							<textarea id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="e_contents" ></textarea>
 							<input id="hotelname" type="hidden" name="hotel_name">
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="hidden" name="e_seq" value="${board.e_seq}">
 							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">

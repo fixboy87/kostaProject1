@@ -30,7 +30,7 @@ public class GngReplyInsertAction implements Action {
 		request.setAttribute("board", board);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("GngListAction.do");
+		forward.setPath("GngListAction.do?");
 		forward.setRedirect(true);
 		
 		return forward;

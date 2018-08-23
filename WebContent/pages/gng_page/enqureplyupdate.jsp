@@ -60,7 +60,7 @@ margin-bottom: 2%;
 
 							<div class="contact_form_container">
 							<form action="GngUpdateEnqReplyAction.do" method="post" id="contact_form" class="clearfix">
-							<input id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="r_contents" ></input>
+							<textarea id="contact_input_message" class="contact_message_input contact_input_message" type="text" name="r_contents" ></textarea>
 							<input id="contact_input_subject" class="contact_input contact_input_subject" type="hidden" name="e_seq" value="${board.e_seq}">
 							<input id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="등록">
 					
