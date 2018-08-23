@@ -3,49 +3,76 @@ package yanoll.models.vo;
 import java.io.Serializable;
 
 public class ReservationSearch implements Serializable{
-	private String id;
-	private String name;
-	private int tel;
+	private int booking_num;
+	private int room_num;
+	private int h_no;
+	private String booking_name;
+	private int booking_price;
 	private String start_day;
 	private String end_day;
-	private int booking_price;
+	private int seq;
+	private int stay_day;
+	private int p_condition;
+	private int b_date;
 
 	public ReservationSearch() {
 		super();
 	}
 
-	public ReservationSearch(String id, String name, int tel, String start_day, String end_day, int booking_price) {
+	public ReservationSearch(int booking_num, int room_num, int h_no, String booking_name, int booking_price,
+			String start_day, String end_day, int seq, int stay_day, int p_condition, int b_date) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.tel = tel;
+		this.booking_num = booking_num;
+		this.room_num = room_num;
+		this.h_no = h_no;
+		this.booking_name = booking_name;
+		this.booking_price = booking_price;
 		this.start_day = start_day;
 		this.end_day = end_day;
+		this.seq = seq;
+		this.stay_day = stay_day;
+		this.p_condition = p_condition;
+		this.b_date = b_date;
+	}
+
+	public int getBooking_num() {
+		return booking_num;
+	}
+
+	public void setBooking_num(int booking_num) {
+		this.booking_num = booking_num;
+	}
+
+	public int getRoom_num() {
+		return room_num;
+	}
+
+	public void setRoom_num(int room_num) {
+		this.room_num = room_num;
+	}
+
+	public int getH_no() {
+		return h_no;
+	}
+
+	public void setH_no(int h_no) {
+		this.h_no = h_no;
+	}
+
+	public String getBooking_name() {
+		return booking_name;
+	}
+
+	public void setBooking_name(String booking_name) {
+		this.booking_name = booking_name;
+	}
+
+	public int getBooking_price() {
+		return booking_price;
+	}
+
+	public void setBooking_price(int booking_price) {
 		this.booking_price = booking_price;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getTel() {
-		return tel;
-	}
-
-	public void setTel(int tel) {
-		this.tel = tel;
 	}
 
 	public String getStart_day() {
@@ -64,17 +91,35 @@ public class ReservationSearch implements Serializable{
 		this.end_day = end_day;
 	}
 
-	public int getBooking_price() {
-		return booking_price;
+	public int getSeq() {
+		return seq;
 	}
 
-	public void setBooking_price(int booking_price) {
-		this.booking_price = booking_price;
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 
-	@Override
-	public String toString() {
-		return "ReservationSearch [id=" + id + ", name=" + name + ", tel=" + tel + ", start_day=" + start_day
-				+ ", end_day=" + end_day + ", booking_price=" + booking_price + "]";
+	public int getStay_day() {
+		return stay_day;
+	}
+
+	public void setStay_day(int stay_day) {
+		this.stay_day = stay_day;
+	}
+
+	public int getP_condition() {
+		return p_condition;
+	}
+
+	public void setP_condition(int p_condition) {
+		this.p_condition = p_condition;
+	}
+
+	public int getB_date() {
+		return b_date;
+	}
+
+	public void setB_date(int b_date) {
+		this.b_date = b_date;
 	}
 }

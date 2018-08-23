@@ -62,10 +62,4 @@ public class ManagementPaging {
 	public void setEndPage(int endPage) {
 		this.endPage = endPage;
 	}
-
-	@Override
-	public String toString() {
-		return "ManagementPaging [list=" + list + ", requestPage=" + requestPage + ", totalPageCount=" + totalPageCount
-				+ ", startPage=" + startPage + ", endPage=" + endPage + "]";
-	}
 }

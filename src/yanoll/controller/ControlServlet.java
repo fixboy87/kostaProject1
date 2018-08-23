@@ -251,7 +251,36 @@ public class ControlServlet extends HttpServlet {
         	} catch (Exception e) {
         		e.printStackTrace();
         	}
-        }
+        } else if(command.equals("Management.do")){
+            action = new ManagementAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if(command.equals("roomList.do")){
+            action = new RoomListAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if(command.equals("Hotel_Info.do")){
+            action = new HotelInfoAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if(command.equals("Sales.do")){
+            action = new SalesAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } 
+    	
 
     	
     	

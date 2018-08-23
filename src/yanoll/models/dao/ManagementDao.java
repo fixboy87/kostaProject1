@@ -32,7 +32,7 @@ public class ManagementDao{
 	}
 	
 	public List<ReservationSearch> listBoard(UserSearch search, int startRow){  //////
-		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		SqlSession sqlSession = getSqlSessionFactory().openSession();  // sql문을 직접 받아올수 있는 sqlsession 객체만듬
 		List<ReservationSearch> list = null;
 		
 		try {
@@ -44,5 +44,4 @@ public class ManagementDao{
 		}
 		return list;
 	}
-	
 }
