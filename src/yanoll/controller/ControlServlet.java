@@ -321,6 +321,20 @@ public class ControlServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        } else if(command.equals("GngUpdateEnqForm.do")){
+            action = new GngUpdateEnqForm();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if(command.equals("GngUpdateEnqAction.do")){
+            action = new GngUpdateEnqAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } 
         
     	
