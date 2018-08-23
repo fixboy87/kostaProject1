@@ -13,8 +13,7 @@ public class ManagementPaging {
 		super();
 	}
 
-	public ManagementPaging(List<ReservationSearch> list, int requestPage, int totalPageCount, int startPage,
-			int endPage) {
+	public ManagementPaging(List<ReservationSearch> list, int requestPage, int totalPageCount, int startPage, int endPage) {
 		super();
 		this.list = list;
 		this.requestPage = requestPage;

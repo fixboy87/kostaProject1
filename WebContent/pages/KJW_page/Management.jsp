@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +14,31 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../../styles/KJW_Style/bootstrap4/bootstrap.min.css">
-<link href="../../plugins/common/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="../../styles/KJW_Style/elements_styles.css">
-<link rel="stylesheet" type="text/css" href="../../styles/KJW_Style/elements_responsive.css">
-<link rel="stylesheet" href="../../styles/KJW_Style/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="http://localhost:8081/kostaProject1/styles/KJW_Style/bootstrap4/bootstrap.min.css">
+<link
+	href="http://localhost:8081/kostaProject1/plugins/common/font-awesome-4.7.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css"
+	href="http://localhost:8081/kostaProject1/styles/KJW_Style/elements_styles.css">
+<link rel="stylesheet" type="text/css"
+	href="http://localhost:8081/kostaProject1/styles/KJW_Style/elements_responsive.css">
+<link rel="stylesheet"
+	href="http://localhost:8081/kostaProject1/styles/KJW_Style/bootstrap4/bootstrap.min.css">
 
-
+<!-- http://localhost:8081/kostaProject1/destino/js/jquery-3.2.1.min.js -->
 
 <!-- 추가. 아래 3줄  -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script> 							<!-- 달력 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 						<!-- 달력 -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 		<!-- 달력 -->
-<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding" rel="stylesheet">	<!-- 폰트 -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!-- 달력 -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- 달력 -->
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- 달력 -->
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding"
+	rel="stylesheet">
+<!--폰트 -->
 
 </head>
 <body>
@@ -53,7 +66,9 @@
 							<input type="search" class="menu_search_input menu_mm">
 							<button id="menu_search_submit" class="menu_search_submit"
 								type="submit">
-								<img src="../../images/common/search_2.png" alt="">
+								<img
+									src="http://localhost:8081/kostaProject1/images/common/search_2.png"
+									alt="">
 							</button>
 						</form>
 					</div>
@@ -81,13 +96,9 @@
 									class="fa fa-twitter" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
-
-					<div class="menu_copyright menu_mm">Colorlib All rights
-						reserved</div>
+					<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
 				</div>
-
 			</div>
-
 		</div>
 
 		<!-- Home -->
@@ -95,7 +106,8 @@
 		<div class="home">
 			<!-- Image by https://unsplash.com/@peecho -->
 			<div class="home_background parallax-window" data-parallax="scroll"
-				data-image-src="../../images/common/elements.jpg" data-speed="0.8"></div>
+				data-image-src="http://localhost:8081/kostaProject1/images/common/elements.jpg"
+				data-speed="0.8"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -104,8 +116,6 @@
 								<div class="home_title">Management</div>
 								<div class="home_breadcrumbs">
 									<ul class="home_breadcrumbs_list">
-										<li class="home_breadcrumb"><a href="index.html">Home</a></li>
-										<li class="home_breadcrumb">Management</li>
 									</ul>
 								</div>
 							</div>
@@ -117,8 +127,6 @@
 		<!-- Elements -->
 
 		<div class="elements">
-
-
 
 			<!-- <div class="find_background parallax-window" data-parallax="scroll" data-image-src="images/find.jpg" data-speed="0.8"></div> -->
 			<div class="container">
@@ -132,7 +140,6 @@
 							<li><a href="Sales.do" method="post">매출현황</a></li>
 							<br></br>
 							</navi>
-
 						</div>
 					</div>
 					<div class="col-12">
@@ -171,7 +178,6 @@
 									<script>
 										$("#secondday").datepicker();
 									</script>
-
 								</div>
 								<button class="button find_button">Find</button>
 							</form>
@@ -181,134 +187,88 @@
 			</div>
 		</div>
 
+<!-- -------------------------------테이블------------------------------------------------------ -->
 
-
-
-
-		<!-- -------------------------------테이블... 어차피 바뀔꺼... ㅜㅜ 임시------------------------------------------------------ -->
-
-		<!-- <div id="wrap" align="cnter">
-	<div class="elements_title">예약현황</div>
-	<table class="type10">
-	    <thead>
-	    <tr>
-	        <th>ID</th><th>이름</th><th>연락처</th><th>Check-in</th><th>Check-out</th><th>예약비용</th><th>선택</th>
-	    </tr>
-	    </thead>
-	    <tbody>
-	    <tr>
-	        <th scope="row">1</th>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>
-	        	<select>
-	        		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
-	    </tr>
-	    <tr>
-	        <th scope="row" class="even">2</th>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">내용이 들어갑니다.</td>
-	        <td class="even">
-	        	<select>
-	       	 		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
-	    </tr>
-	    <tr>
-	        <th scope="row">3</th>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>내용이 들어갑니다.</td>
-	        <td>
-	        	<select>
-	        		<option>----</option>
-	        		<option>수정</option>
-	        		<option>삭제</option>
-	        	</select>
-	        	<button>확인</button>
-	        </td>
-	    </tr>
-	    </tbody>
-	</table>
-</div> -->
-
-<!-- -------------------------------------------------------------------------------------- -->
 		<div id="wrap" align="cnter">
 			<div class="elements_title">예약현황</div>
-			<!-- <a href="insert_form.jsp">글쓰기</a> 나중에 이걸 드롭다운으로 테이블안에 넣을꺼임-->
-			<table class="type10" width="500" border="1" cellpadding="0" cellspacing="0">
-				<tr>
-					<th>예약번호</th>
-					<th>방번호</th>
-					<th>호텔번호</th>
-					<th>예약이름</th>
-					<th>예약가격</th>
-					<th>Check-in</th>
-					<th>Check-out</th>
-					<th>seq</th>
-					<th>거주기간</th>
-					<th>예약상태</th>
-					<th>예약날짜</th>
-					<th>선택</th>
-				</tr>
-		
-				<c:forEach var="Users" items="${ManagementPaging.list}">
+			<table class="type10" width="1130">
+				<thead>
 					<tr>
-						<td>${ReservationSearch.booking_num}</td>
-						<td>${ReservationSearch.room_num}</td>
-						<td>${ReservationSearch.h_no}</td>
-						<td>${ReservationSearch.booking_name}</td>
-						<td>${ReservationSearch.booking_price}</td>
-						<td><fmt:parseDate var="dateString1" value="${ReservationSearch.start_day}" pattern="yyyy-MM-dd" /> 	 <!-- string을 date로 파싱해줌 -->
-							<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" />							<!-- dateString에 저장된 date를 사용 -->
-						</td>
-						 <td>
-							<fmt:parseDate var="dateString2" value="${ReservationSearch.end_day}" pattern="yyyy-MM-dd" /> 
-							<fmt:formatDate value="${dateString2}" pattern="yyyy-MM-dd" />
-						</td>
-					 	<td>${ReservationSearch.seq}</td>
-					 	<td>${ReservationSearch.stay_day}</td>
-					 	<td>${ReservationSearch.p_condition}</td>
-					 	<td>${ReservationSearch.b_date}</td>
+						<th>예약번호</th>
+						<th>방번호</th>
+						<th>호텔번호</th>
+						<th>예약이름</th>
+						<th>예약가격</th>
+						<th>Check-in</th>
+						<th>Check-out</th>
+						<th>seq</th>
+						<th>거주기간</th>
+						<th>예약상태</th>
+						<th>예약날짜</th>
+						<th>선택</th>
 					</tr>
-				</c:forEach>
+				</thead>
+				<tbody>
+					<tr>
+						<!-- <th scope="row">1</th> -->
+						<c:forEach var="reservationSearch" items="${ManagementPaging.list}">
+							<tr>
+								<td>${reservationSearch.booking_num}</td>
+								<td>${reservationSearch.room_num}</td>
+								<td>${reservationSearch.h_no}</td>
+								<td>${reservationSearch.booking_name}</td>
+								<td>${reservationSearch.booking_price}</td>
+								<td><fmt:parseDate var="dateString1" value="${reservationSearch.start_day}" pattern="yyyy-MM-dd" /> 		<!-- string을 date로 파싱해줌 --> 
+									<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" /> 											<!-- dateString에 저장된 date를 사용 -->
+								</td>
+								<td><fmt:parseDate var="dateString2" value="${reservationSearch.end_day}" pattern="yyyy-MM-dd" />
+									<fmt:formatDate value="${dateString2}" pattern="yyyy-MM-dd" />
+								</td>
+								<td>${reservationSearch.seq}</td>
+								<td>${reservationSearch.stay_day}</td>
+								<td>${reservationSearch.p_condition}</td>
+								<td>${reservationSearch.b_date}</td>
+								<td>
+									<select>
+										<option>----</option>
+										<option>수정</option>
+										<option>삭제</option>
+									</select>
+									<button>확인</button>
+								</td>
+							</tr>
+						</c:forEach>
+				</tbody>
 			</table>
-			<br><br>
+
+
 			<!-- 이전페이지 -->
-			<c:if test= "${ManagementPaging.startPage > 5}">
-				<a href="Management.jsp?pageNum=$"${ManagementPaging.startPage-1}>[이전]</a>
+			<c:if test="${reservationSearch.startPage > 5}">
+				<a href="Management.jsp?pageNum=$" ${reservationSearch.startPage-1}>[이전]</a>
 			</c:if>
-			
+
+
 			<!-- 페이지목록 -->
-			<c:forEach var="pageNo" begin="${ManagementPage.startPag}" end="${ManagementPage.endPage}">
-				<c:if test="${Management.requestPage == pageNo}"><b></c:if>
-					<a href="Management.jsp?pageNum=${PageNo}">[${pageNo}]</a>
-				<c:if test="${ManagementPaging.requestPage == pageNo}"></b></c:if>
+			<c:forEach var="pageNo" begin="${reservationSearch.startPag}"
+				end="${reservationSearch.endPage}">
+				<c:if test="${reservationSearch.requestPage == pageNo}">
+					<b>
+				</c:if>
+				<a href="Management.jsp?pageNum=${PageNo}">[${pageNo}]</a>
+				<c:if test="${reservationSearch.requestPage == pageNo}">
+					</b>
+				</c:if>
 			</c:forEach>
-			
+
 			<!-- 다음페이지 -->
-			<c:if test="${ManagementPaging.endPage < ManagementPaging.totalPageCount}">
-				<a href="Management.jsp?pageNum=${ManagementPaging.startPage+5}">[이후]</a>
+			<c:if
+				test="${Users.endPage < reservationSearch.totalPageCount}">
+				<a href="Management.jsp?pageNum=${reservationSearch.startPage+5}">[이후]</a>
 			</c:if>
 		</div>
 	</div>
-	
+</div>
+
 
 	<!-- -------------------------------------------------------------------------------------- -->
 
@@ -327,8 +287,9 @@
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
 						<div class="icon_box_image">
-							<img src="../../images/common/service_1.svg" class="svg"
-								alt="https://www.flaticon.com/authors/monkik">
+							<img
+								src="http://localhost:8081/kostaProject1/images/common/service_1.svg"
+								class="svg" alt="https://www.flaticon.com/authors/monkik">
 						</div>
 						<div class="icon_box_title">Weekend trips</div>
 						<p class="icon_box_text">Lorem ipsum dolor sit amet,
@@ -342,8 +303,9 @@
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
 						<div class="icon_box_image">
-							<img src="../../images/common/service_2.svg" class="svg"
-								alt="https://www.flaticon.com/authors/monkik">
+							<img
+								src="http://localhost:8081/kostaProject1/images/common/service_2.svg"
+								class="svg" alt="https://www.flaticon.com/authors/monkik">
 						</div>
 						<div class="icon_box_title">Fun leisure trips</div>
 						<p class="icon_box_text">Lorem ipsum dolor sit amet,
@@ -352,13 +314,13 @@
 						<a href="#" class="icon_box_more">Read More</a>
 					</div>
 				</div>
-
 				<!-- Icon Box -->
 				<div class="col-lg-4 icon_box_col">
 					<div class="icon_box">
 						<div class="icon_box_image">
-							<img src="../../images/common/service_3.svg" class="svg"
-								alt="https://www.flaticon.com/authors/monkik">
+							<img
+								src="http://localhost:8081/kostaProject1/images/common/service_3.svg"
+								class="svg" alt="https://www.flaticon.com/authors/monkik">
 						</div>
 						<div class="icon_box_title">Plane tickets</div>
 						<p class="icon_box_text">Lorem ipsum dolor sit amet,
@@ -376,19 +338,31 @@
 	<!-- Footer -->
 	<%@include file="../sub_page/footer.html"%>
 	<!-- </div> -->
-	
-	<script src="../../destino/js/jquery-3.2.1.min.js"></script>
-	<script src="../../styles/common/bootstrap4/popper.js"></script>
-	<script src="../../styles/common/bootstrap4/bootstrap.min.js"></script>
-	<script src="../../plugins/common/greensock/TweenMax.min.js"></script>
-	<script src="../../plugins/common/greensock/TimelineMax.min.js"></script>
-	<script src="../../plugins/common/scrollmagic/ScrollMagic.min.js"></script>
-	<script src="../../plugins/common/greensock/animation.gsap.min.js"></script>
-	<script src="../../plugins/common/greensock/ScrollToPlugin.min.js"></script>
-	<script src="../../plugins/common/easing/easing.js"></script>
-	<script src="../../plugins/common/progressbar/progressbar.min.js"></script>
-	<script src="../../plugins/common/parallax-js-master/parallax.min.js"></script>
-	<script src="../../destino/js/elements_custom.js"></script>
+
+	<script
+		src=".http://localhost:8081/kostaProject1/destino/js/jquery-3.2.1.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/greensock/TweenMax.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/greensock/TimelineMax.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/scrollmagic/ScrollMagic.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/greensock/animation.gsap.min.js"></script>
+	<script 
+		src="http://localhost:8081/kostaProject1/plugins/common/greensock/ScrollToPlugin.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/easing/easing.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/progressbar/progressbar.min.js"></script>
+	<script
+		src="http://localhost:8081/kostaProject1/plugins/common/parallax-js-master/parallax.min.js"></script>
+	<script 
+		src="http://localhost:8081/kostaProject1/destino/js/elements_custom.js"></script>
 
 </body>
 </html>

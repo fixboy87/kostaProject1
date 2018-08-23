@@ -4,15 +4,8 @@
 <mapper namespace="yanoll.mapper.ManagerBoardMapper">
 	<cache />
 	
-	<insert id="insertBoard" parameterType="Users">	
-	insert into users values (
-		#{booking_num}, #{room_num}, #{h_no}, #{booking_name}, #{booking_price}, 
-		#{start_day}, #{end_day}, #{seq}, #{stay_day}, #{p_condition}, #{b_date};
-	)
-	</insert>
-	
 	<select id="listBoard" resultType="Users" parameterType="User">
-		select from booking;
+		select * from booking
 		<if test="area !=null">
 			<where>
 			<foreach collection="area" item="item" separator="OR" open="(" close=")">

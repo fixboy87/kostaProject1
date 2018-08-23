@@ -16,6 +16,4 @@ public class UserSearch {
 	public void setSearchKey(String searchKey) {
 		this.searchKey = searchKey;
 	}
-	
-	
 }
