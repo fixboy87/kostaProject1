@@ -5,79 +5,60 @@
 
 
 <mapper namespace="yanoll.mapper.Enquire_BoardMapper">
-
-	<insert id="insertEnquire" parameterType="Enquire_Board">
-		insert into
-		enquire_board
-		(e_seq,e_title,e_contents,e_date,hotel_name,id)
+	<insert id="insertEnquire" parameterType="Enquire_Board">insert into
+		enquire_board (e_seq,e_title,e_contents,e_date,hotel_name,id)
 		values(enquire_board_e_seq.nextval,#{e_title},#{e_contents},sysdate,#{hotel_name},#{id})
 	</insert>
 
 	<select id="EnquireList" resultType="Enquire_Board"
-		parameterType="Enquire_Search">   <!-- 문의 게시판 목록 -->
+		parameterType="Enquire_Search">
+		<!-- 문의 게시판 목록 -->
 		select*from enquire_board
+
 		<if test="area !=null">
+
 			<where>
 				<foreach collection="area" item="item" separator="OR" open="("
-					close=")">
-					${item} Like #{searchKey}
-				</foreach>
+					close=")">${item} Like #{searchKey}</foreach>
 			</where>
 		</if>
 	</select>
 
 	<select id="countBoard" resultType="int" parameterType="Enquire_Search">
 		select count(*)from enquire_board
+
 		<if test="area !=null">
+
 			<where>
-
 				<foreach collection="area" item="item" separator="OR" open="("
-					close=")">
-					${item} LIKE #{searchKey}
-				</foreach>
-
+					close=")">${item} LIKE #{searchKey}</foreach>
 			</where>
 		</if>
 	</select>
-
-	<select id="EnquireDetail" parameterType="int" resultType="Enquire_Board">
-		select*from Enquire_Board where e_seq=#{e_seq}
-
+	<select id="EnquireDetail" parameterType="int" resultType="Enquire_Board">select*from
+		Enquire_Board where e_seq=#{e_seq}
 	</select>
 	<delete id="deleteEnquire" parameterType="Enquire_Board">delete from
 		enquire_board where e_seq=#{e_seq}
 	</delete>
-	<insert id="insertEnquireReply" parameterType="Enquire_Reply">
-		insert into
-		enquire_reply (r_seq,r_contents,r_date,e_seq)
-		values(enquire_reply_r_seq.nextval,#{r_contents},sysdate,#{e_seq})
+	<insert id="insertEnquireReply" parameterType="Enquire_Reply">insert into
+		enquire_reply (r_seq,r_contents,r_date,e_seq,id)
+		values(enquire_reply_r_seq.nextval,#{r_contents},sysdate,#{e_seq},#{id})
 	</insert>
-
-	<select id="EnqReplyList" parameterType="int" resultType="Enquire_Reply">
-		select*from enquire_reply where e_seq=#{e_seq}
+	<select id="EnqReplyList" parameterType="int" resultType="Enquire_Reply">select*from
+		enquire_reply where e_seq=#{e_seq}
 	</select>
 	<delete id="deleteEnquireReply" parameterType="Enquire_Reply">delete from
-		enquire_reply where e_seq=#{e_seq}</delete>
-		
+		enquire_reply where e_seq=#{e_seq}
+	</delete>
 	<update id="updateEnquireReply" parameterType="Enquire_Reply">
-	   update enquire_reply set r_contents=#{r_contents} where r_seq=#{r_seq}
+	update enquire_reply set r_contents=#{r_contents} where e_seq=#{e_seq}
 	</update>
+	<select id="EnquireList2" parameterType="String" resultType="Enquire_Board">select*from
+		enquire_board where id=#{id}
+	</select>
 
-
-
+	<update id="updateEnquire" parameterType="Enquire_Board">
+		update enquire_board set e_contents=#{e_contents},e_title=#{e_title},hotel_name=#{hotel_name} where e_seq=#{e_seq}
+	</update>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

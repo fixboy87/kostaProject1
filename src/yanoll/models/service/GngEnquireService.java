@@ -38,6 +38,7 @@ public class GngEnquireService {
 		board.setE_contents(request.getParameter("e_contents"));
 		board.setId((String)session.getAttribute("id"));
 		System.out.println(board);
+		
 		return dao.insertEnquire(board);
 		
 	}
@@ -81,16 +82,38 @@ public class GngEnquireService {
 	
 	public int insertEnqReply(HttpServletRequest request){
 		Enquire_Reply reply = new Enquire_Reply();
-		/*HttpSession Session = request.getSession();*/
+		HttpSession Session = request.getSession();
 		
 	
 		reply.setE_seq(Integer.parseInt(request.getParameter("e_seq")));
 		reply.setR_contents(request.getParameter("r_contents"));
-	
+	    reply.setId((String)Session.getAttribute("id"));
 		return dao.insertEnquireReply(reply);
 		
 	}
 	
+	public int updateEnqReply(HttpServletRequest request){
+		Enquire_Reply reply = new Enquire_Reply();
+		
+		reply.setE_seq(Integer.parseInt(request.getParameter("e_seq")));
+		reply.setR_contents(request.getParameter("r_contents"));
+		
+		return dao.updateRnqReply(reply);
+	}
+	public int updateEnquire(HttpServletRequest request){
+		Enquire_Board board = new Enquire_Board();
+		
+		HttpSession session = request.getSession();
+		
+		board.setE_seq(Integer.parseInt(request.getParameter("e_seq")));
+		board.setHotel_name(request.getParameter("hotel_name"));
+		board.setE_title(request.getParameter("e_title"));
+		board.setE_contents(request.getParameter("e_contents"));
+		
+		
+		return dao.updateEnquire(board);
+	}
 	
+   
 	
 }

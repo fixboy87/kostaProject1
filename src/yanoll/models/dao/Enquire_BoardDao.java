@@ -169,12 +169,14 @@ public class Enquire_BoardDao {
 		}
 		return re;
 	}
-	public int updateRnqReply(int e_seq){
+	public int updateRnqReply(Enquire_Reply reply){
 		SqlSession session= getSqlSessionFactory().openSession();
 		int re=-1;
 		
 		try {
-			re= session.getMapper(Enquire_BoardMapper.class).updateEnquireReply(e_seq);
+			
+			re= session.getMapper(Enquire_BoardMapper.class).updateEnquireReply(reply);
+			System.out.println(reply);
 			if(re>0){
 				session.commit();
 			}else{
@@ -188,5 +190,38 @@ public class Enquire_BoardDao {
 		return re;
 	}
 	
+	public List<Enquire_Board> enquireList2(String id){
+		SqlSession session = getSqlSessionFactory().openSession();
+		List<Enquire_Board>	board =null;
+		
+		try {
+			
+		board = session.getMapper(Enquire_BoardMapper.class).EnquireList2(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return board;
+	}
+	public int updateEnquire(Enquire_Board board){
+		SqlSession session = getSqlSessionFactory().openSession();
+		int re=-1;
+		
+		try {
+			re= session.getMapper(Enquire_BoardMapper.class).updateEnquire(board);
+			System.out.println(board);
+			if(re>0){
+				session.commit();
+			}else{
+				session.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return re;
+	}
 
 }

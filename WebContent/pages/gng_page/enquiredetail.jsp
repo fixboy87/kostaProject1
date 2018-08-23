@@ -43,6 +43,46 @@
 
 }
 
+.EnquireDelete {
+	-moz-box-shadow:inset 1px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 1px 1px 0px 0px #ffffff;
+	box-shadow:inset 1px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:1px -1px 0px #ffffff;
+}
+.EnquireDelete:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+.EnquireDelete:active {
+	position:relative;
+	top:1px;
+}
+
+
+
 </style>
 
 
@@ -73,9 +113,11 @@
 	
 	
 	<%@include file="../gng_page/enqreplylist.jsp" %>		
-	<a class="enquire" href="GngDeleteEnquire.do?e_seq=${board.e_seq}">삭제</a>
+	<a href="GngDeleteEnquire.do?e_seq=${board.e_seq}"class="EnquireDelete">삭제</a>
+	<a href="GngUpdateEnqForm.do?e_seq=${board.e_seq}"class="EnquireDelete">수정</a>
+	<a href="GngReplyFormAction.do?e_seq=${board.e_seq}"class="EnquireDelete">답변</a>
 	
-    <a class="enq_list" href="GngReplyFormAction.do?e_seq=${board.e_seq}" id="contact_send_btn" class="contact_send_btn trans_200" >답장</a>
+	
 									
 									
 																		

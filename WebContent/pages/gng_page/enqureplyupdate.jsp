@@ -1,20 +1,21 @@
 <%@page import="yanoll.mapper.BoardMapper"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="utf-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../../styles/gng_style/gng_contact.css">
-<link rel="stylesheet" type="text/css" href="../../styles/gng_style/gng_main.css">
-<link rel="stylesheet" type="text/css" href="../../styles/common/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/gng_style/gng_contact.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/gng_style/gng_main.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.css">
 <script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/popper.js"></script>
 <script src="http://localhost:8081/kostaProject1/styles/common/bootstrap4/bootstrap.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common//easing/easing.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common//parallax-js-master/parallax.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/contact_custom.js"></script>
-<script type="text/javascript" src="../../scripts/gng_script/enquire_sc.js"></script>
+<script type="text/javascript" src="http://localhost:8081/kostaProject1/scripts/gng_script/enquire_sc.js"></script>
 <title>Insert title here</title>
 </head>
 <body>

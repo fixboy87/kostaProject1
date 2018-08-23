@@ -77,7 +77,7 @@ margin-left: 20%;
 			<td width="140px">작성일</td>
 		</tr>
 		
-		<c:forEach var="Enquire_Board" items="${listModel.list}">
+		<c:forEach var="Enquire_Board" items="${listModel}">
 		<tr>
 		<td>${Enquire_Board.e_seq}</td>
 		<td>${Enquire_Board.hotel_name}</td>
@@ -88,7 +88,7 @@ margin-left: 20%;
 		</c:forEach>
 		</table>
 		
-		<c:if test="${listModel.startPage>5} ">
+		 <%-- <c:if test="${listModel.startPage>5} ">
 		<a href="GngListAction.do?pageNum=${listModel.startPage-1}" >[이전]</a>
 		</c:if>	
 		
@@ -105,14 +105,14 @@ margin-left: 20%;
 					
 		<c:if test="${listModel.endPage <listModel.totalPageCount }">
 		<a href="GngListAction.do?pageNum=${listModel.startPage+5}"> [이후]</a>
-		</c:if>		
+		</c:if>		 --%>
 		
 		<form class="enquire_search" action="GngListAction.do" method="post">					      
 					        <input type="checkbox" name="area" value="e_title"> 제목 
 					        <input type="checkbox" name="area" value="id"> ID 
 			                <input type="text" name="searchKey" size="10">
 					        <input type="submit" value="검색">
-					        </form>																
+					        </form>														
 			      			        
 					
 			

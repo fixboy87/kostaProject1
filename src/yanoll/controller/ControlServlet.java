@@ -167,7 +167,7 @@ public class ControlServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}else if (command.equals("GngListAction.do")) {
-            action = new GngListAction();
+            action = new GngenqListAction();
             try {
                 forward = action.execute(request, response);
             } catch (Exception e) {
