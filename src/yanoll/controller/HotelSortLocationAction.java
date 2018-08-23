@@ -23,7 +23,7 @@ public class HotelSortLocationAction implements Action {
 		//String h_location = (String) session.getAttribute("h_location");
 	 	
 		System.out.println(h_location + "action 컨트롤러");
-		session.setAttribute("h_location", h_location);
+		//session.setAttribute("h_location", h_location);
 
 		HotelService service = HotelService.getInstance();
 		List<Hotel> list = service.hotelSortLocation(h_location);

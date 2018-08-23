@@ -244,6 +244,13 @@ public class ControlServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        } else if(command.equals("HotelPriceSelector.do")) {
+        	action = new HotelPriceSelectorAction();
+        	try {
+        		forward = action.execute(request, response);
+        	} catch (Exception e) {
+        		e.printStackTrace();
+        	}
         } else if(command.equals("myPageAction.do")) {
         	action = new MyPageAction();
         	try {

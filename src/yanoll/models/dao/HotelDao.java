@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import yanoll.mapper.HotelMapper;
 import yanoll.models.vo.Hotel;
+import yanoll.models.vo.SearchCondition;
 
 public class HotelDao {
 	private static HotelDao dao =new HotelDao();
@@ -59,14 +60,14 @@ public class HotelDao {
 		return list;
 	}
 	
-	public List<Hotel> hotelPriceSelector (int low_price , int max_price){
+	public List<Hotel> hotelPriceSelector (SearchCondition condition ){
 		
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Hotel>list = null;
 		
 		try {
 			
-			list = sqlSession.getMapper(HotelMapper.class).hotelPriceSelector(low_price, max_price);
+			list = sqlSession.getMapper(HotelMapper.class).hotelPriceSelector(condition);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

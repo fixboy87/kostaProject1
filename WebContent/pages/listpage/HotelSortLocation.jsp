@@ -37,81 +37,21 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="http://localhost:8081/kostaProject1/scripts/common/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="http://localhost:8081/kostaProject1/scripts/HY_Script/priceRang.js"></script>
 
 <!--  메뉴이펙트 스크립트  이거 뭐임?-->
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
 
-
-
-
+<!-- custom JS -->
+<script type="text/javascript" src="http://localhost:8081/kostaProject1/scripts/HY_Script/priceRang.js"></script>
+<script type="text/javascript" src="http://localhost:8081/kostaProject1/scripts/HY_Script/SearchConditions.js"></script>
 
 <!-- 달력 -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>                     <!-- 달력 -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>                  <!-- 달력 -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">      <!-- 달력 -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>                     
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>                  
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">     
 
-
-<style type="text/css">
-
-#price_range {
-	background-color: white;
-	width: 470px;
-	height: 80px;
-	padding-left: 30px;
-	
-}
-	
-.find_button
-{
-	margin-left: 85%;
-}
-
-.findButtonCustom {
-	-moz-box-shadow:inset 0px 39px 0px -24px #e67a73;
-	-webkit-box-shadow:inset 0px 39px 0px -24px #e67a73;
-	box-shadow:inset 0px 39px 0px -24px #e67a73;
-	background-color:#fe435c;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
-	border:1px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #b23e35;
-}
-.findButtonCustom:hover {
-	background-color:#eb675e;
-}
-.findButtonCustom:active {
-	position:relative;
-	top:1px;
-}
-#select_box {
-  width: 170px;
-  height:40px;
-  padding: .8em .5em;
-  font-family: inherit;
-  background: url(https://farm1.staticflickr.com/379/19928272501_4ef877c265_t.jpg) no-repeat 95% 50%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 1px solid #999;
-  border-radius: 0px;
-}
-
-</style>
-<script type="text/javascript">
- $(function() {
-	
-})
-
-</script>
+<!-- Custom Css -->
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/HY_Style/ListPage.css">
 
 </head>
 <body>
@@ -196,17 +136,17 @@
 											</div>
 											<div class="col-12">
 												<div class="find_form_container">
-													<form action="#" id="find_form"
+															<form action="HotelPriceSelector.do" id="find_form"
 														class="find_form d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-md-between justify-content-start flex-wrap">
 
 														<div class="find_item">
-															<div>Destination:</div>
+															<div style="color: white !important; background-color: #fe435c; width: 30px;">지역</div>
 															<input type="text" class="destination find_input"
-																required="required" placeholder="Keyword here">
+																required="required" placeholder="Keyword here" name="destination" id="destinationC" autocomplete="off"/>
 														</div>
 														
 														<div class="find_item">
-															<div>체크인</div>
+															<div style="color: white !important; background-color: #fe435c; width: 48px">체크인</div>
 															<input class="dropdown_item_select find_input"   autocomplete="off" type="text" id="firstday" size="9" placeholder="YYYY-MM-DD" >
 																<script>
 																	$("#firstday")
@@ -215,7 +155,7 @@
 														</div>
 														
 														<div class="find_item">
-															<div>체크 아웃</div>									
+															<div style="color: white !important; background-color: #fe435c; width: 60px;">체크 아웃</div>									
 															<input class="dropdown_item_select find_input" autocomplete="off" type="text" id="secondday" size="9" placeholder="YYYY-MM-DD">
 																<script>
 																	$("#secondday")
@@ -225,18 +165,18 @@
 														
 														
 														<div class="find_item">
-															<div>최소 값</div>
+															<div style="color: white !important; background-color: #fe435c; width: 48px;">최소 값</div>
 															<input name="low_price" id="low_price"
-																class="dropdown_item_select find_input">
+																class="dropdown_item_select find_input" autocomplete="off">
 															
 														</div>
 														<div class="find_item">
-															<div>최대 값</div>
+															<div style="color: white !important; background-color: #fe435c; width: 48px">최대 값</div>
 															<input name="max_price" id="max_price"
-																class="dropdown_item_select find_input">
+																class="dropdown_item_select find_input" autocomplete="off">
 															
 														</div>
-														<button class="button find_button"  	>Find</button>
+														<button class="button find_button">Find</button>
 													
 													</form>
 												</div>
