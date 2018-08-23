@@ -52,6 +52,8 @@ summernote 라이브러리 추가
 	src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
 
 <script src="../../scripts/syj_script/reviewList/list.js"></script> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -96,6 +98,10 @@ summernote 라이브러리 추가
 <script	src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <link	href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css"	rel="stylesheet">
 <script	src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+<%
+	String sessionId = (String)session.getAttribute("id");
+	request.setAttribute("sessionId", sessionId);
+%>
 <style type="text/css">
 h1 {
 	font-size: 300%;
@@ -119,20 +125,19 @@ h1 {
 %> --%>
 
 </head>
-<body>
+<body class="detail_body">
 	<%@include file="../sub_page/header_menu.jsp"%>
 
 
 	<!-- Contact -->
 	<%-- form의 textarea에 summernote 적용 --%>
-	<h1>후기 디테일</h1>
+	<h1 >후기 디테일</h1>
 	<div>
-		<div>
-			<%--로그인체크 <%@ include file="/home/sidebar.jsp"%> --%>
-		</div>
+		
 		<!-- <div class="w3-margin-top w3-main"	> -->
-		<div class="table_container" align="center">
-			<table class="tg" width="800" align="center">
+		<div class="detail_table_container" align="center"> 
+			<input class="sessionId" type="hidden" value="${sessionId}">
+			<table class="tg" align="center">
 				  <tr>
 				    <td class="tg-0pky">제목</td>
 				    <td class="tg-0pky" colspan="3">${board.r_title}</td>
@@ -141,26 +146,39 @@ h1 {
 				    <td class="tg-0pky">호텔명</td>
 				    <td class="tg-0pky">${board.hotle_name}</td>
 				    <td class="tg-0pky">숙박일수</td>
-				    <td class="tg-0pky">${board.number_of_stay_days}일</td>
+				    <td class="tg-0pky">${board.stay_day}일</td>
 				  </tr>
 				  <tr>
-				    <td class="tg-0pky">${board.r_grade}</td>
-				    <td class="tg-0pky">${board.id}</td>
+				    <td class="tg-0pky">평점 : ${board.r_grade}점</td>
+				    <td class="tg-0pky" id="board_id">${board.id}</td>
 				    <td class="tg-0pky" colspan="2">
 				    	<fmt:parseDate var="dateString" value="${board.r_redate }" pattern="yyyy-MM-dd"></fmt:parseDate>
 				   		<fmt:formatDate value="${dateString }" pattern="yy-MM-dd"/>
 				    </td>
 				  </tr>
-				  <td>메인 이미지</td>
+				  <td colspan='4'>MAIN IMAGE</td>
 				  <tr>
-				  	<td><img src="images/pages/review_main_img/${board.r_fname}"></img></td>
+				  <c:choose>
+					  	<c:when test="${board.r_fname!=null }">
+						  		<td colspan='4' ><img src="images/pages/review_main_img/${board.r_fname}" ></img></td>
+					  	</c:when>
+					  	<c:when test="${board.r_fname==null }">
+					  		<td><c:out value="NO IMAGE"></c:out></td>
+					  	</c:when>
+				  	</c:choose>
 				  </tr>
 				  <tr>
 				    <td class="tg-0pky" colspan="4">${board.r_content}</td>
 				  </tr>
-			</table>	
-			<a >수정</a>
-			<a href="review_deleteAction.do?r_no=${board.r_no}">삭제</a><br>
+          <tr>
+            <td colspan="4" class="only_writer">
+              <a href="reveiw_updateAction.do?r_no=${board.r_no}">수정</a>
+			  <a href="review_deleteAction.do?r_no=${board.r_no}">삭제</a><br>
+            </td>
+          </tr>
+			</table>
+
+			
 			<a href="review_list.do">목록</a>
 		</div>
 		

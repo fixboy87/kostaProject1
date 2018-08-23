@@ -13,8 +13,8 @@
 <!-- 후기 등록 -->
 	<insert id="insertReview" parameterType="Review_Board">
 		insert into review_board
-			(r_no, r_title, r_grade, r_content, r_redate, r_hitcount , r_fname, p_no, hotle_name, number_of_stay_days, user_no, id 
-		)values(review_seq.nextval, #{r_title}, #{r_grade}, #{r_content}, sysdate, 0, #{r_fname}, #{p_no}, #{hotle_name}, #{number_of_stay_days}, #{user_no}, #{id})
+			(r_no, r_title, r_grade, r_content, r_redate, r_hitcount , r_fname, booking_num, hotle_name, stay_day, userNo, id 
+		)values(review_seq.nextval, #{r_title}, #{r_grade}, #{r_content}, sysdate, 0, #{r_fname}, #{booking_num}, #{hotle_name}, #{stay_day}, #{userNo}, #{id})
 	</insert>
 	
 <!-- 후기 목록 -->
@@ -31,5 +31,27 @@
 	<delete id="deleteReivew" parameterType="Review_Board">
 		delete from review_board where r_no = #{r_no}
 	</delete>
+
+<!-- 후기가능 booking 리스트 -->
+	<select id="listCheck" parameterType="String" resultType="Booking">
+		select*from booking 
+    		where userno=(select userno from users where id = #{id}) and P_CONDITION =2
+	</select>
+
+<!-- 호텔 이름 찾기 -->
+	<select id="searchHotle_name" parameterType="int" resultType="String">
+		select h_name from hotel where h_no=#{h_no}
+	</select>
+
+<!-- 회원 번호 -->
+	<select id="search_userNo" parameterType="String" resultType="int">
+		select userNo from users where id=#{id}
+	</select>
+
+<!-- booking의 p_condition 후기 작성 전(2)-> 작성 후(4) -->
+	<update id="change_condition" parameterType="int">
+		UPDATE booking SET p_condition = 4
+		        where booking_num =#{booking_num}
+	</update>
 
 </mapper>

@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -11,7 +12,9 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import sun.misc.Resource;
 import yanoll.mapper.BoardMapper;
 import yanoll.mapper.Review_BoardMapper;
+import yanoll.models.vo.Booking;
 import yanoll.models.vo.Review_Board;
+import yanoll.models.vo.Users;
 
 public class ReviewDao {
 	
@@ -40,6 +43,8 @@ public class ReviewDao {
 		try {
 			re = sqlSession.getMapper(Review_BoardMapper.class).insertReview(board);
 			if(re>0){
+				System.out.println("dao에서 부킹 넘버"+board.getBooking_num());
+				change_condition(board.getBooking_num());
 				sqlSession.commit();
 			}else {
 				sqlSession.rollback();
@@ -56,16 +61,13 @@ public class ReviewDao {
 	public List<Review_Board> listReview() {
 	      SqlSession sqlSession =getSqlSessionFactory().openSession();
 	      List<Review_Board> list = null;
-	      System.out.println("3-1.dao 입성");
 	      try {
-	    	  System.out.println("3-2.dao에서 메소드 호출");
 	         list = sqlSession.getMapper(Review_BoardMapper.class).listReview();
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }finally {
 	         sqlSession.close();
 	      }
-	      System.out.println("3-3.dao에서 list 반환");
 	      return list;
 	   }
 
@@ -88,14 +90,10 @@ public class ReviewDao {
 		int re = -1;
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
-			System.out.println("-----------이다음이 문제"+r_no);
 			re = sqlSession.getMapper(Review_BoardMapper.class).deleteReivew(r_no);
-			System.out.println("-------------------re값"+re);
 			if (re>0) {
-				System.out.println("-----------if"+re);
 				sqlSession.commit();
 			}else {
-				System.out.println("-----------else여긴가.."+re);
 				sqlSession.rollback();
 			}
 		} catch (Exception e) {
@@ -103,7 +101,78 @@ public class ReviewDao {
 		}finally {
 			sqlSession.close();
 		}
-		System.out.println("리턴은 함");
 		return re;
 	}
+	
+	/*	예약 가능 목록*/
+	public List<Booking> listCheck(String id) {
+		List<Booking> list =null;
+		System.out.println("dao1"+id);
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			System.out.println("dao2"+id);
+			list=sqlSession.getMapper(Review_BoardMapper.class).listCheck(id);
+			for (int i = 0; i < list.size(); i++) {
+				System.out.println(list.get(i));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
+/*호텔이름*/
+	public String searchHotle_name(int h_no) {
+		String hotle_name ="";
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			hotle_name = sqlSession.getMapper(Review_BoardMapper.class).searchHotle_name(h_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return hotle_name;
+	}
+
+/*회원번호*/
+	public int search_userNo(String id) {
+		int userNo =0;
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			userNo = sqlSession.getMapper(Review_BoardMapper.class).search_userNo(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return userNo;
+	}
+
+/*후기 작성 후 p_condition 변경*/
+	public int change_condition(int booking_num) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re =-1;
+		try {
+			re = sqlSession.getMapper(Review_BoardMapper.class).change_condition(booking_num);
+			if (re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return re;
+	}
+	
+	
+	
 }

@@ -1608,3 +1608,30 @@ footer{
 	padding:20px;
 }
 
+/* 후기작성 가능 목록 테이블 스타일 */
+
+.check_tg  {border-collapse:collapse;border-spacing:0;border:none;border-color:#aabcfe; width: 100%}
+.check_tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+.check_tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+.check_tg .tg-s6z2{text-align:center}
+.check_tg .check_tg-hmp3{background-color:#D2E4FC;text-align:left;vertical-align:top}
+.check_tg .check_tg-5hgy{background-color:#D2E4FC;text-align:center}
+
+.detail_table_container{
+	width: 80%;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+.tg{
+	width:70%;
+	height: 100%;
+}
+
+.tg img{
+	max-width: 80%;
+}
+
+
+
+

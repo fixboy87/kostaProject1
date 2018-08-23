@@ -1,6 +1,7 @@
 $(function() {
 
 /*옵션1->옵션2 change 이벤트*/
+	//최종프로젝트에선 ajax로 바꿀 것
 	$('.option1').change(
 			function() {
 				$('.option2').empty();
@@ -37,16 +38,32 @@ $(function() {
 				}
 			})
 	    $('.r_no').hide();
+		
 		$('.list_table').click(function() {
 				var r_no = parseInt($(this).find('.r_no').text());
 				/*alert(typeof r_no);
 				alert(r_no);*/
 				
 				location.href="review_detailAction.do?r_no="+r_no;
-			 
+				
+				
 				})
 		
-	
+/*본인 게시물 삭제 수정 버튼 이벤트*/
+		$('.only_writer').hide();
+		$(function(){
 		
+			var sessionId=$('.sessionId').val();
+			/*alert(sessionId+"로그인 아이디");*/
+			var board_id = $('#board_id').text();
+			/*alert(board_id+"게시물 작성자 아이디")*/
+			if (sessionId==board_id) {
+				$('.only_writer').show();
+			}
 			
+		})
+	
+
 });
+		
+		

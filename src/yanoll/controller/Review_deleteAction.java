@@ -9,6 +9,9 @@ public class Review_deleteAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+
+
 		ReviewDao dao = ReviewDao.getInstance();
 		String str = request.getParameter("r_no");
 		System.out.println("1.엑션 request로 받음"+str);

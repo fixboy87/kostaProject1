@@ -1,6 +1,8 @@
 package yanoll.models.vo;
 
-public class Booking {
+import java.io.Serializable;
+
+public class Booking implements Serializable{
 
 	private int booking_num;
 	private int room_num;
@@ -9,15 +11,15 @@ public class Booking {
 	private int booking_price;
 	private String start_day;
 	private String end_day;
-	private int seq;
+	private int userno;
 	private int stay_day;
 	private int p_condition;
-	private int b_date;
+	private String b_date;
 	
 	public Booking(){}
 
 	public Booking(int booking_num, int room_num, int h_no, String booking_name, int booking_price, String start_day,
-			String end_day, int seq, int stay_day, int p_condition, int b_date) {
+			String end_day, int userno, int stay_day, int p_condition, String b_date) {
 		super();
 		this.booking_num = booking_num;
 		this.room_num = room_num;
@@ -26,7 +28,7 @@ public class Booking {
 		this.booking_price = booking_price;
 		this.start_day = start_day;
 		this.end_day = end_day;
-		this.seq = seq;
+		this.userno = userno;
 		this.stay_day = stay_day;
 		this.p_condition = p_condition;
 		this.b_date = b_date;
@@ -88,12 +90,12 @@ public class Booking {
 		this.end_day = end_day;
 	}
 
-	public int getSeq() {
-		return seq;
+	public int getUserno() {
+		return userno;
 	}
 
-	public void setSeq(int seq) {
-		this.seq = seq;
+	public void setUserno(int userno) {
+		this.userno = userno;
 	}
 
 	public int getStay_day() {
@@ -112,14 +114,21 @@ public class Booking {
 		this.p_condition = p_condition;
 	}
 
-	public int getB_date() {
+	public String getB_date() {
 		return b_date;
 	}
 
-	public void setB_date(int b_date) {
+	public void setB_date(String b_date) {
 		this.b_date = b_date;
 	}
 
+	@Override
+	public String toString() {
+		return "Booking [booking_num=" + booking_num + ", room_num=" + room_num + ", h_no=" + h_no + ", booking_name="
+				+ booking_name + ", booking_price=" + booking_price + ", start_day=" + start_day + ", end_day="
+				+ end_day + ", userno=" + userno + ", stay_day=" + stay_day + ", p_condition=" + p_condition
+				+ ", b_date=" + b_date + "]";
+	}
 	
 
 }

@@ -1,3 +1,5 @@
+[ rquer.rating-stars.js ]
+
 jQuery.fn.ratingStars = function( options ) {
  
     var defaults = {
@@ -138,3 +140,5 @@ $(function() {
 		  $("#ratingOnLeave").html(data.ratingValue);
 		});
 })
+
+

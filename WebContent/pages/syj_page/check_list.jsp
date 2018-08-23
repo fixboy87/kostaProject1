@@ -1,3 +1,7 @@
+<%@page import="yanoll.models.vo.Review_Board"%>
+<%@page import="java.util.List"%>
+<%@page import="yanoll.models.dao.ReviewDao"%>
+<%@page import="yanoll.models.vo.Review_listModel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Destino project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +48,7 @@
 <script	src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <link	href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css"	rel="stylesheet">
 <script	src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
-
+	
 	
 <style type="text/css">
 h1 {
@@ -67,7 +71,6 @@ h1 {
 	
 	
 %> --%>
-
 </head>
 <body>
 	<%@include file="../sub_page/header_menu.jsp"%>
@@ -75,106 +78,37 @@ h1 {
 
 	<!-- Contact -->
 	<%-- form의 textarea에 summernote 적용 --%>
-	<secion id="wrap">
-		<section id="first">
-	<h1>후기 게시판 목록</h1>
+<!-- 	<secion id="wrap"> -->
+<!-- 		<section id="first"> -->
+	<h1>후기 작성 가능 목록</h1>
 	
-		<div>
-			<%--로그인체크 <%@ include file="/home/sidebar.jsp"%> --%>
-		</div>
+		
 		<!-- <div class="w3-margin-top w3-main"	> -->
 		<div class="contact_form_container" id="list_container">
 
-			<header class="list"> 
-				<input type="button" value=" 전체보기 ">
-				<input type="button" value=" 포토 ">
-			<form action="review_list.jsp">
-				<select name="선택">
-					<option value="작성자">작성자</option>
-					<option value="제목">제목</option>
-					<option value="제목+내용">제목+내용</option>
-					<option value="호텔명">호텔명</option>
-				</select> <input type="text" size="15"> <input type="submit"
-					value="검색">
-			</form>
-			<select name="정렬">
-				<option value="최신순">최신순</option>
-				<option value="평점순">평점순</option>
-				<option value="최신순">최신순</option>
-			</select>
-
-		<div class="table_container">
-			<c:forEach var="board" items="${list}">
-			<table class="list_table" width="800" >
-				<tr>
-					<td class="r_no">${board.r_no }</td>
-					<td rowspan="4" class="img_td">
-						<c:if test="${board.r_fname != null }">
-								<c:set var="head" value="${fn:substring(board.r_fname, 0, fn:length(board.r_fname)-4) }"></c:set>
-								<c:set var="pattern" value="${fn:substring(board.r_fname, 	fn:length(head) +1, fn:length(board.r_fname)) }"></c:set>
-							<c:choose>
-								<c:when test="${pattern == 'jpg' || pattern == 'gif' || pattern == 'JPG' || pattern == 'GIF' }">
-									<img src="images/pages/review_main_img/${head }_small.${pattern}">
-								</c:when>
-								<c:otherwise>
-									<c:out value="NO IMAGE"></c:out>
-								</c:otherwise>
-							</c:choose>
-						</c:if>
-						<c:if test="${board.r_fname==null }">
-									<c:out value="NO IMAGE"></c:out>
-						</c:if>
-					</td>					
-					<td class="table_top"><a href="review_deatailAction.do?r_no=${board.r_no }">제목</a></td>
-					<td colspan="3" class="table_top">${board.r_title}</td>
-					<td class="table_top">작성자</td>
-					<td colspan="2" class="table_edge1">${board.id}</td>
-				</tr>
-				<tr>
-					<td>평점</td>
-					<td colspan="3">${board.r_grade}</td>
-					<td>등록일</td>
-					<td class="table_right">
-						<fmt:parseDate var="dateString" value="${board.r_redate}" pattern="yyyy-MM-dd"/>
-						<fmt:formatDate value="${dateString}" pattern="yy/MM/dd"/> 
-					</td>
-				</tr>
-				<tr class="table_bottom">
-					<td>호텔명</td>
-					<td>${board.hotle_name }</td>
-					<td>숙박일수</td>
-					<td>${board.stay_day }</td>
-					<td>조회수</td>
-					<td colspan="2" class="table_right">${board.r_hitcount }</td>
-				</tr>
-			</table>
-				</c:forEach>
-				</div>
-
-
-			<!-- <a href="review_insertFormAction.do">후기 작성</a> </header> -->
-			<a href="review_checkAction.do">후기 작성</a> </header>
-			
-			
-			
-			
+			<table class="check_tg">
+				  <tr>
+				    <th class="check_tg-s6z2" colspan="5" width="800px">후기 작성 가능 목록</th>
+				  </tr>
+				  <c:forEach var="booking" items="${list}">
+				  <tr>
+				  	<form action="review_insertFormAction.do" method="post">
+				  	<input type="hidden"  value="${booking.booking_num}" name="booking_num">
+				  	<input type="hidden"  value="${booking.h_no}" name="h_no">
+				  	<input type="hidden"  value="${booking.stay_day}" name="stay_day">
+				    <td class="check_tg-5hgy">${booking.booking_num}</td>
+				    <td class="check_tg-5hgy">호텔번호: ${booking.h_no}</td>
+				    <td class="check_tg-5hgy">${booking.start_day}~${booking.end_day}</td>
+				    <td class="check_tg-5hgy">${booking.stay_day}일</td>
+				    <td class="check_tg-hmp3"><input type="submit" value="후기작성"/></td>
+				  	</form>
+				  </tr>
+				  </c:forEach>
+				</table>
+					<a href="review_list.do">후기 목록</a>
+		</div>
 	</section>
-	<div id="sidebar">
-
-		<h1>옵션선택</h1>
-		<select name="옵션1(지역별)" class="option1">
-			<option>옵션1(지역별)</option>
-			<option value="서울">서울</option>
-			<option value="부산">부산</option>
-			<option value="광주">광주</option>
-			<option value="대구">대구</option>
-			<option value="강원도">강원도</option>
-			<option value="제주도">제주도</option>
-		</select> <select name="옵션2(지역별)" class="option2">
-			<option>옵션2(지역별)</option>
-		</select>
-		<div id="space"></div>
-	</div>
+	
 
 
 

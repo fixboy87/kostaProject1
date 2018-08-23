@@ -10,7 +10,8 @@ public class Review_detailAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	
+		request.setCharacterEncoding("utf-8");
+
 		String str = request.getParameter("r_no");
 			int r_no =0;
 			

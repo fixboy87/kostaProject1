@@ -59,6 +59,7 @@
 					<div class="find_form_container">
 						<div class="button titleButton"><a href="#">떠나자!!</a></div>
 					</div>
+					<a href="review_list.do">후기 리스트</a>
 				</div>
 			</div>
 		</div>
