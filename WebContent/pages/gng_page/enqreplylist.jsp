@@ -29,13 +29,66 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/contact_custom.js"></script>
 
 <style type="text/css">
+
+.enquire_detail{
+    width: 80%;
+	height: 41px;
+	border: solid 2px #dbdbdb;
+	padding-left: 20px;
+	margin-left :10%;	
+	margin-top:5%;
+	outline: none;
+	text-align: center;
+
+}
+
+.EnquireDelete {
+	-moz-box-shadow:inset 1px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 1px 1px 0px 0px #ffffff;
+	box-shadow:inset 1px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9));
+	background:-moz-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-webkit-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-o-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:-ms-linear-gradient(top, #f9f9f9 5%, #e9e9e9 100%);
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9',GradientType=0);
+	background-color:#f9f9f9;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	float :right;
+	text-decoration:none;
+	text-shadow:1px -1px 0px #ffffff;
+	text-align :center;
+	width: 9%
+}
+.EnquireDelete:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
+	background:-moz-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-webkit-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-o-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:-ms-linear-gradient(top, #e9e9e9 5%, #f9f9f9 100%);
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9',GradientType=0);
+	background-color:#e9e9e9;
+}
+.EnquireDelete:active {
+	position:relative;
+	top:1px;
+}
+
+
 .enquire_reply{
     width: 80%;
 	height: 20%;
 	border: solid 2px #dbdbdb;
 	padding-left: 20px;
 	margin-left :10%;
-	margin-bottom: 10%;
 	outline: none;
 	text-align: center;
 
@@ -50,15 +103,19 @@
 
    <table class="enquire_reply" border="1">
     <c:forEach var="Enquire_Reply" items="${reply}">
+    
+    
+    
     <tr>
     <td>${Enquire_Reply.r_contents}</td>
     <td>${Enquire_Reply.id}</td>
     </tr> 
-    <a class="reply" href="GngDeleteEnqReply.do?e_seq=${Enquire_Reply.e_seq}">[답장삭제]</a> <!-- 배열에 있는 상태여서 foreach로 빼야한다.  -->
-    <a class="reply_update" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">[답장수정]</a>
+    </table>
+    <a class="EnquireDelete" href="GngDeleteEnqReply.do?e_seq=${Enquire_Reply.e_seq}">답장삭제</a> <!-- 배열에 있는 상태여서 foreach로 빼야한다.  -->
+    <a class="EnquireDelete" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">답장수정</a>
     </c:forEach>
      
-    </table>
+    
     
     
 

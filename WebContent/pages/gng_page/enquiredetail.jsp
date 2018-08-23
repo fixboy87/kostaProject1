@@ -65,6 +65,7 @@
 	padding:9px 23px;
 	text-decoration:none;
 	text-shadow:1px -1px 0px #ffffff;
+	margin-left: auto;
 }
 .EnquireDelete:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9));
@@ -112,7 +113,7 @@
 	</table>
 	
 	
-	<%@include file="../gng_page/enqreplylist.jsp" %>		
+			
 	<a href="GngDeleteEnquire.do?e_seq=${board.e_seq}"class="EnquireDelete">삭제</a>
 	<a href="GngUpdateEnqForm.do?e_seq=${board.e_seq}"class="EnquireDelete">수정</a>
 	<a href="GngReplyFormAction.do?e_seq=${board.e_seq}"class="EnquireDelete">답변</a>
@@ -120,7 +121,7 @@
 	
 									
 									
-																		
+    <%@include file="../gng_page/enqreplylist.jsp" %>																
 					
 					      			        
 					
