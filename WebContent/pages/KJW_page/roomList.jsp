@@ -112,10 +112,10 @@
 				<div class="col-12">
 					<div class="find_title text-center">
 					<navi class="navi_bar">
-						<li>예약현황</li>
-						<li>RoomList</li>
-						<li>호텔정보수정</li>
-						<li>매출현황</li>
+							<li><a href="Management.do" method="post">예약현황</a></li>
+							<li><a href="roomList.do" method="post">RoomList</a></li>
+							<li><a href="Hotel_Info.do" method="post">호텔정보수정</a></li>
+							<li><a href="Sales.do" method="post">매출현황</a></li>
 						<br></br>
 					</navi>
 						

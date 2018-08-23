@@ -28,8 +28,8 @@
 		<mapper resource="yanoll/mapper/Users.xml"/>
 		<mapper resource="yanoll/mapper/Review_Board.xml"/>
 		<mapper resource="yanoll/mapper/Enquire_Board.xml" />
-		<!-- <mapper resource="yanoll/mapper/Enquire_Board.xml"/> -->
-		<!-- <mapper resource="yanoll/mapper/ManagerBoard.xml"/> -->
+		<mapper resource="yanoll/mapper/Hotel.xml"/>
+		<mapper resource="yanoll/mapper/ManagerBoard.xml"/>
 	</mappers>
 	
 </configuration>
