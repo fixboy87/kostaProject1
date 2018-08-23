@@ -36,7 +36,8 @@ public class GngEnquireService {
 		board.setHotel_name(request.getParameter("hotel_name"));
 		board.setE_title(request.getParameter("e_title"));
 		board.setE_contents(request.getParameter("e_contents"));
-			
+		board.setId((String)session.getAttribute("id"));
+		System.out.println(board);
 		return dao.insertEnquire(board);
 		
 	}

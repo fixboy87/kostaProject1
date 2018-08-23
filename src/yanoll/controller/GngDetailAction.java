@@ -32,7 +32,7 @@ public class GngDetailAction implements Action {
 		
 		ActionForward forward= new ActionForward();
 		
-		forward.setPath("enquiredetail.jsp");
+		forward.setPath("/pages/gng_page/enquiredetail.jsp");
 		forward.setRedirect(false);
 		return forward;
 	}

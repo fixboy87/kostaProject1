@@ -31,7 +31,7 @@ public class GngListAction implements Action {
 
 	    
 	    ActionForward forward = new ActionForward();
-	    forward.setPath("enquirelist.jsp");
+	    forward.setPath("/pages/gng_page/enquirelist.jsp");
 	    
 	    forward.setRedirect(false);
 	   

@@ -14,7 +14,7 @@ public class GngUpdateEnqReplyForm implements Action {
 		request.setAttribute("e_seq", e_seq);
 		
 		ActionForward forward = new ActionForward();
-		forward.setPath("enqureplyupdate.jsp");
+		forward.setPath("/pages/gng_page/enqureplyupdate.jsp");
 		forward.setRedirect(false);
 		
 		return forward;

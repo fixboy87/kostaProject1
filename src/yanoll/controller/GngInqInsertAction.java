@@ -16,13 +16,10 @@ public class GngInqInsertAction implements Action {
 	GngEnquireService service = GngEnquireService.getinstance();	
 	request.setCharacterEncoding("utf-8");
 	service.insertEnquireService(request);
-	
-	HttpSession Session = request.getSession();
-	
-	
+    
+
 	ActionForward forward= new ActionForward();
 	forward.setPath("GngListAction.do");
-
 	forward.setRedirect(true);
 	
 	return forward;

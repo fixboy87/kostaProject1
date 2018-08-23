@@ -30,7 +30,7 @@ public class GngReplyListAction implements Action {
 	    request.setAttribute("reply", reply);
 		
 	    ActionForward forward= new ActionForward();
-	    forward.setPath("enqreplylist.jsp");
+	    forward.setPath("/pages/gng_page/enqreplylist.jsp");
 	    forward.setRedirect(false);
 	    
 		return forward;

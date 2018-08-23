@@ -27,7 +27,7 @@ public class GngReplyFormAction implements Action {
 		
 		ActionForward forward = new ActionForward();	    
 	    forward.setRedirect(false);
-	    forward.setPath("enquire_reply.jsp");
+	    forward.setPath("/pages/gng_page/enquire_reply.jsp");
 	    
 		return forward;
 	}
