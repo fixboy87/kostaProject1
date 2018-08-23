@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import yanoll.mapper.HotelMapper;
 import yanoll.models.vo.Hotel;
+import yanoll.models.vo.Hotel_room;
 import yanoll.models.vo.SearchCondition;
 
 public class HotelDao {
@@ -75,6 +76,21 @@ public class HotelDao {
 			sqlSession.close();
 		}
 		
+		return list;
+	}
+	
+	public List<Hotel_room> hotelDetailList(int h_no){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Hotel_room> list = null;
+		
+		try {
+			list = sqlSession.getMapper(HotelMapper.class).hotelDetailList(h_no);
+			System.out.println("디테일 DAO 접근");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
 		return list;
 	}
 }

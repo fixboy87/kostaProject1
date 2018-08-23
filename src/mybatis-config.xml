@@ -13,6 +13,7 @@
        <typeAlias type="yanoll.models.vo.Enquire_Search" alias="Enquire_Search" />
        <typeAlias type="yanoll.models.vo.Enquire_List" alias="Enquire_List" />
        <typeAlias type="yanoll.models.vo.Enquire_Reply" alias="Enquire_Reply" />
+       <typeAlias type="yanoll.models.vo.Hotel_room" alias="Hotel_room" />
 	     <!-- <typeAlias type="yanoll.models.vo.Review_listModel" alias="Review_listModel"/> -->
 	     <!-- <typeAlias type="yanoll.models.vo.Enquire_Board" alias="Enquire_Board"/> -->
 	</typeAliases>

@@ -307,7 +307,14 @@ public class ControlServlet extends HttpServlet {
         	} catch (Exception e) {
         		e.printStackTrace();
         	}
-        }
+        }else if(command.equals("HotelDetailAction.do")){
+            action = new HotelDetailAction();
+            try {
+                forward = action.execute(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } 
     	
 
     	

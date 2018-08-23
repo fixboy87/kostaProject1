@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.HotelDao;
 import yanoll.models.vo.Hotel;
+import yanoll.models.vo.Hotel_room;
 import yanoll.models.vo.SearchCondition;
 
 public class HotelService {
@@ -42,6 +43,12 @@ public class HotelService {
 		
 		List<Hotel> list = dao.hotelPriceSelector(condition);
 		
+		return list;
+	}
+	
+	public List<Hotel_room> hotelDetailList(int h_no){
+		List<Hotel_room> list = dao.hotelDetailList(h_no);
+		System.out.println("호텔디테일 서비스 ");
 		return list;
 	}
 	
