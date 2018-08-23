@@ -110,7 +110,6 @@ public class UserService {
 	public Hotel detailUser_e(HttpServletRequest request) throws Exception{
 		request.setCharacterEncoding("utf-8");
 		Hotel hotel = new Hotel();
-		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
 		String loginType = (String)session.getAttribute("type");
@@ -120,5 +119,38 @@ public class UserService {
 		} else {
 			return null;
 		}
+	}
+
+	public Users updateUser_p(HttpServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		Users user = new Users();
+		HttpSession session = request.getSession();
+		
+		String uid = (String)session.getAttribute("id");
+		String loginType = (String)session.getAttribute("type");
+		
+		if(loginType.equals("personal")) {
+			user = dao.getDetail_p(uid);
+			
+			int userNo = user.getUserNo();
+			String id = request.getParameter("mypage_id");
+			String password = request.getParameter("mypage_password");
+			String name = request.getParameter("mypage_name");
+			String tel = request.getParameter("mypage_tel");
+			String email = request.getParameter("mypage_email");
+			String gender = request.getParameter("mypage_gender");
+			String birth = request.getParameter("mypage_birth");
+			
+			user = new Users(userNo, id, password, name, tel, email, gender, birth);
+			System.out.println(user);
+			
+			int re = dao.updateUser_p(user);
+			/*if(re > -1) {
+				session.setAttribute("alert", "수정완료!!!");
+			} else {
+				session.setAttribute("alert", "수정실패!!!");
+			}*/
+		}
+		return dao.getDetail_p(uid);
 	}
 }

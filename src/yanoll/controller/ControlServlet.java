@@ -293,7 +293,21 @@ public class ControlServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		} else if(command.equals("updateUserAction.do")) {
+        	action = new UpdateUserAction();
+        	try {
+        		forward = action.execute(request, response);
+        	} catch (Exception e) {
+        		e.printStackTrace();
+        	}
+        } else if(command.equals("updateUserAction2.do")) {
+        	action = new UpdateUserAction2();
+        	try {
+        		forward = action.execute(request, response);
+        	} catch (Exception e) {
+        		e.printStackTrace();
+        	}
+        }
     	
 
     	

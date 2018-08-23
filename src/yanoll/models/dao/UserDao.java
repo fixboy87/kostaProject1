@@ -154,6 +154,28 @@ public class UserDao {
 		}
 		return hotel;
 	}
+
+
+	public int updateUser_p(Users user) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Users newUser = new Users();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(UserMapper.class).updateUser_p(user);
+			
+			if(re>-1) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return re;
+	}
 	
 
 
