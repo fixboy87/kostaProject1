@@ -22,17 +22,61 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/account/registerForm.css">
 <style type="text/css">
-.myPageCylinder {
-	height : 700px;
-	margin-top: 300px;
-	margin-left: auto;
+.myPageMenuCylinder {
+	/* height: 600px; */
+	margin-top: 30px;
 	margin-right: auto;
+	margin-left: 30px;
+	float: left;
+	padding: 30px 30px 10px 30px;
+}
+.myPageMenuCylinder>div {
+	display: block;
+	margin-bottom: 20px;
 }
 .iEnquire {
 	background-color: #fe435b;
 }
 .iEnquire>a {
-	color: white !important	;
+	color: white !important;
+    font-weight: bold;
+    text-align: center;
+}
+.myPageCylinder {
+	margin-top: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1000px;
+	position: relative;
+}
+.myPageContentCylinder {
+	width: 65%;
+	margin-top: 30px;
+	margin-right: 30px;
+	float: right;
+	padding: 30px 30px 10px 30px;
+	margin-bottom: 50px;
+}
+.mypage_section {
+	display: block;
+    margin-bottom: 20px;
+    /* height: 30px; */
+    padding: 7px;
+    width: fit-content;
+    border-width: thin;
+}
+.mypage_section>div {
+	display: inline-block;
+}
+.mypage_text {
+	width: 100px;
+}
+.mypage_section input {
+	width: 300px;
+    height: 30px;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: grey;
 }
 </style>
 </head>
@@ -46,8 +90,72 @@
 	<%@ include file="../sub_page/header_menu.jsp"%>
 
 		<div id="content" class="content_wrap">
+			
 			<div class="myPageCylinder">
-				<div class="button iEnquire"><a href="#">1:1문의</a></div>			
+				<div class="myPageMenuCylinder">
+					<div class="button iEnquire"><a href="#">1:1문의</a></div>			
+					<div class="button iEnquire"><a href="#">구매내역</a></div>			
+					<div class="button iEnquire"><a href="#">회원정보</a></div>			
+					<div class="button iEnquire"><a href="#">회원탈퇴</a></div>			
+				</div>
+				<div class="myPageContentCylinder">
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>ID : </p></div>
+						</div>
+						<div class="myPage_id">
+							<input type="text" name="mypage_id" val="" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>비밀번호 : </p></div>
+						</div>
+						<div class="myPage_password">
+							<input type="password" name="mypage_password" val=""/>
+						</div>
+					</div>
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>이메일 : </p></div>
+						</div>
+						<div class="myPage_email">
+							<input type="text" name="mypage_email" val=""/>
+						</div>
+					</div>
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>이름 : </p></div>
+						</div>
+						<div class="myPage_text">
+							<input type="text" name="mypage_name" val="" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>전화번호 : </p></div>
+						</div>
+						<div class="myPage_text">
+							<input type="text" name="mypage_tel" val=""/>
+						</div>
+					</div>
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>생년월일 : </p></div>
+						</div>
+						<div class="myPage_text">
+							<input type="text" name="mypage_birth" val="" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="mypage_section">
+						<div class="mypage_text">
+							<div><p>성별 : </p></div>
+						</div>
+						<div class="myPage_text">
+							<input type="text" name="mypage_gender" val="" readonly="readonly"/>
+						</div>
+					</div>
+				</div>
 			</div>
 	</div>
 </div>
