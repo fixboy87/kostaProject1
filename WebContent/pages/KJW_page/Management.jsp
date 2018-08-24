@@ -38,11 +38,23 @@
 <!-- 달력 -->
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding"
 	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://localhost:8081/kostaProject1/styles/common/custom.css">
 <!--폰트 -->
-
+<style type="text/css">
+.header_titlePage {
+	background: none !important;
+}
+.header_titlePage a {
+	color: white !important;
+}
+</style>
 </head>
 <body>
 
+	<input type="hidden" id="uid" name="uid" val="<%=(String)session.getAttribute("id")%>"/>
+	<input type="hidden" id="type" name="type" val="<%=(String)session.getAttribute("type")%>"/>
+	<input type="hidden" id="name" name="name" val="<%=(String)session.getAttribute("name")%>"/>
+	
 	<div class="super_container">
 
 		<!-- Header -->
@@ -96,7 +108,8 @@
 									class="fa fa-twitter" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
-					<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+					<div class="menu_copyright menu_mm">Colorlib All rights
+						reserved</div>
 				</div>
 			</div>
 		</div>
@@ -187,7 +200,7 @@
 			</div>
 		</div>
 
-<!-- -------------------------------테이블------------------------------------------------------ -->
+		<!-- -------------------------------테이블------------------------------------------------------ -->
 
 		<div id="wrap" align="cnter">
 			<div class="elements_title">예약현황</div>
@@ -211,62 +224,58 @@
 				<tbody>
 					<tr>
 						<!-- <th scope="row">1</th> -->
-						<c:forEach var="list" items="${list}">
+						<c:forEach var="list" items="${listModel.list}">
 							<tr>
 								<td>${list.booking_num}</td>
 								<td>${list.room_num}</td>
 								<td>${list.h_no}</td>
 								<td>${list.booking_name}</td>
 								<td>${list.booking_price}</td>
-								<td><fmt:parseDate var="dateString1" value="${list.start_day}" pattern="yyyy-MM-dd" /> 		<!-- string을 date로 파싱해줌 --> 
-									<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" /> 											<!-- dateString에 저장된 date를 사용 -->
-								</td>
-								<td><fmt:parseDate var="dateString2" value="${list.end_day}" pattern="yyyy-MM-dd" />
-									<fmt:formatDate value="${dateString2}" pattern="yyyy-MM-dd" />
-								</td>
+								<td><fmt:parseDate var="dateString1"
+										value="${list.start_day}" pattern="yyyy-MM-dd" /> <!-- string을 date로 파싱해줌 -->
+									<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" />
+									<!-- dateString에 저장된 date를 사용 --></td>
+								<td><fmt:parseDate var="dateString2"
+										value="${list.end_day}" pattern="yyyy-MM-dd" /> <fmt:formatDate
+										value="${dateString2}" pattern="yyyy-MM-dd" /></td>
 								<td>${list.seq}</td>
 								<td>${list.stay_day}</td>
 								<td>${list.p_condition}</td>
 								<td>${list.b_date}</td>
-								<td>
-									<select>
+								<td><select>
 										<option>----</option>
 										<option>수정</option>
 										<option>삭제</option>
-									</select>
-									<button>확인</button>
-								</td>
+								</select>
+									<button>확인</button></td>
 							</tr>
 						</c:forEach>
 				</tbody>
 			</table>
-<!-- pageNo ,endPage ,startPage 변수가 Management.jsp 에 input type='hidden' -->
-			<!-- 이전페이지 -->
-			 <c:if test="${reservationSearch.startPage > 5}">
-				<a href="Management.jsp?pageNum=$" ${list.startPage-1}>[이전]</a>
-			</c:if>
-
-
-			<!-- 페이지목록 -->
-			<c:forEach var="pageNo" begin="${list.startPag}"
-				end="${list.endPage}">
-				<c:if test="${list.requestPage == pageNo}">
-					<b>
-				</c:if>
-				<a href="Management.jsp?pageNum=${PageNo}">[${pageNo}]</a>
-				<c:if test="${list.requestPage == pageNo}">
-					</b>
-				</c:if>
-			</c:forEach>
-
-			<!-- 다음페이지 -->
-			<c:if
-				test="${list.endPage < list.totalPageCount}">
-				<a href="Management.jsp?pageNum=${list.startPage+5}">[이후]</a>
-			</c:if> 
 		</div>
-	</div>
 </div>
+
+ <c:if test="${listModel.startPage>5} ">
+		<a href="Management.do?pageNum=${listModel.startPage-1}" >[이전]</a>
+		</c:if>	
+		
+		<c:forEach var="pageNo" begin="${listModel.startPage}"
+		end="${listModel.endPage}" >
+		<c:if test="${listModel.requestPage ==PageNo }">
+		<b>
+		</c:if>
+	<a href="Management.do?pageNum=${pageNo}">[${pageNo}]</a> 
+		<c:if test="${listModel.requestPage==PageNo }">
+		</b>
+		</c:if>
+		</c:forEach>
+					
+		<c:if test="${listModel.endPage <listModel.totalPageCount }">
+		<a href="Management.do?pageNum=${listModel.startPage+5}"> [이후]</a>
+		</c:if>		 
+	
+
+
 
 
 	<!-- -------------------------------------------------------------------------------------- -->
@@ -357,11 +366,14 @@
 	<script
 		src="http://localhost:8081/kostaProject1/plugins/common/easing/easing.js"></script>
 	<script
-		src="http://localhost:8081/kostaProject1/plugins/common/progressbar/progressbar.min.js"></script>
+		src="ht	tp://localhost:8081/kostaProject1/plugins/common/progressbar/progressbar.min.js"></script>
 	<script
 		src="http://localhost:8081/kostaProject1/plugins/common/parallax-js-master/parallax.min.js"></script>
 	<script 
 		src="http://localhost:8081/kostaProject1/destino/js/elements_custom.js"></script>
-
+	<script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
+	<!--  메뉴이펙트 스크립트 -->
+	<script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
+	
 </body>
 </html>

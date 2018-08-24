@@ -54,11 +54,12 @@ $(document).ready(function() {
 		var $checkEmail = $("input[name='email']");
 		var $checkId = $("input[name = 'userId']");
 		var $checkTel = $("input[name = 'tel']");
-		var $checkName = $("input#mInput3");
+		var $checkName = $("input.u_name");
 		var $checkPass = $("input[name = 'password']");
 		var $checkPassConfirm = $("input[name = 'passwdConfirm']");
 		
-		alert(($checkPassConfirm.val()));
+		
+		alert(($checkName.val()));
 		if(!emailCheck.test($checkEmail.val())) {
 			$checkEmail.val('').attr('placeholder', emailMessage).addClass('wrong_input').focus();
 			event.preventDefault();

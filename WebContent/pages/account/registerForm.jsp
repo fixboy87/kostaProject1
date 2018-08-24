@@ -70,7 +70,7 @@
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput3" name="name" value="" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="text" class="u_name" id="mInput3" name="name" value="" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">

@@ -7,12 +7,9 @@
 	
 	<select id="listBoard" resultType="ReservationSearch">
 		select * from booking
-<!-- 		<if test="area !=null">
-			<where>
-			<foreach collection="area" item="item" separator="OR" open="(" close=")">
-				${item} LIKE #{searchKey}
-			</foreach>
-			</where>
-		</if> -->
+	</select>
+	
+	<select id="countBoard" resultType="int" >
+		select count(*) from booking
 	</select>
 </mapper>

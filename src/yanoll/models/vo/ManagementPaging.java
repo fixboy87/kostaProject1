@@ -1,8 +1,9 @@
 package yanoll.models.vo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ManagementPaging {
+public class ManagementPaging implements Serializable {
 	private List<ReservationSearch> list;
 	private int requestPage;
 	private int totalPageCount;
