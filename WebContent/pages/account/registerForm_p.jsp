@@ -44,7 +44,7 @@
                             <form id="joinMemberPc_p" action="registerInsert.do" method="post" data-member-form="true" class="form-group form-w410">
 
                                 <fieldset id="joinFieldset">
-                                    <legend class="sc-out">회원가입 폼</legend>
+                                   v <legend class="sc-out">회원가입 폼</legend>
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">

@@ -97,5 +97,12 @@ $(document).ready(function() {
 			return true;
 		}
 	});
+	
+	
+	/*$('	#joinMemberPc_p .button').click(function() {
+		alert(aaa);
+		event.preventDefault();
+		return false;
+	})*/
 });
 

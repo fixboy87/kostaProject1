@@ -58,15 +58,15 @@
 
                                     <div class="login-cont">
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput0" name="email" value="" placeholder="이메일을 입력해주세요." title="아이디(이메일)를 입력" autocomplete="off">
+                                            <input type="text" id="mInput0" name="email" value="" placeholder="이메일을 입력해주세요.(7~15자)" title="아이디(이메일)를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="userId" value="" placeholder="닉네임을 입력하세요.(5~15자)" title="닉네임을 입력(2~8자)" autocomplete="off">
+                                            <input type="text" id="mInput1" name="userId" value="" placeholder="닉네임을 입력하세요.(7~15자)" title="닉네임을 입력(2~8자)" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput2" name="tel" value="" placeholder="핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="text" id="mInput2" name="tel" value="" placeholder="-를 제외한 핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
@@ -74,12 +74,10 @@
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="password" id="mInput4" name="password" value="" placeholder="비밀번호를 입력하세요(8~20자)" class="inp-password">
-                                            <label class="placeholder-div hidden" title="1234">비밀번호를 입력하세요(8~20자)</label>
+                                            <input type="password" id="mInput4" name="password" value="" placeholder="비밀번호를 입력하세요(7~15자)" class="inp-password">
                                         </div>
                                         <div class="inp-txt-member">
                                             <input type="password" id="mInput5" name="passwdConfirm" value="" placeholder="비밀번호를 한번 더 입력하세요." class="inp-password">
-                                            <label class="placeholder-div hidden">비밀번호를 한번 더 입력하세요.</label>
                                         </div>
                                     </div>
                                     <input type="hidden" id="registerType" name="type" value="<%=type%>"/>
