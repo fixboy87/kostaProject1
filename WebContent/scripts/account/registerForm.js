@@ -59,7 +59,6 @@ $(document).ready(function() {
 		var $checkPassConfirm = $("input[name = 'passwdConfirm']");
 		
 		
-		alert(($checkName.val()));
 		if(!emailCheck.test($checkEmail.val())) {
 			$checkEmail.val('').attr('placeholder', emailMessage).addClass('wrong_input').focus();
 			event.preventDefault();
