@@ -92,7 +92,27 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/validation/jquery.validate.js" type="text/javascript"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/validation/aditional-methods.js" type="text/javascript"></script>
 <script type="text/javascript">
+/* $('input#button').submit (function() {
+	//id
+	$('#joinMemberPc').validate({
+		rules: {
+			id: {
+				required : true,
+				minlength : 6,
+				pattern : ^[a-zA-Z]+[a-zA-Z0-9],
+				
+			}
+			password: {
+				required : true,
+				minlength : 6
+			}
+		}
+	})
+})
+ */
 </script>
 </body>
 </html>

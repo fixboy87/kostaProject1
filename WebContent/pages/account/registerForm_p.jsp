@@ -86,6 +86,8 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/validation/jquery.validate.js" type="text/javascript"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/validation/aditional-methods.js" type="text/javascript"></script>
 <script type="text/javascript">
 </script>
 </body>
