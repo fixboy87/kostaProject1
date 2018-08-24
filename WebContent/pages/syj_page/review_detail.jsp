@@ -172,14 +172,16 @@ h1 {
 				  </tr>
           <tr>
             <td colspan="4" class="only_writer">
-              <a href="reveiw_updateAction.do?r_no=${board.r_no}">수정</a>
+              <a href="reveiw_updateFormAction.do?r_no=${board.r_no}">수정</a>
 			  <a href="review_deleteAction.do?r_no=${board.r_no}">삭제</a><br>
             </td>
           </tr>
 			</table>
 
 			
-			<a href="review_list.do">목록</a>
+			<!-- <a href="review_list.do">목록</a> -->
+			<input type="button" value="목록" class="w3-button w3-white w3-round-small" onclick="history.go(-1)">
+			
 		</div>
 		
 		

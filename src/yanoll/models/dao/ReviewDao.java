@@ -58,11 +58,11 @@ public class ReviewDao {
 	}
 
 /*리뷰 목록*/
-	public List<Review_Board> listReview() {
+	public List<Review_Board> listReview(String hotle_name) {
 	      SqlSession sqlSession =getSqlSessionFactory().openSession();
 	      List<Review_Board> list = null;
 	      try {
-	         list = sqlSession.getMapper(Review_BoardMapper.class).listReview();
+	         list = sqlSession.getMapper(Review_BoardMapper.class).listReview(hotle_name);
 	      } catch (Exception e) {
 	         e.printStackTrace();
 	      }finally {
@@ -124,7 +124,7 @@ public class ReviewDao {
 		return list;
 	}
 	
-/*호텔이름*/
+/*호텔번호로 이름 찾기*/
 	public String searchHotle_name(int h_no) {
 		String hotle_name ="";
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -139,6 +139,7 @@ public class ReviewDao {
 		return hotle_name;
 	}
 
+	
 /*회원번호*/
 	public int search_userNo(String id) {
 		int userNo =0;
@@ -174,5 +175,25 @@ public class ReviewDao {
 	}
 	
 	
+/*후기 수정*/
+	public int updateReview(Review_Board board) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re =-1;
+		System.out.println("asdasd");
+		try {
+			re = sqlSession.getMapper(Review_BoardMapper.class).updateReview(board);
+			System.out.println("asdasd");
+			if (re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return re;
+	}
 	
 }

@@ -154,6 +154,7 @@ h1 {
 
 			<!-- <a href="review_insertFormAction.do">후기 작성</a> </header> -->
 			<a href="review_checkAction.do">후기 작성</a> </header>
+			<input type="button" value="뒤로" class="w3-button w3-white w3-round-small" onclick="history.go(-1)">
 			
 			
 			

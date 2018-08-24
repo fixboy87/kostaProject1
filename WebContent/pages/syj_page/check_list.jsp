@@ -105,7 +105,9 @@ h1 {
 				  </tr>
 				  </c:forEach>
 				</table>
-					<a href="review_list.do">후기 목록</a>
+					<!-- <a href="review_list.do">후기 목록</a> -->
+					<input type="button" value="취소" class="w3-button w3-white w3-round-small" onclick="history.go(-1)">
+					
 		</div>
 	</section>
 	

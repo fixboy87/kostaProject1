@@ -13,9 +13,14 @@ public class Review_listAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-
+		
+		
 		ReviewDao dao = ReviewDao.getInstance();
-	      List<Review_Board> list = dao.listReview();
+		/*List<Review_Board> list = dao.listReview();*/
+		
+		int h_no = Integer.parseInt(request.getParameter("h_no"));
+		String hotle_name = dao.searchHotle_name(h_no);
+		List<Review_Board> list = dao.listReview(hotle_name);
 	     
 	     /* for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));

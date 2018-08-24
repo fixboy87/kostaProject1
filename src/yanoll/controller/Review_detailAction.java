@@ -21,6 +21,7 @@ public class Review_detailAction implements Action {
 			if(str!=null){
 				r_no = Integer.parseInt(str);
 				board = dao.detailReview(r_no);
+				System.out.println("디테일 보드"+board);
 				request.setAttribute("board", board);
 			}
 			

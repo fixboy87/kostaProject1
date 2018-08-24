@@ -335,7 +335,21 @@ public class ControlServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } 
+        }else if (command.equals("reveiw_updateFormAction.do")) { //syj_7.후기수정폼으로 이동
+			action = new Review_updateFormAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+        		e.printStackTrace();
+			}
+		}else if (command.equals("review_updateAction.do")) { //syj_.8후기수정
+			action = new Review_updateAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+        		e.printStackTrace();
+			}
+		} 
         
     	
 

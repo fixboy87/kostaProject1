@@ -14,7 +14,7 @@ public class Review_insertAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 
-		ReviewDao dao = ReviewDao.getInstance();
+		//ReviewDao dao = ReviewDao.getInstance();
 		ReviewService service = ReviewService.getInstance();
 		int re = -1;
 		re=service.insertReviewService(request);
@@ -30,7 +30,6 @@ public class Review_insertAction implements Action {
 		
 		forward.setRedirect(true);
 		forward.setPath("review_list.do");
-		
 		
 		return forward;
 	}
