@@ -97,10 +97,12 @@ h1 {
 				  	<input type="hidden"  value="${booking.h_no}" name="h_no">
 				  	<input type="hidden"  value="${booking.stay_day}" name="stay_day">
 				    <td class="check_tg-5hgy">${booking.booking_num}</td>
-				    <td class="check_tg-5hgy">호텔번호: ${booking.h_no}</td>
+				   <td class="check_tg-5hgy">호텔번호: ${booking.h_no}</td>
+				  <!--   <td class="check_tg-5hgy" id="h_name"></td> -->
 				    <td class="check_tg-5hgy">${booking.start_day}~${booking.end_day}</td>
 				    <td class="check_tg-5hgy">${booking.stay_day}일</td>
 				    <td class="check_tg-hmp3"><input type="submit" value="후기작성"/></td>
+				  	
 				  	</form>
 				  </tr>
 				  </c:forEach>
@@ -110,7 +112,7 @@ h1 {
 					
 		</div>
 	</section>
-	
+				
 
 
 

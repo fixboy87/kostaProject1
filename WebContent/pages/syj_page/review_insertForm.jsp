@@ -62,20 +62,6 @@ margin-bottom: 2%;
 }
 </style>
 
-<!--  rating_star -->
-<script type="text/javascript">
-$(function() {
-  $(".rating-star").on("click", function () {  
-	
-	var ss =$('#rating-stars-value').val();
-
-	alert(ss); 
-	
-
-	});
-});
-
-</script>
 <%-- <%
 	
 	Review_Board board = new Review_Board();

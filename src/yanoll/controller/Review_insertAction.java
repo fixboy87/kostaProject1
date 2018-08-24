@@ -2,6 +2,7 @@ package yanoll.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 
@@ -25,11 +26,15 @@ public class Review_insertAction implements Action {
 			int booking_num = Integer.parseInt(request.getParameter("booking_num"));
 			dao.change_condition(booking_num);
 		}*/
+		HttpSession session = request.getSession();
+		Integer h_no = (Integer)session.getAttribute("h_no");
+		System.out.println("insertAction에서 호텔번호(Integer)"+h_no);
+		String id = (String)session.getAttribute("id");
+		System.out.println("insertAction에서 회원아이디"+h_no);
 		
 		ActionForward forward = new ActionForward();
-		
 		forward.setRedirect(true);
-		forward.setPath("review_list.do");
+		forward.setPath("review_list.do?h_no="+h_no);
 		
 		return forward;
 	}

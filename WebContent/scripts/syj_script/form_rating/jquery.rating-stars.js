@@ -1,4 +1,4 @@
-[ rquer.rating-stars.js ]
+/*[ rquer.rating-stars.js ]*/
 
 jQuery.fn.ratingStars = function( options ) {
  

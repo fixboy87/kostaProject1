@@ -62,6 +62,12 @@ $(function() {
 			}
 			
 		})
+		
+		$(function() {
+			var h_names = new Array($('#h_no').val());
+			
+			
+		})
 	
 
 });

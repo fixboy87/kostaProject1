@@ -21,8 +21,9 @@ public class HotelDetailAction implements Action {
 		
 		System.out.println("HotelDetailAction  " + h_no);
 		
+		
+		request.setAttribute("h_no", h_no);
 		request.setAttribute("detail", list);
-
 		ActionForward forward = new ActionForward();
 		System.out.println("페이지이동됨?  액션");
 		forward.setRedirect(false);

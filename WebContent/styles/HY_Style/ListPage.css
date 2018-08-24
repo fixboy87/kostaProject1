@@ -83,8 +83,15 @@
 	
 }
 
-
-
+#reviewLink{
+	margin-left: 95%;
+	font-size: 15px;
+	color: black;
+	
+}
+#reviewLink_button{
+	size: 20px;
+}
 
 
 

@@ -147,6 +147,7 @@
 					</div>
 				</div>
 			</div>
+						<div id="reviewLink"><button id="reviewLink_button"><a href="review_list.do?h_no=${h_no }">후기</a></button></div>
 			
 			<div class="row">
 				<div class="col">

@@ -2,6 +2,7 @@ package yanoll.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import yanoll.models.dao.ReviewDao;
 
@@ -10,7 +11,8 @@ public class Review_deleteAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-
+		HttpSession session = request.getSession();
+		Integer h_no = (Integer)session.getAttribute("h_no");
 
 		ReviewDao dao = ReviewDao.getInstance();
 		String str = request.getParameter("r_no");
@@ -27,7 +29,9 @@ public class Review_deleteAction implements Action {
 			
 			if(re>0){
 				forward.setRedirect(true);
-				forward.setPath("review_list.do");
+				/*forward.setPath("review_list.do");*/
+				forward.setPath("review_list.do?h_no="+h_no);
+
 			}
 		}
 		return forward;
