@@ -1705,11 +1705,25 @@ section
 {
 	display:inline;
 	font-size:15px;
+	color : black;
 	padding-right:50px;
 	float : left;
 	list-style-type:none;
 	font-family: 'Nanum Gothic Coding', monospace;
-	font-style: 
+	text-decoration: none;
+}
+
+a:link{
+	text-decoration: none;
+	color: black;
+}
+a:VISITED{
+	text-decoration: none;
+	color: black;
+}
+a:ACTIVE{
+	text-decoration: none;
+	color: black;
 }
 
 .navi_bar li:hover   /* 상단 예약현황 RoomList 호텔정보수정 매출현황 2 호버시 분홍색 */

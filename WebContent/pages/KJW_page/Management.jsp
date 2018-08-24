@@ -211,23 +211,23 @@
 				<tbody>
 					<tr>
 						<!-- <th scope="row">1</th> -->
-						<c:forEach var="reservationSearch" items="${ManagementPaging.list}">
+						<c:forEach var="list" items="${list}">
 							<tr>
-								<td>${reservationSearch.booking_num}</td>
-								<td>${reservationSearch.room_num}</td>
-								<td>${reservationSearch.h_no}</td>
-								<td>${reservationSearch.booking_name}</td>
-								<td>${reservationSearch.booking_price}</td>
-								<td><fmt:parseDate var="dateString1" value="${reservationSearch.start_day}" pattern="yyyy-MM-dd" /> 		<!-- string을 date로 파싱해줌 --> 
+								<td>${list.booking_num}</td>
+								<td>${list.room_num}</td>
+								<td>${list.h_no}</td>
+								<td>${list.booking_name}</td>
+								<td>${list.booking_price}</td>
+								<td><fmt:parseDate var="dateString1" value="${list.start_day}" pattern="yyyy-MM-dd" /> 		<!-- string을 date로 파싱해줌 --> 
 									<fmt:formatDate value="${dateString1}" pattern="yyyy-MM-dd" /> 											<!-- dateString에 저장된 date를 사용 -->
 								</td>
-								<td><fmt:parseDate var="dateString2" value="${reservationSearch.end_day}" pattern="yyyy-MM-dd" />
+								<td><fmt:parseDate var="dateString2" value="${list.end_day}" pattern="yyyy-MM-dd" />
 									<fmt:formatDate value="${dateString2}" pattern="yyyy-MM-dd" />
 								</td>
-								<td>${reservationSearch.seq}</td>
-								<td>${reservationSearch.stay_day}</td>
-								<td>${reservationSearch.p_condition}</td>
-								<td>${reservationSearch.b_date}</td>
+								<td>${list.seq}</td>
+								<td>${list.stay_day}</td>
+								<td>${list.p_condition}</td>
+								<td>${list.b_date}</td>
 								<td>
 									<select>
 										<option>----</option>
@@ -240,31 +240,30 @@
 						</c:forEach>
 				</tbody>
 			</table>
-
-
+<!-- pageNo ,endPage ,startPage 변수가 Management.jsp 에 input type='hidden' -->
 			<!-- 이전페이지 -->
-			<c:if test="${reservationSearch.startPage > 5}">
-				<a href="Management.jsp?pageNum=$" ${reservationSearch.startPage-1}>[이전]</a>
+			 <c:if test="${reservationSearch.startPage > 5}">
+				<a href="Management.jsp?pageNum=$" ${list.startPage-1}>[이전]</a>
 			</c:if>
 
 
 			<!-- 페이지목록 -->
-			<c:forEach var="pageNo" begin="${reservationSearch.startPag}"
-				end="${reservationSearch.endPage}">
-				<c:if test="${reservationSearch.requestPage == pageNo}">
+			<c:forEach var="pageNo" begin="${list.startPag}"
+				end="${list.endPage}">
+				<c:if test="${list.requestPage == pageNo}">
 					<b>
 				</c:if>
 				<a href="Management.jsp?pageNum=${PageNo}">[${pageNo}]</a>
-				<c:if test="${reservationSearch.requestPage == pageNo}">
+				<c:if test="${list.requestPage == pageNo}">
 					</b>
 				</c:if>
 			</c:forEach>
 
 			<!-- 다음페이지 -->
 			<c:if
-				test="${Users.endPage < reservationSearch.totalPageCount}">
-				<a href="Management.jsp?pageNum=${reservationSearch.startPage+5}">[이후]</a>
-			</c:if>
+				test="${list.endPage < list.totalPageCount}">
+				<a href="Management.jsp?pageNum=${list.startPage+5}">[이후]</a>
+			</c:if> 
 		</div>
 	</div>
 </div>

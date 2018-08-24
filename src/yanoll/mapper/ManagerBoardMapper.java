@@ -10,7 +10,7 @@ import yanoll.models.vo.UserSearch;
 import yanoll.models.vo.Users;
 
 public interface ManagerBoardMapper {
-	int insertBoard(ReservationSearch reservationSearch);
+	//int insertBoard(ReservationSearch reservationSearch);
 	 List<ReservationSearch> listBoard();
 	
 }
