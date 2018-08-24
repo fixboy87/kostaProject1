@@ -53,7 +53,7 @@ $(document).ready(function() {
 		var $checkEmail = $("input[name='email']");
 		var $checkId = $("input[name = 'userId']");
 		var $checkTel = $("input[name = 'tel']");
-		var $checkName = $("input[name = 'uname']");
+		var $checkName = $("input#mInput3");
 		var $checkPass = $("input[name = 'password']");
 		var $checkPassConfirm = $("input[name = 'passwdConfirm']");
 		
