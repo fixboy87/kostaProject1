@@ -124,11 +124,11 @@ div.logo div {
 			<form action="updateUserAction.do" id="updateUserDetail" method="post">
 				<div class="myPageCylinder">
 					<div class="myPageMenuCylinder">
-						<div class="button iEnquire" id="admin_page_button"><a href="#">1:1문의</a></div>			
-						<div class="button iEnquire" id="admin_page_button"><a href="#">세부관리</a></div>			
-						<div class="button iEnquire" id="admin_page_button"><a href="#">기본정보</a></div>			
-						<div class="button iEnquire" id="admin_page_button"><a href="#">세부정보</a></div>			
-						<div class="button iEnquire" id="admin_page_button"><a href="#">회원탈퇴</a></div>			
+						<div class="button iEnquire admin_page_button"><a href="#">1:1문의</a></div>			
+						<div class="button iEnquire admin_page_button"><a href="#">세부관리</a></div>			
+						<div class="button iEnquire admin_page_button"><a href="#">기본정보</a></div>			
+						<div class="button iEnquire admin_page_button"><a href="#">세부정보</a></div>			
+						<div class="button iEnquire admin_page_button"><a href="#">회원탈퇴</a></div>			
 					</div>
 					<div class="myPageContentCylinder">
 						<div class="mypage_section">

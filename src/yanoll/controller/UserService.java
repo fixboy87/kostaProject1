@@ -82,7 +82,7 @@ public class UserService {
 			//리다이렉트
 		}
 		System.out.println(name);
-		if(!name.equals("@")){
+		if(name != null){
 			System.out.println(name);
 			session.setAttribute("id", userId);
 			session.setAttribute("type", loginType);

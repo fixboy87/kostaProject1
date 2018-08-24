@@ -260,7 +260,7 @@ $(document).ready(function()
 	
 	
 	//mypage 1:1 문의 버튼
-	$('#myPage_button').click(function() {
+	$('.myPage_button').click(function() {
 		var $buttonPressed = $(this);
 		var $buttonHtml = $(this).find('a').html();
 		
@@ -290,12 +290,11 @@ $(document).ready(function()
 		location.href = "titlePage.do";
 	});
 	
-	$('#admin_page_button').click(function() {
+	$('.admin_page_button').click(function() {
 		var $buttonPressed = $(this);
 		var $buttonHtml = $(this).find('a').html();
-		
 		if($buttonHtml === "1:1문의") {
-			location.href="GngListAction.do";
+			location.href= "GngListAction.do";
 		} else if($buttonHtml === "세부관리") {
 			location.href = "Management.do";
 		} else if($buttonHtml === "기본정보") {

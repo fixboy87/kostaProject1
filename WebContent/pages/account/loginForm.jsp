@@ -45,7 +45,7 @@
                         <section class="login-area">
                             <h3>로그인</h3>
 
-                            <form id="joinMemberPc" action="loginAction.do" method="post" data-member-form="true" class="form-group form-w410">
+                            <form id="loginUser" action="loginAction.do" method="post" data-member-form="true" class="form-group form-w410">
 
                                 <fieldset id="joinFieldset">
                                     <legend class="sc-out">로그인</legend>
@@ -92,27 +92,9 @@
 <script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/account/registerForm.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/menuEffect.js" type="text/javascript"></script>
-<script src="http://localhost:8081/kostaProject1/scripts/validation/jquery.validate.js" type="text/javascript"></script>
-<script src="http://localhost:8081/kostaProject1/scripts/validation/aditional-methods.js" type="text/javascript"></script>
 <script type="text/javascript">
-/* $('input#button').submit (function() {
-	//id
-	$('#joinMemberPc').validate({
-		rules: {
-			id: {
-				required : true,
-				minlength : 6,
-				pattern : ^[a-zA-Z]+[a-zA-Z0-9],
-				
-			}
-			password: {
-				required : true,
-				minlength : 6
-			}
-		}
-	})
-})
- */
+
+
 </script>
 </body>
 </html>
