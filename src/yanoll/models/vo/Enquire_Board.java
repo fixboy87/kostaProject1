@@ -26,6 +26,32 @@ CONSTRAINT enquire_reply_fk
 create sequence enquire_reply_r_seq start with 1;*/
 import java.io.Serializable;
 
+/*create table enquire_board(
+e_seq number PRIMARY KEY,
+e_title varchar2(150),
+e_contents varchar2(1500),
+e_date date,
+hotel_name varchar2(50),
+id varchar2(30),
+user_no number,
+h_no number
+);
+create sequence enquire_board_seq start with 1;
+
+create table enquire_reply(
+r_seq number primary key,
+r_contents varchar2(1500),
+r_date date,
+hotel_name varchar2(50),
+e_seq number,
+id varchar2(30),
+CONSTRAINT enquire_reply_fk
+       FOREIGN KEY(e_seq)
+       REFERENCES enquire_board(e_seq)
+);
+
+create sequence enquire_reply_r_seq start with 1;
+*/
 public class Enquire_Board implements Serializable {
 	private int e_seq;
 	private String e_title;

@@ -123,8 +123,12 @@
 	
 	
 	
-									
-    <%@include file="../gng_page/enqreplylist.jsp" %>				
+	<br style="display:block; ">
+	<br style="display:block; ">
+	<br style="display:block; ">								
+    <%@include file="../gng_page/enqreplylist.jsp" %>
+    
+    				
     <%@include file="../gng_page/enquire_reply.jsp" %>																
 					
 

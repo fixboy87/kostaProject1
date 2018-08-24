@@ -151,11 +151,11 @@ public class Enquire_BoardDao {
 		return reply;
 	}
 	
-	public int deleteEnqReply(int e_seq){
+	public int deleteEnqReply(int r_seq){
 		SqlSession session = getSqlSessionFactory().openSession();
 		int re=-1;
 		try {
-			re= session.getMapper(Enquire_BoardMapper.class).deleteEnquireReply(e_seq);
+			re= session.getMapper(Enquire_BoardMapper.class).deleteEnquireReply(r_seq);
 			
 			if(re>0){
 				session.commit();
@@ -222,6 +222,18 @@ public class Enquire_BoardDao {
 			session.close();
 		}
 		return re;
+	}
+	public Enquire_Reply enqReplyDetail(int r_seq){
+		SqlSession session = getSqlSessionFactory().openSession();
+	    Enquire_Reply reply= null;
+	    try {
+			reply = session.getMapper(Enquire_BoardMapper.class).EnqDetail(r_seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return reply;
 	}
 
 }

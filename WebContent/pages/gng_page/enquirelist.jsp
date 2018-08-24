@@ -85,7 +85,7 @@ margin-bottom: 1%;
 		</c:forEach>
 		</table>
 		
-		 <%-- <c:if test="${listModel.startPage>5} ">
+		<%--  <c:if test="${listModel.startPage>5} ">
 		<a href="GngListAction.do?pageNum=${listModel.startPage-1}" >[이전]</a>
 		</c:if>	
 		
@@ -104,13 +104,13 @@ margin-bottom: 1%;
 		<a href="GngListAction.do?pageNum=${listModel.startPage+5}"> [이후]</a>
 		</c:if>		 --%>
 		
-		<!-- <form class="enquire_search" action="GngListAction.do" method="post">					      
+		 <form class="enquire_search" action="GngListAction.do" method="post">					      
 					        <input type="checkbox" name="area" value="e_title"> 제목 
 					        <input type="checkbox" name="area" value="id"> ID 
 			                <input type="text" name="searchKey" size="10">
 					        <input type="submit" value="검색">
-					        </form>			 -->											
-			      			        
+					        </form>													
+			      			    
 					
 			
 			

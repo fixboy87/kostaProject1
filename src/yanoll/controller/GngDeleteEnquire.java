@@ -24,6 +24,7 @@ public class GngDeleteEnquire implements Action {
 		int re=0;
 		re= dao.deleteEnquireBoard(e_seq);
 		re= dao.deleteEnqReply(e_seq);
+		
 		System.out.println(re);
 
 

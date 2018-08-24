@@ -46,7 +46,7 @@ public class GngEnquireService {
 	
 	public Enquire_List listBoardService(int requestPage , HttpServletRequest request) throws Exception {
 		HttpSession session= request.getSession();
-		Enquire_Search search = new Enquire_Search();
+	Enquire_Search search = new Enquire_Search();
 		
 		if(request.getParameter("area") !=null){
 			session.removeAttribute("search");
@@ -60,6 +60,7 @@ public class GngEnquireService {
 		}
 		
 		int totalCount = dao.countBoard(search);
+		System.out.println(totalCount);
 		int totalPageCount = totalCount/PAGE_SIZE;
 		if(totalCount%PAGE_SIZE>0){
 			totalPageCount++;

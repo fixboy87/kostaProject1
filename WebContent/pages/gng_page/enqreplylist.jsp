@@ -98,35 +98,42 @@
 </head>
 <body>
 
-
-   <table class="enquire_reply" border="1">
-   
-    <c:forEach var="Enquire_Reply" items="${reply}">
-  
-    <tr>
-    <td style="background-color: #fafafa; color: #000000; width: 200px;"><h5>아이디</h5></td>
-	<td colspan="3" style=" color: #000000;"><h5>${Enquire_Reply.id}</h5></td>
-	</tr>
-	<tr>
+<c:forEach var="Enquire_Reply" items="${reply}">	
+	<table class="enquire_reply" border="1" width="50%">
+		<thead>
+			<tr>
+				<td style="background-color: #fafafa; color: #000000; width: 200px;"><h5>아이디</h5></td>
+				<td colspan="3" style="color: #000000;"><h5>${Enquire_Reply.id}</h5></td>
+				
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>				
+				<td style="background-color: #fafafa; color: #000000; width: 80px; "><h5>내용</h5></td>
+				<td colspan="3" style="color: #000000; width: 85%; font-size: 15px; " height="100px">${Enquire_Reply.r_contents}</td>
+			</tr>
+		</tbody>
+	</table>
+		<div style="margin-right: 20%">
+			<a class="EnquireDelete" href="GngDeleteEnqReply.do?r_seq=${Enquire_Reply.r_seq}">댓글삭제</a>
+			<a class="EnquireDelete" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">댓글수정</a>
+		</div>
+		<br style="display:block; ">
+		<br style="display:block; ">
+</c:forEach>
 	
-	<td style="background-color: #fafafa; color: #000000; width: 80px;"><h5>내용</h5></td>
-	<td colspan="3"style=" color: #000000; width:85%;" height="100px"><h5>${Enquire_Reply.r_contents}</h5></td>
-    </tr> 
-    </table>
-    <a class="EnquireDelete" href="GngDeleteEnqReply.do?e_seq=${Enquire_Reply.e_seq}">댓글삭제</a> <!-- 배열에 있는 상태여서 foreach로 빼야한다.  -->
-    <a class="EnquireDelete" href="GngUpdateEnqReplyForm.do?e_seq=${Enquire_Reply.e_seq}">댓글수정</a>
-    </c:forEach>
-     
-    
-    
-    
 
-																		
-							
-					      			        
-					
-			
-			
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
