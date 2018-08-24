@@ -16,7 +16,7 @@ $(document).ready(function() {
 	
 	//패턴
 	var idCheck = /^[a-zA-Z][a-zA-Z0-9]{6,14}$/;
-	var passCheck = /^[a-zA-Z0-9]{7,15}$/;
+	var passCheck = /^[a-zA-Z0-9]{6,14}$/;
 	var emailCheck = /^[a-zA-Z0-9]+@[a-z.]/;
 	var telCheck = /^01+[0-9]{7,9}$/;
 	var nameCheck = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/;
@@ -36,11 +36,12 @@ $(document).ready(function() {
 		var $checkId = $("input[name='id']");
 		var $checkPass = $("input[name='password']");
 		
+		
 		if(!idCheck.test($checkId.val())) {
 			$checkId.val('').attr('placeholder', idMessage).addClass('wrong_input').focus();
 			event.preventDefault();
 			return false;
-		} else if (!passCheck.test($checkPass)) {
+		} else if (!passCheck.test($checkPass.val())) {
 			$checkPass.val('').attr('placeholder', passMessage).addClass('wrong_input').focus();
 			event.preventDefault();
 			return false;

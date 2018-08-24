@@ -56,7 +56,7 @@
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput1" name="password" placeholder="비밀번호를 입력해주세요.(특수문자 불가, 7자 이상)" title="비밀번호 입력" autocomplete="off">
+                                            <input type="password" id="mInput1" name="password" placeholder="비밀번호를 입력해주세요.(특수문자 불가, 7자 이상)" title="비밀번호 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
