@@ -305,5 +305,6 @@
 <script src="http://localhost:8081/kostaProject1/plugins/common/easing/easing.js"></script>
 <script src="http://localhost:8081/kostaProject1/plugins/common/parallax-js-master/parallax.min.js"></script>
 <script src="http://localhost:8081/kostaProject1/scripts/common/offers_custom.js"></script>
+<script src="http://localhost:8081/kostaProject1/scripts/common/custom.js"></script>
 </body>
 </html>

@@ -43,7 +43,6 @@ $(document).ready(function()
 
 	initHamburger();
 	initSpecialSlider();
-	initVideo();
 	initSearch();
 
 
@@ -178,29 +177,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
 
-	5. Init Video
-
-	*/
-
-	function initVideo()
-	{
-		$('.video').magnificPopup({
-          disableOn: 700,
-          type: 'iframe',
-          mainClass: 'mfp-fade',
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false
-        });
-	}
-
-	/* 
-
-	6. Init Search
-
-	*/
 
 	
 	function initSearch()
