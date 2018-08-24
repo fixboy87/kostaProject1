@@ -26,6 +26,7 @@
 .main_nav_list a {
 	color: white;
 }
+
 </style>
 
 </head>

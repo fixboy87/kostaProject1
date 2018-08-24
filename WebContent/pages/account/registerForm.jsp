@@ -31,65 +31,6 @@
 
 <script type="text/javascript">
  
-/*  function Button_Click(){
-	 var emailCheck = /^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z]+)*$/;		
-	 var idCheck = /^[a-z][a-z0-9_$@#]{4,14}$/;								
-	 var nameCheck = /^[\uac00-\ud7a3]*$/;									
-	 var passwordCheck = /^[a-zA-Z0-9]{7,20}$/;	
-	 var telCheck = /^\d{11}$/;					
-	 
-	 var f = document.fmt;  // 이문서의 fmt(아래 form테그중 name이 fmt인 태그)를 f에 넣고
-	
-	 var password = null;
-	 var passwdConfirm = null;
-	 //메소드체인
-	//이메일
-	if(! emailCheck.test(f.email.value)){ // 
-		alert("메일양식이 잘못됐습니다. 다시 입력해주세요");
-		f.email.focus();
-		return false; 
-	}
-	// 아이디
-	if(! idCheck.test(f.id.value)){ // ^ : 앞에만 검사, $ : 뒤에만 검사, i 대소문자 구분 안함(없으면 소문자만 가능하다)
-		alert("아이디 첫문자는 영문자이고 5~15자만 가능");
-		f.id.focus();
-		return false; 
-	}
-	// 연락처
-	if(! telCheck.test(f.tel.value)){
-		alert("전화번호 양식에 맞춰 입력해주세요");
-		f.tel.focus();
-		return false; 
-	}		
-	// 이름
-	if(! nameCheck.test(f.name.value)){ //g: 완전일치, ^앞 $뒤 *0개이상, uac00~ud7a3은 한글 코드값  , gi대소문자 구분없이 완전일치
-		alert("이름을 정확히 입력해주세요");
-		f.name.focus();
-		return false; 
-	}
-	//패스워드검사(영문자와 1자 이상의 숫자특수문자. 8~20)
-	if(!passwordCheck.test(f.password.value)){
-		alert("패드워드는 특수문자가 필요 ");
-		password=(f.password.value);
-		alert(password); 
-		return false; 
-	}else{
-		password=(f.password.value);
-		return false;
-	}
-
-	
-	passwdConfirm=(f.passwdConfirm.value);
-	alert(passwdConfirm);
-	 
-	
-	if(!password.equals(passwdConfirm)){
-		alert("입력하신 패스워드가 서로 다릅니다.");
-		return false;
-	}
-} 
-     */
- 
 </script>
 
 <body>
@@ -125,20 +66,20 @@
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="number" id="mInput2" name="tel" value="" placeholder="핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="text" id="mInput2" name="tel" value="" placeholder="핸드폰번호를 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="text" id="mInput3" name="name" value="" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
+                                            <input type="text" id="mInput3" name="uname" value="" placeholder="이름을 입력하세요." title="전화번호를 입력" autocomplete="off">
                                         </div>
 
                                         <div class="inp-txt-member">
-                                            <input type="password" id="mInput4" name="password" value="" class="inp-password">
-                                            <label class="placeholder-div" title="1234">비밀번호를 입력하세요(8~20자)</label>
+                                            <input type="password" id="mInput4" name="password" value="" placeholder="비밀번호를 입력하세요(8~20자)" class="inp-password">
+                                            <label class="placeholder-div hidden" title="1234">비밀번호를 입력하세요(8~20자)</label>
                                         </div>
                                         <div class="inp-txt-member">
-                                            <input type="password" id="mInput5" name="passwdConfirm" value="" class="inp-password">
-                                            <label class="placeholder-div">비밀번호를 한번 더 입력하세요.</label>
+                                            <input type="password" id="mInput5" name="passwdConfirm" value="" placeholder="비밀번호를 한번 더 입력하세요." class="inp-password">
+                                            <label class="placeholder-div hidden">비밀번호를 한번 더 입력하세요.</label>
                                         </div>
                                     </div>
                                     <input type="hidden" id="registerType" name="type" value="<%=type%>"/>

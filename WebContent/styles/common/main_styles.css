@@ -1633,3 +1633,8 @@ section
 .main_nav_list a {
 	color: white;
 }
+
+.wrong_input::-webkit-input-placeholder { /* Chrome */
+ 	color: red !important;
+  	font-size: 0.7em !important;
+	font-weight: bold;
